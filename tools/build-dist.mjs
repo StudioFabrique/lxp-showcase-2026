@@ -22,16 +22,19 @@ const srcdoc = comp.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 // 2. Wrapper : src= remplacé par srcdoc=.
 let wrapper = read("index.html");
 wrapper = wrapper.replace(/\s+src="composition\/index\.html"/, `\n        srcdoc="${srcdoc}"`);
+// Miniatures du plan : dans dist/, les ressources de la composition sont à la racine de assets/.
+wrapper = wrapper.replace('data-thumbs="composition/assets/thumbs/"', 'data-thumbs="assets/thumbs/"');
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 writeFileSync(join(dist, "index.html"), wrapper);
 cpSync(join(root, "vendor"), join(dist, "vendor"), { recursive: true });
+cpSync(join(root, "ui"), join(dist, "ui"), { recursive: true });
 // Ressources référencées par la composition (images, logos) : chemins relatifs à dist/.
 if (existsSync(join(root, "composition/assets"))) {
   cpSync(join(root, "composition/assets"), join(dist, "assets"), {
     recursive: true,
-    filter: (p) => !/gsap\.min\.js/.test(p),
+    filter: (p) => !/(gsap|MorphSVGPlugin)\.min\.js/.test(p),
   });
 }
 console.log("dist/index.html :", Math.round(wrapper.length / 1024), "Ko");

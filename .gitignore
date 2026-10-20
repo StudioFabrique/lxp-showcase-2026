@@ -22,3 +22,6 @@ composition/.waveform-cache/
 
 # Réglages locaux de l'assistant (Claude Code) : personnels à chaque poste
 .claude/settings.local.json
+
+# Pipeline des captures (S5)
+.snapshots-cache/

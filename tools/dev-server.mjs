@@ -38,6 +38,7 @@ const MIME = {
 // modification de composition/index.html.
 const syncIsland = () => {
   try {
+    execFileSync(process.execPath, [join(root, "tools/sync-content.mjs")], { stdio: "inherit" });
     execFileSync(process.execPath, [join(root, "tools/sync-island.mjs")], { stdio: "ignore" });
   } catch (e) {
     console.error("⚠ Synchronisation de l'île impossible :", e.message);
@@ -80,15 +81,16 @@ const changed = (dir, name) => {
   clearTimeout(timer);
   timer = setTimeout(() => {
     // Seule la composition porte l'île source ; le wrapper (racine) en reçoit la copie.
-    if (dir === "composition" && String(name || "") === "index.html") syncIsland();
+    if (dir === "content" || (dir === "composition" && String(name || "") === "index.html")) syncIsland();
     for (const c of clients) c.write("data: reload\n\n");
     console.log("↻ rechargé" + (name ? " (" + name + ")" : ""));
   }, 150);
 };
-for (const dir of ["composition", "."]) {
+for (const dir of ["composition", "content", "."]) {
   watch(join(root, dir), { recursive: dir !== "." }, (_, name) => {
     if (dir === "." && name !== "index.html") return;
     if (name && /(\.hyperframes|\.thumbnails|\.waveform-cache|renders)/.test(name)) return;
+    if (dir === "composition" && name === "js/content.js") return; // sortie de sync-content : évite une boucle
     changed(dir, name);
   });
 }
@@ -96,7 +98,7 @@ for (const dir of ["composition", "."]) {
 server.listen(port, "127.0.0.1", () => {
   const target = `http://localhost:${port}/index.html${scene ? "#" + scene : ""}`;
   console.log(`Session ouverte : ${target}`);
-  console.log("Modifiez composition/js/scene-*.js, composition/css/scenes.css ou composition/index.html : la page se recharge toute seule.");
+  console.log("Textes : content/*.json. Animations : composition/js/scene-*.js, composition/css/scenes.css ou composition/index.html : la page se recharge toute seule.");
   console.log("Ctrl+C pour arrêter.");
   if (openBrowser) spawn("open", [target], { stdio: "ignore", detached: true }).unref();
 });

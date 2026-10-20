@@ -2,11 +2,16 @@
   "name": "lxp-showcase-2026",
   "private": true,
   "scripts": {
-    "sync": "node tools/sync-island.mjs",
+    "sync": "node tools/sync-content.mjs && node tools/sync-island.mjs",
     "check": "npm run sync && cd composition && npx --yes hyperframes@0.8.174 check",
     "build": "npm run sync && node tools/build-dist.mjs",
     "dev": "npm run sync && npx --yes hyperframes@0.8.174 present ./composition",
     "studio": "npx --yes hyperframes@0.8.174 preview ./composition --background",
-    "scene": "node tools/dev-server.mjs"
+    "scene": "node tools/dev-server.mjs",
+    "snapshots": "node tools/snapshots/run.mjs",
+    "thumbs": "node tools/thumbnails.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.0.0"
   }
 }

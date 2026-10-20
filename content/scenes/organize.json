@@ -1,0 +1,390 @@
+{
+  "label": "Organiser",
+  "notes": "Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.",
+  "calendrier": {
+    "intro": {
+      "badge": "Calendrier",
+      "h1": "Un calendrier **par parcours**",
+      "lede": "Consultez les cours, les devoirs et les modules d’un parcours."
+    },
+    "carte": {
+      "entete": {
+        "h3": "Octobre 2026",
+        "lgs": {
+          "lg": [
+            {
+              "texte": "Cours"
+            },
+            {
+              "texte": "Devoir"
+            },
+            {
+              "texte": "Module"
+            }
+          ]
+        }
+      },
+      "wk": {
+        "span": [
+          "Lun",
+          "Mar",
+          "Mer",
+          "Jeu",
+          "Ven",
+          "Sam",
+          "Dim"
+        ]
+      },
+      "grid": {
+        "day": [
+          {
+            "ev": "Bases du HTML",
+            "ev-type": "Cours",
+            "ev-titre": "Les bases du HTML",
+            "ev-date": "Mardi 6 octobre"
+          },
+          {
+            "ev": "Page d'accueil",
+            "ev-type": "Devoir",
+            "ev-titre": "Devoir : page d'accueil",
+            "ev-date": "Jeudi 8 octobre"
+          },
+          {
+            "ev": "Interface",
+            "ev-type": "Module",
+            "ev-titre": "Module : Construire une interface",
+            "ev-date": "Mardi 13 octobre"
+          },
+          {
+            "ev": "Les balises",
+            "ev-type": "Cours",
+            "ev-titre": "Les balises principales",
+            "ev-date": "Jeudi 15 octobre"
+          },
+          {
+            "ev": "Mise en page",
+            "ev-type": "Cours",
+            "ev-date": "Mardi 20 octobre"
+          },
+          {
+            "ev": "Maquette",
+            "ev-type": "Devoir",
+            "ev-titre": "Devoir : maquette de la page",
+            "ev-date": "Jeudi 22 octobre"
+          },
+          {
+            "ev": "Accessibilité",
+            "ev-type": "Module",
+            "ev-titre": "Module : Accessibilité",
+            "ev-date": "Mardi 27 octobre"
+          }
+        ]
+      },
+      "evd": {
+        "bouton": "Accéder au cours",
+        "boutonModele": "Accéder au {0}"
+      }
+    }
+  },
+  "mediatheque": {
+    "intro": {
+      "badge": "Médiathèque",
+      "h1": "Tous les médias **au même endroit**",
+      "lede": "Gérez toutes les ressources utilisées dans l’application."
+    },
+    "carte": {
+      "mtabs": {
+        "tab": [
+          "Images",
+          "Vidéos",
+          "Audios",
+          "Ressources"
+        ]
+      },
+      "sorts": {
+        "span": "Trier par",
+        "sort": [
+          "Date de création",
+          "Taille",
+          "Nombre d'utilisations"
+        ]
+      },
+      "mhead": {
+        "span": [
+          "Nom du fichier",
+          "Taille",
+          "Utilisé"
+        ]
+      },
+      "mbody": {
+        "mlist": [
+          {
+            "mrow2": [
+              {
+                "mn": "logo-organisme.png",
+                "span": [
+                  "124 Ko"
+                ]
+              },
+              {
+                "mn": "banniere-parcours.jpg",
+                "span": [
+                  "860 Ko"
+                ]
+              },
+              {
+                "mn": "schema-html.svg",
+                "span": [
+                  "18 Ko"
+                ]
+              },
+              {
+                "mn": "photo-equipe.webp",
+                "span": [
+                  "312 Ko"
+                ]
+              },
+              {
+                "mn": "capture-editeur.png",
+                "span": [
+                  "540 Ko"
+                ]
+              }
+            ]
+          },
+          {
+            "mrow2": [
+              {
+                "mn": "intro-html.mp4",
+                "span": [
+                  "47,1 Mo"
+                ]
+              },
+              {
+                "mn": "presentation-parcours.mp4",
+                "span": [
+                  "94,2 Mo"
+                ]
+              },
+              {
+                "mn": "demo-editeur.webm",
+                "span": [
+                  "21,9 Mo"
+                ]
+              },
+              {
+                "mn": "accueil-promo.mp4",
+                "span": [
+                  "31,1 Mo"
+                ]
+              },
+              {
+                "mn": "tutoriel-quiz.mp4",
+                "span": [
+                  "26,9 Mo"
+                ]
+              }
+            ]
+          },
+          {
+            "mrow2": [
+              {
+                "mn": "podcast-accueil.mp3",
+                "span": [
+                  "9,2 Mo"
+                ]
+              },
+              {
+                "mn": "consignes-devoir.m4a",
+                "span": [
+                  "2,1 Mo"
+                ]
+              },
+              {
+                "mn": "lecture-lecon.mp3",
+                "span": [
+                  "5,5 Mo"
+                ]
+              },
+              {
+                "mn": "extrait-entretien.wav",
+                "span": [
+                  "14,5 Mo"
+                ]
+              },
+              {
+                "mn": "bienvenue.mp3",
+                "span": [
+                  "1,8 Mo"
+                ]
+              }
+            ]
+          },
+          {
+            "mrow2": [
+              {
+                "mn": "guide-apprenant.pdf",
+                "span": [
+                  "1,4 Mo"
+                ]
+              },
+              {
+                "mn": "grille-evaluation.xlsx",
+                "span": [
+                  "96 Ko"
+                ]
+              },
+              {
+                "mn": "support-module.pptx",
+                "span": [
+                  "5,1 Mo"
+                ]
+              },
+              {
+                "mn": "glossaire.docx",
+                "span": [
+                  "74 Ko"
+                ]
+              },
+              {
+                "mn": "modele-devoir.docx",
+                "span": [
+                  "58 Ko"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "groupes": {
+    "intro": {
+      "badge": "Groupes et formateurs",
+      "h1": "Des groupes **rattachés à un parcours**",
+      "lede": "Chaque groupe est lié à un parcours et aux formateurs qui l’accompagnent."
+    },
+    "carte": {
+      "entete": {
+        "h3": "Groupes",
+        "bouton": "Créer un groupe"
+      },
+      "ghead": {
+        "span": [
+          "Nom",
+          "Formation - Parcours",
+          "Nombre d’apprenants"
+        ]
+      },
+      "grow": [
+        {
+          "formateurs": "Formateur A, Formateur B",
+          "nom": "Promotion A",
+          "parcours": "Développeur web 2026",
+          "span": [
+            "Promotion A",
+            "Développeur web - Parcours 2026"
+          ]
+        },
+        {
+          "formateurs": "Formateur C",
+          "nom": "Promotion B",
+          "parcours": "Initiation au numérique",
+          "span": [
+            "Promotion B",
+            "Initiation - Parcours numérique"
+          ]
+        },
+        {
+          "formateurs": "Formateur A",
+          "nom": "Atelier du soir",
+          "parcours": "Accessibilité du web",
+          "span": [
+            "Atelier du soir",
+            "Accessibilité - Parcours web"
+          ]
+        }
+      ],
+      "ginfo": {
+        "h4": "Informations du groupe",
+        "p": [
+          {
+            "small": "Parcours associé",
+            "gp": "Développeur web 2026"
+          },
+          {
+            "small": "Formateurs"
+          }
+        ],
+        "em": "Les affectations des formateurs se modifient depuis le parcours associé."
+      }
+    }
+  },
+  "tags": {
+    "intro": {
+      "badge": "Tags",
+      "h1": "Des tags pour **classer les contenus**",
+      "lede": "Créer, modifier et supprimer des tags."
+    },
+    "carte": {
+      "entete": {
+        "h3": "Liste des tags",
+        "bouton": "Ajouter un tag"
+      },
+      "thead": {
+        "span": [
+          "Titre",
+          "No. d'utilisation",
+          "Parcours"
+        ]
+      },
+      "tbody": {
+        "trow": [
+          {
+            "tt": {
+              "texte": "numérique"
+            },
+            "span": [
+              "Développeur web 2026"
+            ]
+          },
+          {
+            "tt": {
+              "texte": "accessibilité"
+            },
+            "span": [
+              "Accessibilité du web"
+            ]
+          },
+          {
+            "tt": {
+              "texte": "design"
+            },
+            "span": [
+              "Initiation au numérique"
+            ]
+          }
+        ]
+      },
+      "thint": "Exemple : artisanal, technologie, industriel",
+      "suggestions": [
+        {
+          "nom": "technologie",
+          "usage": "5",
+          "parcours": "Développeur web 2026"
+        },
+        {
+          "nom": "industriel",
+          "usage": "2",
+          "parcours": "Initiation au numérique"
+        },
+        {
+          "nom": "artisanal",
+          "usage": "1",
+          "parcours": "Accessibilité du web"
+        }
+      ],
+      "supprimer": "Supprimer"
+    }
+  }
+}

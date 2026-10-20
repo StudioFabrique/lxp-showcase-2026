@@ -1,0 +1,178 @@
+{
+  "label": "Évolution de l'interface",
+  "notes": "Un commit à la fois : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer.",
+  "title": "L'interface au fil des mois",
+  "captureManquante": "Capture à venir",
+  "snapshots": [
+    {
+      "date": "28 juin 2023",
+      "titre": "Les premiers écrans",
+      "fonctions": [
+        "Création d'un parcours",
+        "Informations, dates et tags",
+        "Ressources et contacts"
+      ],
+      "image": "assets/snapshots/2023-06-28-8204569.webp",
+      "_commit": "8204569ef"
+    },
+    {
+      "date": "4 septembre 2023",
+      "titre": "L'édition d'un parcours",
+      "fonctions": [
+        "Un parcours en cinq étapes",
+        "Objectifs, compétences et modules",
+        ""
+      ],
+      "image": "assets/snapshots/2023-09-04-dafd74e.webp",
+      "_commit": "dafd74ef8"
+    },
+    {
+      "date": "29 décembre 2023",
+      "titre": "Le profil de l'utilisateur",
+      "fonctions": [
+        "Informations personnelles",
+        "Calendrier, évaluations et badges",
+        ""
+      ],
+      "image": "assets/snapshots/2023-12-29-5d400a3.webp",
+      "_commit": "5d400a32f"
+    },
+    {
+      "date": "5 mars 2024",
+      "titre": "Le tableau de bord",
+      "fonctions": [
+        "Navigation latérale",
+        "Statistiques et graphiques",
+        ""
+      ],
+      "image": "assets/snapshots/2024-03-05-da283f2.webp",
+      "_commit": "da283f2a2"
+    },
+    {
+      "date": "27 septembre 2024",
+      "titre": "La liste des groupes",
+      "fonctions": [
+        "Groupes d'apprenants",
+        "Recherche et activation",
+        ""
+      ],
+      "image": "assets/snapshots/2024-09-27-ac6b6f4.webp",
+      "_commit": "ac6b6f46a"
+    },
+    {
+      "date": "19 décembre 2024",
+      "titre": "La médiathèque",
+      "fonctions": [
+        "Images, vidéos, audios, documents",
+        "Taille et nombre d'utilisations",
+        ""
+      ],
+      "image": "assets/snapshots/2024-12-19-e576c18.webp",
+      "_commit": "e576c189f"
+    },
+    {
+      "date": "24 avril 2025",
+      "titre": "La liste des parcours",
+      "fonctions": [
+        "Tableau des parcours",
+        "Recherche et filtre par formation",
+        ""
+      ],
+      "image": "assets/snapshots/2025-04-24-d8027b1.webp",
+      "_commit": "d8027b163"
+    },
+    {
+      "date": "8 septembre 2025",
+      "titre": "Le premier assistant",
+      "fonctions": [
+        "Assistant « A.L.A.A. »",
+        "Questions en langage naturel",
+        ""
+      ],
+      "image": "assets/snapshots/2025-09-08-a1a615e.webp",
+      "_commit": "a1a615ed9"
+    },
+    {
+      "date": "2 décembre 2025",
+      "titre": "Le calendrier",
+      "fonctions": [
+        "Emploi du temps de la semaine",
+        "Cours planifiés par module",
+        ""
+      ],
+      "image": "assets/snapshots/2025-12-02-7d3d8fc.webp",
+      "_commit": "7d3d8fc3b"
+    },
+    {
+      "date": "5 mars 2026",
+      "titre": "Le tableau de bord IA",
+      "fonctions": [
+        "Consommation de tokens",
+        "Utilisation par promotion",
+        ""
+      ],
+      "image": "assets/snapshots/2026-03-05-ef6724e.webp",
+      "_commit": "ef6724e3c"
+    },
+    {
+      "date": "5 mars 2026",
+      "titre": "L'ancien tableau de bord",
+      "fonctions": [
+        "Actions rapides en boutons",
+        "Tableau des derniers parcours",
+        ""
+      ],
+      "image": "assets/snapshots/2026-03-05-ef6724e-tableau-de-bord.webp",
+      "_commit": "ef6724e3c"
+    },
+    {
+      "date": "15 octobre 2026",
+      "titre": "Le nouveau tableau de bord",
+      "fonctions": [
+        "Derniers parcours et modules",
+        "Actions rapides",
+        ""
+      ],
+      "image": "assets/snapshots/2026-10-15-5708778.webp",
+      "_commit": "57087787e"
+    },
+    {
+      "date": "15 octobre 2026",
+      "titre": "La gestion des parcours",
+      "fonctions": [
+        "Formations et parcours en cartes",
+        "Recherche d'un parcours",
+        ""
+      ],
+      "image": "assets/snapshots/2026-10-15-5708778-parcours.webp",
+      "_commit": "57087787e"
+    },
+    {
+      "date": "15 octobre 2026",
+      "titre": "La médiathèque",
+      "fonctions": [
+        "Images, vidéos, audios, fichiers",
+        "Recherche et tri",
+        ""
+      ],
+      "image": "assets/snapshots/2026-10-15-5708778-mediatheque.webp",
+      "_commit": "57087787e"
+    },
+    {
+      "date": "15 octobre 2026",
+      "titre": "Les tags",
+      "fonctions": [
+        "Liste des tags",
+        "Utilisation par parcours",
+        ""
+      ],
+      "image": "assets/snapshots/2026-10-15-5708778-tags.webp",
+      "_commit": "57087787e"
+    }
+  ],
+  "final": {
+    "message": "Le projet continue d'évoluer",
+    "demo": "Voir la démo",
+    "adresse": "lxp.dev.step.eco"
+  }
+}
