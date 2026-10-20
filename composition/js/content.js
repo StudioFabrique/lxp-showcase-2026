@@ -556,13 +556,148 @@ window.CONTENT = {
   },
   "closing": {
     "label": "Évolution de l'interface",
-    "notes": "Un commit à la fois, avec sa date et ses fonctionnalités marquantes. La frise se prolonge : le projet continue d'évoluer.",
-    "eyebrow": "S5 · Clôture",
+    "notes": "Un commit à la fois : la date, la capture de l'interface et ses fonctionnalités marquantes. Ensuite le projet continue d'évoluer. Dates issues de l'historique du dépôt ; libellés des fonctionnalités à valider.",
     "title": "L'interface au fil des mois",
-    "leads": [
-      "Snapshots datés des commits",
-      "Le projet continue d'évoluer →"
-    ]
+    "captureManquante": "Capture à venir",
+    "snapshots": [
+      {
+        "date": "28 juin 2023",
+        "titre": "Les premiers écrans",
+        "fonctions": [
+          "Création d'un parcours",
+          "Ajout d'utilisateurs existants",
+          "Filtres par date"
+        ],
+        "image": "assets/snapshots/2023-06-28-8204569.webp",
+        "_commit": "8204569ef"
+      },
+      {
+        "date": "4 septembre 2023",
+        "titre": "L'édition de parcours",
+        "fonctions": [
+          "Vue « nouveau parcours »",
+          "Étapes vérifiées avant l'aperçu",
+          ""
+        ],
+        "image": "assets/snapshots/2023-09-04-dafd74e.webp",
+        "_commit": "dafd74ef8"
+      },
+      {
+        "date": "29 décembre 2023",
+        "titre": "Le profil de l'utilisateur",
+        "fonctions": [
+          "Interface du profil",
+          "Gestion des permissions",
+          ""
+        ],
+        "image": "assets/snapshots/2023-12-29-5d400a3.webp",
+        "_commit": "5d400a32f"
+      },
+      {
+        "date": "5 mars 2024",
+        "titre": "La navigation latérale",
+        "fonctions": [
+          "Barre de navigation complète",
+          "Feedback des apprenants",
+          ""
+        ],
+        "image": "assets/snapshots/2024-03-05-da283f2.webp",
+        "_commit": "da283f2a2"
+      },
+      {
+        "date": "27 septembre 2024",
+        "titre": "Groupes et comptes",
+        "fonctions": [
+          "Création de groupes d'apprenants",
+          "Activation du compte par l'apprenant",
+          ""
+        ],
+        "image": "assets/snapshots/2024-09-27-ac6b6f4.webp",
+        "_commit": "ac6b6f46a"
+      },
+      {
+        "date": "19 décembre 2024",
+        "titre": "La médiathèque",
+        "fonctions": [
+          "Liste des vidéos enregistrées",
+          "Activités de type ressources",
+          ""
+        ],
+        "image": "assets/snapshots/2024-12-19-e576c18.webp",
+        "_commit": "e576c189f"
+      },
+      {
+        "date": "24 avril 2025",
+        "titre": "Cours et parcours en liste",
+        "fonctions": [
+          "Liste des cours",
+          "Liste des parcours",
+          ""
+        ],
+        "image": "assets/snapshots/2025-04-24-d8027b1.webp",
+        "_commit": "d8027b163"
+      },
+      {
+        "date": "8 septembre 2025",
+        "titre": "L'assistant virtuel",
+        "fonctions": [
+          "Chatbot d'assistance IA",
+          "Aide pendant le cours",
+          ""
+        ],
+        "image": "assets/snapshots/2025-09-08-a1a615e.webp",
+        "_commit": "a1a615ed9"
+      },
+      {
+        "date": "2 décembre 2025",
+        "titre": "Le calendrier",
+        "fonctions": [
+          "Calendrier des modules refondu",
+          "Ressources supplémentaires",
+          ""
+        ],
+        "image": "assets/snapshots/2025-12-02-7d3d8fc.webp",
+        "_commit": "7d3d8fc3b"
+      },
+      {
+        "date": "5 mars 2026",
+        "titre": "Le quiz formatif",
+        "fonctions": [
+          "Un quiz qui s'adapte aux réponses",
+          "",
+          ""
+        ],
+        "image": "assets/snapshots/2026-03-05-ef6724e.webp",
+        "_commit": "ef6724e3c"
+      },
+      {
+        "date": "8 septembre 2026",
+        "titre": "Les badges",
+        "fonctions": [
+          "Obtention de badges",
+          "Améliorations de l'interface",
+          ""
+        ],
+        "image": "assets/snapshots/2026-09-08-8001ea2.webp",
+        "_commit": "8001ea2c0"
+      },
+      {
+        "date": "15 octobre 2026",
+        "titre": "Responsive et tutoriels",
+        "fonctions": [
+          "Interface adaptée aux petits écrans",
+          "Tutoriels et assistant refondus",
+          ""
+        ],
+        "image": "assets/snapshots/2026-10-15-5708778.webp",
+        "_commit": "57087787e"
+      }
+    ],
+    "final": {
+      "message": "Le projet continue d'évoluer",
+      "demo": "Voir la démo",
+      "adresse": "lxp.dev.step.eco"
+    }
   },
   "content": {
     "label": "Créer du contenu",

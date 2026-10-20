@@ -244,7 +244,7 @@ Retour : pas assez de 3D, transitions peu agréables, trop de majuscules. Action
 - **Données de scénario sorties du HTML et des scripts** : réponses de l'assistant (`assistant.conversation.passages`), retours du quiz, associations et ordre (`assess.types.quiz.qbody.qp.2/3`, avec `startOrder` pour la disposition mélangée de départ), modèle « Accéder au {0} », tags suggérés, libellés « Voir / Masquer les données utilisées ».
 - **Contrôles** : la synchronisation échoue si une clé liée manque, avertit si un texte n'est lu par personne. Rendu par défaut vérifié identique à l'ancien HTML (comparaison de DOM, 3781 nœuds), toutes les scènes parcourues sans erreur dans Chrome, interactions des scènes 3 à 6 relevées (textes dynamiques identiques), `hyperframes check` passe.
 - **Limites** : le nombre d'éléments d'une liste est celui du HTML ; les valeurs de tri de la médiathèque (`data-size`, `data-used`, `data-date`) et les nombres affichés (notes, compteurs) restent dans le HTML.
-- **Reste à faire** : phase F (snapshots et S5), phase G (finition), phase H (dépôt). Les huit scènes détaillées sont réalisées (§20 et §21).
+- **Reste à faire** : pipeline des captures réelles de S5 (§22), phase G (finition), phase H (dépôt), navigation globale (§23). Les huit scènes détaillées sont réalisées (§20 et §21).
 
 ## 20. Scène 7 « Piloter » (20/10/2026, branche feature/content-json)
 - Quatre pauses : (0) « Tableau de bord IA » (total « Tokens consommés ce mois-ci » qui monte, utilisation par promotion en barres, « Top consommateurs de tokens ») ; (1) « Classement de mes cours » (étoiles d'après la note, « Afficher plus ») ; (2) « Import de cours » (Moodle) et « Importer un parcours » avec progression puis résultat ; (3) tableaux de bord par rôle (Apprenant, Équipe pédagogique, Administrateur).
@@ -258,4 +258,15 @@ Règle de travail à partir d'ici : **une branche par séquence**.
 - Libellés repris du LXP (`instance-general-settings`, `email-template-settings`, `module-completion-modal`, journal). Données **fictives** (nom d'organisme, badges, dates), indiquées dans les notes du présentateur. Confettis déterministes (positions fixes, pas de `Math.random`).
 - JSON d'abord (`content/scenes/personalize.json`), classes préfixées `pz-` sous `#scene-personalize`. Le placeholder commun `deck.ui.placeholder` est supprimé : il n'y a plus d'écran « à venir » dans les scènes détaillées.
 - Les palettes sont une **configuration** de la scène (`THEMES` dans `scene-personalize.js`), pas du texte : elles ne sont pas dans le JSON.
+
+## 22. S5 « L'interface au fil des mois » (20/10/2026, branche feature/closing-scene)
+- **Scène réalisée** (`composition/js/scene-closing.js`, `content/scenes/closing.json`) : 13 pauses = 12 captures (navigateur factice, fondu enchaîné, date, titre, 1 à 3 fonctionnalités) puis le dernier plan. En bas, une frise de 12 repères (années repérées automatiquement, repère cliquable = saut direct) se remplit au fil des pauses ; au dernier plan elle monte au centre, se prolonge d'une flèche pointillée « Le projet continue d'évoluer », le bandeau d'identité (logo, partenaires, 2022 — 2026) revient et le bouton mène à la démo.
+- **Données dans le JSON** : `snapshots[]` (`date`, `titre`, `fonctions` jusqu'à 3, `image`) ; `_commit` garde le commit d'origine (clé ignorée par la présentation). Le nombre de captures est celui du HTML (12) ; une fonctionnalité vide est masquée.
+- **Dates et commits** issus de l'historique du dépôt (`git log --first-parent --merges -- front/src`) ; **les titres et fonctionnalités sont déduits des titres de pull requests et restent à valider.**
+- **Captures** : les 12 fichiers `assets/snapshots/<date>-<commit>.webp` sont pour l'instant des **images d'attente** (squelette d'interface, sans texte). Si une image est absente, le cadre affiche « Capture à venir ».
+- **Faisabilité du pipeline** (spike) : le front a connu quatre chaînes de build (CRA / Tailwind 3 en 2023, Vite 4 / Tailwind 3 en 2024 et début 2025, Vite 6 / Tailwind 4 en 2025 et 2026, Vite 8 / React 19 depuis juin 2026). Un export propre (`git archive`) se construit en 1,5 s avec un `node_modules` partagé ; Chrome pilote l'application servie en statique avec les appels `/v1/*` simulés (`handshake` avec `abilityRules`, `setup-status`, `demo/config`, `instance-settings`) : le tableau de bord administrateur s'affiche (vide, faute de données). Le coût réel est dans les données simulées, propres à chaque époque.
+- **Navigation directe** : `#closing` (et tout identifiant de diapositive de premier niveau : `start`, `intro`, `what`, `traits`) ouvre directement la diapositive.
+
+## 23. À faire : navigation globale (demande du 20/10/2026, branche séparée, en dernier)
+Un numéro de diapositive très discret, et une grille (vue d'ensemble) accessible de partout dans la présentation pour revenir **sans latence** à n'importe quel endroit. À traiter dans une branche dédiée une fois les séquences terminées.
 
