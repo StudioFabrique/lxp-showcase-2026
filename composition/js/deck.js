@@ -402,7 +402,13 @@
 
   // Écran de départ : n'importe quelle touche lance la présentation (les touches de navigation
   // sont déjà gérées par le contrôleur, les combinaisons avec Ctrl/Cmd/Alt sont laissées au navigateur).
-  var NAV_KEYS = ["ArrowRight", "ArrowLeft", " ", "Backspace", "p", "P", "Shift", "Control", "Alt", "Meta"];
+  var NAV_KEYS = ["ArrowRight", "ArrowLeft", " ", "Backspace", "p", "P", "g", "G", "Escape", "Shift", "Control", "Alt", "Meta"];
+  // Plan de la présentation : G (ouvrir / fermer) et Échap sont relayés à la page parente (ui/nav.js).
+  document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === "g" || e.key === "G") parent.postMessage({ source: "lxp-deck", type: "grid", action: "toggle" }, "*");
+    else if (e.key === "Escape") parent.postMessage({ source: "lxp-deck", type: "grid", action: "close" }, "*");
+  });
   document.addEventListener("keydown", function (e) {
     if (!current || current.id !== "start" || e.ctrlKey || e.metaKey || e.altKey) return;
     if (NAV_KEYS.indexOf(e.key) !== -1) return;

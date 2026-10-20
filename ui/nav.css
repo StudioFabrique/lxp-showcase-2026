@@ -1,0 +1,155 @@
+/* Navigation globale : numéro discret et plan de la présentation (voir nav.js). Fond blanc, thème Océan. */
+#nav {
+  --nav-ink: #082f49;
+  --nav-primary: #0369a1;
+  --nav-line: #bae6fd;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+#nav .nav-counter-wrap {
+  position: fixed;
+  left: 14px;
+  bottom: 10px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+}
+#nav .nav-counter-wrap.nav-hide {
+  display: none;
+}
+#nav .nav-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--nav-ink);
+  font: 500 12px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  opacity: 0.28;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+#nav .nav-counter::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: radial-gradient(circle, currentColor 1.1px, transparent 1.3px) 0 0 / 3.4px 3.4px;
+  opacity: 0.8;
+}
+#nav .nav-counter:hover,
+#nav .nav-counter:focus-visible {
+  opacity: 0.9;
+}
+#nav .nav-counter:focus-visible,
+#nav .nav-card:focus-visible,
+#nav .nav-close:focus-visible {
+  outline: 3px solid #0891b2;
+  outline-offset: 2px;
+}
+
+/* Plan */
+#nav .nav-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  padding: 3vh 4vw 4vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+}
+#nav .nav-grid[hidden] {
+  display: none;
+}
+#nav .nav-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4vh;
+}
+#nav .nav-title {
+  font-size: clamp(18px, 2.2vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--nav-ink);
+}
+#nav .nav-close {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--nav-line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--nav-ink);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+#nav .nav-cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17vw, 1fr));
+  gap: 2vh 1.6vw;
+}
+#nav .nav-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 2px solid var(--nav-line);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(22, 78, 99, 0.1), 0 8px 18px -8px rgba(22, 78, 99, 0.2);
+  transition: transform 0.15s, border-color 0.15s;
+}
+#nav .nav-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #f0f9ff;
+}
+#nav .nav-card.sel {
+  transform: translateY(-3px);
+  border-color: var(--nav-primary);
+}
+#nav .nav-card.on {
+  border-color: var(--nav-primary);
+  box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.18), 0 8px 18px -8px rgba(22, 78, 99, 0.2);
+}
+#nav .nav-num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  min-width: 26px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--nav-primary);
+  font: 700 13px/1.2 system-ui, sans-serif;
+  text-align: center;
+}
+#nav .nav-card.on .nav-num {
+  background: var(--nav-primary);
+  color: #fff;
+}
+#nav .nav-label {
+  display: block;
+  padding: 9px 12px 11px;
+  color: var(--nav-ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+@media (prefers-reduced-motion: reduce) {
+  #nav .nav-card,
+  #nav .nav-counter {
+    transition: none;
+  }
+}

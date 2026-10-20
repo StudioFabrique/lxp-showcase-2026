@@ -268,6 +268,11 @@ Règle de travail à partir d'ici : **une branche par séquence**.
 - **Limites** : la date affichée dans le calendrier est celle du jour de capture ; certaines anciennes versions n'ont ni gestion d'erreur ni état vide soigné (une capture reflète ce que l'application affichait alors) ; les noms, dates, chiffres sont fictifs.
 - **Navigation directe** : `#closing` (et tout identifiant de diapositive de premier niveau : `start`, `intro`, `what`, `traits`) ouvre directement la diapositive.
 
-## 23. À faire : navigation globale (demande du 20/10/2026, branche séparée, en dernier)
-Un numéro de diapositive très discret, et une grille (vue d'ensemble) accessible de partout dans la présentation pour revenir **sans latence** à n'importe quel endroit. À traiter dans une branche dédiée une fois les séquences terminées.
+## 23. Navigation globale (demande du 20/10/2026, branche feature/navigation-globale)
+Un numéro de diapositive très discret, et une grille (plan de la présentation) accessible de partout pour revenir **sans latence** à n'importe quel endroit.
+- **Numéro** : « 7 / 14 » en bas à gauche (12 px, opacité 0,28, plein au survol), masqué sur l'écran de départ. L'ordre est celui de la présentation : diapositives d'ouverture, les huit scènes détaillées, puis la clôture.
+- **Plan** : clic sur le numéro ou touche **G** (même quand le focus est dans une scène : `deck.js` relaie G et Échap à la page parente). Grille de 14 miniatures numérotées, la scène courante en relief ; flèches pour se déplacer, **Entrée** ou clic pour y aller, **Échap** ou **G** pour fermer. Les entrées, libellés et textes (`deck.json` → `ui.nav`) sont générés par `npm run sync` dans le wrapper (`#nav-data`).
+- **Sans latence** : le saut passe directement par `controller.syncTo(séquence, diapositive, pause)` (y compris pour les scènes détaillées, sans repasser par la frise) : mesuré à ~30 ms dans Chrome, scène affichée à son état initial.
+- **Miniatures** : `npm run thumbs` (`tools/thumbnails.mjs`) ouvre chaque scène avec le même saut que le plan et la capture en WebP (`composition/assets/thumbs/`, ~15 Ko chacune). À relancer quand une scène change visuellement.
+- **Code** : `ui/nav.js` et `ui/nav.css` (copiés dans `dist/ui/`), marquage dans `index.html`. Fonctionne en développement (`npm run scene`) et en `file://` (`dist/index.html`, testé).
 

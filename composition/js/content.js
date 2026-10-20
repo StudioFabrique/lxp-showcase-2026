@@ -32,7 +32,12 @@ window.CONTENT = {
       },
       "showDetail": "{0} : afficher le détail",
       "showPreview": "{0} : afficher l'aperçu",
-      "openScene": "Voir la scène →"
+      "openScene": "Voir la scène →",
+      "nav": {
+        "title": "Plan de la présentation",
+        "open": "Ouvrir le plan de la présentation",
+        "close": "Fermer le plan"
+      }
     }
   },
   "assess": {

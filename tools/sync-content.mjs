@@ -84,6 +84,8 @@ for (const r of refs) {
   if (!hits.length) errors.push(`clé utilisée mais absente du JSON : ${r}`);
   hits.forEach((k) => covered.add(k));
 }
+// Textes de la navigation globale (wrapper, ui/nav.js) : lus par sync-island, pas par la composition.
+for (const k of leaves.keys()) if (k.startsWith("deck.ui.nav.")) covered.add(k);
 // label et notes sont repris par l'île, pas par des data-t
 for (const k of leaves.keys()) if (/^[\w]+\.(label|notes)$/.test(k) && k !== "deck.label") covered.add(k);
 const unused = [...leaves.keys()].filter((k) => !covered.has(k) && leaves.get(k) !== null && leaves.get(k) !== "" && !k.split(".").some((p) => p.startsWith("_")));
