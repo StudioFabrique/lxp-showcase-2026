@@ -396,7 +396,8 @@
   // timeline : un `@keyframes` infini resterait immobile. On utilise donc des tweens GSAP autonomes.
   if (!reduced) {
     gsap.fromTo(".start-msg", { opacity: 1 }, { opacity: 0.12, duration: 0.85, ease: "sine.inOut", repeat: -1, yoyo: true });
-    gsap.fromTo(".chevron svg", { opacity: 0.3, y: -6 }, { opacity: 1, y: 8, duration: 0.75, ease: "sine.inOut", repeat: -1, yoyo: true });
+    gsap.fromTo(".chevron:not(.side) svg", { opacity: 0.3, y: -6 }, { opacity: 1, y: 8, duration: 0.75, ease: "sine.inOut", repeat: -1, yoyo: true });
+    gsap.fromTo(".chevron.side svg", { opacity: 0.3, x: -6 }, { opacity: 1, x: 8, duration: 0.75, ease: "sine.inOut", repeat: -1, yoyo: true });
   }
 
   // Écran de départ : n'importe quelle touche lance la présentation (les touches de navigation

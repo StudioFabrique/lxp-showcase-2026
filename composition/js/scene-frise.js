@@ -49,7 +49,7 @@
     var dots = gsap.utils.toArray(q(".dot"));
     var stems = gsap.utils.toArray(q(".stem"));
     var chevron = function (inAt, outAt) {
-      fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, inAt);
+      fx.ft(tl, q(".chevron.mini"), { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4 }, inAt);
       tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, inAt);
       if (outAt !== undefined) {
         fx.ft(tl, q(".chevron.mini"), { opacity: 1 }, { opacity: 0, duration: 0.2 }, outAt);

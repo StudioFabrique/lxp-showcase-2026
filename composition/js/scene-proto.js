@@ -31,7 +31,12 @@
       0.5,
     );
     rise(q(".pa .lede"), 1.0);
-    fx.drop(tl, cards, 1.3, { z0: 420, turn: 10, stagger: 0.28, dur: 0.85 });
+    // Le fil de la phase 1 se trace (juin 2022 → février 2024) et marque chaque étape quand sa carte se pose.
+    fx.ft(tl, q(".pline"), { scaleX: 0 }, { scaleX: 1, duration: 2.0, ease: "power2.inOut" }, 1.1);
+    fx.ft(tl, q(".prail .pl"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, stagger: 1.6 }, 1.2);
+    fx.ft(tl, q(".pdot"), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)", stagger: 0.28 }, 1.4);
+    fx.ft(tl, q(".parr"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 2.8);
+    fx.drop(tl, cards, 1.5, { z0: 420, turn: 10, stagger: 0.28, dur: 0.85 });
     fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 4.3);
     tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, 4.3);
     tl.addLabel("step0", 4.6);
@@ -40,6 +45,7 @@
     fx.ft(tl, q(".chevron.mini"), { opacity: 1 }, { opacity: 0, duration: 0.2 }, 4.8);
     tl.set(q(".chevron.mini"), { pointerEvents: "none" }, 4.8);
     tl.set(q(".pa"), { pointerEvents: "none" }, 4.8);
+    fx.ft(tl, q(".prail"), { opacity: 1, y: 0 }, { opacity: 0, y: -50, duration: 0.6, ease: "power2.in" }, 4.8);
     fx.ft(
       tl,
       q(".pa-text"),
@@ -67,14 +73,14 @@
       tl,
       q(".stack5"),
       { rotationX: 70, rotation: -40, scale: 0.62, x: -60, y: 40, transformPerspective: P },
-      { rotationX: 54, rotation: -12, scale: 0.8, x: -80, y: 30, duration: 1.6, ease: "power3.out" },
+      { rotationX: 54, rotation: -12, scale: 0.72, x: -110, y: 30, duration: 1.6, ease: "power3.out" },
       5.9,
     );
     fx.ft(
       tl,
       q(".stack5"),
-      { rotationX: 54, rotation: -12, scale: 0.8, x: -80, y: 30 },
-      { rotationX: 36, rotation: -6, scale: 0.95, x: 0, y: 0, duration: 1.4, ease: "sine.inOut" },
+      { rotationX: 54, rotation: -12, scale: 0.72, x: -110, y: 30 },
+      { rotationX: 36, rotation: -6, scale: 0.84, x: -60, y: 0, duration: 1.4, ease: "sine.inOut" },
       7.4,
     );
     fx.drop(tl, plates, 6.1, { z0: 520, dz: 70, turn: 24, stagger: 0.24 });
@@ -118,18 +124,19 @@
       10.5,
     );
     rise(q(".pc .lede"), 11.0);
-    fx.ft(
-      tl,
-      q(".pc-next"),
-      { opacity: 0, x: 140, rotationY: -26, transformPerspective: P },
-      { opacity: 1, x: 0, rotationY: 0, duration: 0.9, ease: "power3.out" },
-      11.4,
-    );
-    fx.ft(tl, q(".pc-next .go"), { x: 0 }, { x: 14, duration: 0.5, ease: "power2.out" }, 12.3);
-    fx.ft(tl, q(".pc-next .go"), { x: 14 }, { x: 0, duration: 0.5, ease: "power2.inOut" }, 12.8);
-    fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 13.0);
-    tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, 13.0);
-    tl.addLabel("step2", 13.3);
+    // Les trois acquis du prototype, un par étape de la pause 1.
+    fx.ft(tl, q(".pc-acq li"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.3 }, 11.4);
+    fx.ft(tl, q(".pc-acq .ok"), { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.4)", stagger: 0.3 }, 11.6);
+    // Le fil continue vers la phase 2 : la ligne se trace de la fin de la phase 1 jusqu'à 2024 – 2026.
+    fx.ft(tl, q(".pr-dot"), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.4)" }, 12.6);
+    fx.ft(tl, q(".pr-l"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 }, 12.8);
+    fx.ft(tl, q(".pr-line"), { scaleX: 0 }, { scaleX: 1, duration: 1.6, ease: "power2.inOut" }, 12.9);
+    fx.ft(tl, q(".pr-arr"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 14.3);
+    fx.ft(tl, q(".pr-r"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 }, 14.4);
+    rise(q(".pc-next"), 14.7, 0.7);
+    fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 15.5);
+    tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, 15.5);
+    tl.addLabel("step2", 15.8);
 
     // ── Interactions (hors timeline) ──────────────────────────────────────────────────
     var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -192,13 +199,13 @@
       });
       pl.addEventListener("mouseleave", function () {
         gsap.to(pl, { y: 0, duration: 0.45, ease: "power3.out", overwrite: "auto" });
-        gsap.to(pl, { borderColor: i === 0 ? "rgba(" + rgb + ",1)" : "rgba(186,230,253,1)", duration: 0.3, overwrite: "auto" });
+        gsap.to(pl, { borderColor: i === 4 ? "rgba(" + rgb + ",1)" : "rgba(186,230,253,1)", duration: 0.3, overwrite: "auto" });
         show(-1);
       });
     });
     el.addEventListener("scene:leave", function () {
       plates.forEach(function (pl, i) {
-        gsap.set(pl, { borderColor: i === 0 ? "rgba(" + rgb + ",1)" : "rgba(186,230,253,1)" });
+        gsap.set(pl, { borderColor: i === 4 ? "rgba(" + rgb + ",1)" : "rgba(186,230,253,1)" });
       });
       ttl.textContent = D0[0];
       txt.textContent = D0[1];
