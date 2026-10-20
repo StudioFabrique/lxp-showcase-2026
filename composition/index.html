@@ -147,7 +147,13 @@
       "slides": [
         {
           "sceneId": "care",
-          "notes": ""
+          "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
+          "fragments": [
+            58.2,
+            59,
+            60,
+            61
+          ]
         }
       ]
     },
@@ -625,10 +631,10 @@
           <article class="res surface">
             <h3 class="res-t">Résultats du diagnostic</h3>
             <p class="res-k">Détail des réponses</p>
-            <div class="rrow"><span>Que décrit le HTML ?</span><em class="tg ok on">Bonne réponse</em></div>
-            <div class="rrow"><span>Un parcours regroupe des modules</span><em class="tg ok on">Bonne réponse</em></div>
-            <div class="rrow"><span>Associer les niveaux à leur rôle</span><em class="tg ko on">Mauvaise réponse</em></div>
-            <div class="rrow"><span>Ordonner les niveaux</span><em class="tg ok on">Bonne réponse</em></div>
+            <div class="dgrow"><span>Que décrit le HTML ?</span><em class="tg ok on">Bonne réponse</em></div>
+            <div class="dgrow"><span>Un parcours regroupe des modules</span><em class="tg ok on">Bonne réponse</em></div>
+            <div class="dgrow"><span>Associer les niveaux à leur rôle</span><em class="tg ko on">Mauvaise réponse</em></div>
+            <div class="dgrow"><span>Ordonner les niveaux</span><em class="tg ok on">Bonne réponse</em></div>
             <div class="rfoot"><span class="btn primary">Démarrer le module</span></div>
           </article>
           <div class="ringbox">
@@ -730,12 +736,91 @@
       <button class="chevron mini" data-next aria-label="Continuer"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
 
-    <div data-hf-id="hf-rgux" id="scene-care" class="scene-frame clip" data-composition-id="care" data-start="58" data-duration="4" data-width="1920" data-height="1080" data-label="Suivre et accompagner">
-      <div data-hf-id="hf-rdj8" class="scene-inner">
-      <p data-hf-id="hf-ttfy" class="eyebrow">S4 · Scène 6 / 8</p>
-      <h2 data-hf-id="hf-pdym" class="title">Suivre et accompagner</h2>
-      <p data-hf-id="hf-elo6" class="placeholder">Animation et messages à venir · Voir en démo : lxp.dev.step.eco</p>
+    <div id="scene-care" class="scene-frame clip" data-composition-id="care" data-start="58" data-duration="4" data-width="1920" data-height="1080" data-label="Suivre et accompagner" data-fragments='[58.2, 59, 60, 61]'>
+      <div class="bar">
+        <button class="btn primary" data-open="https://lxp.dev.step.eco" aria-label="Voir en démo (nouvel onglet)"><span>Voir en démo</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
       </div>
+      <div class="cam">
+        <section class="step ra">
+          <div class="og-text">
+            <span class="badge">Progression et préférences</span>
+            <h2 class="h1">Suivre <b>chaque apprenant</b></h2>
+            <p class="lede">Son rythme préféré, ses préférences d’apprentissage et sa progression semaine après semaine.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="ch"><h3>Préférences</h3></div>
+            <div class="rcols">
+              <div class="rcol">
+                <p class="who">Rythme préféré</p>
+                <div class="paces"><button type="button" class="pace on" data-d="Avancer tranquillement, avec davantage d'explications.">Progressif</button><button type="button" class="pace" data-d="Un équilibre entre explications et mise en pratique.">Standard</button><button type="button" class="pace" data-d="Aller plus vite et droit à l'essentiel.">Soutenu</button><button type="button" class="pace" data-d="Adapter le rythme selon le contexte.">Sans préférence</button></div>
+                <p class="pdesc">Avancer tranquillement, avec davantage d'explications.</p>
+                <p class="who">Préférences</p>
+                <div class="chips"><button type="button" class="cchip on">Exemples concrets</button><button type="button" class="cchip on">Pas-à-pas</button><button type="button" class="cchip">Synthèse</button><button type="button" class="cchip">Questions d’entraînement</button></div>
+              </div>
+              <div class="rcol">
+                <p class="who">Progression</p>
+                <div class="pbars"><button type="button" class="wkb" data-w="Semaine 1" data-m="1 module"><i style="height:22%"></i><span>S1</span></button><button type="button" class="wkb" data-w="Semaine 2" data-m="2 modules"><i style="height:38%"></i><span>S2</span></button><button type="button" class="wkb" data-w="Semaine 3" data-m="2 modules"><i style="height:46%"></i><span>S3</span></button><button type="button" class="wkb" data-w="Semaine 4" data-m="3 modules"><i style="height:64%"></i><span>S4</span></button><button type="button" class="wkb" data-w="Semaine 5" data-m="4 modules"><i style="height:72%"></i><span>S5</span></button><button type="button" class="wkb" data-w="Semaine 6" data-m="5 modules"><i style="height:90%"></i><span>S6</span></button></div>
+                <p class="pinfo"><b>Semaine 6</b> · 5 modules</p>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="step rb">
+          <div class="og-text">
+            <span class="badge">Humeur de l’apprenant</span>
+            <h2 class="h1">Un point <b>sur son ressenti</b></h2>
+            <p class="lede">L’apprenant indique chaque jour comment il se sent. L’équipe le voit.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="ch"><h3>Comment vous sentez-vous aujourd'hui ?</h3></div>
+            <div class="wxbox"><div class="wx"><span class="bw" data-l="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></svg></span><span class="bw" data-l="2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg></span><span class="bw" data-l="3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M3 20a5 5 0 1 1 8.9-4H13a3 3 0 0 1 2 5.24"/><path d="M11 20v2"/><path d="M7 19v2"/></svg></span><span class="bw" data-l="4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg></span><span class="bw" data-l="5"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span></div></div>
+            <div class="mlvs"><button type="button" class="mlv" data-l="1" aria-label="Niveau 1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></svg></button><button type="button" class="mlv" data-l="2" aria-label="Niveau 2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg></button><button type="button" class="mlv" data-l="3" aria-label="Niveau 3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M3 20a5 5 0 1 1 8.9-4H13a3 3 0 0 1 2 5.24"/><path d="M11 20v2"/><path d="M7 19v2"/></svg></button><button type="button" class="mlv" data-l="4" aria-label="Niveau 4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg></button><button type="button" class="mlv" data-l="5" aria-label="Niveau 5"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button></div>
+            <div class="rfoot"><span class="btn primary sm sendm" role="button" tabindex="0">Envoyer</span></div>
+            <p class="toast">Feedback envoyé !</p>
+          </article>
+        </section>
+        <section class="step rc">
+          <div class="og-text">
+            <span class="badge">Alerte de décrochage</span>
+            <h2 class="h1">Repérer <b>avant le décrochage</b></h2>
+            <p class="lede">Un signal arrive en amont, avec les données qui l’expliquent.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="ch"><h3>Alertes</h3><em class="alr">1 cas critique</em></div>
+            <div class="alrow"><b>Promotion A</b><span>Risque de décrochage</span></div>
+            <div class="sig"><b>Engagement en perte de vitesse</b><p>Plus de 15 jours sans activité et au plus deux jours de connexion sur la période.</p></div>
+            <div class="chart">
+              <svg viewBox="0 0 600 220" aria-label="Évolution chronologique des probabilités de réussite, d'échec et d'abandon">
+                <line class="gl" x1="0" y1="20" x2="600" y2="20"/><line class="gl" x1="0" y1="110" x2="600" y2="110"/><line class="gl" x1="0" y1="200" x2="600" y2="200"/>
+                <polyline class="ln ok" pathLength="1" points="0,60 100,70 200,95 300,120 400,150 500,170 600,180"/>
+                <polyline class="ln wr" pathLength="1" points="0,150 100,146 200,140 300,130 400,120 500,112 600,106"/>
+                <polyline class="ln ko" pathLength="1" points="0,170 100,162 200,140 300,100 400,70 500,48 600,34"/>
+              </svg>
+              <div class="leg"><span class="ok"><i></i>Réussite</span><span class="wr"><i></i>Échec</span><span class="ko"><i></i>Abandon</span><small>Probabilité estimée</small></div>
+            </div>
+            <button type="button" class="btn sm usedbtn"><span>Voir les données utilisées</span></button>
+            <div class="used"><p>Jours sans activité : 16 (seuil : 15)</p><p>Jours de connexion : 2 (seuil : 2)</p></div>
+          </article>
+        </section>
+        <section class="step rd">
+          <div class="og-text">
+            <span class="badge">Retour de l’équipe</span>
+            <h2 class="h1">L’équipe <b>juge l’analyse</b></h2>
+            <p class="lede">Le formateur dit si l’analyse était pertinente, et ce que devient l’apprenant.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="ch"><h3>Votre retour sur cette analyse</h3></div>
+            <div class="recap"><span>Promotion A</span><b>Engagement en perte de vitesse</b><em>Risque de décrochage</em></div>
+            <p class="who">Choisir un avis</p>
+            <div class="avis"><button type="button" class="av on">Analyse pertinente</button><button type="button" class="av">Risque surestimé</button><button type="button" class="av">Risque sous-estimé</button><button type="button" class="av">Je ne peux pas encore me prononcer</button></div>
+            <p class="who">Devenir de l’apprenant</p>
+            <div class="chips"><button type="button" class="cchip out">Réussite</button><button type="button" class="cchip out">Échec</button><button type="button" class="cchip out">Abandon</button><button type="button" class="cchip out on">Pas encore connu</button></div>
+            <div class="rfoot"><span class="btn primary sm savef" role="button" tabindex="0">Enregistrer le retour</span></div>
+            <p class="toast">Retour enregistré.</p>
+          </article>
+        </section>
+      </div>
+      <button class="chevron mini" data-next aria-label="Continuer"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
 
     <div data-hf-id="hf-0mby" id="scene-steer" class="scene-frame clip" data-composition-id="steer" data-start="62" data-duration="4" data-width="1920" data-height="1080" data-label="Piloter">
@@ -767,6 +852,7 @@
     <script src="js/scene-assistant.js"></script>
     <script src="js/scene-assess.js"></script>
     <script src="js/scene-organize.js"></script>
+    <script src="js/scene-care.js"></script>
     <script src="js/deck.js"></script>
     <script>
       // Seule la timeline racine est enregistrée : le player pilote la dernière clé du registre.

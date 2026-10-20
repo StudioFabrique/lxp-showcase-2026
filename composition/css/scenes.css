@@ -152,7 +152,10 @@
 .step.ec,
 .step.ob,
 .step.oc,
-.step.od {
+.step.od,
+.step.rb,
+.step.rc,
+.step.rd {
   opacity: 0;
 }
 .badge {
@@ -2595,7 +2598,7 @@
   font-size: 28px;
   color: var(--soft);
 }
-.rrow {
+.dgrow {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2608,7 +2611,7 @@
   font-size: 30px;
   font-weight: 600;
 }
-.rrow .tg {
+.dgrow .tg {
   opacity: 1;
 }
 .rfoot {
@@ -3147,4 +3150,317 @@
 .thead,
 .trow {
   grid-template-columns: 1fr 210px 1.3fr 56px;
+}
+
+/* Suivre et accompagner ---------------------------------------------------------------------------- */
+.rcols {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+.who {
+  margin: 20px 0 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--soft);
+}
+.paces,
+.chips,
+.avis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pace,
+.cchip,
+.av {
+  height: 60px;
+  padding: 0 24px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 999px;
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  font: 700 28px var(--font);
+  cursor: pointer;
+}
+.pace.on,
+.cchip.on,
+.av.on {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+.pdesc {
+  margin-top: 16px;
+  min-height: 80px;
+  font-size: 30px;
+  line-height: 1.35;
+}
+.pbars {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  height: 400px;
+  padding: 0 4px 0;
+  border-bottom: 3px solid var(--color-base-300);
+}
+.wkb {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--soft);
+  font: 700 24px var(--font);
+  cursor: pointer;
+}
+.wkb i {
+  display: block;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background: color-mix(in srgb, var(--color-primary) 35%, var(--color-base-100));
+  transform-origin: 50% 100%;
+}
+.wkb.on i {
+  background: var(--color-primary);
+}
+.pbars .wkb span {
+  position: absolute;
+  margin-top: 408px;
+}
+.wkb {
+  position: relative;
+}
+.pinfo {
+  margin-top: 44px;
+  font-size: 30px;
+  color: var(--soft);
+}
+.pinfo b {
+  color: var(--color-base-content);
+}
+
+/* Humeur */
+.wxbox {
+  display: grid;
+  place-items: center;
+  height: 330px;
+  margin-top: 10px;
+}
+.wx {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.bw {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  color: var(--color-primary);
+}
+.bw.on {
+  opacity: 1;
+}
+.bw svg,
+.mlv svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mlvs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.mlv {
+  width: 110px;
+  height: 110px;
+  padding: 22px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 24px;
+  background: var(--color-base-100);
+  color: var(--soft);
+  cursor: pointer;
+}
+.mlv.on {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--color-base-100));
+}
+.sendm,
+.savef {
+  cursor: pointer;
+}
+
+/* Alerte de décrochage */
+.alr {
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-error) 14%, var(--color-base-100));
+  color: var(--color-error);
+  font: 800 26px var(--font);
+  font-style: normal;
+}
+.alrow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding: 20px 28px;
+  border: 1px solid color-mix(in srgb, var(--color-error) 35%, var(--color-base-300));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--color-error) 5%, var(--color-base-100));
+  font-size: 32px;
+}
+.alrow span {
+  color: var(--color-error);
+  font-weight: 700;
+}
+.sig {
+  margin-top: 20px;
+}
+.sig b {
+  font-size: 34px;
+}
+.sig p {
+  margin-top: 6px;
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--soft);
+}
+.chart {
+  position: relative;
+  margin-top: 20px;
+}
+.chart svg {
+  width: 100%;
+  height: 250px;
+}
+.gl {
+  stroke: var(--color-base-300);
+  stroke-width: 2;
+}
+.ln {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+}
+.ln.ok {
+  stroke: var(--color-accent);
+}
+.ln.wr {
+  stroke: var(--color-warning);
+}
+.ln.ko {
+  stroke: var(--color-error);
+}
+.leg {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 26px;
+  font-weight: 700;
+}
+.leg i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.leg .ok {
+  color: var(--color-accent);
+}
+.leg .wr {
+  color: #b45309;
+}
+.leg .ko {
+  color: var(--color-error);
+}
+.leg small {
+  margin-left: auto;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--soft);
+}
+.usedbtn {
+  margin-top: 20px;
+  cursor: pointer;
+}
+.used {
+  display: none;
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 34px;
+  padding: 20px 28px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 16px;
+  background: var(--color-base-100);
+  box-shadow: var(--elev);
+  font-size: 28px;
+}
+.used.on {
+  display: block;
+}
+
+/* Retour de l'équipe */
+.ogc .rfoot {
+  margin-top: 36px;
+}
+.recap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 20px 28px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 16px;
+  background: var(--color-base-100);
+  font-size: 30px;
+}
+.recap b {
+  flex: 1;
+}
+.recap span {
+  color: var(--soft);
+}
+.recap em {
+  color: var(--color-error);
+  font-style: normal;
+  font-weight: 700;
+}
+.rd .who {
+  margin-top: 30px;
+}
+.rd .pace,
+.rd .cchip,
+.rd .av {
+  height: 68px;
+  font-size: 30px;
+}
+.chart svg {
+  height: 300px;
+}
+.wxbox {
+  height: 380px;
+}
+.wx {
+  width: 340px;
+  height: 340px;
+}
+.mlv {
+  width: 120px;
+  height: 120px;
 }

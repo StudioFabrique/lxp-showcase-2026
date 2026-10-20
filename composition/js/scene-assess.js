@@ -95,8 +95,8 @@
       6.3,
     );
     fx.ft(tl, q(".res-t, .res-k"), { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.1 }, 7.0);
-    fx.ft(tl, q(".rrow"), { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.16 }, 7.4);
-    fx.ft(tl, q(".rrow .tg"), { scale: 0.5 }, { scale: 1, duration: 0.4, ease: "back.out(2.4)", stagger: 0.16 }, 7.6);
+    fx.ft(tl, q(".dgrow"), { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.16 }, 7.4);
+    fx.ft(tl, q(".dgrow .tg"), { scale: 0.5 }, { scale: 1, duration: 0.4, ease: "back.out(2.4)", stagger: 0.16 }, 7.6);
     fx.ft(tl, q(".rfoot .btn"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 8.5);
     fx.ft(tl, q(".ringbox"), { opacity: 0, scale: 0.7, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.9, ease: "back.out(1.5)" }, 7.0);
     fx.ft(tl, q(".rg-fg"), { strokeDashoffset: 540.35 }, { strokeDashoffset: 135.09, duration: 1.4, ease: "power2.inOut" }, 7.5);
