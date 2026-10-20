@@ -7,6 +7,10 @@
     "build": "npm run sync && node tools/build-dist.mjs",
     "dev": "npm run sync && npx --yes hyperframes@0.8.174 present ./composition",
     "studio": "npx --yes hyperframes@0.8.174 preview ./composition --background",
-    "scene": "node tools/dev-server.mjs"
+    "scene": "node tools/dev-server.mjs",
+    "snapshots": "node tools/snapshots/run.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.0.0"
   }
 }

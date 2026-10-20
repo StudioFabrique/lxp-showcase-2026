@@ -556,7 +556,7 @@ window.CONTENT = {
   },
   "closing": {
     "label": "Évolution de l'interface",
-    "notes": "Un commit à la fois : la date, la capture de l'interface et ses fonctionnalités marquantes. Ensuite le projet continue d'évoluer. Dates issues de l'historique du dépôt ; libellés des fonctionnalités à valider.",
+    "notes": "Un commit à la fois : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer.",
     "title": "L'interface au fil des mois",
     "captureManquante": "Capture à venir",
     "snapshots": [
@@ -565,18 +565,18 @@ window.CONTENT = {
         "titre": "Les premiers écrans",
         "fonctions": [
           "Création d'un parcours",
-          "Ajout d'utilisateurs existants",
-          "Filtres par date"
+          "Informations, dates et tags",
+          "Ressources et contacts"
         ],
         "image": "assets/snapshots/2023-06-28-8204569.webp",
         "_commit": "8204569ef"
       },
       {
         "date": "4 septembre 2023",
-        "titre": "L'édition de parcours",
+        "titre": "L'édition d'un parcours",
         "fonctions": [
-          "Vue « nouveau parcours »",
-          "Étapes vérifiées avant l'aperçu",
+          "Un parcours en cinq étapes",
+          "Objectifs, compétences et modules",
           ""
         ],
         "image": "assets/snapshots/2023-09-04-dafd74e.webp",
@@ -586,8 +586,8 @@ window.CONTENT = {
         "date": "29 décembre 2023",
         "titre": "Le profil de l'utilisateur",
         "fonctions": [
-          "Interface du profil",
-          "Gestion des permissions",
+          "Informations personnelles",
+          "Calendrier, évaluations et badges",
           ""
         ],
         "image": "assets/snapshots/2023-12-29-5d400a3.webp",
@@ -595,10 +595,10 @@ window.CONTENT = {
       },
       {
         "date": "5 mars 2024",
-        "titre": "La navigation latérale",
+        "titre": "Le tableau de bord",
         "fonctions": [
-          "Barre de navigation complète",
-          "Feedback des apprenants",
+          "Navigation latérale",
+          "Statistiques et graphiques",
           ""
         ],
         "image": "assets/snapshots/2024-03-05-da283f2.webp",
@@ -606,10 +606,10 @@ window.CONTENT = {
       },
       {
         "date": "27 septembre 2024",
-        "titre": "Groupes et comptes",
+        "titre": "La liste des groupes",
         "fonctions": [
-          "Création de groupes d'apprenants",
-          "Activation du compte par l'apprenant",
+          "Groupes d'apprenants",
+          "Recherche et activation",
           ""
         ],
         "image": "assets/snapshots/2024-09-27-ac6b6f4.webp",
@@ -619,8 +619,8 @@ window.CONTENT = {
         "date": "19 décembre 2024",
         "titre": "La médiathèque",
         "fonctions": [
-          "Liste des vidéos enregistrées",
-          "Activités de type ressources",
+          "Images, vidéos, audios, documents",
+          "Taille et nombre d'utilisations",
           ""
         ],
         "image": "assets/snapshots/2024-12-19-e576c18.webp",
@@ -628,10 +628,10 @@ window.CONTENT = {
       },
       {
         "date": "24 avril 2025",
-        "titre": "Cours et parcours en liste",
+        "titre": "La liste des parcours",
         "fonctions": [
-          "Liste des cours",
-          "Liste des parcours",
+          "Tableau des parcours",
+          "Recherche et filtre par formation",
           ""
         ],
         "image": "assets/snapshots/2025-04-24-d8027b1.webp",
@@ -639,10 +639,10 @@ window.CONTENT = {
       },
       {
         "date": "8 septembre 2025",
-        "titre": "L'assistant virtuel",
+        "titre": "Le premier assistant",
         "fonctions": [
-          "Chatbot d'assistance IA",
-          "Aide pendant le cours",
+          "Assistant « A.L.A.A. »",
+          "Questions en langage naturel",
           ""
         ],
         "image": "assets/snapshots/2025-09-08-a1a615e.webp",
@@ -652,8 +652,8 @@ window.CONTENT = {
         "date": "2 décembre 2025",
         "titre": "Le calendrier",
         "fonctions": [
-          "Calendrier des modules refondu",
-          "Ressources supplémentaires",
+          "Emploi du temps de la semaine",
+          "Cours planifiés par module",
           ""
         ],
         "image": "assets/snapshots/2025-12-02-7d3d8fc.webp",
@@ -661,10 +661,10 @@ window.CONTENT = {
       },
       {
         "date": "5 mars 2026",
-        "titre": "Le quiz formatif",
+        "titre": "Le tableau de bord IA",
         "fonctions": [
-          "Un quiz qui s'adapte aux réponses",
-          "",
+          "Consommation de tokens",
+          "Utilisation par promotion",
           ""
         ],
         "image": "assets/snapshots/2026-03-05-ef6724e.webp",
@@ -672,10 +672,10 @@ window.CONTENT = {
       },
       {
         "date": "8 septembre 2026",
-        "titre": "Les badges",
+        "titre": "L'espace de l'apprenant",
         "fonctions": [
-          "Obtention de badges",
-          "Améliorations de l'interface",
+          "Menu simplifié",
+          "Tutoriel guidé et assistant",
           ""
         ],
         "image": "assets/snapshots/2026-09-08-8001ea2.webp",
@@ -683,10 +683,10 @@ window.CONTENT = {
       },
       {
         "date": "15 octobre 2026",
-        "titre": "Responsive et tutoriels",
+        "titre": "Le tableau de bord actuel",
         "fonctions": [
-          "Interface adaptée aux petits écrans",
-          "Tutoriels et assistant refondus",
+          "Derniers parcours et modules",
+          "Actions rapides",
           ""
         ],
         "image": "assets/snapshots/2026-10-15-5708778.webp",
