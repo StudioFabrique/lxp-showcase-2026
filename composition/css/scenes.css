@@ -1,0 +1,1788 @@
+/* Calque persistant ------------------------------------------------------- */
+#stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  perspective: 2000px;
+}
+#stage > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform-origin: 50% 50%;
+}
+#stage > #years {
+  opacity: 1;
+}
+#logo {
+  width: 790px;
+  height: 256px;
+}
+#logo .brand-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#logo .logo-settled {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+#logo .ink,
+#logo .plate {
+  fill: var(--color-primary);
+}
+#logo .inverse {
+  fill: var(--color-base-100);
+}
+.logo-grid-mask .logo-pixel {
+  stroke: currentColor;
+  stroke-width: 0.45;
+  stroke-linejoin: round;
+}
+#partners {
+  width: 1000px;
+  height: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+}
+.logo-flat {
+  display: grid;
+  place-items: center;
+  height: 124px;
+}
+.logo-flat img {
+  height: 84px;
+  width: auto;
+  display: block;
+}
+#cofin {
+  width: 1000px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 44px;
+  color: var(--soft);
+}
+.year,
+#year-dash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 50% 50%;
+  height: 190px;
+  font-size: 170px;
+  line-height: 170px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-align: center;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+.year {
+  width: 480px;
+  color: var(--color-primary);
+}
+#year-dash {
+  width: 140px;
+  color: var(--color-secondary);
+}
+.year i,
+#year-dash i {
+  display: inline-block;
+  font-style: normal;
+}
+
+/* Chevron ------------------------------------------------------------------ */
+.chevron {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -48px;
+  pointer-events: auto;
+}
+.chevron .halo {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 18%, transparent) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+.chevron svg {
+  position: relative;
+}
+.sbar li[data-goto] {
+  cursor: pointer;
+  border-radius: 14px;
+}
+.chevron.mini {
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  bottom: 56px;
+  opacity: 0;
+}
+.chevron.mini svg {
+  width: 52px;
+  height: 52px;
+}
+
+/* Vocabulaire commun ------------------------------------------------------- */
+.cam,
+.step,
+.tilt {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+.cam {
+  perspective: 2000px;
+}
+.step.wb,
+.step.wc,
+.step.cb,
+.step.pb,
+.step.pc {
+  opacity: 0;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 24px;
+  border-radius: 999px;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--color-base-100));
+  border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-base-100));
+}
+.ico {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+}
+.ico svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* S1 · étape 0 : définition et pile de plaques ------------------------------ */
+.wa-text {
+  position: absolute;
+  left: 120px;
+  top: 250px;
+  width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  text-align: left;
+}
+.h1 {
+  font-size: 76px;
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.h1 b {
+  color: var(--color-primary);
+}
+.acro {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.acro span {
+  font-size: 34px;
+  font-weight: 600;
+  padding: 8px 24px;
+  border-radius: 14px;
+  background: var(--color-base-200);
+  border: 1px solid var(--color-base-300);
+}
+.acro b {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+.lede {
+  font-size: 34px;
+  line-height: 1.38;
+  color: var(--soft);
+}
+.stack {
+  position: absolute;
+  right: 110px;
+  top: 190px;
+  width: 780px;
+  height: 640px;
+  transform-style: preserve-3d;
+}
+.slab {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 18px 26px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 22px;
+  background: var(--color-base-200);
+  color: var(--color-base-content);
+  box-shadow: var(--edge);
+  backface-visibility: hidden;
+  font-size: 34px;
+  font-weight: 700;
+}
+.slab b {
+  line-height: 56px;
+  white-space: nowrap;
+}
+#p0 {
+  width: 700px;
+  height: 520px;
+  left: 40px;
+  top: 60px;
+}
+#p1 {
+  width: 600px;
+  height: 400px;
+  left: 90px;
+  top: 120px;
+}
+#p2 {
+  width: 500px;
+  height: 280px;
+  left: 140px;
+  top: 180px;
+}
+#p3 {
+  width: 400px;
+  height: 160px;
+  left: 190px;
+  top: 240px;
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-base-100));
+  border-color: var(--color-primary);
+}
+
+/* S1 · étape 1 : sidebar de verre et tableau ------------------------------ */
+.sbar {
+  position: absolute;
+  left: 110px;
+  top: 200px;
+  width: 104px;
+  height: 600px;
+  padding: 22px 18px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+  box-shadow: 0 35px 65px color-mix(in srgb, var(--color-neutral) 28%, transparent);
+  transform-style: preserve-3d;
+}
+.sbar .glass {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-base-100) 55%, transparent),
+    color-mix(in srgb, var(--color-base-100) 8%, transparent) 60%
+  );
+}
+.sbar ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.sbar .act {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 112px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--color-primary-content) 22%, transparent);
+}
+.sbar li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 112px;
+  padding: 0 14px;
+  font-size: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.sbar li .ico {
+  background: color-mix(in srgb, var(--color-primary-content) 16%, transparent);
+}
+.sbar li span:last-child {
+  opacity: 0;
+}
+.board {
+  position: absolute;
+  left: 590px;
+  top: 200px;
+  width: 1220px;
+  height: 600px;
+  transform-style: preserve-3d;
+}
+.face {
+  position: absolute;
+  inset: 0;
+  padding: 52px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 24px;
+  background: var(--color-base-200);
+  box-shadow: var(--elev);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  opacity: 0;
+}
+.face .badge {
+  align-self: flex-start;
+}
+.face .ico.big {
+  width: 104px;
+  height: 104px;
+  border-radius: 28px;
+}
+.face .ico.big svg {
+  width: 56px;
+  height: 56px;
+}
+.face h2 {
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.face p {
+  font-size: 38px;
+  line-height: 1.35;
+  color: var(--soft);
+  max-width: 980px;
+}
+.goals3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  flex: 1;
+}
+.fam {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px 24px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 20px;
+  background: var(--color-base-100);
+  box-shadow: var(--elev-sm);
+}
+.fam header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.fam ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.fam li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 27px;
+  line-height: 1.25;
+  color: var(--soft);
+}
+.fam li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+
+/* S1 · étape 5 : LMS ou LXP — tableau comparatif, colonne LXP mise en avant --------------------- */
+.vs-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+.cmp {
+  position: absolute;
+  left: 230px;
+  top: 270px;
+  width: 1460px;
+  display: flex;
+  flex-direction: column;
+}
+.cmp-hl {
+  position: absolute;
+  left: 790px;
+  top: -22px;
+  width: 670px;
+  height: calc(100% + 44px);
+  border-radius: 28px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-primary) 11%, var(--color-base-100)), color-mix(in srgb, var(--color-primary) 4%, var(--color-base-100)));
+  border: 1px solid color-mix(in srgb, var(--color-primary) 32%, var(--color-base-100));
+  box-shadow: var(--elev);
+  opacity: 0;
+}
+.cmp-head,
+.cmp-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  align-items: center;
+}
+.cmp-head {
+  height: 84px;
+}
+.cmp-head .h {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 34px;
+}
+.cmp-head b {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.cmp-head span {
+  font-size: 26px;
+  color: var(--soft);
+}
+.cmp-head .r b {
+  color: var(--color-primary);
+}
+.cmp-row {
+  height: 84px;
+}
+.cmp-row .c {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 12px;
+  padding: 0 22px;
+  height: 68px;
+  border-radius: 16px;
+  font-size: 30px;
+  line-height: 1.15;
+}
+.cmp-row .c.l {
+  color: var(--soft);
+}
+.cmp-row .c.r {
+  font-weight: 700;
+  color: var(--color-base-content);
+}
+.cmp-row .c i {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+}
+.cmp-row .c svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cmp-row .c.l i {
+  color: color-mix(in srgb, var(--soft) 70%, var(--color-base-100));
+}
+.cmp-row .c.r i {
+  color: var(--color-primary);
+}
+.cmp-row .mid {
+  visibility: hidden;
+}
+.cmp-row .mid svg {
+  width: 40px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.quote-slab {
+  position: absolute;
+  left: 250px;
+  right: 250px;
+  top: 836px;
+  padding: 16px 34px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.3;
+  color: var(--soft);
+  border: 1px solid var(--color-base-300);
+  border-radius: 20px;
+  background: var(--color-base-200);
+  box-shadow: var(--elev-sm);
+}
+.quote-slab b {
+  color: var(--color-primary);
+}
+
+/* Écran d'attente ----------------------------------------------------------- */
+[data-next] {
+  cursor: pointer;
+}
+.start-msg {
+  max-width: 1500px;
+  font-size: 112px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+}
+
+/* S2 · tuiles interactives ---------------------------------------------------- */
+.tiles-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+.tiles {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+.tile {
+  position: absolute;
+  width: 540px;
+  height: 190px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.tile-in {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+.tile .f,
+.tile .b {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  border: 1px solid var(--color-base-300);
+  box-shadow: var(--elev);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.tile .f {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 0 30px;
+  background: var(--color-base-200);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.tile .b {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 34px;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-content);
+  font-size: 27px;
+  line-height: 1.3;
+}
+.tile .b strong {
+  font-size: 30px;
+}
+.tile .glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--color-primary) 24%, transparent), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* S3 · frise ------------------------------------------------------------------ */
+.cam3 {
+  position: absolute;
+  inset: 0;
+  perspective: 2400px;
+  transform-style: preserve-3d;
+}
+/* Le plan de la frise est plat : tout y est peint dans l'ordre du DOM (bandes, ligne, repères, cartes), sans
+   tri 3D ni parallaxe entre éléments. Seule l'inclinaison globale (.tiltwrap) donne de la profondeur. */
+.tiltwrap {
+  position: absolute;
+  inset: 0;
+}
+.world {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7300px;
+  height: 1080px;
+  transform-style: flat;
+}
+.world .line {
+  position: absolute;
+  left: 640px;
+  top: 537px;
+  width: 5830px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transform-origin: 0 50%;
+}
+.world .line-arrow {
+  position: absolute;
+  left: 640px;
+  top: 522px;
+  width: 28px;
+  height: 36px;
+  opacity: 0;
+  fill: none;
+  stroke: var(--color-secondary);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.world .tick {
+  font-style: normal;
+  position: absolute;
+  top: 522px;
+  width: 3px;
+  height: 36px;
+  background: var(--color-base-300);
+  opacity: 0;
+}
+.world .tick span {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--soft);
+  white-space: nowrap;
+}
+.world .pband {
+  position: absolute;
+  top: 100px;
+  height: 860px; /* s'arrête avant le chevron (y ≥ 960) */
+  border-radius: 40px;
+  opacity: 0;
+}
+.world .pband.p1 {
+  left: 640px;
+  width: 2184px;
+  background: color-mix(in srgb, var(--color-base-200) 70%, var(--color-base-100));
+  border: 1px solid color-mix(in srgb, var(--color-base-300) 70%, var(--color-base-100));
+}
+.world .pband.p2 {
+  left: 2856px;
+  width: 3614px;
+  background: color-mix(in srgb, var(--color-primary) 4%, var(--color-base-100));
+  border: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-base-100));
+}
+.pband .ptitle {
+  position: absolute;
+  left: 36px;
+  top: 14px; /* au-dessus des cartes du haut (qui commencent à y = 185) */
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+.pband .ptitle small {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--soft);
+}
+.world .wyear {
+  opacity: 0;
+}
+.world .endcap {
+  position: absolute;
+  left: 6200px; /* aligné sur la fin de la ligne (6470) : le bord droit touche son extrémité */
+  top: 466px;
+  width: 270px;
+  text-align: center;
+  padding: 4px 18px;
+  border-radius: 999px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary-content);
+  background: var(--color-primary);
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 2;
+}
+.world .stem {
+  position: absolute;
+  width: 3px;
+  background: var(--color-base-300);
+  opacity: 0;
+}
+.world .stem.up {
+  top: 425px;
+  height: 112px;
+}
+.world .stem.down {
+  top: 543px;
+  height: 107px;
+}
+.world .dot {
+  position: absolute;
+  top: 525px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-base-100);
+  border: 6px solid var(--color-primary);
+  opacity: 0;
+  z-index: 1;
+}
+.world .sc {
+  position: absolute;
+  width: 520px;
+  height: 240px;
+  opacity: 0;
+  cursor: pointer;
+}
+.world .sc.up {
+  top: 185px;
+}
+.world .sc.down {
+  top: 650px;
+}
+.sc-in {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 26px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 22px;
+  background: var(--color-base-200);
+  box-shadow: var(--elev);
+}
+.sc .chip {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.sc h3 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.sc .open {
+  margin-top: auto;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0;
+}
+.proj {
+  position: absolute;
+  left: 760px;
+  top: 440px;
+  width: 400px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+  font: 800 40px var(--font);
+  cursor: pointer;
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--color-primary) 25%, transparent), 0 14px 32px -6px color-mix(in srgb, var(--color-primary) 40%, transparent);
+  opacity: 0;
+}
+.proj .halo {
+  position: absolute;
+  inset: -30px;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 22%, transparent), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+.proj:focus-visible {
+  outline: 4px solid var(--color-secondary);
+  outline-offset: 6px;
+}
+
+/* Les éléments non visibles ne doivent pas capter la souris : seul ce qui est affiché est actif. Les
+   animations rendent la main (pointer-events) au fur et à mesure de l'apparition. */
+.step {
+  pointer-events: none;
+}
+.chevron.mini,
+.world .sc,
+.proj {
+  pointer-events: none;
+}
+
+/* Scènes détaillées : barre d'actions, boutons -------------------------------------------- */
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 110px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 60px;
+  padding: 0 26px;
+  border-radius: 999px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  font: 700 28px var(--font);
+  cursor: pointer;
+  box-shadow: var(--elev-sm);
+}
+.btn.primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+.btn svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.btn:focus-visible {
+  outline: 4px solid var(--color-secondary);
+  outline-offset: 4px;
+}
+.surface {
+  background: var(--color-base-200);
+  border: 1px solid var(--color-base-300);
+  border-radius: 24px;
+  box-shadow: var(--elev);
+}
+
+/* Créer du contenu · étape 0 : six niveaux -------------------------------------------------- */
+.ca-text {
+  position: absolute;
+  left: 110px;
+  top: 170px;
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+}
+.ca .h1 {
+  font-size: 62px;
+}
+.ca .lede {
+  font-size: 30px;
+}
+.rail {
+  position: absolute;
+  left: 110px;
+  top: 560px;
+  width: 580px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rail li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 58px;
+  padding: 0 14px;
+  border-radius: 14px;
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.rail li .ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+.rail li .ico svg {
+  width: 24px;
+  height: 24px;
+}
+.stack6 {
+  position: absolute;
+  right: 90px;
+  top: 190px;
+  width: 880px;
+  height: 760px;
+  transform-style: preserve-3d;
+}
+.slab.lv {
+  cursor: pointer;
+  font-size: 28px;
+  padding: 10px 22px;
+}
+.slab.lv .ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+.slab.lv .ico svg {
+  width: 24px;
+  height: 24px;
+}
+.slab.lv b {
+  line-height: 44px;
+}
+#lv5 {
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-base-100));
+  border-color: var(--color-primary);
+}
+#lv0 {
+  width: 820px;
+  height: 650px;
+  left: 30px;
+  top: 50px;
+}
+#lv1 {
+  width: 710px;
+  height: 542px;
+  left: 85px;
+  top: 104px;
+}
+#lv2 {
+  width: 600px;
+  height: 434px;
+  left: 140px;
+  top: 158px;
+}
+#lv3 {
+  width: 490px;
+  height: 326px;
+  left: 195px;
+  top: 212px;
+}
+#lv4 {
+  width: 380px;
+  height: 218px;
+  left: 250px;
+  top: 266px;
+}
+#lv5 {
+  width: 270px;
+  height: 110px;
+  left: 305px;
+  top: 320px;
+}
+
+/* Créer du contenu · étape 1 : un aperçu par type d'activité (composants du LXP) ---------------------- */
+.cb-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 140px;
+  text-align: center;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.cb-title b {
+  color: var(--color-primary);
+}
+.palette {
+  position: absolute;
+  left: 110px;
+  top: 250px;
+  width: 460px;
+  height: 620px;
+  padding: 70px 24px;
+}
+.palette .act {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 70px;
+  height: 88px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--color-primary) 14%, var(--color-base-100));
+  border: 1px solid color-mix(in srgb, var(--color-primary) 38%, var(--color-base-100));
+  opacity: 0;
+}
+.palette ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 88px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pal .ico {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+}
+.pal .ico svg {
+  width: 28px;
+  height: 28px;
+}
+.editor {
+  position: absolute;
+  left: 630px;
+  top: 250px;
+  width: 1180px;
+  height: 620px;
+  overflow: hidden;
+}
+.ehead {
+  position: relative;
+  height: 76px;
+  border-bottom: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+}
+.eh-text,
+.eh-head {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px;
+}
+.eh-head {
+  opacity: 0;
+  pointer-events: none;
+}
+.eh-ico {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+}
+.eh-ico svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.eh-input {
+  flex: 1;
+  font-size: 30px;
+  font-weight: 800;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-primary) 40%, var(--color-base-100));
+  padding: 4px 2px;
+}
+.btn.warn {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: var(--color-base-content);
+}
+.pv .btn,
+.ehead .btn {
+  height: 52px;
+  padding: 0 22px;
+  font-size: 24px;
+  box-shadow: none;
+}
+.tb {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--soft);
+  cursor: pointer;
+}
+.tb svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tb.on {
+  background: color-mix(in srgb, var(--color-primary) 14%, var(--color-base-100));
+  color: var(--color-primary);
+}
+.pvs {
+  position: relative;
+  height: calc(100% - 76px);
+  background: var(--color-base-100);
+}
+.pv {
+  position: absolute;
+  inset: 0;
+  padding: 22px 40px;
+  opacity: 0;
+  pointer-events: none;
+}
+.pv0 {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Aperçu « texte » : mise en page d'origine, inchangée. */
+.doc-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.d-title {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.d-p {
+  font-size: 28px;
+  color: var(--soft);
+}
+.d-check {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.d-check li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+}
+.d-check svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.d-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 24px;
+}
+.d-table th,
+.d-table td {
+  border: 1px solid var(--color-base-300);
+  padding: 6px 16px;
+  text-align: left;
+}
+.d-table th {
+  background: var(--color-base-200);
+}
+.d-code {
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: var(--color-base-200);
+  font: 22px/1.4 ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--color-base-content);
+}
+/* Autres aperçus : structure des composants d'édition du LXP. */
+.pv-col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pv-col.center {
+  align-items: center;
+  justify-content: center;
+}
+.actions {
+  display: flex;
+  gap: 14px;
+}
+.actions.end {
+  justify-content: flex-end;
+  margin-top: auto;
+}
+.lab {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--soft);
+  margin-bottom: 8px;
+}
+.lab.primary {
+  color: var(--color-primary);
+}
+.h2 {
+  font-size: 30px;
+  font-weight: 800;
+}
+.field {
+  padding: 10px 16px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 12px;
+  background: var(--color-base-100);
+  font-size: 24px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.field.area {
+  height: 124px;
+}
+.field.select {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.img-frame {
+  width: 500px;
+  margin: 0;
+}
+.wire {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: var(--elev-sm);
+}
+.wire .w-bg {
+  fill: var(--color-base-200);
+}
+.wire .w-a {
+  fill: var(--color-primary);
+}
+.wire .w-b {
+  fill: var(--color-base-300);
+}
+.wire .w-c {
+  fill: color-mix(in srgb, var(--color-secondary) 35%, var(--color-base-100));
+}
+.player {
+  width: 340px;
+  align-self: center;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--elev);
+  background: var(--color-neutral);
+}
+.poster {
+  height: 150px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+.bigplay {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-base-100) 90%, transparent);
+  color: var(--color-primary);
+}
+.bigplay svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  stroke: currentColor;
+  margin-left: 4px;
+}
+.ctrl {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  color: var(--color-neutral-content);
+  font-size: 18px;
+}
+.ctrl .pl svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+.pbar {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--color-neutral-content) 25%, transparent);
+  overflow: hidden;
+}
+.pbar i {
+  display: block;
+  width: 35%;
+  height: 100%;
+  background: var(--color-secondary);
+}
+.urlrow {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.field.url {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 0;
+  height: 52px;
+}
+.clr {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--soft);
+  cursor: pointer;
+}
+.clr svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+.embed {
+  display: flex;
+  justify-content: center;
+}
+.embed .frame {
+  width: 520px;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+  box-shadow: var(--elev-sm);
+}
+.empty {
+  display: none;
+  padding: 40px 24px;
+  border-radius: 12px;
+  background: var(--color-base-200);
+  text-align: center;
+  font-size: 26px;
+  color: var(--soft);
+}
+.rhead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.rhead small {
+  display: block;
+  margin-top: 6px;
+  text-align: right;
+  font-size: 22px;
+  color: var(--soft);
+}
+.rlist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rrow {
+  display: grid;
+  grid-template-columns: 44px 1.2fr 1.5fr 0.6fr 44px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: var(--color-base-200);
+  font-size: 24px;
+}
+.rrow > svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--color-info);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.rrow .rf,
+.rrow .rs {
+  color: var(--soft);
+}
+.rdel {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--color-error, #ef4444);
+  cursor: pointer;
+}
+.rdel svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.upl {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-base-300);
+  overflow: hidden;
+  grid-column: 2 / 5;
+}
+.upl i {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+  transform-origin: 0 50%;
+}
+
+/* Prototype · étape 0 : de l'étude au prototype ------------------------------------------------- */
+.pa-text,
+.pb-text {
+  position: absolute;
+  left: 110px;
+  top: 170px;
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+}
+.pa .h1,
+.pb .h1 {
+  font-size: 66px;
+}
+.pcards {
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 110px;
+  right: 110px;
+  top: 540px;
+  display: flex;
+  gap: 30px;
+}
+.pcard {
+  position: relative;
+  width: 540px;
+  height: 330px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+.pc-in {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+.pcard .f,
+.pcard .b {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  border: 1px solid var(--color-base-300);
+  box-shadow: var(--elev);
+  backface-visibility: hidden;
+  padding: 32px 34px;
+}
+.pcard .f {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-base-200);
+}
+.pcard .f .ico {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.pcard .f .ico svg {
+  width: 40px;
+  height: 40px;
+}
+.pcard .f b {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.pcard .f small {
+  font-size: 28px;
+  color: var(--soft);
+}
+.pcard .num {
+  position: absolute;
+  top: 28px;
+  right: 34px;
+  font-size: 56px;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--color-primary) 22%, var(--color-base-100));
+}
+.pcard .b {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+.pcard .b strong {
+  font-size: 32px;
+}
+.pcard .b ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pcard .b li {
+  font-size: 26px;
+  line-height: 1.3;
+  padding-left: 22px;
+  position: relative;
+}
+.pcard .b li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary-content);
+}
+/* Prototype · étape 1 : architecture en couches ---------------------------------------------------- */
+.pdetail {
+  margin-top: 10px;
+  width: 640px;
+  padding: 24px 28px;
+}
+.pdetail b {
+  display: block;
+  font-size: 32px;
+  color: var(--color-primary);
+}
+.pdetail p {
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--soft);
+}
+.stack5 {
+  position: absolute;
+  right: 90px;
+  top: 190px;
+  width: 880px;
+  height: 760px;
+  transform-style: preserve-3d;
+}
+.slab.pl {
+  cursor: pointer;
+  font-size: 28px;
+  padding: 10px 22px;
+}
+.slab.pl .ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+.slab.pl .ico svg {
+  width: 24px;
+  height: 24px;
+}
+.slab.pl b {
+  line-height: 44px;
+}
+#pl0 {
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-base-100));
+  border-color: var(--color-primary);
+}
+#pl0 {
+  width: 820px;
+  height: 600px;
+  left: 30px;
+  top: 50px;
+}
+#pl1 {
+  width: 700px;
+  height: 500px;
+  left: 90px;
+  top: 100px;
+}
+#pl2 {
+  width: 580px;
+  height: 400px;
+  left: 150px;
+  top: 150px;
+}
+#pl3 {
+  width: 460px;
+  height: 300px;
+  left: 210px;
+  top: 200px;
+}
+#pl4 {
+  width: 340px;
+  height: 200px;
+  left: 270px;
+  top: 250px;
+}
+/* Prototype · étape 2 : faisabilité validée --------------------------------------------------------- */
+.pc-big {
+  position: absolute;
+  left: 110px;
+  top: 250px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  text-align: left;
+}
+.bigok {
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+}
+.bigok svg {
+  width: 90px;
+  height: 90px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.pc .h1 {
+  font-size: 86px;
+}
+.pc-next {
+  position: absolute;
+  right: 110px;
+  top: 300px;
+  width: 640px;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.pc-next p {
+  font-size: 36px;
+  line-height: 1.35;
+}
+.pc-next b {
+  color: var(--color-primary);
+}
+.pc-next .go {
+  align-self: flex-end;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+}
+.pc-next .go svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

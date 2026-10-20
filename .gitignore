@@ -1,0 +1,24 @@
+# macOS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dépendances et sorties de build (régénérées par `npm run build`)
+node_modules/
+dist/
+*.zip
+
+# Caches et rendus Hyperframes (régénérables)
+composition/.hyperframes/
+composition/renders/
+composition/.thumbnails/
+composition/.waveform-cache/
+
+# Variables d'environnement et journaux (aucun n'est utilisé aujourd'hui : garde-fou)
+.env
+.env.*
+*.log
+
+# Réglages locaux de l'assistant (Claude Code) : personnels à chaque poste
+.claude/settings.local.json

@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+# Fichiers tiers ou générés : exclus des statistiques de langages et des diffs de revue
+vendor/** linguist-vendored
+composition/assets/gsap.min.js linguist-vendored
+composition/js/logo.js linguist-generated
+*.png binary
+*.jpg binary

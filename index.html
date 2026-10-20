@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANDRIA — état des lieux 2026</title>
+    <script src="vendor/hyperframes-player.global.js"></script>
+    <script src="vendor/hyperframes-slideshow.global.js"></script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #ffffff;
+      }
+      /* Bandes blanches (et non noires) quand l'écran n'est pas en 16:9. */
+      hyperframes-player,
+      hyperframes-slideshow {
+        background: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- tabindex="0" : sans focus, les flèches du clavier sont mortes. -->
+    <hyperframes-slideshow
+      tabindex="0"
+      style="display: block; position: relative; width: 100vw; height: 100vh"
+    >
+      <hyperframes-player
+        interactive
+        style="position: absolute; inset: 0"
+        src="composition/index.html"
+      ></hyperframes-player>
+
+      <!-- ÎLE COPIÉE depuis composition/index.html par `npm run sync` : ne pas éditer ici. -->
+      <script type="application/hyperframes-slideshow+json" id="island-copy">{"slides":[{"sceneId":"start","notes":"Écran d'attente : n'importe quelle touche lance la présentation."},{"sceneId":"intro","notes":"Bienvenue. ANDRIA est la plateforme d'apprentissage que Step a conçue entre 2022 et 2026, avec le soutien de la Région Nouvelle-Aquitaine et de l'Union européenne."},{"sceneId":"what","notes":"Trois temps : ce qu'est ANDRIA, le problème résolu et les objectifs, puis la comparaison LMS / LXP. Une interaction par temps.","fragments":[10.2,11,11.8,12.6,13.4,14.2]},{"sceneId":"traits","notes":"Neuf caractéristiques sous forme de tuiles : survol ou clic pour les détails. Le chevron suffit pour avancer.","fragments":[16.2,17]},{"sceneId":"frise","notes":"La première phase, financée par la Région, a validé la faisabilité. La deuxième, cofinancée par le FSE, a produit la plateforme actuelle. Cliquer un jalon ouvre sa scène.","fragments":[22.2,23,23.8,24.6,25.4,26.2,27,27.8,28.6]},{"sceneId":"closing","notes":"Un commit à la fois, avec sa date et ses fonctionnalités marquantes. La frise se prolonge : le projet continue d'évoluer.","fragments":[30.2,32,34]}],"slideSequences":[{"id":"proto","label":"Un prototype pour valider l'idée","slides":[{"sceneId":"proto","notes":"Phase 1 : analyse du marché, personas, prototype, bases techniques ; faisabilité validée.","fragments":[38.2,39,40]}]},{"id":"content","label":"Créer du contenu","slides":[{"sceneId":"content","notes":"Structure en six niveaux, puis éditeur riche et six types d'activité.","fragments":[42.2,43]}]},{"id":"assistant","label":"Un assistant disponible 24 h/24","slides":[{"sceneId":"assistant","notes":""}]},{"id":"assess","label":"Évaluer","slides":[{"sceneId":"assess","notes":""}]},{"id":"organize","label":"Organiser","slides":[{"sceneId":"organize","notes":""}]},{"id":"care","label":"Suivre et accompagner","slides":[{"sceneId":"care","notes":""}]},{"id":"steer","label":"Piloter","slides":[{"sceneId":"steer","notes":""}]},{"id":"personalize","label":"Personnaliser et encourager","slides":[{"sceneId":"personalize","notes":""}]}]}</script>
+    </hyperframes-slideshow>
+
+    <script>
+      // Les clics dans la composition (chevron, frise) demandent « suivant » au parent.
+      (function () {
+        var deck = document.querySelector("hyperframes-slideshow");
+        window.addEventListener("message", function (e) {
+          var d = e.data;
+          if (!d || d.source !== "lxp-deck") return;
+          if (d.type === "goto") {
+            var c = deck.controller;
+            var idx = c && c.show ? c.show.slides.findIndex(function (s) { return s.sceneId === d.scene; }) : -1;
+            if (idx >= 0) c.syncTo("main", idx, d.fragment);
+            return;
+          }
+          if (d.type === "back") {
+            if (deck.controller && deck.controller.back) deck.controller.back();
+            return;
+          }
+          if (d.type === "open") {
+            if (/^https:\/\/lxp\.dev\.step\.eco\/?/.test(d.url)) window.open(d.url, "_blank", "noopener");
+            return;
+          }
+          if (d.type === "branch") {
+            if (deck.controller && deck.controller.enterBranch) deck.controller.enterBranch(d.id);
+            return;
+          }
+          if (d.type !== "nav") return;
+          var key = d.action === "prev" ? "ArrowLeft" : "ArrowRight";
+          deck.dispatchEvent(new KeyboardEvent("keydown", { key: key, bubbles: true }));
+        });
+        deck.focus();
+
+        // Le contrôleur d'origine revient à la diapositive précédente, pas à la PAUSE précédente.
+        // On le complète : « précédent » recule d'une PAUSE, puis atterrit sur la dernière PAUSE
+        // de la diapositive d'avant (état « terminé »), comme dans un vrai retour arrière.
+        function patchController() {
+          var c = deck.controller;
+          if (!c || c.__lxpPatched || !c.syncTo || !c.show) return !!(c && c.__lxpPatched);
+          var original = c.prev.bind(c);
+          c.prev = function () {
+            var p = c.position;
+            var slides = p.sequenceId === "main" ? c.show.slides : (c.show.sequences[p.sequenceId] || {}).slides || [];
+            if (p.fragmentIndex > 0) return c.syncTo(p.sequenceId, p.slideIndex, p.fragmentIndex - 1);
+            if (p.slideIndex > 0) {
+              var before = slides[p.slideIndex - 1];
+              var last = before && before.fragments ? before.fragments.length - 1 : -1;
+              if (last > 0) return c.syncTo(p.sequenceId, p.slideIndex - 1, last);
+            }
+            return original();
+          };
+          c.__lxpPatched = true;
+          return true;
+        }
+        // Écran de départ : n'importe quelle touche lance la présentation (focus dans la page parente).
+        var NAV_KEYS = ["ArrowRight", "ArrowLeft", " ", "Backspace", "p", "P", "Shift", "Control", "Alt", "Meta"];
+        document.addEventListener("keydown", function (e) {
+          var c = deck.controller;
+          if (!c || e.ctrlKey || e.metaKey || e.altKey || NAV_KEYS.indexOf(e.key) !== -1) return;
+          var pos = c.position;
+          if (pos.sequenceId === "main" && pos.slideIndex === 0) c.next();
+        });
+
+        // Pas d'infobulle « HyperFrames Composition » sur la scène (titre de l'iframe).
+        var titleTimer = setInterval(function () {
+          var pl = document.querySelector("hyperframes-player");
+          var fr = pl && pl.iframeElement;
+          if (fr) {
+            fr.removeAttribute("title");
+            clearInterval(titleTimer);
+          }
+        }, 100);
+
+        // Raccourci de développement : index.html#content (ou #assistant, #frise…) ouvre directement la scène.
+        function applyHash() {
+          var c = deck.controller;
+          var h = location.hash.slice(1);
+          if (!h || !c || !c.show) return;
+          var fr = c.show.slides.findIndex(function (s) { return s.sceneId === "frise"; });
+          if (h === "frise") {
+            c.syncTo("main", fr, 1);
+          } else if (c.show.sequences[h]) {
+            c.syncTo("main", fr, 1);
+            setTimeout(function () { c.enterBranch(h); }, 300);
+          }
+        }
+        var timer = setInterval(function () {
+          if (patchController()) {
+            clearInterval(timer);
+            applyHash();
+          }
+        }, 100);
+      })();
+    </script>
+  </body>
+</html>
