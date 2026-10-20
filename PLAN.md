@@ -283,3 +283,12 @@ Demande : reprendre, pour l'étape « humeur », le morphing 3D de la séquence 
 - **MorphSVG** (`composition/assets/MorphSVGPlugin.min.js`, même version 3.14.2 que GSAP, repris de `brag-output`) déforme réellement le tracé de toutes les couches d'un état à l'autre ; l'icône fait un tour complet sur elle-même avec un léger bond vers l'avant à chaque changement. Démonstration automatique de l'orage au soleil voilé (étape 1), puis **un clic sur un niveau** rejoue le même morphing (état final remis à zéro à la sortie de la scène ; sans animation en `prefers-reduced-motion`).
 - Le plugin est chargé par `composition/index.html`, enregistré dans `scene-care.js` ; `tools/build-dist.mjs` ne le recopie pas dans `dist/assets` (il est déjà inliné).
 
+## 25. Phase G : finition (20/10/2026, branche feature/finition)
+- **Reduced-motion** : testé sur les 14 scènes avec `prefers-reduced-motion: reduce` émulé : aucune erreur, chaque étape s'affiche en moins de 0,35 s, aucune animation infinie (chevrons, message de départ, survols sont gardés par le test dans `deck.js`). Rien à corriger.
+- **Responsive** : composition 16:9 mise à l'échelle par le player ; essais à 1280×720, 1024×768, 2560×1440, 844×390 et 390×844 : pas de défilement horizontal, numéro de diapositive toujours dans l'angle. Le plan de navigation passe de 5 colonnes à 2 sur téléphone (colonnes jamais sous 160 px, le plan défile) : corrigé. La présentation reste conçue pour un écran large (en portrait elle est réduite dans un cadre 16:9).
+- **Navigateurs** : Chrome et **WebKit** (moteur de Safari, via Playwright 1.63 pour la révision 2359 en cache) : les 14 scènes se chargent sans erreur, la 3D (`preserve-3d`), le morphing, les miniatures et le plan fonctionnent. **Firefox : non testé** (pas de binaire disponible) ; à essayer avant la présentation.
+- **Mode présentateur** (`P`) : ouvre une fenêtre d'audience et affiche notes, étape suivante et chronomètre dans la fenêtre principale. Les libellés du bandeau (« UP NEXT », « SLIDE », « ELAPSED ») viennent du bundle `vendor/` et restent en anglais.
+- **Poids** : `dist/index.html` 0,8 Mo, `dist/` complet environ 1,8 Mo, zip de 1 Mo.
+- **Export** : `npm run zip` (`tools/zip-dist.mjs`) produit `lxp-showcase-2026.zip` avec un `LISEZMOI.txt` (touches, ouverture). Testé : décompressé dans un autre dossier, ouvert en `file://`, plan et miniatures fonctionnent.
+- **Reste** : essai sur Firefox, relecture des textes (jalons S5, dates de la frise, objectifs), puis phase H (dépôt).
+

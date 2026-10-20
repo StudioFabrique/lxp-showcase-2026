@@ -91,7 +91,8 @@
 #nav .nav-cards {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17vw, 1fr));
+  /* 5 colonnes sur grand écran ; jamais plus étroites que 160 px (téléphone : 2 colonnes, le plan défile). */
+  grid-template-columns: repeat(auto-fill, minmax(max(17vw, 160px), 1fr));
   gap: 2vh 1.6vw;
 }
 #nav .nav-card {
