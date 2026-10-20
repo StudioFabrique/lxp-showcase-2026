@@ -30,7 +30,6 @@
     },
     "showDetail": "{0} : afficher le détail",
     "showPreview": "{0} : afficher l'aperçu",
-    "openScene": "Voir la scène →",
-    "placeholder": "Animation et messages à venir · Voir en démo : lxp.dev.step.eco"
+    "openScene": "Voir la scène →"
   }
 }

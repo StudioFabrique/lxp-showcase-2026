@@ -1,13 +1,89 @@
 {
   "label": "Personnaliser et encourager",
-  "notes": "",
-  "eyebrow": "S4 · Scène 8 / 8",
-  "title": "Personnaliser et encourager",
-  "_prevu": {
-    "messages": [
-      "Identité de l'organisme et thèmes",
-      "Modèles d'e-mails et récapitulatifs",
-      "Félicitations de l'équipe"
-    ]
+  "notes": "Thèmes clairs et sombres au choix de l'organisme ; identité (nom, logo) ; modèles d'e-mails ; félicitations, badges de compétences et historique d'accomplissements. Données fictives.",
+  "themes": {
+    "intro": {
+      "badge": "Thèmes",
+      "h1": "Une interface **à vos couleurs**",
+      "lede": "Chaque organisme choisit les thèmes accessibles à tous ses utilisateurs."
+    },
+    "carte": {
+      "entete": { "h3": "Personnalisation de l'interface" },
+      "description": "Choisissez les thèmes accessibles à tous les utilisateurs de l'instance.",
+      "groupes": [
+        { "titre": "Thèmes clairs", "actifs": "4 actifs", "themes": ["Classique", "Océan", "Lin", "Forêt"] },
+        { "titre": "Thèmes sombres", "actifs": "4 actifs", "themes": ["Classique sombre", "Aurore", "Braise", "Abysses"] }
+      ],
+      "apercu": {
+        "salutation": "Bonjour Camille !",
+        "bouton": "Mon avancement",
+        "tuiles": [
+          { "titre": "Calendrier", "texte": "Votre prochaine séance : Atelier CSS." },
+          { "titre": "Remises et évaluations", "texte": "Votre retour pédagogique est disponible." }
+        ]
+      }
+    }
+  },
+  "identite": {
+    "intro": {
+      "badge": "Identité",
+      "h1": "Le **nom et le logo** de l'organisme",
+      "lede": "L'instance prend l'identité de l'organisme qui l'utilise."
+    },
+    "carte": {
+      "entete": { "h3": "Identité de l'organisme" },
+      "description": "Personnalisez le nom, le logo et son fond d'affichage.",
+      "champs": {
+        "nom": { "libelle": "Nom de l'organisme", "valeur": "Step" },
+        "site": { "libelle": "Site internet", "optionnel": "(optionnel)", "valeur": "https://step.eco" },
+        "logo": { "libelle": "Logo", "optionnel": "(facultatif)", "aide": "JPG ou PNG, 500 Ko maximum." }
+      },
+      "bouton": "Sauvegarder",
+      "confirmation": "Identité enregistrée."
+    }
+  },
+  "emails": {
+    "intro": {
+      "badge": "E-mails",
+      "h1": "Des **e-mails à votre image**",
+      "lede": "Un modèle au choix pour les messages envoyés aux utilisateurs."
+    },
+    "carte": {
+      "entete": { "h3": "Template de l'e-mail" },
+      "selection": "Modèle sélectionné :",
+      "modeles": ["Classique", "En-tête compact", "Éditorial", "Invitation", "Bannière", "Épuré"],
+      "apercu": {
+        "objet": "Bienvenue sur la plateforme",
+        "texte": "Bonjour Camille, votre compte est prêt. Vous pouvez dès maintenant accéder à votre parcours.",
+        "bouton": "Accéder à la plateforme"
+      },
+      "actions": {
+        "test": "Envoyer un e-mail de test",
+        "modifier": "Modifier le template"
+      },
+      "confirmation": "E-mail de test envoyé."
+    }
+  },
+  "felicitations": {
+    "intro": {
+      "badge": "Encourager",
+      "h1": "Célébrer **chaque étape** franchie",
+      "lede": "Les modules terminés et les compétences acquises sont reconnus à l'apprenant."
+    },
+    "carte": {
+      "entete": { "h3": "Fin de module" },
+      "message": "Félicitations, vous avez terminé tous les cours de ce module !",
+      "obtenus": { "titre": "Badges obtenus", "badges": ["Communiquer efficacement", "Structurer une page web"] },
+      "restants": { "titre": "Badges restant à obtenir", "badges": ["Concevoir une interface accessible"] },
+      "historique": {
+        "titre": "Mon historique d'accomplissements",
+        "description": "Retrouvez les étapes que vous avez validées au fil de vos cours.",
+        "items": [
+          { "cours": "Les bases du HTML", "date": "6 octobre 2026" },
+          { "cours": "Les balises principales", "date": "15 octobre 2026" },
+          { "cours": "Mise en page", "date": "20 octobre 2026" }
+        ]
+      }
+    }
   }
 }

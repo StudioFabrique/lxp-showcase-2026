@@ -3789,3 +3789,557 @@
   line-height: 1.35;
   color: var(--soft);
 }
+
+/* Personnaliser et encourager -----------------------------------------------------------------------
+   Préfixe pz-, scopé sous #scene-personalize. L'aperçu des thèmes est piloté par des variables --m-*. */
+#scene-personalize .step.zb,
+#scene-personalize .step.zc,
+#scene-personalize .step.zd {
+  opacity: 0;
+}
+#scene-personalize .pz-ico {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--color-base-100));
+}
+#scene-personalize svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#scene-personalize .pz-ico svg {
+  width: 60%;
+  height: 60%;
+}
+#scene-personalize .pz-desc {
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--soft);
+}
+#scene-personalize .pz-cols {
+  display: grid;
+  gap: 36px;
+  margin-top: 22px;
+}
+/* Thèmes */
+#scene-personalize .step.za .pz-cols {
+  grid-template-columns: 1fr 440px;
+}
+#scene-personalize .pz-gh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 12px;
+}
+#scene-personalize .pz-gh b {
+  font-size: 32px;
+  font-weight: 800;
+}
+#scene-personalize .pz-gh em {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary) 10%, var(--color-base-100));
+}
+#scene-personalize .pz-grp + .pz-grp {
+  margin-top: 28px;
+}
+#scene-personalize .pz-ths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+#scene-personalize .pz-th {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 78px;
+  padding: 0 16px;
+  border-radius: 18px;
+  border: 2px solid var(--color-base-300);
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  font: 700 28px var(--font);
+  text-align: left;
+  cursor: pointer;
+}
+#scene-personalize .pz-th.on {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 7%, var(--color-base-100));
+}
+#scene-personalize .pz-th:focus-visible,
+#scene-personalize .pz-model:focus-visible {
+  outline: 4px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+#scene-personalize .pz-sw {
+  display: flex;
+  flex: none;
+}
+#scene-personalize .pz-sw i {
+  width: 24px;
+  height: 24px;
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--color-base-100);
+  background: var(--color-primary);
+}
+#scene-personalize .pz-sw i:first-child {
+  margin-left: 0;
+}
+#scene-personalize .pz-mock {
+  --m-bg: #f0f9ff;
+  --m-card: #e0f2fe;
+  --m-bd: #bae6fd;
+  --m-tx: #082f49;
+  --m-pr: #0369a1;
+  --m-prc: #ffffff;
+  align-self: start;
+  height: 590px;
+  padding: 28px;
+  border-radius: 26px;
+  border: 2px solid var(--m-bd);
+  background: var(--m-bg);
+  color: var(--m-tx);
+  box-shadow: var(--elev);
+}
+#scene-personalize .pz-mhead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+#scene-personalize .pz-hello {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+#scene-personalize .pz-mbtn {
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: var(--m-pr);
+  color: var(--m-prc);
+  font-size: 28px;
+  font-weight: 700;
+}
+#scene-personalize .pz-mtiles {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 28px;
+}
+#scene-personalize .pz-mtile {
+  position: relative;
+  padding: 22px 24px 22px 70px;
+  border-radius: 20px;
+  border: 1px solid var(--m-bd);
+  background: var(--m-card);
+}
+#scene-personalize .pz-mdot {
+  position: absolute;
+  left: 22px;
+  top: 26px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--m-pr);
+}
+#scene-personalize .pz-mtile b {
+  display: block;
+  font-size: 30px;
+  font-weight: 800;
+}
+#scene-personalize .pz-mtile p {
+  margin-top: 6px;
+  font-size: 26px;
+  line-height: 1.3;
+  opacity: 0.8;
+}
+/* Identité */
+#scene-personalize .step.zb .pz-cols {
+  grid-template-columns: 1fr 330px;
+}
+#scene-personalize .pz-lab {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 28px;
+}
+#scene-personalize .pz-lab:first-child {
+  margin-top: 0;
+}
+#scene-personalize .pz-lab em {
+  font-style: normal;
+  color: var(--soft);
+}
+#scene-personalize .pz-field {
+  height: 70px;
+  padding: 0 22px;
+  line-height: 70px;
+  border-radius: 16px;
+  border: 2px solid var(--color-base-300);
+  background: var(--color-base-100);
+  font-size: 30px;
+}
+#scene-personalize .pz-drop {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  height: 130px;
+  padding: 0 28px;
+  border-radius: 18px;
+  border: 3px dashed var(--color-base-300);
+  background: var(--color-base-100);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+#scene-personalize .pz-drop svg {
+  width: 56px;
+  height: 56px;
+  flex: none;
+}
+#scene-personalize .pz-drop small {
+  font-size: 26px;
+  color: var(--soft);
+}
+#scene-personalize .pz-idprev {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 24px;
+  border-radius: 24px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+  box-shadow: var(--elev-sm);
+}
+#scene-personalize .pz-idlogo {
+  width: 150px;
+  height: 150px;
+  border-radius: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 84px;
+  font-weight: 800;
+  color: var(--color-primary-content);
+  background: var(--color-primary);
+}
+#scene-personalize .pz-idname {
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+}
+#scene-personalize .pz-toast {
+  opacity: 0;
+}
+/* E-mails */
+#scene-personalize .step.zc .pz-cols {
+  grid-template-columns: 380px 1fr;
+}
+#scene-personalize .pz-models {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#scene-personalize .pz-model {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 84px;
+  padding: 0 16px;
+  border-radius: 18px;
+  border: 2px solid var(--color-base-300);
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  font: 700 28px var(--font);
+  text-align: left;
+  cursor: pointer;
+}
+#scene-personalize .pz-model.on {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 7%, var(--color-base-100));
+}
+#scene-personalize .pz-mthumb {
+  flex: none;
+  width: 64px;
+  height: 52px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+}
+#scene-personalize .pz-mthumb i {
+  display: block;
+  height: 6px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background: var(--color-base-300);
+}
+#scene-personalize .pz-mthumb i:first-child {
+  background: var(--color-primary);
+}
+#scene-personalize .pz-mthumb.v1 i:first-child {
+  height: 12px;
+  margin: -6px -6px 5px;
+  border-radius: 8px 8px 0 0;
+}
+#scene-personalize .pz-mthumb.v2 {
+  border-left: 5px solid var(--color-primary);
+}
+#scene-personalize .pz-mthumb.v3 i:first-child {
+  width: 50%;
+  margin-left: 25%;
+}
+#scene-personalize .pz-mthumb.v4 i:first-child {
+  height: 18px;
+  margin: -6px -6px 5px;
+}
+#scene-personalize .pz-mthumb.v5 i:first-child {
+  background: var(--color-base-300);
+}
+#scene-personalize .pz-sel {
+  font-size: 30px;
+  color: var(--soft);
+}
+#scene-personalize .pz-sel b {
+  color: var(--color-base-content);
+  font-weight: 800;
+}
+#scene-personalize .pz-mail-prev {
+  margin-top: 16px;
+  min-height: 340px;
+  border-radius: 20px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+  box-shadow: var(--elev-sm);
+  overflow: hidden;
+}
+#scene-personalize .pz-mh {
+  padding: 18px 28px;
+  font-size: 30px;
+  color: var(--color-primary);
+}
+#scene-personalize .pz-mb {
+  padding: 8px 28px 30px;
+}
+#scene-personalize .pz-mb h4 {
+  font-size: 38px;
+  font-weight: 800;
+}
+#scene-personalize .pz-mb p {
+  margin: 14px 0 22px;
+  font-size: 28px;
+  line-height: 1.4;
+  color: var(--soft);
+}
+#scene-personalize .pz-mcta {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 12px;
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+  font-size: 28px;
+  font-weight: 700;
+}
+#scene-personalize .pz-mail-prev.v1 .pz-mh {
+  background: var(--color-primary);
+  color: var(--color-primary-content);
+  padding: 12px 28px;
+  font-size: 26px;
+}
+#scene-personalize .pz-mail-prev.v2 {
+  border-left: 8px solid var(--color-primary);
+}
+#scene-personalize .pz-mail-prev.v2 .pz-mb h4 {
+  font-size: 44px;
+  letter-spacing: -0.03em;
+}
+#scene-personalize .pz-mail-prev.v3 {
+  background: color-mix(in srgb, var(--color-primary) 7%, var(--color-base-100));
+  text-align: center;
+}
+#scene-personalize .pz-mail-prev.v3 .pz-mcta {
+  border-radius: 999px;
+}
+#scene-personalize .pz-mail-prev.v4 .pz-mh {
+  padding: 46px 28px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-primary-content);
+  font-size: 38px;
+  font-weight: 800;
+}
+#scene-personalize .pz-mail-prev.v5 {
+  box-shadow: none;
+  border-color: var(--color-base-300);
+}
+#scene-personalize .pz-mail-prev.v5 .pz-mh {
+  color: var(--soft);
+}
+#scene-personalize .pz-mail-prev.v5 .pz-mcta {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+#scene-personalize .pz-acts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 14px;
+  margin-top: 22px;
+}
+#scene-personalize .pz-acts .btn {
+  height: 60px;
+  font-size: 26px;
+}
+/* Félicitations */
+#scene-personalize .step.zd .pz-cols {
+  grid-template-columns: 1fr 1fr;
+}
+#scene-personalize .pz-modal {
+  position: relative;
+  padding: 34px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+  box-shadow: var(--elev-sm);
+  overflow: hidden;
+}
+#scene-personalize .pz-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+#scene-personalize .pz-cf {
+  position: absolute;
+  width: 14px;
+  height: 24px;
+  border-radius: 3px;
+  transform: rotate(var(--r));
+}
+#scene-personalize .pz-cf.c0 {
+  background: var(--color-primary);
+}
+#scene-personalize .pz-cf.c1 {
+  background: var(--color-warning);
+}
+#scene-personalize .pz-cf.c2 {
+  background: var(--color-accent);
+}
+#scene-personalize .pz-cf.c3 {
+  background: var(--color-secondary);
+}
+#scene-personalize .pz-trophy {
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+  border-radius: 50%;
+  color: var(--color-warning);
+  background: color-mix(in srgb, var(--color-warning) 16%, var(--color-base-100));
+}
+#scene-personalize .pz-trophy svg {
+  width: 58px;
+  height: 58px;
+}
+#scene-personalize .pz-msg {
+  margin: 20px 0 22px;
+  text-align: center;
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+#scene-personalize .pz-bh {
+  margin: 14px 0 10px;
+  font-size: 28px;
+  font-weight: 700;
+}
+#scene-personalize .pz-bdgs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#scene-personalize .pz-bdg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 26px;
+  font-weight: 600;
+  border: 2px solid var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-base-100));
+}
+#scene-personalize .pz-bdg svg {
+  width: 30px;
+  height: 30px;
+  color: var(--color-accent);
+}
+#scene-personalize .pz-bdg.todo {
+  border: 2px dashed var(--color-base-300);
+  background: var(--color-base-100);
+  color: var(--soft);
+  cursor: pointer;
+}
+#scene-personalize .pz-bdg.todo svg {
+  color: var(--soft);
+}
+#scene-personalize .pz-bdg:focus-visible {
+  outline: 4px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+#scene-personalize .pz-hist {
+  padding-top: 8px;
+}
+#scene-personalize .pz-hdesc {
+  margin-bottom: 16px;
+  font-size: 26px;
+  line-height: 1.35;
+  color: var(--soft);
+}
+#scene-personalize .pz-hrow {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  align-items: center;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+}
+#scene-personalize .pz-hrow b {
+  font-size: 30px;
+}
+#scene-personalize .pz-hrow em {
+  grid-column: 2;
+  font-style: normal;
+  font-size: 24px;
+  color: var(--soft);
+}
+#scene-personalize .pz-hdot {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: var(--color-primary-content);
+  background: var(--color-accent);
+}
+#scene-personalize .pz-hdot svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 3;
+}
