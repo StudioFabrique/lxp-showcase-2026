@@ -252,3 +252,9 @@ Retour : pas assez de 3D, transitions peu agréables, trop de majuscules. Action
 - Écrite **JSON d'abord** (`content/scenes/steer.json`) puis HTML et script, sur le modèle de la scène 6. Les valeurs numériques qui pilotent l'animation (`part` des barres) sont dans le JSON ; les étoiles se déduisent de la note affichée ; le total se recompte depuis son texte (animation ignorée si ce n'est pas un nombre simple).
 - Classes préfixées `pi-` et scopées sous `#scene-steer` (règle du §18). Un estompage appliqué à un conteneur déjà animé par la timeline entre en conflit avec elle : il est porté par les enfants.
 
+## 24. « Suivre et accompagner » : morphing 3D de l'humeur (20/10/2026, branche feature/care-mood-morph)
+Demande : reprendre, pour l'étape « humeur », le morphing 3D de la séquence Hyperframes de `lxp/brag-output`.
+- **Un seul pictogramme en relief** remplace les cinq pictogrammes qui se fondaient l'un dans l'autre : dix couches SVG identiques empilées en profondeur (`--depth`, `translateZ`, teinte qui s'éclaircit vers l'avant, ombre portée sur la couche de face) dans `.feeling-3d`, comme dans `brag-output/composition/motion.js`. Les cinq états sont les tracés `data-level-1…5` du pictogramme (orage, pluie, éclaircies pluvieuses, nuageux avec éclaircies, soleil).
+- **MorphSVG** (`composition/assets/MorphSVGPlugin.min.js`, même version 3.14.2 que GSAP, repris de `brag-output`) déforme réellement le tracé de toutes les couches d'un état à l'autre ; l'icône fait un tour complet sur elle-même avec un léger bond vers l'avant à chaque changement. Démonstration automatique de l'orage au soleil voilé (étape 1), puis **un clic sur un niveau** rejoue le même morphing (état final remis à zéro à la sortie de la scène ; sans animation en `prefers-reduced-motion`).
+- Le plugin est chargé par `composition/index.html`, enregistré dans `scene-care.js` ; `tools/build-dist.mjs` ne le recopie pas dans `dist/assets` (il est déjà inliné).
+

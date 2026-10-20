@@ -1,11 +1,12 @@
 /* Scène détaillée « Suivre et accompagner » (jalon 6). Quatre PAUSES :
    0 progression et préférences d'un apprenant
-   1 l'humeur du jour (les cinq pictogrammes météo du LXP se transforment l'un en l'autre)
+   1 l'humeur du jour (un pictogramme météo en relief se déforme d'un état à l'autre : MorphSVG, 3D)
    2 l'alerte de décrochage et les données utilisées
    3 le retour de l'équipe sur l'analyse.
    Libellés repris du LXP (learning-profile, feeling-feedback, PredictionPanel, AnalysisFeedbackForm).
    Données fictives ; aucune amélioration causée par l'IA n'est revendiquée. */
 (function () {
+  if (window.MorphSVGPlugin) gsap.registerPlugin(window.MorphSVGPlugin);
   var Deck = (window.Deck = window.Deck || { scenes: {} });
   var P = 1800;
 
@@ -85,18 +86,26 @@
     leave("ra", 5.5);
     activate("rb", 6.2);
     enter("rb", 6.2, [".mlv", ".rfoot"]);
-    // Démonstration : le pictogramme se transforme de l'orage au soleil voilé, comme l'humeur change.
-    var bw = gsap.utils.toArray(q(".bw"));
-    var demo = [
-      [0, 7.6, 8.3],
-      [1, 8.3, 8.9],
-      [2, 8.9, 9.5],
-      [3, 9.5, null],
-    ];
-    demo.forEach(function (st) {
-      var node = bw[st[0]];
-      fx.ft(tl, node, { opacity: 0, rotation: 40, scale: 0.5 }, { opacity: 1, rotation: 0, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, st[1]);
-      if (st[2]) fx.ft(tl, node, { opacity: 1, rotation: 0, scale: 1 }, { opacity: 0, rotation: -40, scale: 0.5, duration: 0.4, ease: "power2.in" }, st[2] - 0.05);
+    // Démonstration : un seul pictogramme en relief (couches empilées en profondeur) se déforme réellement
+    // (MorphSVG) d'un état à l'autre, de l'orage au soleil voilé, en tournant sur lui-même : c'est le morphing 3D
+    // de la séquence Hyperframes (lxp/brag-output).
+    var icon = el.querySelector(".feeling-3d");
+    var paths = gsap.utils.toArray(q(".feeling-path"));
+    var LV = [1, 2, 3, 4, 5].map(function (n) {
+      return icon.getAttribute("data-level-" + n);
+    });
+    // Un demi-tour complet avec un léger bond vers l'avant, pendant que le tracé se déforme.
+    var spin = function (tlx, at) {
+      tlx.fromTo(icon, { rotationY: 0 }, { rotationY: 360, duration: 1.05, ease: "power2.inOut", immediateRender: false }, at);
+      tlx.to(icon, { scale: 1.1, z: 40, duration: 0.5, ease: "power2.out" }, at);
+      tlx.to(icon, { scale: 1, z: 0, duration: 0.55, ease: "power2.in" }, at + 0.5);
+    };
+    tl.set(paths, { attr: { d: LV[0] } }, 0);
+    fx.ft(tl, icon, { opacity: 0, rotationY: -180, scale: 0.6, transformPerspective: 1400 }, { opacity: 1, rotationY: 0, scale: 1, duration: 1.0, ease: "power3.out" }, 7.3);
+    [1, 2, 3].forEach(function (k, i) {
+      var at = 8.5 + i * 0.7;
+      tl.to(paths, { morphSVG: LV[k], duration: 0.65, ease: "power2.inOut" }, at);
+      spin(tl, at - 0.1);
     });
     chevOn(10.4);
     tl.addLabel("step1", 10.7);
@@ -179,22 +188,23 @@
       });
     });
 
-    // Humeur : un clic sur un niveau transforme le pictogramme.
+    // Humeur : un clic sur un niveau déforme le pictogramme vers le nouvel état (même morphing 3D que la démonstration).
     var lvs = gsap.utils.toArray(q(".mlv"));
     var level = LEVEL0;
+    var morphTl = null;
     var setLevel = function (l, animate) {
-      var prev = level;
       level = l;
       single(lvs, lvs[l - 1]);
-      bw.forEach(function (n, i) {
-        var idx = i + 1;
-        if (idx === l) {
-          if (animate) gsap.fromTo(n, { opacity: 0, rotation: l > prev ? 40 : -40, scale: 0.5 }, { opacity: 1, rotation: 0, scale: 1, duration: 0.5 * d, ease: "back.out(1.6)", overwrite: "auto" });
-          else gsap.set(n, { opacity: 1, rotation: 0, scale: 1 });
-        } else if (idx === prev && animate) {
-          gsap.to(n, { opacity: 0, rotation: l > prev ? -40 : 40, scale: 0.5, duration: 0.3 * d, ease: "power2.in", overwrite: "auto" });
-        } else gsap.set(n, { opacity: 0 });
-      });
+      icon.setAttribute("aria-label", lvs[l - 1].getAttribute("aria-label") || "");
+      if (morphTl) morphTl.kill();
+      if (!animate || reduced) {
+        gsap.set(paths, { attr: { d: LV[l - 1] } });
+        gsap.set(icon, { opacity: 1, rotationY: 0, scale: 1, z: 0 });
+        return;
+      }
+      morphTl = gsap.timeline();
+      morphTl.to(paths, { morphSVG: LV[l - 1], duration: 0.7, ease: "power2.inOut" }, 0);
+      spin(morphTl, 0);
     };
     lvs.forEach(function (b, i) {
       hover(b, { y: -4 }, { y: 0 });
