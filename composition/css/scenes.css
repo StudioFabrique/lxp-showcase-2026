@@ -149,7 +149,10 @@
 .step.ab,
 .step.ac,
 .step.eb,
-.step.ec {
+.step.ec,
+.step.ob,
+.step.oc,
+.step.od {
   opacity: 0;
 }
 .badge {
@@ -2790,4 +2793,358 @@
 }
 .cmt span {
   display: block;
+}
+
+/* Organiser ---------------------------------------------------------------------------------------- */
+.og-text {
+  position: absolute;
+  left: 110px;
+  top: 230px;
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  text-align: left;
+}
+.og-text .h1 {
+  font-size: 68px;
+}
+.og-text .lede {
+  font-size: 34px;
+}
+.ogc {
+  position: absolute;
+  left: 700px;
+  top: 160px;
+  width: 1110px;
+  height: 780px;
+  padding: 34px 40px;
+}
+.ch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.ch h3 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.lgs {
+  display: flex;
+  gap: 10px;
+}
+.lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 22px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 999px;
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  font: 700 26px var(--font);
+  cursor: pointer;
+}
+.lg i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.lg[data-k="cours"] i,
+.ev.cours {
+  --c: var(--color-primary);
+}
+.lg[data-k="devoir"] i,
+.ev.devoir {
+  --c: var(--color-warning);
+}
+.lg[data-k="module"] i,
+.ev.module {
+  --c: var(--color-secondary);
+}
+.lg i {
+  background: var(--c);
+}
+.wk {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 18px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--soft);
+  text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 118px;
+  margin-top: 8px;
+  gap: 6px;
+}
+.day {
+  position: relative;
+  padding: 8px 8px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 12px;
+  background: var(--color-base-100);
+  overflow: hidden;
+}
+.day.off {
+  border-style: dashed;
+  background: transparent;
+}
+.day b {
+  font-size: 26px;
+  color: var(--soft);
+}
+.day.today {
+  border: 3px solid var(--color-primary);
+}
+.day.today b {
+  color: var(--color-primary);
+}
+.ev {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 3px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--c) 16%, var(--color-base-100));
+  border-left: 5px solid var(--c);
+  color: var(--color-base-content);
+  font: 700 22px var(--font);
+  line-height: 1.15;
+  text-align: left;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  cursor: pointer;
+}
+.evd {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 18px;
+  background: var(--color-base-100);
+  box-shadow: var(--elev);
+  opacity: 0;
+  pointer-events: none;
+}
+.evd small {
+  display: block;
+  font-size: 22px;
+  color: var(--soft);
+}
+.evd b {
+  display: block;
+  font-size: 30px;
+}
+.evd span:not(.btn) {
+  font-size: 24px;
+  color: var(--soft);
+}
+
+/* Médiathèque */
+.mtabs,
+.sorts {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sorts {
+  margin-top: 20px;
+  font-size: 26px;
+  color: var(--soft);
+}
+.sort {
+  height: 52px;
+  padding: 0 20px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 12px;
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  font: 600 26px var(--font);
+  cursor: pointer;
+}
+.sort.on {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.mhead,
+.mrow2,
+.ghead,
+.grow,
+.thead,
+.trow {
+  display: grid;
+  align-items: center;
+  gap: 14px;
+}
+.mhead,
+.mrow2 {
+  grid-template-columns: 1fr 190px 150px;
+}
+.mhead,
+.ghead,
+.thead {
+  margin-top: 26px;
+  padding: 0 26px 12px;
+  border-bottom: 2px solid var(--color-base-300);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--soft);
+}
+.mbody {
+  position: relative;
+  height: 470px;
+}
+.mlist {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.mlist:not(.on) {
+  pointer-events: none;
+}
+.mlist.on {
+  opacity: 1;
+}
+.mrow2,
+.grow,
+.trow {
+  margin-top: 10px;
+  padding: 25px 28px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 14px;
+  background: var(--color-base-100);
+  font-size: 34px;
+  font-weight: 600;
+}
+.mn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Groupes */
+.ghead,
+.grow {
+  grid-template-columns: 0.8fr 1.7fr 230px;
+}
+.grow {
+  width: 100%;
+  color: var(--color-base-content);
+  font-family: var(--font);
+  text-align: left;
+  cursor: pointer;
+}
+.grow.on {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 8%, var(--color-base-100));
+}
+.ginfo {
+  margin-top: 24px;
+  padding: 20px 30px;
+  border-radius: 18px;
+  background: var(--color-base-100);
+  border: 1px solid var(--color-base-300);
+}
+.ginfo h4 {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+.ginfo p {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  margin-top: 10px;
+  font-size: 30px;
+}
+.ginfo small {
+  width: 250px;
+  font-size: 26px;
+  color: var(--soft);
+}
+.gt span {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: var(--color-base-300);
+  font-weight: 700;
+}
+.ginfo em {
+  display: block;
+  margin-top: 12px;
+  font-size: 24px;
+  color: var(--soft);
+  font-style: normal;
+}
+
+/* Tags */
+.thead,
+.trow {
+  grid-template-columns: 1fr 210px 1.2fr 56px;
+}
+.tbody {
+  position: relative;
+}
+.tt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tt i {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+.tdel {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--soft);
+  font: 400 40px var(--font);
+  line-height: 1;
+  cursor: pointer;
+}
+.thint {
+  position: absolute;
+  left: 36px;
+  bottom: 28px;
+  font-size: 24px;
+  color: var(--soft);
+}
+.ghead span:last-child {
+  font-size: 24px;
+}
+.grow span {
+  font-size: 30px;
+}
+.trow {
+  padding: 20px 28px;
+  font-size: 32px;
+}
+.trow span {
+  white-space: nowrap;
+}
+.thead,
+.trow {
+  grid-template-columns: 1fr 210px 1.3fr 56px;
 }

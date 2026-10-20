@@ -131,7 +131,13 @@
       "slides": [
         {
           "sceneId": "organize",
-          "notes": ""
+          "notes": "Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.",
+          "fragments": [
+            54.2,
+            55,
+            56,
+            57
+          ]
         }
       ]
     },
@@ -657,12 +663,71 @@
       <button class="chevron mini" data-next aria-label="Continuer"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
 
-    <div data-hf-id="hf-a2sq" id="scene-organize" class="scene-frame clip" data-composition-id="organize" data-start="54" data-duration="4" data-width="1920" data-height="1080" data-label="Organiser">
-      <div data-hf-id="hf-rru9" class="scene-inner">
-      <p data-hf-id="hf-ks3v" class="eyebrow">S4 · Scène 5 / 8</p>
-      <h2 data-hf-id="hf-vc4r" class="title">Organiser</h2>
-      <p data-hf-id="hf-e7d5" class="placeholder">Animation et messages à venir · Voir en démo : lxp.dev.step.eco</p>
+    <div id="scene-organize" class="scene-frame clip" data-composition-id="organize" data-start="54" data-duration="4" data-width="1920" data-height="1080" data-label="Organiser" data-fragments='[54.2, 55, 56, 57]'>
+      <div class="bar">
+        <button class="btn primary" data-open="https://lxp.dev.step.eco" aria-label="Voir en démo (nouvel onglet)"><span>Voir en démo</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
       </div>
+      <div class="cam">
+        <section class="step oa">
+          <div class="og-text">
+            <span class="badge">Calendrier</span>
+            <h2 class="h1">Un calendrier <b>par parcours</b></h2>
+            <p class="lede">Consultez les cours, les devoirs et les modules d’un parcours.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="ch"><h3>Octobre 2026</h3><div class="lgs"><button type="button" class="lg" data-k="cours"><i></i>Cours</button><button type="button" class="lg" data-k="devoir"><i></i>Devoir</button><button type="button" class="lg" data-k="module"><i></i>Module</button></div></div>
+            <div class="wk"><span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span></div>
+            <div class="grid"><div class="day off"></div><div class="day off"></div><div class="day off"></div><div class="day"><b>1</b></div><div class="day"><b>2</b></div><div class="day"><b>3</b></div><div class="day"><b>4</b></div><div class="day"><b>5</b></div><div class="day"><b>6</b><button type="button" class="ev cours" data-k="cours" data-t="Cours" data-n="Les bases du HTML" data-d="Mardi 6 octobre">Bases du HTML</button></div><div class="day"><b>7</b></div><div class="day"><b>8</b><button type="button" class="ev devoir" data-k="devoir" data-t="Devoir" data-n="Devoir : page d'accueil" data-d="Jeudi 8 octobre">Page d'accueil</button></div><div class="day"><b>9</b></div><div class="day"><b>10</b></div><div class="day"><b>11</b></div><div class="day"><b>12</b></div><div class="day"><b>13</b><button type="button" class="ev module" data-k="module" data-t="Module" data-n="Module : Construire une interface" data-d="Mardi 13 octobre">Interface</button></div><div class="day"><b>14</b></div><div class="day"><b>15</b><button type="button" class="ev cours" data-k="cours" data-t="Cours" data-n="Les balises principales" data-d="Jeudi 15 octobre">Les balises</button></div><div class="day"><b>16</b></div><div class="day"><b>17</b></div><div class="day"><b>18</b></div><div class="day"><b>19</b></div><div class="day today"><b>20</b><button type="button" class="ev cours" data-k="cours" data-t="Cours" data-n="Mise en page" data-d="Mardi 20 octobre">Mise en page</button></div><div class="day"><b>21</b></div><div class="day"><b>22</b><button type="button" class="ev devoir" data-k="devoir" data-t="Devoir" data-n="Devoir : maquette de la page" data-d="Jeudi 22 octobre">Maquette</button></div><div class="day"><b>23</b></div><div class="day"><b>24</b></div><div class="day"><b>25</b></div><div class="day"><b>26</b></div><div class="day"><b>27</b><button type="button" class="ev module" data-k="module" data-t="Module" data-n="Module : Accessibilité" data-d="Mardi 27 octobre">Accessibilité</button></div><div class="day"><b>28</b></div><div class="day"><b>29</b></div><div class="day"><b>30</b></div><div class="day"><b>31</b></div><div class="day off"></div></div>
+            <div class="evd"><div><small></small><b></b><span></span></div><span class="btn primary sm">Accéder au cours</span></div>
+          </article>
+        </section>
+        <section class="step ob">
+          <div class="og-text">
+            <span class="badge">Médiathèque</span>
+            <h2 class="h1">Tous les médias <b>au même endroit</b></h2>
+            <p class="lede">Gérez toutes les ressources utilisées dans l’application.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="mtabs"><button type="button" class="tab on" data-p="images">Images</button><button type="button" class="tab" data-p="videos">Vidéos</button><button type="button" class="tab" data-p="audios">Audios</button><button type="button" class="tab" data-p="ressources">Ressources</button></div>
+            <div class="sorts"><span>Trier par</span><button type="button" class="sort on" data-k="date">Date de création</button><button type="button" class="sort" data-k="size">Taille</button><button type="button" class="sort" data-k="used">Nombre d'utilisations</button></div>
+            <div class="mhead"><span>Nom du fichier</span><span>Taille</span><span>Utilisé</span></div>
+            <div class="mbody"><div class="mlist on" data-p="images"><div class="mrow2" data-name="logo-organisme.png" data-size="124" data-used="4" data-date="3"><span class="mn">logo-organisme.png</span><span>124 Ko</span><span>4</span></div><div class="mrow2" data-name="banniere-parcours.jpg" data-size="860" data-used="2" data-date="1"><span class="mn">banniere-parcours.jpg</span><span>860 Ko</span><span>2</span></div><div class="mrow2" data-name="schema-html.svg" data-size="18" data-used="6" data-date="4"><span class="mn">schema-html.svg</span><span>18 Ko</span><span>6</span></div><div class="mrow2" data-name="photo-equipe.webp" data-size="312" data-used="0" data-date="2"><span class="mn">photo-equipe.webp</span><span>312 Ko</span><span>0</span></div><div class="mrow2" data-name="capture-editeur.png" data-size="540" data-used="3" data-date="5"><span class="mn">capture-editeur.png</span><span>540 Ko</span><span>3</span></div></div><div class="mlist" data-p="videos"><div class="mrow2" data-name="intro-html.mp4" data-size="48200" data-used="3" data-date="2"><span class="mn">intro-html.mp4</span><span>47,1 Mo</span><span>3</span></div><div class="mrow2" data-name="presentation-parcours.mp4" data-size="96500" data-used="1" data-date="4"><span class="mn">presentation-parcours.mp4</span><span>94,2 Mo</span><span>1</span></div><div class="mrow2" data-name="demo-editeur.webm" data-size="22400" data-used="2" data-date="1"><span class="mn">demo-editeur.webm</span><span>21,9 Mo</span><span>2</span></div><div class="mrow2" data-name="accueil-promo.mp4" data-size="31800" data-used="0" data-date="3"><span class="mn">accueil-promo.mp4</span><span>31,1 Mo</span><span>0</span></div><div class="mrow2" data-name="tutoriel-quiz.mp4" data-size="27500" data-used="2" data-date="5"><span class="mn">tutoriel-quiz.mp4</span><span>26,9 Mo</span><span>2</span></div></div><div class="mlist" data-p="audios"><div class="mrow2" data-name="podcast-accueil.mp3" data-size="9400" data-used="1" data-date="3"><span class="mn">podcast-accueil.mp3</span><span>9,2 Mo</span><span>1</span></div><div class="mrow2" data-name="consignes-devoir.m4a" data-size="2100" data-used="2" data-date="1"><span class="mn">consignes-devoir.m4a</span><span>2,1 Mo</span><span>2</span></div><div class="mrow2" data-name="lecture-lecon.mp3" data-size="5600" data-used="4" data-date="4"><span class="mn">lecture-lecon.mp3</span><span>5,5 Mo</span><span>4</span></div><div class="mrow2" data-name="extrait-entretien.wav" data-size="14800" data-used="0" data-date="2"><span class="mn">extrait-entretien.wav</span><span>14,5 Mo</span><span>0</span></div><div class="mrow2" data-name="bienvenue.mp3" data-size="1800" data-used="1" data-date="5"><span class="mn">bienvenue.mp3</span><span>1,8 Mo</span><span>1</span></div></div><div class="mlist" data-p="ressources"><div class="mrow2" data-name="guide-apprenant.pdf" data-size="1480" data-used="5" data-date="2"><span class="mn">guide-apprenant.pdf</span><span>1,4 Mo</span><span>5</span></div><div class="mrow2" data-name="grille-evaluation.xlsx" data-size="96" data-used="2" data-date="4"><span class="mn">grille-evaluation.xlsx</span><span>96 Ko</span><span>2</span></div><div class="mrow2" data-name="support-module.pptx" data-size="5200" data-used="3" data-date="1"><span class="mn">support-module.pptx</span><span>5,1 Mo</span><span>3</span></div><div class="mrow2" data-name="glossaire.docx" data-size="74" data-used="1" data-date="3"><span class="mn">glossaire.docx</span><span>74 Ko</span><span>1</span></div><div class="mrow2" data-name="modele-devoir.docx" data-size="58" data-used="2" data-date="5"><span class="mn">modele-devoir.docx</span><span>58 Ko</span><span>2</span></div></div></div>
+          </article>
+        </section>
+        <section class="step oc">
+          <div class="og-text">
+            <span class="badge">Groupes et formateurs</span>
+            <h2 class="h1">Des groupes <b>rattachés à un parcours</b></h2>
+            <p class="lede">Chaque groupe est lié à un parcours et aux formateurs qui l’accompagnent.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="ch"><h3>Groupes</h3><span class="btn primary sm">Créer un groupe</span></div>
+            <div class="ghead"><span>Nom</span><span>Formation - Parcours</span><span>Nombre d’apprenants</span></div>
+            <button type="button" class="grow on" data-p="Développeur web 2026" data-n="Promotion A" data-t="Formateur A, Formateur B"><span>Promotion A</span><span>Développeur web - Parcours 2026</span><span>18</span></button>
+            <button type="button" class="grow" data-p="Initiation au numérique" data-n="Promotion B" data-t="Formateur C"><span>Promotion B</span><span>Initiation - Parcours numérique</span><span>12</span></button>
+            <button type="button" class="grow" data-p="Accessibilité du web" data-n="Atelier du soir" data-t="Formateur A"><span>Atelier du soir</span><span>Accessibilité - Parcours web</span><span>9</span></button>
+            <div class="ginfo"><h4>Informations du groupe</h4><p><small>Parcours associé</small><b class="gp">Développeur web 2026</b></p><p><small>Formateurs</small><span class="gt"></span></p><em>Les affectations des formateurs se modifient depuis le parcours associé.</em></div>
+          </article>
+        </section>
+        <section class="step od">
+          <div class="og-text">
+            <span class="badge">Tags</span>
+            <h2 class="h1">Des tags pour <b>classer les contenus</b></h2>
+            <p class="lede">Créer, modifier et supprimer des tags.</p>
+          </div>
+          <article class="ogc surface">
+            <div class="ch"><h3>Liste des tags</h3><button type="button" class="btn primary sm addtag">Ajouter un tag</button></div>
+            <div class="thead"><span>Titre</span><span>No. d'utilisation</span><span>Parcours</span><span></span></div>
+            <div class="tbody">
+              <div class="trow"><span class="tt"><i></i>numérique</span><span>4</span><span>Développeur web 2026</span><button type="button" class="tdel" aria-label="Supprimer">×</button></div>
+              <div class="trow"><span class="tt"><i></i>accessibilité</span><span>3</span><span>Accessibilité du web</span><button type="button" class="tdel" aria-label="Supprimer">×</button></div>
+              <div class="trow"><span class="tt"><i></i>design</span><span>1</span><span>Initiation au numérique</span><button type="button" class="tdel" aria-label="Supprimer">×</button></div>
+            </div>
+            <p class="thint">Exemple : artisanal, technologie, industriel</p>
+          </article>
+        </section>
+      </div>
+      <button class="chevron mini" data-next aria-label="Continuer"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
 
     <div data-hf-id="hf-rgux" id="scene-care" class="scene-frame clip" data-composition-id="care" data-start="58" data-duration="4" data-width="1920" data-height="1080" data-label="Suivre et accompagner">
@@ -701,6 +766,7 @@
     <script src="js/scene-proto.js"></script>
     <script src="js/scene-assistant.js"></script>
     <script src="js/scene-assess.js"></script>
+    <script src="js/scene-organize.js"></script>
     <script src="js/deck.js"></script>
     <script>
       // Seule la timeline racine est enregistrée : le player pilote la dernière clé du registre.
