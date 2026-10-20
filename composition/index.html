@@ -116,7 +116,12 @@
       "slides": [
         {
           "sceneId": "assess",
-          "notes": ""
+          "notes": "Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.",
+          "fragments": [
+            50.2,
+            51,
+            52
+          ]
         }
       ]
     },
@@ -559,12 +564,97 @@
       <button class="chevron mini" data-next aria-label="Continuer"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
 
-    <div data-hf-id="hf-m0tm" id="scene-assess" class="scene-frame clip" data-composition-id="assess" data-start="50" data-duration="4" data-width="1920" data-height="1080" data-label="Évaluer">
-      <div data-hf-id="hf-s65a" class="scene-inner">
-      <p data-hf-id="hf-ijfs" class="eyebrow">S4 · Scène 4 / 8</p>
-      <h2 data-hf-id="hf-ssb3" class="title">Évaluer</h2>
-      <p data-hf-id="hf-fea8" class="placeholder">Animation et messages à venir · Voir en démo : lxp.dev.step.eco</p>
+    <div id="scene-assess" class="scene-frame clip" data-composition-id="assess" data-start="50" data-duration="4" data-width="1920" data-height="1080" data-label="Évaluer" data-fragments='[50.2, 51, 52]'>
+      <div class="bar">
+        <button class="btn primary" data-open="https://lxp.dev.step.eco" aria-label="Voir en démo (nouvel onglet)"><span>Voir en démo</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></button>
       </div>
+      <div class="cam">
+        <section class="step ea">
+          <div class="ea-text">
+            <span class="badge">Évaluer</span>
+            <h2 class="h1">Des quiz <b>de quatre types</b></h2>
+            <p class="lede">Une évaluation initiale avant un module, ou un quiz d'auto-évaluation pour s'entraîner.</p>
+          </div>
+          <article class="qz surface">
+            <small class="qz-k">Évaluation initiale</small>
+            <h3 class="qz-t">Quiz d'auto-évaluation</h3>
+            <div class="qtabs" role="tablist">
+              <button type="button" class="tab on" data-p="mcq">QCM</button>
+              <button type="button" class="tab" data-p="tf">Vrai ou faux</button>
+              <button type="button" class="tab" data-p="match">Associations</button>
+              <button type="button" class="tab" data-p="order">Ordre</button>
+            </div>
+            <div class="qbody">
+              <div class="qp on" data-p="mcq">
+                <h4>Que décrit le HTML ?</h4>
+                <button type="button" class="opt" data-ok="0"><span class="dot"></span><span>Les couleurs de la page</span><em class="tg ko">Votre réponse</em></button>
+                <button type="button" class="opt" data-ok="1"><span class="dot"></span><span>Le sens et l'organisation du contenu</span><em class="tg ok">Bonne réponse</em></button>
+                <button type="button" class="opt" data-ok="0"><span class="dot"></span><span>La vitesse du serveur</span><em class="tg ko">Votre réponse</em></button>
+              </div>
+              <div class="qp" data-p="tf">
+                <h4>Un parcours regroupe des modules.</h4>
+                <button type="button" class="opt" data-ok="1"><span class="dot"></span><span>Vrai</span><em class="tg ok">Bonne réponse</em></button>
+                <button type="button" class="opt" data-ok="0"><span class="dot"></span><span>Faux</span><em class="tg ko">Votre réponse</em></button>
+              </div>
+              <div class="qp" data-p="match" data-correct='["regroupe des modules","regroupe des cours","regroupe des activités"]'>
+                <h4>Associez chaque niveau à son rôle.</h4>
+                <div class="mrow"><span class="term">Parcours</span><button type="button" class="ans">regroupe des cours</button></div>
+                <div class="mrow"><span class="term">Module</span><button type="button" class="ans">regroupe des activités</button></div>
+                <div class="mrow"><span class="term">Leçon</span><button type="button" class="ans">regroupe des modules</button></div>
+                <p class="verdict">Associations correctes</p>
+              </div>
+              <div class="qp" data-p="order" data-correct='["Parcours","Module","Cours","Leçon"]'>
+                <h4>Du plus large au plus précis.</h4>
+                <div class="orow"><i>1</i><button type="button" class="ans">Leçon</button></div>
+                <div class="orow"><i>2</i><button type="button" class="ans">Parcours</button></div>
+                <div class="orow"><i>3</i><button type="button" class="ans">Cours</button></div>
+                <div class="orow"><i>4</i><button type="button" class="ans">Module</button></div>
+                <p class="verdict">Ordre correct</p>
+              </div>
+            </div>
+            <div class="qfoot"><span class="qhint">Cliquez une réponse pour la tester.</span><span class="btn primary sm">Question suivante</span></div>
+          </article>
+        </section>
+        <section class="step eb">
+          <article class="res surface">
+            <h3 class="res-t">Résultats du diagnostic</h3>
+            <p class="res-k">Détail des réponses</p>
+            <div class="rrow"><span>Que décrit le HTML ?</span><em class="tg ok on">Bonne réponse</em></div>
+            <div class="rrow"><span>Un parcours regroupe des modules</span><em class="tg ok on">Bonne réponse</em></div>
+            <div class="rrow"><span>Associer les niveaux à leur rôle</span><em class="tg ko on">Mauvaise réponse</em></div>
+            <div class="rrow"><span>Ordonner les niveaux</span><em class="tg ok on">Bonne réponse</em></div>
+            <div class="rfoot"><span class="btn primary">Démarrer le module</span></div>
+          </article>
+          <div class="ringbox">
+            <svg viewBox="0 0 200 200" aria-hidden="true"><circle class="rg-bg" cx="100" cy="100" r="86"/><circle class="rg-fg" cx="100" cy="100" r="86"/></svg>
+            <div class="rg-n"><b>3</b><span>/4</span></div>
+            <p class="rg-c">bonnes réponses</p>
+          </div>
+        </section>
+        <section class="step ec">
+          <article class="rend surface">
+            <h3 class="gh">Travail remis</h3>
+            <p class="who">Apprenant · réponse textuelle</p>
+            <p class="rtxt">Une page se découpe en trois zones : l'en-tête avec le menu, la zone principale avec le contenu, puis le pied de page. Chaque balise indique son rôle au navigateur.</p>
+            <p class="who files">Fichiers</p>
+            <span class="file"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5z"/><polyline points="14 2 14 8 20 8"/></svg>maquette-accueil.pdf</span>
+            <p class="who bar-t">Barème d’évaluation</p>
+            <ul class="bareme"><li><span>Structure de la page</span><b>5 points</b></li><li><span>Accessibilité</span><b>5 points</b></li><li><span>Clarté du texte</span><b>5 points</b></li></ul>
+          </article>
+          <article class="grade surface">
+            <h3 class="gh">Notation</h3>
+            <div class="crit"><span>Structure de la page</span><button type="button" class="score" data-max="5" data-v="4"><b>4</b>/5</button></div>
+            <div class="crit"><span>Accessibilité</span><button type="button" class="score" data-max="5" data-v="3"><b>3</b>/5</button></div>
+            <div class="crit"><span>Clarté du texte</span><button type="button" class="score" data-max="5" data-v="5"><b>5</b>/5</button></div>
+            <p class="total">Total : <b>12</b>/15</p>
+            <p class="who cm">Commentaire</p>
+            <p class="cmt"><span>Bonne structure. Pensez à décrire les images pour les lecteurs d'écran.</span></p>
+            <div class="rfoot"><span class="btn warn sm save" role="button" tabindex="0">Enregistrer la note</span></div>
+            <p class="toast">Note enregistrée</p>
+          </article>
+        </section>
+      </div>
+      <button class="chevron mini" data-next aria-label="Continuer"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
 
     <div data-hf-id="hf-a2sq" id="scene-organize" class="scene-frame clip" data-composition-id="organize" data-start="54" data-duration="4" data-width="1920" data-height="1080" data-label="Organiser">
@@ -610,6 +700,7 @@
     <script src="js/scene-content.js"></script>
     <script src="js/scene-proto.js"></script>
     <script src="js/scene-assistant.js"></script>
+    <script src="js/scene-assess.js"></script>
     <script src="js/deck.js"></script>
     <script>
       // Seule la timeline racine est enregistrée : le player pilote la dernière clé du registre.
