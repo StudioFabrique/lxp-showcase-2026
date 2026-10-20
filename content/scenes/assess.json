@@ -1,0 +1,183 @@
+{
+  "label": "Évaluer",
+  "notes": "Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.",
+  "types": {
+    "intro": {
+      "badge": "Évaluer",
+      "h1": "Des quiz **de quatre types**",
+      "lede": "Une évaluation initiale avant un module, ou un quiz d'auto-évaluation pour s'entraîner."
+    },
+    "quiz": {
+      "etiquette": "Évaluation initiale",
+      "titre": "Quiz d'auto-évaluation",
+      "qtabs": {
+        "tab": [
+          "QCM",
+          "Vrai ou faux",
+          "Associations",
+          "Ordre"
+        ]
+      },
+      "qbody": {
+        "qp": [
+          {
+            "h4": "Que décrit le HTML ?",
+            "opt": [
+              {
+                "span": "Les couleurs de la page",
+                "tg": "Votre réponse"
+              },
+              {
+                "span": "Le sens et l'organisation du contenu",
+                "tg": "Bonne réponse"
+              },
+              {
+                "span": "La vitesse du serveur",
+                "tg": "Votre réponse"
+              }
+            ]
+          },
+          {
+            "h4": "Un parcours regroupe des modules.",
+            "opt": [
+              {
+                "span": "Vrai",
+                "tg": "Bonne réponse"
+              },
+              {
+                "span": "Faux",
+                "tg": "Votre réponse"
+              }
+            ]
+          },
+          {
+            "h4": "Associez chaque niveau à son rôle.",
+            "verdict": "Associations correctes",
+            "pairs": [
+              {
+                "term": "Parcours",
+                "answer": "regroupe des modules"
+              },
+              {
+                "term": "Module",
+                "answer": "regroupe des cours"
+              },
+              {
+                "term": "Leçon",
+                "answer": "regroupe des activités"
+              }
+            ],
+            "startOrder": [
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "h4": "Du plus large au plus précis.",
+            "verdict": "Ordre correct",
+            "items": [
+              "Parcours",
+              "Module",
+              "Cours",
+              "Leçon"
+            ],
+            "startOrder": [
+              3,
+              0,
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      "pied": {
+        "qhint": "Cliquez une réponse pour la tester.",
+        "bouton": "Question suivante"
+      }
+    }
+  },
+  "diagnostic": {
+    "res": {
+      "res-t": "Résultats du diagnostic",
+      "res-k": "Détail des réponses",
+      "dgrow": [
+        {
+          "span": "Que décrit le HTML ?",
+          "tg": "Bonne réponse"
+        },
+        {
+          "span": "Un parcours regroupe des modules",
+          "tg": "Bonne réponse"
+        },
+        {
+          "span": "Associer les niveaux à leur rôle",
+          "tg": "Mauvaise réponse"
+        },
+        {
+          "span": "Ordonner les niveaux",
+          "tg": "Bonne réponse"
+        }
+      ],
+      "pied": {
+        "span": "Démarrer le module"
+      }
+    },
+    "ringbox": {
+      "rg-c": "bonnes réponses"
+    }
+  },
+  "remise": {
+    "rend": {
+      "gh": "Travail remis",
+      "who": [
+        "Apprenant · réponse textuelle",
+        "Fichiers",
+        "Barème d’évaluation"
+      ],
+      "rtxt": "Une page se découpe en trois zones : l'en-tête avec le menu, la zone principale avec le contenu, puis le pied de page. Chaque balise indique son rôle au navigateur.",
+      "file": {
+        "texte": "maquette-accueil.pdf"
+      },
+      "bareme": {
+        "li": [
+          {
+            "span": "Structure de la page",
+            "b": "5 points"
+          },
+          {
+            "span": "Accessibilité",
+            "b": "5 points"
+          },
+          {
+            "span": "Clarté du texte",
+            "b": "5 points"
+          }
+        ]
+      }
+    },
+    "grade": {
+      "gh": "Notation",
+      "crit": [
+        {
+          "span": "Structure de la page"
+        },
+        {
+          "span": "Accessibilité"
+        },
+        {
+          "span": "Clarté du texte"
+        }
+      ],
+      "total": "Total : **12**/15",
+      "who": "Commentaire",
+      "cmt": {
+        "span": "Bonne structure. Pensez à décrire les images pour les lecteurs d'écran."
+      },
+      "pied": {
+        "warn": "Enregistrer la note"
+      },
+      "toast": "Note enregistrée"
+    }
+  }
+}

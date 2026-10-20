@@ -1,0 +1,43 @@
+{
+  "label": "Caractéristiques",
+  "notes": "Neuf caractéristiques sous forme de tuiles : survol ou clic pour les détails. Le chevron suffit pour avancer.",
+  "title": "Ce que fait ANDRIA",
+  "tiles": [
+    {
+      "title": "Personnalisation",
+      "text": "Chacun adapte son apprentissage à ses intérêts et à ses objectifs."
+    },
+    {
+      "title": "Recommandations",
+      "text": "Du contenu proposé selon l'historique d'apprentissage et les préférences."
+    },
+    {
+      "title": "Interactivité",
+      "text": "Échanger avec le contenu et avec les autres, poser des questions."
+    },
+    {
+      "title": "Suivi",
+      "text": "Suivre ses progrès et se fixer des objectifs d'apprentissage à atteindre."
+    },
+    {
+      "title": "Intégration de contenu",
+      "text": "Cours en ligne, autres plateformes (Moodle), articles, vidéos."
+    },
+    {
+      "title": "Analyse",
+      "text": "Comprendre les forces et les faiblesses, pour les apprenants comme pour les administrateurs."
+    },
+    {
+      "title": "Certification",
+      "text": "Démontrer ses compétences et son expertise dans un domaine."
+    },
+    {
+      "title": "Gestion de contenu",
+      "text": "Créer, publier et mettre à jour les contenus d'apprentissage."
+    },
+    {
+      "title": "Assistant virtuel ANDRIA",
+      "text": "Un assistant IA disponible 24 h/24 et 7 j/7 pour aider et recommander."
+    }
+  ]
+}

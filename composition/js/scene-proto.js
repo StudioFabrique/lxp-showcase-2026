@@ -173,7 +173,9 @@
       });
     });
     // Couches : survol ou clic = la plaque se soulève et le détail s'affiche à gauche.
-    var DET = JSON.parse(el.getAttribute("data-layers") || "[]");
+    var DET = (Content.get("proto.architecture.layers") || []).map(function (l) {
+      return l.detail;
+    });
     var ttl = el.querySelector(".pd-t");
     var txt = el.querySelector(".pd-p");
     var D0 = [ttl.textContent, txt.textContent];

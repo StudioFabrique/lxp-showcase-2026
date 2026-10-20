@@ -1,0 +1,128 @@
+{
+  "label": "Un assistant disponible 24 h/24",
+  "notes": "Assistant virtuel disponible 24 h/24 et 7 j/7 ; réponses contextualisées au cours ; quiz suggéré. Les réponses affichées sont des exemples scénarisés.",
+  "lanceur": {
+    "intro": {
+      "badge": "Assistant virtuel ANDRIA",
+      "h1": "Disponible **24 h/24, 7 j/7**",
+      "lede": "Il aide dans la tâche en cours et fait des recommandations intelligentes."
+    },
+    "fan": {
+      "q": [
+        "À quoi sert cette page ?",
+        "À quoi servent les menus ?",
+        "Comment créer une formation ?",
+        "Autres questions"
+      ]
+    },
+    "launcher": {
+      "typing": {
+        "aria": "L'assistant écrit un message"
+      },
+      "tip": {
+        "texte": "Le chatbot",
+        "texte2": "est là pour vous aider.",
+        "pr": "Besoin d'aide ?",
+        "b": "ANDRIA"
+      },
+      "avatar": {
+        "aria": "Ouvrir l'assistant virtuel"
+      }
+    }
+  },
+  "cours": {
+    "reading": {
+      "small": "Les bases du HTML",
+      "h3": "La structure d'une page",
+      "pas": [
+        "Le HTML décrit le sens et l'organisation du contenu.",
+        "La balise <main> contient le contenu principal de la page."
+      ],
+      "pas2": "<header> Navigation </header>\n<main> Votre contenu </main>\n<footer> Informations </footer>",
+      "askbtn": {
+        "span": "Demander à l'IA"
+      }
+    }
+  },
+  "quiz": {
+    "quizcard": {
+      "qtop": {
+        "span": "Quiz généré pour vous",
+        "b": "Question 1 / 4"
+      },
+      "h3": "Quel élément contient le contenu principal ?",
+      "opt": [
+        {
+          "code": "<header>"
+        },
+        {
+          "code": "<main>"
+        },
+        {
+          "code": "<footer>"
+        }
+      ]
+    },
+    "right": "Exact. <main> identifie le contenu principal du document.",
+    "wrong": "Pas tout à fait : relisez le passage sur la balise <main>."
+  },
+  "conversation": {
+    "chead": {
+      "b": "Assistant virtuel ANDRIA",
+      "small": "Assistant virtuel"
+    },
+    "cbody": {
+      "m": [
+        {
+          "small": "Une question sur ce passage ?"
+        },
+        {
+          "small": "Assistant"
+        },
+        {
+          "span": "Contenus de cours associés :",
+          "b": "La structure d'une page"
+        },
+        {
+          "p": "Vous êtes bloqué ? Vous pouvez générer un quiz pour vous aider.",
+          "bouton": {
+            "span": "Générer un quiz"
+          }
+        },
+        {
+          "small": "Assistant",
+          "p": "Voici un quiz pour vérifier ce que vous avez compris. Répondez à côté."
+        }
+      ]
+    },
+    "cinput": {
+      "span": "Posez votre question à l'assistant..."
+    },
+    "passages": [
+      {
+        "selection": "Le HTML décrit le sens et l'organisation du contenu.",
+        "question": "Explique-moi avec un exemple concret.",
+        "answer": [
+          "Sur un site de recettes, le HTML indique ce qui est un titre, une liste d'ingrédients ou une étape de préparation.",
+          "Le navigateur s'en sert pour afficher la page, et les lecteurs d'écran pour la lire."
+        ]
+      },
+      {
+        "selection": "La balise <main> contient le contenu principal de la page.",
+        "question": "Explique-moi avec un exemple concret.",
+        "answer": [
+          "Sur un site de recettes, <main> contient la recette : les ingrédients et les étapes.",
+          "Le menu de navigation reste dans <header>."
+        ]
+      },
+      {
+        "selection": "<header> Navigation </header>",
+        "question": "À quoi sert cette balise ?",
+        "answer": [
+          "<header> regroupe l'en-tête de la page : le logo et le menu de navigation.",
+          "Elle se place avant <main>, qui contient le contenu principal."
+        ]
+      }
+    ]
+  }
+}

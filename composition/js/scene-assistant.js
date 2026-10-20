@@ -13,7 +13,9 @@
     var q = function (s) {
       return "#scene-assistant " + s;
     };
-    var QA = JSON.parse(el.getAttribute("data-qa") || "[]");
+    var QA = (Content.get("assistant.conversation.passages") || []).map(function (p) {
+      return { sel: p.selection, q: p.question, a: p.answer };
+    });
     var DEFAULT = 1;
     var rise = function (target, at, dur) {
       fx.ft(tl, target, { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: dur || 0.7, ease: "power3.out" }, at);
@@ -280,13 +282,13 @@
         if (good) {
           o.classList.add("good");
           qexp.className = "qexp good";
-          qexp.textContent = "Exact. <main> identifie le contenu principal du document.";
+          qexp.textContent = Content.text("assistant.quiz.right");
           gsap.to(qbar, { width: "50%", duration: 0.6, ease: "power2.out" });
           gsap.fromTo(o, { scale: 0.97 }, { scale: 1, duration: 0.5, ease: "back.out(3)" });
         } else {
           o.classList.add("bad");
           qexp.className = "qexp bad";
-          qexp.textContent = "Pas tout à fait : relisez le passage sur la balise <main>.";
+          qexp.textContent = Content.text("assistant.quiz.wrong");
           gsap.fromTo(o, { x: -10 }, { x: 0, duration: 0.5, ease: "elastic.out(1, 0.3)", overwrite: "auto" });
         }
         gsap.fromTo(qexp, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35 });

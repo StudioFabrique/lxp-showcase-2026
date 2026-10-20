@@ -1,0 +1,59 @@
+{
+  "label": "Frise du projet",
+  "notes": "La première phase, financée par la Région, a validé la faisabilité. La deuxième, cofinancée par le FSE, a produit la plateforme actuelle. Cliquer un jalon ouvre sa scène.",
+  "start": {
+    "label": "Projet LXP",
+    "aria": "Dérouler la frise du projet"
+  },
+  "phases": [
+    {
+      "title": "Phase 1",
+      "subtitle": "Région Nouvelle-Aquitaine"
+    },
+    {
+      "title": "Phase 2",
+      "subtitle": "Cofinancée par le FSE"
+    }
+  ],
+  "ticks": [
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ],
+  "end": "Novembre 2026",
+  "steps": [
+    {
+      "period": "Juin 2022 – février 2024",
+      "title": "Prototype et fondations"
+    },
+    {
+      "period": "",
+      "title": "Créer du contenu"
+    },
+    {
+      "period": "",
+      "title": "Assistant virtuel"
+    },
+    {
+      "period": "",
+      "title": "Évaluer"
+    },
+    {
+      "period": "",
+      "title": "Organiser"
+    },
+    {
+      "period": "",
+      "title": "Suivre et accompagner"
+    },
+    {
+      "period": "",
+      "title": "Piloter"
+    },
+    {
+      "period": "",
+      "title": "Personnaliser et encourager"
+    }
+  ]
+}

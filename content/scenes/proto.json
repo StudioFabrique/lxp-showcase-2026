@@ -1,0 +1,88 @@
+{
+  "label": "Un prototype pour valider l'idée",
+  "notes": "Phase 1 : analyse du marché, personas, prototype, bases techniques ; faisabilité validée.",
+  "prototype": {
+    "badge": "Phase 1 · juin 2022 – février 2024",
+    "title": "Un prototype pour **valider l'idée**",
+    "lede": "Analyser le marché, écouter les utilisateurs, puis construire.",
+    "railStart": "Juin 2022",
+    "railEnd": "Février 2024",
+    "cards": [
+      {
+        "title": "Analyse concurrentielle",
+        "subtitle": "Le marché des LXP et des LMS",
+        "points": [
+          "Analyse approfondie du marché des LXP et des LMS",
+          "Décision : concevoir une LXP plutôt que de rester sur un LMS classique (type Moodle)"
+        ]
+      },
+      {
+        "title": "Personas et besoins",
+        "subtitle": "Entretiens apprenants et formateurs",
+        "points": [
+          "Personas d'utilisateurs construits à partir d'entretiens",
+          "Besoins fonctionnels définis avec les apprenants et les formateurs"
+        ]
+      },
+      {
+        "title": "Premier prototype",
+        "subtitle": "Développé et déployé",
+        "points": [
+          "Prototype fonctionnel de la plateforme LXP",
+          "Faisabilité validée, potentiel démontré"
+        ]
+      }
+    ]
+  },
+  "architecture": {
+    "badge": "Bases techniques",
+    "title": "Une architecture **pour durer**",
+    "hint": {
+      "title": "Survolez une couche",
+      "text": "Interface, API, données, livraison : chaque couche pose les bases de la plateforme."
+    },
+    "layers": [
+      {
+        "name": "Livraison · CI/CD",
+        "detail": "Chaîne d'intégration et de déploiement continus (CI/CD)"
+      },
+      {
+        "name": "Données · PostgreSQL et MongoDB",
+        "detail": "Bases de données PostgreSQL et MongoDB"
+      },
+      {
+        "name": "API · Node.js / Express",
+        "detail": "Architecture Node.js / Express"
+      },
+      {
+        "name": "Interface · React",
+        "detail": "Frontend React"
+      },
+      {
+        "name": "Exploration · IA",
+        "detail": "Travaux exploratoires sur l'intégration de l'IA"
+      }
+    ]
+  },
+  "validation": {
+    "title": "Faisabilité **validée**",
+    "lede": "Ce prototype a démontré le potentiel de la solution.",
+    "gains": [
+      {
+        "title": "Marché analysé",
+        "text": "Une LXP plutôt qu'un LMS classique"
+      },
+      {
+        "title": "Besoins recueillis",
+        "text": "Auprès d'apprenants et de formateurs"
+      },
+      {
+        "title": "Prototype déployé",
+        "text": "Fonctionnel, potentiel démontré"
+      }
+    ],
+    "railLeft": "Fin de la phase 1 · février 2024",
+    "railRight": "Phase 2 · 2024 – 2026",
+    "next": "Une plateforme **robuste**, **évolutive** et intégrant des modules d'**intelligence artificielle**."
+  }
+}

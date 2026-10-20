@@ -1,0 +1,159 @@
+{
+  "label": "Créer du contenu",
+  "notes": "Structure en six niveaux, puis éditeur riche et six types d'activité.",
+  "levels": {
+    "badge": "Créer du contenu",
+    "title": "Un parcours, **six niveaux** de contenu",
+    "lede": "De l'organisme de formation aux activités, chaque niveau s'emboîte dans le suivant.",
+    "items": [
+      "Organisme de formation",
+      "Parcours",
+      "Module",
+      "Cours",
+      "Leçon",
+      "Activités"
+    ],
+    "hint": "Cliquez un niveau pour le détailler",
+    "levelBadge": "Niveau {0} sur {1}",
+    "exampleLabel": "Exemple :",
+    "details": [
+      {
+        "role": "L'organisation qui propose les formations.",
+        "example": "Step"
+      },
+      {
+        "role": "Un parcours regroupe des modules.",
+        "example": "Développeur web 2026"
+      },
+      {
+        "role": "Un module regroupe des cours.",
+        "example": "Construire une interface"
+      },
+      {
+        "role": "Un cours regroupe des leçons.",
+        "example": "Les bases du HTML"
+      },
+      {
+        "role": "Une leçon regroupe des activités.",
+        "example": "La structure d'une page"
+      },
+      {
+        "role": "Le contenu que suit l'apprenant : texte, image, vidéo, contenu interactif ou ressources.",
+        "example": "Comprendre la structure HTML"
+      }
+    ]
+  },
+  "editor": {
+    "title": "Un éditeur riche, **cinq types d'activité**",
+    "types": [
+      "Texte",
+      "Image",
+      "Vidéo",
+      "Contenu interactif",
+      "Ressources"
+    ],
+    "toolbar": [
+      "Gras",
+      "Italique",
+      "Liste",
+      "Liste de tâches",
+      "Tableau",
+      "Image",
+      "Code"
+    ],
+    "titlePlaceholder": "Titre",
+    "headings": [
+      "",
+      "Schéma d'une page HTML",
+      "Comprendre la structure HTML",
+      "Simulateur de mise en page",
+      "Ressources du cours"
+    ],
+    "cancel": "Annuler",
+    "text": {
+      "title": "Construire sa première page",
+      "paragraph": "Une page **bien structurée** rend le contenu accessible.",
+      "checklist": [
+        "Définir un titre",
+        "Organiser les sections",
+        "Ajouter des ressources"
+      ],
+      "tableHeaders": [
+        "Section",
+        "Rôle"
+      ],
+      "tableRows": [
+        [
+          "En-tête",
+          "Titre et navigation"
+        ],
+        [
+          "Principal",
+          "Contenu de la page"
+        ]
+      ],
+      "code": "<main>\n  <h1>Construire sa première page</h1>\n</main>"
+    },
+    "image": {
+      "select": "Sélectionner une image",
+      "save": "Sauvegarder"
+    },
+    "video": {
+      "descriptionLabel": "Description",
+      "description": "Les bases de la structure d'une page : en-tête, navigation et contenu principal.",
+      "sourceLabel": "Sélectionner la provenance de la vidéo :",
+      "source": "Un lien externe",
+      "url": "https://exemple.fr/videos/structure-html",
+      "previewTitle": "Aperçu de la vidéo",
+      "time": "02:14 / 06:40",
+      "save": "Sauvegarde"
+    },
+    "interactive": {
+      "url": "https://exemple.fr/simulateur-mise-en-page",
+      "clearAria": "Effacer l'URL",
+      "urlEmpty": "Saisir une URL",
+      "save": "Sauvegarde",
+      "empty": "Saisir une URL ci-dessus pour prévisualiser le contenu."
+    },
+    "resources": {
+      "title": "Ressources",
+      "add": "Ajouter une ressource",
+      "formats": "PDF, Office, texte ou Markdown",
+      "removeAria": "Retirer la ressource",
+      "items": [
+        {
+          "name": "Guide HTML accessible",
+          "file": "guide-html-accessible.pdf",
+          "size": "1,2 Mo"
+        },
+        {
+          "name": "Fiche de synthèse",
+          "file": "synthese-html.pdf",
+          "size": "640 Ko"
+        },
+        {
+          "name": "Exercices corrigés",
+          "file": "exercices-html.docx",
+          "size": "86 Ko"
+        }
+      ],
+      "added": [
+        {
+          "name": "Lien vers le cours",
+          "file": "cours-html.md",
+          "size": "12 Ko"
+        },
+        {
+          "name": "Schéma de la page",
+          "file": "schema-page.pptx",
+          "size": "420 Ko"
+        },
+        {
+          "name": "Glossaire",
+          "file": "glossaire-web.pdf",
+          "size": "210 Ko"
+        }
+      ]
+    }
+  }
+}

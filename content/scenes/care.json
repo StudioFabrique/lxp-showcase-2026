@@ -1,0 +1,208 @@
+{
+  "label": "Suivre et accompagner",
+  "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
+  "preferences": {
+    "intro": {
+      "badge": "Progression et préférences",
+      "h1": "Suivre **chaque apprenant**",
+      "lede": "Son rythme préféré, ses préférences d’apprentissage et sa progression semaine après semaine."
+    },
+    "carte": {
+      "entete": {
+        "h3": "Préférences"
+      },
+      "rcols": {
+        "rcol": [
+          {
+            "who": [
+              "Rythme préféré",
+              "Préférences"
+            ],
+            "paces": {
+              "pace": [
+                "Progressif",
+                "Standard",
+                "Soutenu",
+                "Sans préférence"
+              ],
+              "pace-description": [
+                "Avancer tranquillement, avec davantage d'explications.",
+                "Un équilibre entre explications et mise en pratique.",
+                "Aller plus vite et droit à l'essentiel.",
+                "Adapter le rythme selon le contexte."
+              ]
+            },
+            "pdesc": "Avancer tranquillement, avec davantage d'explications.",
+            "chips": {
+              "cchip": [
+                "Exemples concrets",
+                "Pas-à-pas",
+                "Synthèse",
+                "Questions d’entraînement"
+              ]
+            }
+          },
+          {
+            "who": "Progression",
+            "pbars": {
+              "wkb": [
+                {
+                  "semaine": "Semaine 1",
+                  "modules": "1 module",
+                  "span": "S1"
+                },
+                {
+                  "semaine": "Semaine 2",
+                  "modules": "2 modules",
+                  "span": "S2"
+                },
+                {
+                  "semaine": "Semaine 3",
+                  "modules": "2 modules",
+                  "span": "S3"
+                },
+                {
+                  "semaine": "Semaine 4",
+                  "modules": "3 modules",
+                  "span": "S4"
+                },
+                {
+                  "semaine": "Semaine 5",
+                  "modules": "4 modules",
+                  "span": "S5"
+                },
+                {
+                  "semaine": "Semaine 6",
+                  "modules": "5 modules",
+                  "span": "S6"
+                }
+              ]
+            },
+            "pinfo": "**Semaine 6** · 5 modules"
+          }
+        ]
+      }
+    }
+  },
+  "humeur": {
+    "intro": {
+      "badge": "Humeur de l’apprenant",
+      "h1": "Un point **sur son ressenti**",
+      "lede": "L’apprenant indique chaque jour comment il se sent. L’équipe le voit."
+    },
+    "carte": {
+      "entete": {
+        "h3": "Comment vous sentez-vous aujourd'hui ?"
+      },
+      "mlvs": {
+        "mlv": [
+          {
+            "aria": "Niveau 1"
+          },
+          {
+            "aria": "Niveau 2"
+          },
+          {
+            "aria": "Niveau 3"
+          },
+          {
+            "aria": "Niveau 4"
+          },
+          {
+            "aria": "Niveau 5"
+          }
+        ]
+      },
+      "pied": {
+        "bouton": "Envoyer"
+      },
+      "toast": "Feedback envoyé !"
+    }
+  },
+  "alerte": {
+    "intro": {
+      "badge": "Alerte de décrochage",
+      "h1": "Repérer **avant le décrochage**",
+      "lede": "Un signal arrive en amont, avec les données qui l’expliquent."
+    },
+    "carte": {
+      "entete": {
+        "h3": "Alertes",
+        "alr": "1 cas critique"
+      },
+      "alrow": {
+        "b": "Promotion A",
+        "span": "Risque de décrochage"
+      },
+      "sig": {
+        "b": "Engagement en perte de vitesse",
+        "p": "Plus de 15 jours sans activité et au plus deux jours de connexion sur la période."
+      },
+      "chart": {
+        "leg": {
+          "ok": {
+            "texte": "Réussite"
+          },
+          "wr": {
+            "texte": "Échec"
+          },
+          "ko": {
+            "texte": "Abandon"
+          },
+          "small": "Probabilité estimée"
+        }
+      },
+      "used": {
+        "p": [
+          "Jours sans activité : 16 (seuil : 15)",
+          "Jours de connexion : 2 (seuil : 2)"
+        ]
+      },
+      "donnees": {
+        "voir": "Voir les données utilisées",
+        "masquer": "Masquer les données utilisées"
+      }
+    }
+  },
+  "retour": {
+    "intro": {
+      "badge": "Retour de l’équipe",
+      "h1": "L’équipe **juge l’analyse**",
+      "lede": "Le formateur dit si l’analyse était pertinente, et ce que devient l’apprenant."
+    },
+    "carte": {
+      "entete": {
+        "h3": "Votre retour sur cette analyse"
+      },
+      "recap": {
+        "span": "Promotion A",
+        "b": "Engagement en perte de vitesse",
+        "em": "Risque de décrochage"
+      },
+      "who": [
+        "Choisir un avis",
+        "Devenir de l’apprenant"
+      ],
+      "avis": {
+        "av": [
+          "Analyse pertinente",
+          "Risque surestimé",
+          "Risque sous-estimé",
+          "Je ne peux pas encore me prononcer"
+        ]
+      },
+      "chips": {
+        "cchip": [
+          "Réussite",
+          "Échec",
+          "Abandon",
+          "Pas encore connu"
+        ]
+      },
+      "pied": {
+        "bouton": "Enregistrer le retour"
+      },
+      "toast": "Retour enregistré."
+    }
+  }
+}

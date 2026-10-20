@@ -139,15 +139,10 @@
     };
     // Niveaux : survol = la plaque se soulève ; clic = on sélectionne le niveau (plaque soulevée, niveaux parents
     // soulignés pour montrer l'emboîtement) et le texte de gauche devient la fiche de ce niveau.
-    var LEVELS = [
-      { n: "Organisme de formation", role: "L'organisation qui propose les formations.", ex: "Step" },
-      { n: "Parcours", role: "Un parcours regroupe des modules.", ex: "Développeur web 2026" },
-      { n: "Module", role: "Un module regroupe des cours.", ex: "Construire une interface" },
-      { n: "Cours", role: "Un cours regroupe des leçons.", ex: "Les bases du HTML" },
-      { n: "Leçon", role: "Une leçon regroupe des activités.", ex: "La structure d'une page" },
-      { n: "Activités", role: "Le contenu que suit l'apprenant : texte, image, vidéo, contenu interactif ou ressources.", ex: "Comprendre la structure HTML" },
-    ];
-    var tBadge = el.querySelector(".ca .badge");
+    var LEVELS = Content.get("content.levels.items").map(function (name, i) {
+      var d = Content.get("content.levels.details." + i);
+      return { n: name, role: d.role, ex: d.example };
+    });    var tBadge = el.querySelector(".ca .badge");
     var tH1 = el.querySelector(".ca .h1");
     var tLede = el.querySelector(".ca .lede");
     var T0 = [tBadge.textContent, tH1.innerHTML, tLede.textContent];
@@ -185,7 +180,7 @@
       } else {
         selLevel = i;
         var d = LEVELS[i];
-        swapText("Niveau " + (i + 1) + " sur 6", d.n, d.role + " <b>Exemple : " + d.ex + "</b>", true);
+        swapText(Content.text("content.levels.levelBadge").replace("{0}", i + 1).replace("{1}", LEVELS.length), esc(d.n), esc(d.role) + " <b>" + esc(Content.text("content.levels.exampleLabel")) + " " + esc(d.ex) + "</b>", true);
       }
       renderLevels();
     };
@@ -225,7 +220,7 @@
       '<path d="M10 7.75a.75.75 0 0 1 1.142-.638l3.664 2.249a.75.75 0 0 1 0 1.277l-3.664 2.249A.75.75 0 0 1 10 12.249z"/><path d="M12 17v4"/><path d="M8 21h8"/><rect x="2" y="3" width="20" height="14" rx="2"/>',
       '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/>',
     ];
-    var TITLES = ["", "Schéma d'une page HTML", "Comprendre la structure HTML", "Simulateur de mise en page", "Ressources du cours"];
+    var TITLES = Content.get("content.editor.headings");
     var pvs = gsap.utils.toArray(q(".pv"));
     var act = el.querySelector(".palette .act");
     var ehText = el.querySelector(".eh-text");
@@ -335,7 +330,7 @@
     var empty = el.querySelector(".empty");
     var URL_TXT = urltxt.textContent;
     var setUrl = function (on, quiet) {
-      urltxt.textContent = on ? URL_TXT : "Saisir une URL";
+      urltxt.textContent = on ? URL_TXT : Content.text("content.editor.interactive.urlEmpty");
       urltxt.style.color = on ? "" : "var(--soft)";
       clr.style.visibility = on ? "visible" : "hidden";
       embed.style.display = on ? "flex" : "none";
@@ -353,11 +348,12 @@
     // Ressources : la corbeille retire une ligne, « Ajouter une ressource » en ajoute une.
     var rlist = el.querySelector(".rlist");
     var RLIST0 = rlist.innerHTML;
-    var NEW = [
-      ["Lien vers le cours", "cours-html.md", "12 Ko"],
-      ["Schéma de la page", "schema-page.pptx", "420 Ko"],
-      ["Glossaire", "glossaire-web.pdf", "210 Ko"],
-    ];
+    var NEW = Content.get("content.editor.resources.added").map(function (r) {
+      return [r.name, r.file, r.size];
+    });
+    var esc = function (t) {
+      return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    };
     var nIdx = 0;
     var trash = rlist.querySelector(".rdel").innerHTML;
     rlist.addEventListener("click", function (e) {
@@ -368,12 +364,12 @@
     });
     el.querySelector(".addres").addEventListener("click", function () {
       if (rlist.children.length >= 5) return;
-      var d = NEW[nIdx++ % NEW.length];
+      var d = NEW[nIdx++ % NEW.length].map(esc);
       var row = document.createElement("div");
       row.className = "rrow";
       row.innerHTML =
         '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg><span class="rn">' +
-        d[0] + '</span><span class="rf">' + d[1] + '</span><span class="rs">' + d[2] + '</span><button type="button" class="rdel" aria-label="Retirer la ressource">' + trash + "</button>";
+        d[0] + '</span><span class="rf">' + d[1] + '</span><span class="rs">' + d[2] + '</span><button type="button" class="rdel" aria-label="' + esc(Content.text("content.editor.resources.removeAria")) + '">' + trash + "</button>";
       rlist.appendChild(row);
       gsap.fromTo(row, { opacity: 0, y: 24, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: reduced ? 0 : 0.5, ease: "back.out(1.6)" });
     });

@@ -1,0 +1,119 @@
+{
+  "label": "Piloter",
+  "notes": "Consommation de l'IA par promotion, classement des cours, import de cours Moodle et de parcours, tableaux de bord selon le rôle. Données fictives.",
+  "ia": {
+    "intro": {
+      "badge": "Consommation de l'IA",
+      "h1": "Savoir **ce que consomme l'IA**",
+      "lede": "Les tokens consommés ce mois-ci, par promotion et par utilisateur."
+    },
+    "carte": {
+      "entete": { "h3": "Tableau de bord IA" },
+      "total": { "libelle": "Tokens consommés ce mois-ci", "valeur": "128 400" },
+      "promotions": {
+        "titre": "Utilisation des tokens par promotions ce mois-ci",
+        "items": [
+          { "nom": "Développeur web 2026", "valeur": "76 800", "part": 60 },
+          { "nom": "Designer numérique 2026", "valeur": "51 600", "part": 40 }
+        ]
+      },
+      "top": {
+        "titre": "Top consommateurs de tokens (5 premiers)",
+        "colonnes": ["Utilisateur", "Tokens"],
+        "lignes": [
+          { "nom": "Camille", "valeur": "18 400" },
+          { "nom": "Louis", "valeur": "15 200" },
+          { "nom": "Inès", "valeur": "12 900" },
+          { "nom": "Hugo", "valeur": "11 300" },
+          { "nom": "Léa", "valeur": "9 800" }
+        ]
+      }
+    }
+  },
+  "classement": {
+    "intro": {
+      "badge": "Qualité des cours",
+      "h1": "Voir **les cours les mieux notés**",
+      "lede": "Les retours des apprenants classent les cours de chaque formateur."
+    },
+    "carte": {
+      "entete": { "h3": "Classement de mes cours" },
+      "sousTitre": "Retours des apprenants",
+      "cours": [
+        { "titre": "Les bases du HTML", "note": "4,8" },
+        { "titre": "Concevoir une page accessible", "note": "4,6" },
+        { "titre": "Mettre en page avec CSS", "note": "4,4" },
+        { "titre": "Les formulaires", "note": "4,1" },
+        { "titre": "Publier son site", "note": "3,9" }
+      ],
+      "noteSur": "/ 5",
+      "plus": "Afficher plus",
+      "moins": "Afficher moins"
+    }
+  },
+  "import": {
+    "intro": {
+      "badge": "Réutiliser l'existant",
+      "h1": "Importer **sans tout recréer**",
+      "lede": "Des cours Moodle et des parcours déjà construits entrent dans la plateforme."
+    },
+    "carte": {
+      "entete": { "h3": "Réutiliser les contenus existants" },
+      "options": [
+        {
+          "titre": "Import de cours",
+          "description": "Importer des cours depuis Moodle ainsi que toutes les leçons et activités associées.",
+          "bouton": "Importer des cours",
+          "encours": "Import en cours…",
+          "termine": "Cours importés avec leurs leçons et activités."
+        },
+        {
+          "titre": "Importer un parcours",
+          "description": "Retrouver une structure pédagogique déjà construite.",
+          "bouton": "Importer le parcours",
+          "encours": "Import en cours…",
+          "termine": "Parcours importé avec ses modules."
+        }
+      ]
+    }
+  },
+  "roles": {
+    "intro": {
+      "badge": "Selon le rôle",
+      "h1": "Un tableau de bord **pour chacun**",
+      "lede": "Chaque rôle retrouve les actions et les informations qui le concernent."
+    },
+    "carte": {
+      "entete": { "h3": "Tableaux de bord" },
+      "onglets": [
+        {
+          "nom": "Apprenant",
+          "salutation": "Bonjour Camille !",
+          "tuiles": [
+            { "titre": "Mon avancement", "texte": "Reprendre la leçon en cours." },
+            { "titre": "Calendrier", "texte": "Votre prochaine séance : Atelier CSS." },
+            { "titre": "Remises et évaluations", "texte": "Votre retour pédagogique est disponible." }
+          ]
+        },
+        {
+          "nom": "Équipe pédagogique",
+          "salutation": "Bonjour Marc !",
+          "tuiles": [
+            { "titre": "Classement de mes cours", "texte": "Les cours les mieux notés par vos apprenants." },
+            { "titre": "Alertes de groupe", "texte": "1 cas critique à examiner." },
+            { "titre": "Évaluer un apprenant", "texte": "Noter une remise et laisser un commentaire." }
+          ]
+        },
+        {
+          "nom": "Administrateur",
+          "salutation": "Bonjour Sophie !",
+          "tuiles": [
+            { "titre": "Créer une formation", "texte": "Ouvrir un nouvel organisme de formation." },
+            { "titre": "Créer un utilisateur", "texte": "Inviter une personne et lui attribuer un rôle." },
+            { "titre": "Voir les feedbacks", "texte": "Lire les retours des apprenants." }
+          ]
+        }
+      ]
+    }
+  }
+}

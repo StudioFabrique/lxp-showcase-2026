@@ -140,7 +140,7 @@
         sel = e;
         evd.querySelector("small").textContent = e.getAttribute("data-t") + " · " + e.getAttribute("data-d");
         evd.querySelector("b").textContent = e.getAttribute("data-n");
-        evd.querySelector(".btn").textContent = "Accéder au " + e.getAttribute("data-t").toLowerCase();
+        evd.querySelector(".btn").textContent = Content.text("organize.calendrier.carte.evd.boutonModele").replace("{0}", e.getAttribute("data-t").toLowerCase());
         gsap.fromTo(evd, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4 * d, ease: "power3.out", overwrite: "auto" });
       });
     });
@@ -221,11 +221,12 @@
 
     // Tags : « Ajouter un tag » crée le tag suivant (exemples du LXP) ; × le supprime.
     var tbody = el.querySelector(".tbody");
-    var queue = [
-      ["technologie", "5", "Développeur web 2026"],
-      ["industriel", "2", "Initiation au numérique"],
-      ["artisanal", "1", "Accessibilité du web"],
-    ];
+    var queue = Content.get("organize.tags.carte.suggestions").map(function (t) {
+      return [t.nom, t.usage, t.parcours];
+    });
+    var esc = function (t) {
+      return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    };
     var queueStart = queue.slice();
     var tagStart = tbody.innerHTML;
     var bindDel = function (btn) {
@@ -249,7 +250,7 @@
       var t = queue.shift();
       var row = document.createElement("div");
       row.className = "trow";
-      row.innerHTML = '<span class="tt"><i></i></span><span>' + t[1] + "</span><span>" + t[2] + '</span><button type="button" class="tdel" aria-label="Supprimer">×</button>';
+      row.innerHTML = '<span class="tt"><i></i></span><span>' + esc(t[1]) + "</span><span>" + esc(t[2]) + '</span><button type="button" class="tdel" aria-label="' + esc(Content.text("organize.tags.carte.supprimer")) + '">×</button>';
       row.querySelector(".tt").appendChild(document.createTextNode(t[0]));
       tbody.insertBefore(row, tbody.firstChild);
       bindDel(row.querySelector(".tdel"));

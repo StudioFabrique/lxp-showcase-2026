@@ -165,12 +165,16 @@
     });
     var pbs = gsap.utils.toArray(q(".wkb"));
     var pinfo = el.querySelector(".pinfo");
+    var PINFO0 = pinfo.innerHTML;
+    var esc = function (t) {
+      return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    };
     pbs[pbs.length - 1].classList.add("on");
     pbs.forEach(function (b) {
       hover(b, { y: -6 }, { y: 0 });
       b.addEventListener("click", function () {
         single(pbs, b);
-        pinfo.innerHTML = "<b>" + b.getAttribute("data-w") + "</b> · " + b.getAttribute("data-m");
+        pinfo.innerHTML = "<b>" + esc(b.getAttribute("data-w")) + "</b> · " + esc(b.getAttribute("data-m"));
         gsap.fromTo(pinfo, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3 * d, overwrite: "auto" });
       });
     });
@@ -226,7 +230,7 @@
     var usedOn = false;
     usedBtn.addEventListener("click", function () {
       usedOn = !usedOn;
-      usedBtn.firstChild.textContent = usedOn ? "Masquer les données utilisées" : "Voir les données utilisées";
+      usedBtn.firstChild.textContent = Content.text(usedOn ? "care.alerte.carte.donnees.masquer" : "care.alerte.carte.donnees.voir");
       used.classList.toggle("on", usedOn);
       if (usedOn) gsap.fromTo(used, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4 * d, ease: "power3.out" });
     });
@@ -255,10 +259,10 @@
         b.classList.toggle("on", i < 2);
       });
       single(pbs, pbs[pbs.length - 1]);
-      pinfo.innerHTML = "<b>Semaine 6</b> · 5 modules";
+      pinfo.innerHTML = PINFO0;
       setLevel(LEVEL0, false);
       usedOn = false;
-      usedBtn.firstChild.textContent = "Voir les données utilisées";
+      usedBtn.firstChild.textContent = Content.text("care.alerte.carte.donnees.voir");
       used.classList.remove("on");
       single(avs, avs[0]);
       single(outs, outs[3]);

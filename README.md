@@ -24,7 +24,8 @@ Ouvre la scène dans le navigateur et recharge la page à chaque modification. S
 
 ## Si je veux modifier le contenu sans l'IA, je fais comment ?
 
-- `composition/index.html` : le contenu de toutes les scènes
+- `content/` : **tous les textes** (un fichier JSON par scène, notes de présentateur, URL de démo, années). Voir `content/README.md`. Aucune modification du HTML nécessaire : `npm run build` applique les changements.
+- `composition/index.html` : la structure des scènes (à ne modifier que pour ajouter ou retirer un élément)
 - `composition/js/scene-*.js` : l'animation de chaque scène
 - `composition/css/` : le style
-- `PLAN.md` et `SCRIPT.md` : le plan et le texte de la présentation
+- `PLAN.md` et `SCRIPT.md` : le plan et le script de la présentation

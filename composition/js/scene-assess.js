@@ -207,7 +207,18 @@
     var swaps = ["match", "order"].map(function (name) {
       var panel = el.querySelector('.qp[data-p="' + name + '"]');
       var btns = gsap.utils.toArray(panel.querySelectorAll(".ans"));
-      var correct = JSON.parse(panel.getAttribute("data-correct"));
+      // Textes et réponses attendues viennent du JSON ; la disposition de départ est mélangée (startOrder).
+      var data = Content.get("assess.types.quiz.qbody.qp." + (name === "match" ? 2 : 3));
+      var answers = name === "match" ? data.pairs.map(function (p) { return p.answer; }) : data.items;
+      var correct = answers;
+      if (name === "match") {
+        panel.querySelectorAll(".term").forEach(function (t, i) {
+          t.textContent = data.pairs[i].term;
+        });
+      }
+      btns.forEach(function (b, i) {
+        b.textContent = answers[data.startOrder[i]];
+      });
       var start = btns.map(function (b) {
         return b.textContent;
       });
