@@ -277,3 +277,9 @@ Un numéro de diapositive très discret, et une grille (plan de la présentation
 - **Miniatures** : `npm run thumbs` (`tools/thumbnails.mjs`) ouvre chaque scène avec le même saut que le plan et la capture en WebP (`composition/assets/thumbs/`, ~15 Ko chacune). À relancer quand une scène change visuellement.
 - **Code** : `ui/nav.js` et `ui/nav.css` (copiés dans `dist/ui/`), marquage dans `index.html`. Fonctionne en développement (`npm run scene`) et en `file://` (`dist/index.html`, testé).
 
+## 24. « Suivre et accompagner » : morphing 3D de l'humeur (20/10/2026, branche feature/care-mood-morph)
+Demande : reprendre, pour l'étape « humeur », le morphing 3D de la séquence Hyperframes de `lxp/brag-output`.
+- **Un seul pictogramme en relief** remplace les cinq pictogrammes qui se fondaient l'un dans l'autre : dix couches SVG identiques empilées en profondeur (`--depth`, `translateZ`, teinte qui s'éclaircit vers l'avant, ombre portée sur la couche de face) dans `.feeling-3d`, comme dans `brag-output/composition/motion.js`. Les cinq états sont les tracés `data-level-1…5` du pictogramme (orage, pluie, éclaircies pluvieuses, nuageux avec éclaircies, soleil).
+- **MorphSVG** (`composition/assets/MorphSVGPlugin.min.js`, même version 3.14.2 que GSAP, repris de `brag-output`) déforme réellement le tracé de toutes les couches d'un état à l'autre ; l'icône fait un tour complet sur elle-même avec un léger bond vers l'avant à chaque changement. Démonstration automatique de l'orage au soleil voilé (étape 1), puis **un clic sur un niveau** rejoue le même morphing (état final remis à zéro à la sortie de la scène ; sans animation en `prefers-reduced-motion`).
+- Le plugin est chargé par `composition/index.html`, enregistré dans `scene-care.js` ; `tools/build-dist.mjs` ne le recopie pas dans `dist/assets` (il est déjà inliné).
+

@@ -3260,16 +3260,7 @@
   width: 300px;
   height: 300px;
 }
-.bw {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  color: var(--color-primary);
-}
-.bw.on {
-  opacity: 1;
-}
-.bw svg,
+/* Pictogramme en relief : couches empilées en profondeur, tracé déformé par MorphSVG (voir #scene-care .feeling-3d). */
 .mlv svg {
   width: 100%;
   height: 100%;
@@ -4563,4 +4554,29 @@
 #scene-closing .cl-url {
   font-weight: 500;
   opacity: 0.85;
+}
+
+/* Humeur : pictogramme en relief (couches empilées en profondeur), déformé par MorphSVG ------------------
+   Repris de la séquence Hyperframes (lxp/brag-output) : chaque couche porte le même tracé, décalée en Z. */
+#scene-care .feeling-3d {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  color: var(--color-primary);
+}
+#scene-care .feeling-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: translateZ(calc(var(--depth) * -5px));
+  color: color-mix(in srgb, var(--color-primary) calc(100% - var(--depth) * 6%), var(--color-neutral));
+}
+#scene-care .feeling-layer:last-child {
+  filter: drop-shadow(0 3px 4px color-mix(in srgb, var(--color-neutral) 28%, transparent));
 }

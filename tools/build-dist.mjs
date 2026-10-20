@@ -34,7 +34,7 @@ cpSync(join(root, "ui"), join(dist, "ui"), { recursive: true });
 if (existsSync(join(root, "composition/assets"))) {
   cpSync(join(root, "composition/assets"), join(dist, "assets"), {
     recursive: true,
-    filter: (p) => !/gsap\.min\.js/.test(p),
+    filter: (p) => !/(gsap|MorphSVGPlugin)\.min\.js/.test(p),
   });
 }
 console.log("dist/index.html :", Math.round(wrapper.length / 1024), "Ko");
