@@ -88,7 +88,7 @@
     fx.ft(tl, q(".cl-title, .cl-browser"), { opacity: 1, y: 0 }, { opacity: 0, y: -50, duration: 0.7, ease: "power2.in" }, tf);
     fx.ft(tl, q(".chevron.mini"), { opacity: 1 }, { opacity: 0, duration: 0.3 }, tf);
     tl.set(q(".chevron.mini"), { pointerEvents: "none" }, tf);
-    fx.ft(tl, q(".cl-rail"), { y: 0 }, { y: -420, duration: 1.0, ease: "power3.inOut" }, tf + 0.2);
+    fx.ft(tl, q(".cl-rail"), { y: 0 }, { y: -380, duration: 1.0, ease: "power3.inOut" }, tf + 0.2);
     fx.ft(tl, q(".cl-ext"), { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 1.0, ease: "power2.out" }, tf + 1.1);
     Deck.Stage.fromTo(tl, "hidden", "dock", tf + 0.4, 1.0, "power3.inOut", 0.05);
     // Partenaires et années : l'apparition est déclarée ici (leurs états dépendent sinon de l'introduction).

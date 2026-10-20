@@ -4360,31 +4360,16 @@
   left: 110px;
   top: 170px;
   width: 1130px;
-  height: 700px;
+  height: 660px;
   border-radius: 22px;
   border: 1px solid var(--color-base-300);
   background: var(--color-base-100);
   box-shadow: var(--elev);
   overflow: hidden;
 }
-#scene-closing .cl-bar {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  height: 44px;
-  padding-left: 20px;
-  background: var(--color-base-200);
-  border-bottom: 1px solid var(--color-base-300);
-}
-#scene-closing .cl-bar i {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--color-base-300);
-}
 #scene-closing .cl-view {
   position: relative;
-  height: 656px;
+  height: 100%;
   background: var(--color-base-200);
 }
 #scene-closing .cl-shot {
@@ -4416,7 +4401,7 @@
   left: 1290px;
   top: 170px;
   width: 520px;
-  height: 700px;
+  height: 660px;
 }
 #scene-closing .cl-card {
   position: absolute;
@@ -4464,7 +4449,7 @@
 #scene-closing .cl-rail {
   position: absolute;
   left: 110px;
-  top: 944px;
+  top: 902px;
   width: 1700px;
   height: 60px;
 }
