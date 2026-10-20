@@ -25,3 +25,4 @@ composition/.waveform-cache/
 
 # Pipeline des captures (S5)
 .snapshots-cache/
+.zip-staging/
