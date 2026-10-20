@@ -213,3 +213,12 @@ Retour : pas assez de 3D, transitions peu agréables, trop de majuscules. Action
 
 - **Proto, dernière pause refaite** (20/10) : plus de carte ressemblant à un bouton. Faisabilité validée, trois acquis (marché analysé, besoins recueillis, prototype déployé), puis le fil se prolonge de la fin de la phase 1 (février 2024) vers la phase 2 (2024 – 2026) avec la phrase de cadrage en texte simple.
 - **Frise** : chevron latéral « étape suivante » à droite, sous la ligne (classe `.chevron.side`, clignote horizontalement, survol comme les autres chevrons).
+
+## 15. Scène 3 « Un assistant disponible 24 h/24 » (20/10, branche feature/assistant-scene)
+- Trois pauses : (0) lanceur de l'assistant (avatar rond avec l'icône `bot` du LXP, bulle « Besoin d'aide ? Le chatbot ANDRIA est là pour vous aider. », éventail de questions : « À quoi sert cette page ? », « À quoi servent les menus ? », « Comment créer une formation ? », « Autres questions ») ; (1) cours et conversation : passage surligné, « Demander à l'IA », notice « Une question sur ce passage ? », question, réponse, sources (« Contenus de cours associés »), suggestion « Générer un quiz » ; (2) la recommandation : quiz avec bonne et mauvaise réponses.
+- Interactions : clic avatar = fermer/rouvrir l'éventail ; clic pilule = passer à la conversation ; clic sur un passage puis « Demander à l'IA » = autre conversation ; « Générer un quiz » = quiz ; réponses du quiz.
+- Les réponses de l'assistant sont des **exemples scénarisés** (aucun appel à l'IA), indiqué dans les notes du présentateur. Libellés repris de `front/src/features/chatbot`.
+
+- **Retours du 20/10** : scène « Créer du contenu » : un clic sur un niveau (plaque ou liste) le sélectionne : plaque soulevée, niveaux parents soulignés (emboîtement), et le bloc de texte devient la fiche du niveau (rôle et exemple) ; nouveau clic = retour. Bouton « Frise » retiré des scènes détaillées (retour par la touche ← ou en fin de scène). Sidebar compacte de S1 : largeur 128 px et marges corrigées, icônes centrées. Proto : numéros 1 2 3 retirés des cartes.
+
+- **Assistant : lanceur animé comme dans le LXP** (20/10) : l'avatar arrive par translation depuis la droite (`x:40→0`), la bulle « ... » (trois points qui pulsent) apparaît à sa gauche, puis laisse la place au message « Besoin d'aide ? … » pendant que l'icône oscille (rotation -8° puis 5° puis 0) et que les yeux clignent (volets `clipPath` sur les deux yeux du `bot`, comme `dashboard-eye-shutter` de brag). Pas de bulle d'attente dans la conversation.

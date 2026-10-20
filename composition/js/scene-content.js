@@ -137,27 +137,82 @@
     var tint = function (a) {
       return "rgba(" + rgb + "," + a + ")";
     };
-    // Survol d'un niveau : la plaque se soulève et l'entrée de la liste s'éclaire (et inversement).
-    var focusLevel = function (i, on) {
-      if (reduced) return;
-      gsap.to(plates[i], { y: on ? -22 : 0, duration: 0.4, ease: on ? "back.out(2)" : "power3.out", overwrite: "auto" });
-      gsap.to(plates[i], { borderColor: on ? "rgba(" + rgb + ",1)" : "rgba(186,230,253,1)", duration: 0.3, overwrite: "auto" });
-      gsap.to(rails[i], { backgroundColor: on ? tint(0.1) : tint(0), duration: 0.3, overwrite: "auto" });
+    // Niveaux : survol = la plaque se soulève ; clic = on sélectionne le niveau (plaque soulevée, niveaux parents
+    // soulignés pour montrer l'emboîtement) et le texte de gauche devient la fiche de ce niveau.
+    var LEVELS = [
+      { n: "Organisme de formation", role: "L'organisation qui propose les formations.", ex: "Step" },
+      { n: "Parcours", role: "Un parcours regroupe des modules.", ex: "Développeur web 2026" },
+      { n: "Module", role: "Un module regroupe des cours.", ex: "Construire une interface" },
+      { n: "Cours", role: "Un cours regroupe des leçons.", ex: "Les bases du HTML" },
+      { n: "Leçon", role: "Une leçon regroupe des activités.", ex: "La structure d'une page" },
+      { n: "Activités", role: "Le contenu que suit l'apprenant : texte, image, vidéo, contenu interactif ou ressources.", ex: "Comprendre la structure HTML" },
+    ];
+    var tBadge = el.querySelector(".ca .badge");
+    var tH1 = el.querySelector(".ca .h1");
+    var tLede = el.querySelector(".ca .lede");
+    var T0 = [tBadge.textContent, tH1.innerHTML, tLede.textContent];
+    var selLevel = -1;
+    var hoverLevel = -1;
+    var BORDER = "rgba(186,230,253,1)";
+    var renderLevels = function () {
+      plates.forEach(function (pl, i) {
+        var on = i === selLevel || i === hoverLevel;
+        var parent = selLevel >= 0 && i < selLevel;
+        gsap.to(pl, { y: on && !reduced ? (i === selLevel ? -30 : -22) : 0, duration: 0.4, ease: on ? "back.out(2)" : "power3.out", overwrite: "auto" });
+        gsap.to(pl, { borderColor: on ? "rgba(" + rgb + ",1)" : parent ? "rgba(" + rgb + ",0.5)" : BORDER, duration: 0.3, overwrite: "auto" });
+        gsap.to(rails[i], { backgroundColor: i === selLevel ? tint(0.16) : on ? tint(0.1) : parent ? tint(0.05) : tint(0), duration: 0.3, overwrite: "auto" });
+      });
+    };
+    var swapText = function (badge, h1Html, lede, ledeHtml) {
+      var parts = [tBadge, tH1, tLede];
+      gsap.to(parts, {
+        opacity: 0,
+        y: -14,
+        duration: reduced ? 0 : 0.18,
+        onComplete: function () {
+          tBadge.textContent = badge;
+          tH1.innerHTML = h1Html;
+          if (ledeHtml) tLede.innerHTML = lede;
+          else tLede.textContent = lede;
+          gsap.fromTo(parts, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: reduced ? 0 : 0.35, ease: "power3.out", stagger: 0.06 });
+        },
+      });
+    };
+    var selectLevel = function (i) {
+      if (i === selLevel) {
+        selLevel = -1;
+        swapText(T0[0], T0[1], T0[2], false);
+      } else {
+        selLevel = i;
+        var d = LEVELS[i];
+        swapText("Niveau " + (i + 1) + " sur 6", d.n, d.role + " <b>Exemple : " + d.ex + "</b>", true);
+      }
+      renderLevels();
     };
     plates.forEach(function (pl, i) {
       pl.addEventListener("mouseenter", function () {
-        focusLevel(i, true);
+        hoverLevel = i;
+        renderLevels();
       });
       pl.addEventListener("mouseleave", function () {
-        focusLevel(i, false);
+        hoverLevel = -1;
+        renderLevels();
+      });
+      pl.addEventListener("click", function () {
+        selectLevel(i);
       });
     });
     rails.forEach(function (li, i) {
       li.addEventListener("mouseenter", function () {
-        focusLevel(i, true);
+        hoverLevel = i;
+        renderLevels();
       });
       li.addEventListener("mouseleave", function () {
-        focusLevel(i, false);
+        hoverLevel = -1;
+        renderLevels();
+      });
+      li.addEventListener("click", function () {
+        selectLevel(i);
       });
     });
 
@@ -324,8 +379,14 @@
     });
 
     el.addEventListener("scene:leave", function () {
+      selLevel = -1;
+      hoverLevel = -1;
+      tBadge.textContent = T0[0];
+      tH1.innerHTML = T0[1];
+      tLede.textContent = T0[2];
+      gsap.set([tBadge, tH1, tLede], { opacity: 1, y: 0 });
       plates.forEach(function (_, i) {
-        gsap.set(plates[i], { borderColor: "rgba(186,230,253,1)" });
+        gsap.set(plates[i], { borderColor: BORDER, y: 0 });
         gsap.set(rails[i], { backgroundColor: tint(0) });
       });
       rows.forEach(function (r) {

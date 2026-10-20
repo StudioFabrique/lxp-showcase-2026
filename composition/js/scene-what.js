@@ -100,7 +100,7 @@
       { opacity: 1, x: 0, y: 0, z: 65, rotation: 0, duration: 1.0, ease: "back.out(1.2)" },
       4.3,
     );
-    fx.ft(tl, q(".sbar"), { width: 104 }, { width: 430, duration: 0.8, ease: "sine.inOut" }, 5.2);
+    fx.ft(tl, q(".sbar"), { width: 128 }, { width: 430, duration: 0.8, ease: "sine.inOut" }, 5.2);
     fx.ft(tl, q(".sbar .glass"), { opacity: 1 }, { opacity: 0, duration: 1.1, ease: "sine.inOut" }, 5.1);
     fx.ft(
       tl,
