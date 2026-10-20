@@ -676,25 +676,58 @@ window.CONTENT = {
         "_commit": "ef6724e3c"
       },
       {
-        "date": "8 septembre 2026",
-        "titre": "L'espace de l'apprenant",
+        "date": "5 mars 2026",
+        "titre": "L'ancien tableau de bord",
         "fonctions": [
-          "Menu simplifié",
-          "Tutoriel guidé et assistant",
+          "Actions rapides en boutons",
+          "Tableau des derniers parcours",
           ""
         ],
-        "image": "assets/snapshots/2026-09-08-8001ea2.webp",
-        "_commit": "8001ea2c0"
+        "image": "assets/snapshots/2026-03-05-ef6724e-tableau-de-bord.webp",
+        "_commit": "ef6724e3c"
       },
       {
         "date": "15 octobre 2026",
-        "titre": "Le tableau de bord actuel",
+        "titre": "Le nouveau tableau de bord",
         "fonctions": [
           "Derniers parcours et modules",
           "Actions rapides",
           ""
         ],
         "image": "assets/snapshots/2026-10-15-5708778.webp",
+        "_commit": "57087787e"
+      },
+      {
+        "date": "15 octobre 2026",
+        "titre": "La gestion des parcours",
+        "fonctions": [
+          "Formations et parcours en cartes",
+          "Recherche d'un parcours",
+          ""
+        ],
+        "image": "assets/snapshots/2026-10-15-5708778-parcours.webp",
+        "_commit": "57087787e"
+      },
+      {
+        "date": "15 octobre 2026",
+        "titre": "La médiathèque",
+        "fonctions": [
+          "Images, vidéos, audios, fichiers",
+          "Recherche et tri",
+          ""
+        ],
+        "image": "assets/snapshots/2026-10-15-5708778-mediatheque.webp",
+        "_commit": "57087787e"
+      },
+      {
+        "date": "15 octobre 2026",
+        "titre": "Les tags",
+        "fonctions": [
+          "Liste des tags",
+          "Utilisation par parcours",
+          ""
+        ],
+        "image": "assets/snapshots/2026-10-15-5708778-tags.webp",
         "_commit": "57087787e"
       }
     ],

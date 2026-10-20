@@ -58,3 +58,22 @@ export const studentUser = {
   email: "lea.moreau@exemple.fr",
   roles: [{ _id: "r3", role: "student", label: "Apprenant", rank: 3, protection: 1 }],
 };
+
+/** Données des pages de gestion de l'interface actuelle (médiathèque, tags). Fictives. */
+const MEDIA = [
+  ["logo-organisme.png", "image", 124000, 4], ["banniere-parcours.jpg", "image", 860000, 2], ["schema-html.svg", "image", 18000, 6],
+  ["photo-equipe.webp", "image", 312000, 0], ["capture-editeur.png", "image", 540000, 3], ["intro-html.mp4", "video", 47100000, 1],
+];
+export function modernPages(path) {
+  if (path === "/media") {
+    return {
+      medias: MEDIA.map(([name, type, size, used], i) => ({ id: i + 1, url: `/uploads/${type}s/media-${i + 1}.png`, name, type, size, used, createdAt: new Date(Date.UTC(2026, 8, 20 - i)).toISOString(), associatedActivities: [] })),
+      total: MEDIA.length,
+      totalPages: 1,
+    };
+  }
+  const tags = [["web", "#0369a1", 5, ["Développeur web 2026"]], ["accessibilité", "#059669", 3, ["Accessibilité du web"]], ["design", "#a16207", 2, ["Designer numérique"]], ["javascript", "#7c3aed", 4, ["Développeur web 2026"]]].map(([name, color, totalUses, ps], i) => ({ id: i + 1, name, color, canDelete: true, canUpdate: true, totalUses, parcours: ps.map((title, k) => ({ id: k + 1, title })) }));
+  if (path === "/tag") return tags;
+  if (path.startsWith("/tag/paginate")) return { list: tags, total: tags.length };
+  return undefined;
+}
