@@ -1952,6 +1952,12 @@
   height: 56px;
 }
 
+/* Clôture : le chevron avance d'une capture le long de la frise, sous la ligne et à droite. */
+#scene-closing .chevron.mini.side {
+  top: 945px;
+  right: 110px;
+}
+
 /* Assistant virtuel · étape 0 : lanceur et éventail de questions -------------------------------------- */
 .as-text {
   position: absolute;
@@ -2569,6 +2575,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.qnext:disabled {
+  opacity: 0.4;
+  cursor: default;
+  box-shadow: none;
 }
 .qhint {
   font-size: 24px;
@@ -4198,6 +4209,7 @@
 }
 #scene-personalize .pz-modal {
   position: relative;
+  isolation: isolate;
   padding: 34px 28px;
   border-radius: 24px;
   border: 1px solid var(--color-base-300);
@@ -4205,29 +4217,16 @@
   box-shadow: var(--elev-sm);
   overflow: hidden;
 }
+/* Confettis du LXP (react-confetti) : le canevas prend la largeur de la carte et la hauteur d'une fenêtre,
+   la carte rogne ce qui dépasse ; il passe derrière le contenu comme dans module-completion-modal. */
 #scene-personalize .pz-confetti {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 900px;
+  z-index: -1;
   pointer-events: none;
-}
-#scene-personalize .pz-cf {
-  position: absolute;
-  width: 14px;
-  height: 24px;
-  border-radius: 3px;
-  transform: rotate(var(--r));
-}
-#scene-personalize .pz-cf.c0 {
-  background: var(--color-primary);
-}
-#scene-personalize .pz-cf.c1 {
-  background: var(--color-warning);
-}
-#scene-personalize .pz-cf.c2 {
-  background: var(--color-accent);
-}
-#scene-personalize .pz-cf.c3 {
-  background: var(--color-secondary);
 }
 #scene-personalize .pz-trophy {
   display: grid;
@@ -4386,6 +4385,127 @@
 }
 #scene-closing .cl-shot.none img {
   display: none;
+}
+/* Comparatif de la page de connexion (dernier écran) : 2023 à gauche, 2026 à droite, puis la bande des photos Unsplash. */
+#scene-closing .cl-cmp {
+  display: block;
+}
+#scene-closing .cmp-pane {
+  position: absolute;
+  top: 61px;
+  width: 505px;
+}
+#scene-closing .cmp-then {
+  left: 28px;
+}
+#scene-closing .cmp-now {
+  left: 597px;
+}
+#scene-closing .cmp-pane figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  height: 44px;
+  font-size: 26px;
+  color: var(--soft);
+}
+#scene-closing .cmp-pane figcaption b {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-neutral);
+}
+#scene-closing .cmp-now figcaption b {
+  color: var(--color-primary);
+}
+#scene-closing .cmp-frame {
+  position: relative;
+  height: 316px;
+  border-radius: 14px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+  box-shadow: var(--elev-sm);
+  overflow: hidden;
+}
+#scene-closing .cmp-frame img,
+#scene-closing .cmp-ph img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+#scene-closing .cmp-arrow {
+  position: absolute;
+  left: 545px;
+  top: 249px;
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#scene-closing .cmp-badge {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--color-neutral);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+#scene-closing .cmp-strip {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  top: 475px;
+  height: 124px;
+}
+#scene-closing .cmp-query {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 286px;
+  height: 124px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--color-base-300);
+  background: var(--color-base-100);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#scene-closing .cmp-query small {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--soft);
+}
+#scene-closing .cmp-query span {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+#scene-closing .cmp-photos {
+  position: absolute;
+  left: 304px;
+  top: 0;
+  display: flex;
+  gap: 14px;
+}
+#scene-closing .cmp-ph {
+  position: relative;
+  width: 180px;
+  height: 124px;
+  border-radius: 12px;
+  border: 3px solid var(--color-base-300);
+  overflow: hidden;
 }
 #scene-closing .cl-info {
   position: absolute;

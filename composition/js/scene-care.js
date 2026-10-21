@@ -26,7 +26,6 @@
 
     var enter = function (cls, t, rows) {
       var s = q("." + cls);
-      fx.ft(tl, s + " .badge", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, t + 0.1);
       fx.ft(
         tl,
         s + " .h1",

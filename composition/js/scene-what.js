@@ -30,7 +30,6 @@
     fx.ft(tl, "#intro-chevron", { opacity: 1 }, { opacity: 0, duration: 0.2 }, 0);
 
     // ── Étape 0 : définition ─────────────────────────────────────────────────────────────
-    rise(q(".wa .badge"), 0.6);
     fx.ft(tl, 
       q(".wa .h1"),
       { opacity: 0, y: 60, rotationX: -24, transformPerspective: P, transformOrigin: "50% 100%" },

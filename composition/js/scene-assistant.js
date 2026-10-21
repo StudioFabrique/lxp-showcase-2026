@@ -64,7 +64,6 @@
     fx.ft(tl, q(".bar"), { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0);
 
     // ── Étape 0 : le lanceur ──────────────────────────────────────────────────────────────
-    rise(q(".aa .badge"), 0.3);
     fx.ft(
       tl,
       q(".aa .h1"),

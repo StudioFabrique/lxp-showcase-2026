@@ -3,7 +3,6 @@
   "notes": "Assistant virtuel disponible 24 h/24 et 7 j/7 ; réponses contextualisées au cours ; quiz suggéré. Les réponses affichées sont des exemples scénarisés.",
   "lanceur": {
     "intro": {
-      "badge": "Assistant virtuel ANDRIA",
       "h1": "Disponible **24 h/24, 7 j/7**",
       "lede": "Il aide dans la tâche en cours et fait des recommandations intelligentes."
     },

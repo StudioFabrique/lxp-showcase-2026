@@ -31,7 +31,6 @@
     // Entrée d'un outil : le texte monte, la carte arrive en pivotant, puis le contenu se pose ligne à ligne.
     var enter = function (cls, t, rows) {
       var s = q("." + cls);
-      fx.ft(tl, s + " .badge", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, t + 0.1);
       fx.ft(
         tl,
         s + " .h1",
@@ -140,7 +139,6 @@
         sel = e;
         evd.querySelector("small").textContent = e.getAttribute("data-t") + " · " + e.getAttribute("data-d");
         evd.querySelector("b").textContent = e.getAttribute("data-n");
-        evd.querySelector(".btn").textContent = Content.text("organize.calendrier.carte.evd.boutonModele").replace("{0}", e.getAttribute("data-t").toLowerCase());
         gsap.fromTo(evd, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4 * d, ease: "power3.out", overwrite: "auto" });
       });
     });

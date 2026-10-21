@@ -3,7 +3,6 @@
   "notes": "Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.",
   "types": {
     "intro": {
-      "badge": "Évaluer",
       "h1": "Des quiz **de quatre types**",
       "lede": "Une évaluation initiale avant un module, ou un quiz d'auto-évaluation pour s'entraîner."
     },
@@ -118,10 +117,7 @@
           "span": "Ordonner les niveaux",
           "tg": "Bonne réponse"
         }
-      ],
-      "pied": {
-        "span": "Démarrer le module"
-      }
+      ]
     },
     "ringbox": {
       "rg-c": "bonnes réponses"

@@ -3,7 +3,6 @@
   "notes": "Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.",
   "calendrier": {
     "intro": {
-      "badge": "Calendrier",
       "h1": "Un calendrier **par parcours**",
       "lede": "Consultez les cours, les devoirs et les modules d’un parcours."
     },
@@ -79,16 +78,11 @@
             "ev-date": "Mardi 27 octobre"
           }
         ]
-      },
-      "evd": {
-        "bouton": "Accéder au cours",
-        "boutonModele": "Accéder au {0}"
       }
     }
   },
   "mediatheque": {
     "intro": {
-      "badge": "Médiathèque",
       "h1": "Tous les médias **au même endroit**",
       "lede": "Gérez toutes les ressources utilisées dans l’application."
     },
@@ -260,14 +254,12 @@
   },
   "groupes": {
     "intro": {
-      "badge": "Groupes et formateurs",
       "h1": "Des groupes **rattachés à un parcours**",
       "lede": "Chaque groupe est lié à un parcours et aux formateurs qui l’accompagnent."
     },
     "carte": {
       "entete": {
-        "h3": "Groupes",
-        "bouton": "Créer un groupe"
+        "h3": "Groupes"
       },
       "ghead": {
         "span": [
@@ -322,7 +314,6 @@
   },
   "tags": {
     "intro": {
-      "badge": "Tags",
       "h1": "Des tags pour **classer les contenus**",
       "lede": "Créer, modifier et supprimer des tags."
     },

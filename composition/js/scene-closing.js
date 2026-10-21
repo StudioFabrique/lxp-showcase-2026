@@ -18,8 +18,10 @@
     var cards = gsap.utils.toArray(q(".cl-card"));
     var dots = gsap.utils.toArray(q(".cl-dot"));
     var N = cards.length;
+    var CMP = 7.3; // durée du dernier écran (comparatif de la connexion) : quatre photos Unsplash se succèdent
     var T = function (k) {
-      return 1.0 + k * 2.4; // instant d'entrée de la capture k ; k = N : dernier plan
+      // instant d'entrée de la capture k ; k = N : dernier plan
+      return k < N ? 1.0 + k * 2.4 : 1.0 + (N - 1) * 2.4 + CMP;
     };
     var RAIL_W = 1480; // longueur de la frise entre la première et la dernière capture
     var dotX = function (k) {
@@ -63,7 +65,7 @@
     );
     fx.ft(tl, q(".cl-line"), { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.5);
     fx.ft(tl, dots, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.04 }, 0.7);
-    fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 1.2);
+    fx.ft(tl, q(".chevron.mini"), { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4 }, 1.2);
     tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, 1.2);
 
     // Une capture à la fois : fondu enchaîné, fiche de date, repère actif sur la frise.
@@ -79,8 +81,30 @@
       fx.ft(tl, dots[k].querySelector("i"), { scale: 1, backgroundColor: C.base, borderColor: C.line }, { scale: 1.3, backgroundColor: C.pri, borderColor: C.pri, duration: 0.4, ease: "back.out(2)" }, t);
       fx.ft(tl, dots[k].querySelector("i"), { scale: 1.3 }, { scale: 1, duration: 0.3 }, out);
       fx.ft(tl, q(".cl-done"), { width: dotX(k > 0 ? k - 1 : 0) }, { width: dotX(k), duration: 0.8, ease: "power2.inOut" }, t);
-      tl.addLabel("step" + k, t + 1.5);
+      if (k === N - 1) compare(t);
+      tl.addLabel("step" + k, t + (k === N - 1 ? CMP - 0.8 : 1.5));
       void feats;
+    }
+
+    // Dernier écran : la connexion de 2023 (visuel fixe) face à celle de 2026, dont le fond change de photo Unsplash.
+    // La bande du bas montre d'où vient l'image : la recherche, les photos proposées, celle qui est affichée.
+    function compare(t) {
+      var now = gsap.utils.toArray(q(".cmp-now-img"));
+      var thumbs = gsap.utils.toArray(q(".cmp-ph"));
+      var off = { opacity: 0.45, scale: 0.94, borderColor: C.line };
+      var on = { opacity: 1, scale: 1, borderColor: C.pri };
+      fx.ft(tl, q(".cmp-then"), { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, t + 0.3);
+      fx.ft(tl, q(".cmp-arrow"), { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, t + 0.7);
+      fx.ft(tl, q(".cmp-now"), { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, t + 0.8);
+      fx.ft(tl, q(".cmp-badge"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, t + 1.3);
+      fx.ft(tl, q(".cmp-query"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, t + 0.9);
+      fx.ft(tl, thumbs[0], off, on, t + 1.1); // première photo : active dès l'entrée
+      for (var j = 1; j < now.length; j++) {
+        var tj = t + 1.7 + (j - 1) * 1.7;
+        fx.ft(tl, now[j], { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power1.inOut" }, tj);
+        fx.ft(tl, thumbs[j - 1], on, off, tj);
+        fx.ft(tl, thumbs[j], off, on, tj);
+      }
     }
 
     // Dernier plan : la frise monte au centre et se prolonge ; le bandeau d'identité revient.

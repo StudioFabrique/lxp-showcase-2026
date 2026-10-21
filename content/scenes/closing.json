@@ -1,6 +1,6 @@
 {
   "label": "Évolution de l'interface",
-  "notes": "Un commit à la fois : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer.",
+  "notes": "Un commit à la fois : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer. Dernier écran : la page de connexion, comparée entre 2023 (visuel fixe) et 2026 (le fond est une photo tirée de l'API Unsplash à chaque visite). Les quatre photos affichées sont de vraies photos Unsplash (licence Unsplash) ; les captures sont produites par tools/snapshots/login.mjs.",
   "title": "L'interface au fil des mois",
   "captureManquante": "Capture à venir",
   "snapshots": [
@@ -160,13 +160,12 @@
     },
     {
       "date": "15 octobre 2026",
-      "titre": "Les tags",
+      "titre": "La page de connexion",
       "fonctions": [
-        "Liste des tags",
-        "Utilisation par parcours",
-        ""
+        "Une photo Unsplash à chaque visite",
+        "Thème clair ou sombre, photo adaptée",
+        "Photo de secours si l'API est indisponible"
       ],
-      "image": "assets/snapshots/2026-10-15-5708778-tags.webp",
       "_commit": "57087787e"
     }
   ],
@@ -174,5 +173,44 @@
     "message": "Le projet continue d'évoluer",
     "demo": "Voir la démo",
     "adresse": "lxp.dev.step.eco"
+  },
+  "comparatif": {
+    "debut": {
+      "annee": "2023",
+      "legende": "Un visuel fixe",
+      "image": "assets/connexion/debut.webp",
+      "alt": "Page de connexion de 2023 : formulaire sur fond uni, image décorative fixe"
+    },
+    "fin": {
+      "annee": "2026",
+      "legende": "Une photo Unsplash",
+      "alt": "Page de connexion de 2026 : fond en tuiles tiré d'une photo Unsplash",
+      "images": [
+        "assets/connexion/fin-1.webp",
+        "assets/connexion/fin-2.webp",
+        "assets/connexion/fin-3.webp",
+        "assets/connexion/fin-4.webp"
+      ]
+    },
+    "requete": "abstract architecture minimal",
+    "requeteLibelle": "Recherche Unsplash",
+    "photos": [
+      {
+        "image": "assets/connexion/unsplash-1.webp",
+        "alt": "Façade blanche, architecture minimale"
+      },
+      {
+        "image": "assets/connexion/unsplash-2.webp",
+        "alt": "Architecture abstraite en noir et blanc"
+      },
+      {
+        "image": "assets/connexion/unsplash-3.webp",
+        "alt": "Béton brutaliste et escaliers"
+      },
+      {
+        "image": "assets/connexion/unsplash-4.webp",
+        "alt": "Relief de béton géométrique"
+      }
+    ]
   }
 }

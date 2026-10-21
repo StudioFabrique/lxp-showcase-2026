@@ -45,7 +45,6 @@
     fx.ft(tl, q(".bar"), { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0);
 
     // ── Étape 0 : les types de quiz ────────────────────────────────────────────────────────
-    rise(q(".ea .badge"), 0.3);
     fx.ft(
       tl,
       q(".ea .h1"),
@@ -97,7 +96,6 @@
     fx.ft(tl, q(".res-t, .res-k"), { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.1 }, 7.0);
     fx.ft(tl, q(".dgrow"), { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.16 }, 7.4);
     fx.ft(tl, q(".dgrow .tg"), { scale: 0.5 }, { scale: 1, duration: 0.4, ease: "back.out(2.4)", stagger: 0.16 }, 7.6);
-    fx.ft(tl, q(".rfoot .btn"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 8.5);
     fx.ft(tl, q(".ringbox"), { opacity: 0, scale: 0.7, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.9, ease: "back.out(1.5)" }, 7.0);
     fx.ft(tl, q(".rg-fg"), { strokeDashoffset: 540.35 }, { strokeDashoffset: 135.09, duration: 1.4, ease: "power2.inOut" }, 7.5);
     fx.ft(tl, q(".rg-n"), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(2)" }, 8.1);
@@ -154,7 +152,13 @@
     // Onglets : on change de type de quiz.
     var tabs = gsap.utils.toArray(q(".tab"));
     var panels = gsap.utils.toArray(q(".qp"));
+    var next = el.querySelector(".qnext");
     var show = function (name) {
+      // « Question suivante » passe au type de quiz suivant ; sur le dernier type, il est désactivé.
+      var at = tabs.findIndex(function (t) {
+        return t.getAttribute("data-p") === name;
+      });
+      next.disabled = at === tabs.length - 1;
       tabs.forEach(function (t) {
         t.classList.toggle("on", t.getAttribute("data-p") === name);
       });
@@ -166,6 +170,12 @@
         else gsap.set(p, { opacity: 0, x: 0 });
       });
     };
+    next.addEventListener("click", function () {
+      var at = tabs.findIndex(function (t) {
+        return t.classList.contains("on");
+      });
+      if (at < tabs.length - 1) show(tabs[at + 1].getAttribute("data-p"));
+    });
     tabs.forEach(function (t) {
       hover(t, { y: -3 }, { y: 0 });
       t.addEventListener("click", function () {

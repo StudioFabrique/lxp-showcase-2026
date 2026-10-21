@@ -47,8 +47,8 @@ export const captures = {
   10: { route: "/admin", mock: modern(anyList) },
   // 15 octobre 2026 · le nouveau tableau de bord (nouveaux composants)
   11: { route: "/admin/dashboard", mock: modern() },
-  // 15 octobre 2026 · autres pages de la nouvelle interface : parcours, médiathèque, tags
+  // 15 octobre 2026 · autres pages de la nouvelle interface : parcours, médiathèque
   12: page("/admin/parcours"),
   13: page("/admin/mediatheque"),
-  14: page("/admin/tags"),
+  // 14 · comparatif de la page de connexion (2023 / 2026) : captures par tools/snapshots/login.mjs
 };
