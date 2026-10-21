@@ -76,8 +76,9 @@ export function serve(dir) {
 /**
  * Ouvre la page, simule toutes les requêtes fetch / XHR avec `mock(path, method, url)` et prend la capture.
  * `mock` renvoie un corps JSON, ou `{ __status, __body }` pour forcer un statut.
+ * `files` : { fragment d'URL → fichier local } ; les requêtes d'images correspondantes sont servies depuis le disque (captures hors ligne).
  */
-export async function capture({ dir, route, mock, out, viewport = { width: 1440, height: 900 }, storage = {}, before, wait = 1800, log = console.log }) {
+export async function capture({ dir, route, mock, out, viewport = { width: 1440, height: 900 }, storage = {}, before, wait = 1800, files = {}, log = console.log }) {
   const server = await serve(dir);
   const browser = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox", "--hide-scrollbars"] });
   const seen = new Set();
@@ -91,6 +92,8 @@ export async function capture({ dir, route, mock, out, viewport = { width: 1440,
     await page.setRequestInterception(true);
     page.on("request", (r) => {
       const t = r.resourceType();
+      const local = Object.entries(files).find(([frag]) => r.url().includes(frag));
+      if (local) return void r.respond({ status: 200, contentType: MIME[extname(local[1])] || "image/jpeg", headers: { "access-control-allow-origin": "*" }, body: readFileSync(local[1]) });
       if (t === "image" && /\/(uploads|images|media|files)\//.test(r.url())) {
         // Images de contenu (téléversements) : un aplat coloré stable, pour que les listes ne soient pas vides.
         const h = [...r.url()].reduce((a, c) => (a * 31 + c.charCodeAt(0)) % 360, 7);
