@@ -320,7 +320,6 @@
     });
     var test = el.querySelector(".pz-test");
     hover(test, { y: -2 }, { y: 0 });
-    hover(el.querySelector(".pz-edit"), { y: -2 }, { y: 0 });
     activateOn(test, function () {
       toast(el.querySelector(".zc .pz-toast"));
     });

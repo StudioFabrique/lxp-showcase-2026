@@ -55,8 +55,7 @@
         "bouton": "Accéder à la plateforme"
       },
       "actions": {
-        "test": "Envoyer un e-mail de test",
-        "modifier": "Modifier le template"
+        "test": "Envoyer un e-mail de test"
       },
       "confirmation": "E-mail de test envoyé."
     }

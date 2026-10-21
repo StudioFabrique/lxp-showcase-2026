@@ -65,7 +65,7 @@
     );
     fx.ft(tl, q(".cl-line"), { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.5);
     fx.ft(tl, dots, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.04 }, 0.7);
-    fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 1.2);
+    fx.ft(tl, q(".chevron.mini"), { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4 }, 1.2);
     tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, 1.2);
 
     // Une capture à la fois : fondu enchaîné, fiche de date, repère actif sur la frise.

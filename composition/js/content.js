@@ -862,10 +862,6 @@ window.CONTENT = {
         ],
         "code": "<main>\n  <h1>Construire sa première page</h1>\n</main>"
       },
-      "image": {
-        "select": "Sélectionner une image",
-        "save": "Sauvegarder"
-      },
       "video": {
         "descriptionLabel": "Description",
         "description": "Les bases de la structure d'une page : en-tête, navigation et contenu principal.",
@@ -873,14 +869,12 @@ window.CONTENT = {
         "source": "Un lien externe",
         "url": "https://exemple.fr/videos/structure-html",
         "previewTitle": "Aperçu de la vidéo",
-        "time": "02:14 / 06:40",
-        "save": "Sauvegarde"
+        "time": "02:14 / 06:40"
       },
       "interactive": {
         "url": "https://exemple.fr/simulateur-mise-en-page",
         "clearAria": "Effacer l'URL",
         "urlEmpty": "Saisir une URL",
-        "save": "Sauvegarde",
         "empty": "Saisir une URL ci-dessus pour prévisualiser le contenu."
       },
       "resources": {
@@ -1474,8 +1468,7 @@ window.CONTENT = {
           "bouton": "Accéder à la plateforme"
         },
         "actions": {
-          "test": "Envoyer un e-mail de test",
-          "modifier": "Modifier le template"
+          "test": "Envoyer un e-mail de test"
         },
         "confirmation": "E-mail de test envoyé."
       }

@@ -1952,6 +1952,12 @@
   height: 56px;
 }
 
+/* Clôture : le chevron avance d'une capture le long de la frise, sous la ligne et à droite. */
+#scene-closing .chevron.mini.side {
+  top: 945px;
+  right: 110px;
+}
+
 /* Assistant virtuel · étape 0 : lanceur et éventail de questions -------------------------------------- */
 .as-text {
   position: absolute;
