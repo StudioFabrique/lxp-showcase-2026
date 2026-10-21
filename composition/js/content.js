@@ -45,7 +45,6 @@ window.CONTENT = {
     "notes": "Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.",
     "types": {
       "intro": {
-        "badge": "Évaluer",
         "h1": "Des quiz **de quatre types**",
         "lede": "Une évaluation initiale avant un module, ou un quiz d'auto-évaluation pour s'entraîner."
       },
@@ -160,10 +159,7 @@ window.CONTENT = {
             "span": "Ordonner les niveaux",
             "tg": "Bonne réponse"
           }
-        ],
-        "pied": {
-          "span": "Démarrer le module"
-        }
+        ]
       },
       "ringbox": {
         "rg-c": "bonnes réponses"
@@ -228,7 +224,6 @@ window.CONTENT = {
     "notes": "Assistant virtuel disponible 24 h/24 et 7 j/7 ; réponses contextualisées au cours ; quiz suggéré. Les réponses affichées sont des exemples scénarisés.",
     "lanceur": {
       "intro": {
-        "badge": "Assistant virtuel ANDRIA",
         "h1": "Disponible **24 h/24, 7 j/7**",
         "lede": "Il aide dans la tâche en cours et fait des recommandations intelligentes."
       },
@@ -356,7 +351,6 @@ window.CONTENT = {
     "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
     "preferences": {
       "intro": {
-        "badge": "Progression et préférences",
         "h1": "Suivre **chaque apprenant**",
         "lede": "Son rythme préféré, ses préférences d’apprentissage et sa progression semaine après semaine."
       },
@@ -439,7 +433,6 @@ window.CONTENT = {
     },
     "humeur": {
       "intro": {
-        "badge": "Humeur de l’apprenant",
         "h1": "Un point **sur son ressenti**",
         "lede": "L’apprenant indique chaque jour comment il se sent. L’équipe le voit."
       },
@@ -474,7 +467,6 @@ window.CONTENT = {
     },
     "alerte": {
       "intro": {
-        "badge": "Alerte de décrochage",
         "h1": "Repérer **avant le décrochage**",
         "lede": "Un signal arrive en amont, avec les données qui l’expliquent."
       },
@@ -519,7 +511,6 @@ window.CONTENT = {
     },
     "retour": {
       "intro": {
-        "badge": "Retour de l’équipe",
         "h1": "L’équipe **juge l’analyse**",
         "lede": "Le formateur dit si l’analyse était pertinente, et ce que devient l’apprenant."
       },
@@ -1002,7 +993,6 @@ window.CONTENT = {
     "notes": "Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.",
     "calendrier": {
       "intro": {
-        "badge": "Calendrier",
         "h1": "Un calendrier **par parcours**",
         "lede": "Consultez les cours, les devoirs et les modules d’un parcours."
       },
@@ -1078,16 +1068,11 @@ window.CONTENT = {
               "ev-date": "Mardi 27 octobre"
             }
           ]
-        },
-        "evd": {
-          "bouton": "Accéder au cours",
-          "boutonModele": "Accéder au {0}"
         }
       }
     },
     "mediatheque": {
       "intro": {
-        "badge": "Médiathèque",
         "h1": "Tous les médias **au même endroit**",
         "lede": "Gérez toutes les ressources utilisées dans l’application."
       },
@@ -1259,14 +1244,12 @@ window.CONTENT = {
     },
     "groupes": {
       "intro": {
-        "badge": "Groupes et formateurs",
         "h1": "Des groupes **rattachés à un parcours**",
         "lede": "Chaque groupe est lié à un parcours et aux formateurs qui l’accompagnent."
       },
       "carte": {
         "entete": {
-          "h3": "Groupes",
-          "bouton": "Créer un groupe"
+          "h3": "Groupes"
         },
         "ghead": {
           "span": [
@@ -1321,7 +1304,6 @@ window.CONTENT = {
     },
     "tags": {
       "intro": {
-        "badge": "Tags",
         "h1": "Des tags pour **classer les contenus**",
         "lede": "Créer, modifier et supprimer des tags."
       },
@@ -1392,7 +1374,6 @@ window.CONTENT = {
     "notes": "Thèmes clairs et sombres au choix de l'organisme ; identité (nom, logo) ; modèles d'e-mails ; félicitations, badges de compétences et historique d'accomplissements. Données fictives.",
     "themes": {
       "intro": {
-        "badge": "Thèmes",
         "h1": "Une interface **à vos couleurs**",
         "lede": "Chaque organisme choisit les thèmes accessibles à tous ses utilisateurs."
       },
@@ -1441,7 +1422,6 @@ window.CONTENT = {
     },
     "identite": {
       "intro": {
-        "badge": "Identité",
         "h1": "Le **nom et le logo** de l'organisme",
         "lede": "L'instance prend l'identité de l'organisme qui l'utilise."
       },
@@ -1472,7 +1452,6 @@ window.CONTENT = {
     },
     "emails": {
       "intro": {
-        "badge": "E-mails",
         "h1": "Des **e-mails à votre image**",
         "lede": "Un modèle au choix pour les messages envoyés aux utilisateurs."
       },
@@ -1503,7 +1482,6 @@ window.CONTENT = {
     },
     "felicitations": {
       "intro": {
-        "badge": "Encourager",
         "h1": "Célébrer **chaque étape** franchie",
         "lede": "Les modules terminés et les compétences acquises sont reconnus à l'apprenant."
       },
@@ -1583,7 +1561,6 @@ window.CONTENT = {
       ]
     },
     "architecture": {
-      "badge": "Bases techniques",
       "title": "Une architecture **pour durer**",
       "hint": {
         "title": "Survolez une couche",
@@ -1644,7 +1621,6 @@ window.CONTENT = {
     "notes": "Consommation de l'IA par promotion, classement des cours, import de cours Moodle et de parcours, tableaux de bord selon le rôle. Données fictives.",
     "ia": {
       "intro": {
-        "badge": "Consommation de l'IA",
         "h1": "Savoir **ce que consomme l'IA**",
         "lede": "Les tokens consommés ce mois-ci, par promotion et par utilisateur."
       },
@@ -1704,7 +1680,6 @@ window.CONTENT = {
     },
     "classement": {
       "intro": {
-        "badge": "Qualité des cours",
         "h1": "Voir **les cours les mieux notés**",
         "lede": "Les retours des apprenants classent les cours de chaque formateur."
       },
@@ -1742,7 +1717,6 @@ window.CONTENT = {
     },
     "import": {
       "intro": {
-        "badge": "Réutiliser l'existant",
         "h1": "Importer **sans tout recréer**",
         "lede": "Des cours Moodle et des parcours déjà construits entrent dans la plateforme."
       },
@@ -1770,7 +1744,6 @@ window.CONTENT = {
     },
     "roles": {
       "intro": {
-        "badge": "Selon le rôle",
         "h1": "Un tableau de bord **pour chacun**",
         "lede": "Chaque rôle retrouve les actions et les informations qui le concernent."
       },
@@ -1884,7 +1857,6 @@ window.CONTENT = {
     "label": "ANDRIA",
     "notes": "Trois temps : ce qu'est ANDRIA, le problème résolu et les objectifs, puis la comparaison LMS / LXP. Une interaction par temps.",
     "definition": {
-      "badge": "Qu'est-ce qu'ANDRIA ?",
       "title": "Une **plateforme d'expérience** d'apprentissage",
       "acronym": [
         "**L**earning",
@@ -1910,23 +1882,19 @@ window.CONTENT = {
     },
     "problems": [
       {
-        "badge": "Depuis 2020",
         "title": "Individualiser les parcours",
         "text": "Les outils LMS existants sont centrés sur les contenus plutôt que sur l'apprenant."
       },
       {
-        "badge": "Formation à distance",
         "title": "Prévenir le décrochage",
         "text": "Les publics fragilisés décrochent davantage en formation à distance, depuis la pandémie."
       },
       {
-        "badge": "Besoin non satisfait",
         "title": "Gagner en autonomie",
         "text": "Les apprenants attendent plus d'autonomie que ce que les outils disponibles leur offrent."
       }
     ],
     "goals": {
-      "badge": "Neuf objectifs, trois pilliers",
       "families": [
         {
           "title": "Apprendre",

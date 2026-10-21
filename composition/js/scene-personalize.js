@@ -23,6 +23,116 @@
   };
   var START_THEME = "ocean";
 
+  // Confettis du LXP : transcription de react-confetti 6.4 (Particle, ParticleGenerator) avec les réglages de
+  // module-completion-modal (recycle: false, numberOfPieces: 400, couleurs par défaut). Le hasard est remplacé par un
+  // générateur à graine et le temps par des pas fixes de 1/60 s : le rendu ne dépend que de l'instant demandé,
+  // ce qui garde le retour arrière et les captures exacts.
+  var CONFETTI_COLORS = ["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4CAF50", "#8BC34A", "#CDDC39", "#FFEB3B", "#FFC107", "#FF9800", "#FF5722", "#795548"];
+  function makeConfetti(canvas, reduced) {
+    var N = 400, SPAWN_MS = 5000, STEP = 1000 / 60, SCALE = 2;
+    var ctx = canvas.getContext("2d");
+    var W = 0, H = 0, st = null;
+    var clock = { t: 0 };
+    var seeded = function (seed) {
+      return function () {
+        seed = (seed + 0x6d2b79f5) | 0;
+        var x = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+        return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+      };
+    };
+    var ease = function (t, b, end, d) {
+      var c = end - b;
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t -= 1;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+    var fresh = function () {
+      return { frame: 0, rnd: seeded(2026), parts: [], made: 0, progress: 0 };
+    };
+    var between = function (r, a, b) {
+      return a + r() * (b - a);
+    };
+    var spawn = function (r) {
+      return {
+        x: between(r, 0, W),
+        y: 0,
+        w: between(r, 5, 20),
+        h: between(r, 5, 20),
+        radius: between(r, 5, 10),
+        vx: between(r, -4, 4),
+        vy: between(r, -10, 0),
+        shape: Math.floor(between(r, 0, 3)),
+        angle: (between(r, 0, 360) * Math.PI) / 180,
+        spin: between(r, -0.2, 0.2),
+        color: CONFETTI_COLORS[Math.floor(r() * CONFETTI_COLORS.length)],
+        rotY: between(r, 0, 1),
+        dir: 1,
+      };
+    };
+    var advance = function () {
+      var r = st.rnd;
+      st.progress = Math.min(SPAWN_MS, st.progress + STEP);
+      if (st.made < N) {
+        var add = Math.round(ease(st.progress, 0, N, SPAWN_MS) - st.made);
+        for (var i = 0; i < add; i++) st.parts.push(spawn(r));
+        st.made += add;
+      }
+      for (var k = st.parts.length - 1; k >= 0; k--) {
+        var p = st.parts[k];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.1;
+        p.vy *= 0.99;
+        p.vx *= 0.99;
+        if (p.rotY >= 1 && p.dir === 1) p.dir = -1;
+        else if (p.rotY <= -1 && p.dir === -1) p.dir = 1;
+        p.rotY += 0.1 * p.dir;
+        p.angle += p.spin;
+        if (p.y > H || p.y < -100 || p.x > W + 100 || p.x < -100) st.parts.splice(k, 1);
+      }
+      st.frame++;
+    };
+    var paint = function () {
+      ctx.setTransform(SCALE, 0, 0, SCALE, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      st.parts.forEach(function (p) {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.angle);
+        ctx.scale(1, p.rotY);
+        ctx.rotate(p.angle);
+        ctx.fillStyle = p.color;
+        if (p.shape === 0) {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.radius, 0, 2 * Math.PI);
+          ctx.fill();
+        } else if (p.shape === 1) ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        else ctx.fillRect(-p.w / 6, -p.h / 2, p.w / 3, p.h);
+        ctx.restore();
+      });
+    };
+    return {
+      clock: clock,
+      draw: function () {
+        var w = canvas.parentNode.offsetWidth || 600;
+        var h = canvas.offsetHeight || 900;
+        if (w !== W || h !== H) {
+          W = w;
+          H = h;
+          canvas.width = W * SCALE;
+          canvas.height = H * SCALE;
+          st = null;
+        }
+        var target = reduced ? 0 : Math.round((clock.t * 1000) / STEP);
+        if (!st || target < st.frame) st = fresh();
+        while (st.frame < target) advance();
+        paint();
+      },
+    };
+  }
+
   Deck.scenes.personalize = function (tl, el) {
     var S = Deck.Stage;
     var fx = Deck.fx;
@@ -38,7 +148,6 @@
 
     var enter = function (cls, t, rows) {
       var s = q("." + cls);
-      fx.ft(tl, s + " .badge", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, t + 0.1);
       fx.ft(
         tl,
         s + " .h1",
@@ -128,7 +237,9 @@
     enter("zd", 15.6, [".pz-ico", ".pz-hist"]);
     fx.ft(tl, q(".pz-modal"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 16.6);
     fx.ft(tl, q(".pz-trophy"), { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.7, ease: "back.out(2.2)" }, 16.9);
-    fx.ft(tl, q(".pz-cf"), { opacity: 0, y: -140 }, { opacity: 1, y: 0, duration: 1.4, ease: "bounce.out", stagger: 0.04 }, 17.1);
+    // Confettis : même simulation que react-confetti dans la modale de fin de module (400 pièces, sans recyclage).
+    var confetti = makeConfetti(el.querySelector(".pz-confetti"), reduced);
+    tl.fromTo(confetti.clock, { t: 0 }, { t: 9, duration: 9, ease: "none", immediateRender: false, onUpdate: confetti.draw }, 16.9);
     fx.ft(tl, q(".pz-msg, .pz-bh, .pz-bdg"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out", stagger: 0.09 }, 17.6);
     chevOn(20.6);
     tl.addLabel("step3", 20.9);

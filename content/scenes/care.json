@@ -3,7 +3,6 @@
   "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
   "preferences": {
     "intro": {
-      "badge": "Progression et préférences",
       "h1": "Suivre **chaque apprenant**",
       "lede": "Son rythme préféré, ses préférences d’apprentissage et sa progression semaine après semaine."
     },
@@ -86,7 +85,6 @@
   },
   "humeur": {
     "intro": {
-      "badge": "Humeur de l’apprenant",
       "h1": "Un point **sur son ressenti**",
       "lede": "L’apprenant indique chaque jour comment il se sent. L’équipe le voit."
     },
@@ -121,7 +119,6 @@
   },
   "alerte": {
     "intro": {
-      "badge": "Alerte de décrochage",
       "h1": "Repérer **avant le décrochage**",
       "lede": "Un signal arrive en amont, avec les données qui l’expliquent."
     },
@@ -166,7 +163,6 @@
   },
   "retour": {
     "intro": {
-      "badge": "Retour de l’équipe",
       "h1": "L’équipe **juge l’analyse**",
       "lede": "Le formateur dit si l’analyse était pertinente, et ce que devient l’apprenant."
     },

@@ -3,7 +3,6 @@
   "notes": "Thèmes clairs et sombres au choix de l'organisme ; identité (nom, logo) ; modèles d'e-mails ; félicitations, badges de compétences et historique d'accomplissements. Données fictives.",
   "themes": {
     "intro": {
-      "badge": "Thèmes",
       "h1": "Une interface **à vos couleurs**",
       "lede": "Chaque organisme choisit les thèmes accessibles à tous ses utilisateurs."
     },
@@ -26,7 +25,6 @@
   },
   "identite": {
     "intro": {
-      "badge": "Identité",
       "h1": "Le **nom et le logo** de l'organisme",
       "lede": "L'instance prend l'identité de l'organisme qui l'utilise."
     },
@@ -44,7 +42,6 @@
   },
   "emails": {
     "intro": {
-      "badge": "E-mails",
       "h1": "Des **e-mails à votre image**",
       "lede": "Un modèle au choix pour les messages envoyés aux utilisateurs."
     },
@@ -66,7 +63,6 @@
   },
   "felicitations": {
     "intro": {
-      "badge": "Encourager",
       "h1": "Célébrer **chaque étape** franchie",
       "lede": "Les modules terminés et les compétences acquises sont reconnus à l'apprenant."
     },

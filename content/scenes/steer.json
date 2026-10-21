@@ -3,7 +3,6 @@
   "notes": "Consommation de l'IA par promotion, classement des cours, import de cours Moodle et de parcours, tableaux de bord selon le rôle. Données fictives.",
   "ia": {
     "intro": {
-      "badge": "Consommation de l'IA",
       "h1": "Savoir **ce que consomme l'IA**",
       "lede": "Les tokens consommés ce mois-ci, par promotion et par utilisateur."
     },
@@ -32,7 +31,6 @@
   },
   "classement": {
     "intro": {
-      "badge": "Qualité des cours",
       "h1": "Voir **les cours les mieux notés**",
       "lede": "Les retours des apprenants classent les cours de chaque formateur."
     },
@@ -53,7 +51,6 @@
   },
   "import": {
     "intro": {
-      "badge": "Réutiliser l'existant",
       "h1": "Importer **sans tout recréer**",
       "lede": "Des cours Moodle et des parcours déjà construits entrent dans la plateforme."
     },
@@ -79,7 +76,6 @@
   },
   "roles": {
     "intro": {
-      "badge": "Selon le rôle",
       "h1": "Un tableau de bord **pour chacun**",
       "lede": "Chaque rôle retrouve les actions et les informations qui le concernent."
     },

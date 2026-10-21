@@ -2,49 +2,30 @@
   "label": "ANDRIA",
   "notes": "Trois temps : ce qu'est ANDRIA, le problème résolu et les objectifs, puis la comparaison LMS / LXP. Une interaction par temps.",
   "definition": {
-    "badge": "Qu'est-ce qu'ANDRIA ?",
     "title": "Une **plateforme d'expérience** d'apprentissage",
-    "acronym": [
-      "**L**earning",
-      "e**X**perience",
-      "**P**latform"
-    ],
+    "acronym": ["**L**earning", "e**X**perience", "**P**latform"],
     "lede": "Des contenus et des modalités de formation adaptés aux besoins, aux envies et au profil de chacun, pour développer ses compétences en restant motivé et engagé.",
-    "plates": [
-      "L'apprenant",
-      "Ses besoins",
-      "Ses envies",
-      "Son profil"
-    ]
+    "plates": ["L'apprenant", "Ses besoins", "Ses envies", "Son profil"]
   },
   "sidebar": {
     "aria": "Difficultés et objectifs",
-    "items": [
-      "Individualiser",
-      "Décrochage",
-      "Autonomie",
-      "Les objectifs"
-    ]
+    "items": ["Individualiser", "Décrochage", "Autonomie", "Les objectifs"]
   },
   "problems": [
     {
-      "badge": "Depuis 2020",
       "title": "Individualiser les parcours",
       "text": "Les outils LMS existants sont centrés sur les contenus plutôt que sur l'apprenant."
     },
     {
-      "badge": "Formation à distance",
       "title": "Prévenir le décrochage",
       "text": "Les publics fragilisés décrochent davantage en formation à distance, depuis la pandémie."
     },
     {
-      "badge": "Besoin non satisfait",
       "title": "Gagner en autonomie",
       "text": "Les apprenants attendent plus d'autonomie que ce que les outils disponibles leur offrent."
     }
   ],
   "goals": {
-    "badge": "Neuf objectifs, trois familles",
     "families": [
       {
         "title": "Apprendre",

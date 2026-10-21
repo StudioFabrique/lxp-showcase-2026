@@ -61,7 +61,6 @@
       });
     fx.ft(tl, q(".pb"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, 5.7);
     tl.set(q(".pb"), { pointerEvents: "auto" }, 5.7);
-    rise(q(".pb .badge"), 5.8);
     fx.ft(
       tl,
       q(".pb .h1"),
