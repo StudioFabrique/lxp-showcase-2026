@@ -51,7 +51,7 @@ lxp-showcase-2026/
 3. **PAUSE** → **LXP vs LMS** : tableau à 5 lignes, animé ligne par ligne (centré contenus ↔ centré utilisateur, etc.), phrase de conclusion « créer le contenant qui produit les données ».
 
 ### S2 — Scène intermédiaire 2 : caractéristiques
-- Le logo reste en haut, 9 tuiles interactives en dessous (une par caractéristique : Personnalisation, Recommandations, Interactivité, Suivi, Intégration de contenu (Moodle), Analyse, Certification, Gestion de contenu, Assistant virtuel). Survol / clic = tuile qui s'agrandit avec un court texte et une icône Lucide. La tuile 2 du brief original était vide : la liste ci-dessus la remplit.
+- Le logo reste en haut, 9 tuiles interactives en dessous (une par caractéristique : Personnalisation, Reprise de l’apprentissage, Interactivité, Suivi, Intégration de contenu (Moodle), Analyse, Certification, Gestion de contenu, Assistant virtuel). Survol / clic = tuile qui s'agrandit avec un court texte et une icône Lucide. La tuile 2 du brief original était vide : la liste ci-dessus la remplit.
 - Tuiles optionnelles, pas de gate obligatoire par tuile : le chevron suffit pour avancer.
 - **Transition S2 → S3** : le logo et les logos partenaires disparaissent (animation existante inversée), puis « 2022 » et « 2026 » glissent chacun vers un côté, sans toucher les bords (marge de 4 vw).
 

@@ -87,7 +87,7 @@ Légende : **[PAUSE]** = la lecture s'arrête jusqu'à une interaction (chevron,
 | # | Tuile | Phrase |
 |---|---|---|
 | 1 | Personnalisation | Chacun adapte son apprentissage à ses intérêts et à ses objectifs. |
-| 2 | Recommandations | Du contenu proposé selon l'historique et les préférences. |
+| 2 | Reprendre là où l'on s'était arrêté | L'apprenant retrouve sa dernière leçon et la reprend en un clic. |
 | 3 | Interactivité | Échanger avec le contenu et avec les autres, poser des questions. |
 | 4 | Suivi | Suivre ses progrès et se fixer des objectifs à atteindre. |
 | 5 | Intégration de contenu | Cours en ligne, autres plateformes (Moodle), articles, vidéos. |

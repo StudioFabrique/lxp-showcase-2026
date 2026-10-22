@@ -1837,8 +1837,8 @@ window.CONTENT = {
         "text": "Chacun adapte son apprentissage à ses intérêts et à ses objectifs."
       },
       {
-        "title": "Recommandations",
-        "text": "Du contenu proposé selon l'historique d'apprentissage et les préférences."
+        "title": "Reprendre là où l'on s'était arrêté",
+        "text": "L'apprenant retrouve sa dernière leçon et la reprend en un clic."
       },
       {
         "title": "Interactivité",
