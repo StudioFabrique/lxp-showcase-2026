@@ -348,15 +348,15 @@ window.CONTENT = {
   },
   "care": {
     "label": "Accompagner chaque apprenant",
-    "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
+    "notes": "Progression de l'apprenant (reprise de la dernière leçon, avancement, profil d'apprentissage) ; humeur du jour : une barre se règle et le pictogramme se déforme en relief (morphing 3D), puis un commentaire est envoyé ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
     "preferences": {
       "intro": {
-        "h1": "Suivre **chaque apprenant**",
-        "lede": "Son rythme préféré, ses préférences d’apprentissage et sa progression semaine après semaine."
+        "h1": "Chaque apprenant **garde sa progression**",
+        "lede": "Il reprend là où il s'était arrêté, suit son avancement et renseigne son rythme et ses préférences d'apprentissage."
       },
       "carte": {
         "entete": {
-          "h3": "Préférences"
+          "h3": "Espace de l'apprenant"
         },
         "rcols": {
           "rcol": [
@@ -387,45 +387,35 @@ window.CONTENT = {
                   "Synthèse",
                   "Questions d’entraînement"
                 ]
-              }
+              },
+              "titre": "Mon profil d'apprentissage",
+              "aide": "Renseigné par l'apprenant"
             },
             {
-              "who": "Progression",
-              "pbars": {
-                "wkb": [
+              "reprise": {
+                "titre": "Reprendre là où je m'étais arrêté",
+                "lignes": [
                   {
-                    "semaine": "Semaine 1",
-                    "modules": "1 module",
-                    "span": "S1"
+                    "module": "Construire une interface",
+                    "cours": "Cours 1 : Les bases du HTML",
+                    "etiquette": "HTML",
+                    "progression": "2 / 3",
+                    "prochaine": "La structure d'une page"
                   },
                   {
-                    "semaine": "Semaine 2",
-                    "modules": "2 modules",
-                    "span": "S2"
-                  },
-                  {
-                    "semaine": "Semaine 3",
-                    "modules": "2 modules",
-                    "span": "S3"
-                  },
-                  {
-                    "semaine": "Semaine 4",
-                    "modules": "3 modules",
-                    "span": "S4"
-                  },
-                  {
-                    "semaine": "Semaine 5",
-                    "modules": "4 modules",
-                    "span": "S5"
-                  },
-                  {
-                    "semaine": "Semaine 6",
-                    "modules": "5 modules",
-                    "span": "S6"
+                    "module": "Développer une API",
+                    "cours": "Cours 2 : Les routes HTTP",
+                    "etiquette": "API REST",
+                    "progression": "1 / 4",
+                    "prochaine": "Définir une route"
                   }
                 ]
               },
-              "pinfo": "**Semaine 6** · 5 modules"
+              "avancement": {
+                "titre": "Mon avancement",
+                "module": "Construire une interface",
+                "valeur": "68 %"
+              }
             }
           ]
         }
@@ -434,7 +424,7 @@ window.CONTENT = {
     "humeur": {
       "intro": {
         "h1": "Un point **sur son ressenti**",
-        "lede": "L’apprenant indique chaque jour comment il se sent. L’équipe le voit."
+        "lede": "L’apprenant règle chaque jour comment il se sent, avec un mot s’il le souhaite. L’équipe le voit."
       },
       "carte": {
         "entete": {
@@ -462,7 +452,14 @@ window.CONTENT = {
         "pied": {
           "bouton": "Envoyer"
         },
-        "toast": "Feedback envoyé !"
+        "toast": "Feedback envoyé !",
+        "slider": {
+          "aria": "Niveau de ressenti, de 1 à 5"
+        },
+        "commentaire": {
+          "libelle": "Commentaire (facultatif)",
+          "exemple": "Je bloque sur la dernière leçon."
+        }
       }
     },
     "alerte": {

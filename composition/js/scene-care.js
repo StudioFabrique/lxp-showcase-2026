@@ -1,6 +1,7 @@
 /* Scène détaillée « Suivre et accompagner » (jalon 6). Quatre PAUSES :
-   0 progression et préférences d'un apprenant
-   1 l'humeur du jour (un pictogramme météo en relief se déforme d'un état à l'autre : MorphSVG, 3D)
+   0 progression d'un apprenant (reprise, avancement, profil d'apprentissage)
+   1 l'humeur du jour : un curseur règle la barre, le pictogramme météo en relief se déforme (MorphSVG, 3D),
+     puis un commentaire est envoyé (séquence reprise de la présentation Hyperframes du dépôt lxp)
    2 l'alerte de décrochage et les données utilisées
    3 le retour de l'équipe sur l'analyse.
    Libellés repris du LXP (learning-profile, feeling-feedback, PredictionPanel, AnalysisFeedbackForm).
@@ -18,7 +19,9 @@
     };
     var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var d = reduced ? 0 : 1;
-    var LEVEL0 = 4; // niveau affiché à l'issue de la démonstration
+    var LEVEL_START = 3; // niveau au début de la démonstration
+    var LEVEL0 = 2; // niveau affiché à l'issue de la démonstration
+    var D = 3.5; // décalage des étapes suivantes : la démonstration de l'humeur dure plus longtemps
 
     S.set(tl, "hidden", 0);
     tl.set(q(".ra"), { pointerEvents: "auto" }, 0);
@@ -74,9 +77,8 @@
     };
 
     // ── Étape 0 : progression et préférences ──────────────────────────────────────────────
-    enter("ra", 0.9, [".who", ".pace", ".pdesc", ".cchip", ".pinfo"]);
-    fx.ft(tl, q(".wkb"), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.08 }, 2.4);
-    fx.ft(tl, q(".wkb i"), { scaleY: 0 }, { scaleY: 1, duration: 0.7, ease: "back.out(1.4)", stagger: 0.12 }, 2.6);
+    enter("ra", 0.9, [".rtitle", ".raide", ".who", ".pace", ".pdesc", ".cchip", ".rsm-row", ".avb"]);
+    fx.ft(tl, q(".avb .track i"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out" }, 3.0);
     chevOn(5.0);
     tl.addLabel("step0", 5.3);
 
@@ -85,48 +87,115 @@
     leave("ra", 5.5);
     activate("rb", 6.2);
     enter("rb", 6.2, [".mlv", ".rfoot"]);
-    // Démonstration : un seul pictogramme en relief (couches empilées en profondeur) se déforme réellement
-    // (MorphSVG) d'un état à l'autre, de l'orage au soleil voilé, en tournant sur lui-même : c'est le morphing 3D
-    // de la séquence Hyperframes (lxp/brag-output).
+    // Démonstration (séquence Hyperframes du dépôt lxp) : un curseur saisit la barre, la fait glisser vers la pluie,
+    // le pictogramme en relief (couches empilées en profondeur) se déforme (MorphSVG) en tournant sur lui-même,
+    // puis il tape un commentaire et clique sur « Envoyer ».
     var icon = el.querySelector(".feeling-3d");
     var paths = gsap.utils.toArray(q(".feeling-path"));
     var LV = [1, 2, 3, 4, 5].map(function (n) {
       return icon.getAttribute("data-level-" + n);
     });
+    var rb = el.querySelector(".rb");
+    var range = el.querySelector(".mslider");
+    var area = el.querySelector(".mta");
+    var cursor = el.querySelector(".mcursor");
+    var ring = el.querySelector(".mring");
+    var sendBtn = el.querySelector(".sendm");
+    var typed = Content.text("care.humeur.carte.commentaire.exemple");
+    var THUMB = 30; // diamètre du curseur de la barre (voir .mslider)
+    // Coordonnées dans l'espace de la scène (1920 × 1080), indépendantes des transformations en cours.
+    var pos = function (node, fx0, fy0) {
+      var x = 0;
+      var y = 0;
+      var n = node;
+      while (n && n !== rb) {
+        x += n.offsetLeft;
+        y += n.offsetTop;
+        n = n.offsetParent;
+      }
+      return { x: x + node.offsetWidth * fx0, y: y + node.offsetHeight * fy0 };
+    };
+    var thumbAt = function (v) {
+      var o = pos(range, 0, 0.5);
+      return { x: o.x + THUMB / 2 + (range.offsetWidth - THUMB) * ((v - 1) / 4), y: o.y };
+    };
+    var tip = function (pt) {
+      return { x: pt.x - 3.6, y: pt.y - 2.3 }; // la pointe de la flèche, pas son coin
+    };
+    var click = function (pt, at) {
+      tl.to(cursor, { scale: 0.9, duration: 0.1 }, at);
+      tl.to(cursor, { scale: 1, duration: 0.16 }, at + 0.1);
+      fx.ft(tl, ring, { x: pt.x - 22, y: pt.y - 22, scale: 0.35, opacity: 0.6 }, { x: pt.x - 22, y: pt.y - 22, scale: 1.4, opacity: 0, duration: 0.45 }, at);
+    };
     // Un demi-tour complet avec un léger bond vers l'avant, pendant que le tracé se déforme.
     var spin = function (tlx, at) {
       tlx.fromTo(icon, { rotationY: 0 }, { rotationY: 360, duration: 1.05, ease: "power2.inOut", immediateRender: false }, at);
       tlx.to(icon, { scale: 1.1, z: 40, duration: 0.5, ease: "power2.out" }, at);
       tlx.to(icon, { scale: 1, z: 0, duration: 0.55, ease: "power2.in" }, at + 0.5);
     };
-    tl.set(paths, { attr: { d: LV[0] } }, 0);
+    var P0 = thumbAt(LEVEL_START);
+    var P1 = thumbAt(LEVEL0);
+    var PA = pos(area, 0.3, 0.5);
+    var PS = pos(sendBtn, 0.5, 0.5);
+    var typeProxy = { n: 0 };
+    tl.set(paths, { attr: { d: LV[LEVEL_START - 1] } }, 0);
+    tl.set(range, { value: LEVEL_START }, 0);
+    tl.set(area, { value: "" }, 0);
+    tl.set(cursor, { opacity: 0 }, 0);
+    tl.set(q(".rb .toast"), { opacity: 0 }, 0);
     fx.ft(tl, icon, { opacity: 0, rotationY: -180, scale: 0.6, transformPerspective: 1400 }, { opacity: 1, rotationY: 0, scale: 1, duration: 1.0, ease: "power3.out" }, 7.3);
-    [1, 2, 3].forEach(function (k, i) {
-      var at = 8.5 + i * 0.7;
-      tl.to(paths, { morphSVG: LV[k], duration: 0.65, ease: "power2.inOut" }, at);
-      spin(tl, at - 0.1);
-    });
-    chevOn(10.4);
-    tl.addLabel("step1", 10.7);
+    // 1. Le curseur saisit la barre et la fait glisser : le pictogramme passe à la pluie.
+    fx.ft(tl, cursor, { opacity: 0, x: tip(P0).x + 70, y: tip(P0).y + 60, scale: 1 }, { opacity: 1, x: tip(P0).x, y: tip(P0).y, duration: 0.6, ease: "power2.inOut" }, 8.5);
+    tl.to(cursor, { scale: 0.92, duration: 0.1 }, 9.1);
+    tl.fromTo(range, { value: LEVEL_START }, { value: LEVEL0, duration: 0.8, ease: "power2.inOut", immediateRender: false }, 9.2);
+    tl.to(cursor, { x: tip(P1).x, y: tip(P1).y, duration: 0.8, ease: "power2.inOut" }, 9.2);
+    tl.to(cursor, { scale: 1, duration: 0.16 }, 10.0);
+    tl.to(paths, { morphSVG: LV[LEVEL0 - 1], duration: 0.7, ease: "power2.inOut" }, 9.4);
+    spin(tl, 9.3);
+    // 2. Un commentaire, saisi lettre à lettre.
+    tl.to(cursor, { x: tip(PA).x, y: tip(PA).y, duration: 0.5, ease: "power2.inOut" }, 10.3);
+    click(PA, 10.9);
+    tl.fromTo(
+      typeProxy,
+      { n: 0 },
+      {
+        n: typed.length,
+        duration: 1.1,
+        ease: "none",
+        immediateRender: false,
+        onUpdate: function () {
+          area.value = typed.slice(0, Math.round(typeProxy.n));
+        },
+      },
+      11.1,
+    );
+    // 3. « Envoyer » : une confirmation s'affiche.
+    tl.to(cursor, { x: tip(PS).x, y: tip(PS).y, duration: 0.5, ease: "power2.inOut" }, 12.3);
+    click(PS, 12.85);
+    tl.to(cursor, { opacity: 0, duration: 0.25 }, 13.15);
+    fx.ft(tl, q(".rb .toast"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 13.05);
+    tl.to(q(".rb .toast"), { opacity: 0, y: -8, duration: 0.4 }, 14.4);
+    chevOn(14.4);
+    tl.addLabel("step1", 14.7);
 
     // ── Étape 2 : alerte de décrochage ────────────────────────────────────────────────────
-    chevOff(10.9);
-    leave("rb", 10.9);
-    activate("rc", 11.6);
-    enter("rc", 11.6, [".alrow", ".sig", ".leg", ".usedbtn"]);
-    fx.ft(tl, q(".alr"), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.4)" }, 12.9);
-    fx.ft(tl, q(".gl"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.1 }, 13.2);
-    fx.ft(tl, q(".ln"), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut", stagger: 0.3 }, 13.6);
-    chevOn(15.8);
-    tl.addLabel("step2", 16.1);
+    chevOff(10.9 + D);
+    leave("rb", 10.9 + D);
+    activate("rc", 11.6 + D);
+    enter("rc", 11.6 + D, [".alrow", ".sig", ".leg", ".usedbtn"]);
+    fx.ft(tl, q(".alr"), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.4)" }, 12.9 + D);
+    fx.ft(tl, q(".gl"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.1 }, 13.2 + D);
+    fx.ft(tl, q(".ln"), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut", stagger: 0.3 }, 13.6 + D);
+    chevOn(15.8 + D);
+    tl.addLabel("step2", 16.1 + D);
 
     // ── Étape 3 : retour de l'équipe ──────────────────────────────────────────────────────
-    chevOff(16.3);
-    leave("rc", 16.3);
-    activate("rd", 17.0);
-    enter("rd", 17.0, [".who", ".av", ".cchip", ".rfoot"]);
-    chevOn(20.2);
-    tl.addLabel("step3", 20.5);
+    chevOff(16.3 + D);
+    leave("rc", 16.3 + D);
+    activate("rd", 17.0 + D);
+    enter("rd", 17.0 + D, [".who", ".av", ".cchip", ".rfoot"]);
+    chevOn(20.2 + D);
+    tl.addLabel("step3", 20.5 + D);
 
     // ── Interactions (hors timeline) ──────────────────────────────────────────────────────
     var hover = function (node, on, off) {
@@ -155,7 +224,7 @@
       });
     };
 
-    // Préférences : rythme (un seul), préférences (plusieurs), semaine de progression.
+    // Profil d'apprentissage : rythme (un seul), préférences (plusieurs).
     var paces = gsap.utils.toArray(q(".pace"));
     var pdesc = el.querySelector(".pdesc");
     paces.forEach(function (b) {
@@ -171,30 +240,12 @@
         b.classList.toggle("on");
       });
     });
-    var pbs = gsap.utils.toArray(q(".wkb"));
-    var pinfo = el.querySelector(".pinfo");
-    var PINFO0 = pinfo.innerHTML;
-    var esc = function (t) {
-      return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    };
-    pbs[pbs.length - 1].classList.add("on");
-    pbs.forEach(function (b) {
-      hover(b, { y: -6 }, { y: 0 });
-      b.addEventListener("click", function () {
-        single(pbs, b);
-        pinfo.innerHTML = "<b>" + esc(b.getAttribute("data-w")) + "</b> · " + esc(b.getAttribute("data-m"));
-        gsap.fromTo(pinfo, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3 * d, overwrite: "auto" });
-      });
-    });
-
-    // Humeur : un clic sur un niveau déforme le pictogramme vers le nouvel état (même morphing 3D que la démonstration).
-    var lvs = gsap.utils.toArray(q(".mlv"));
+    // Humeur : déplacer la barre déforme le pictogramme vers le nouvel état (même morphing 3D que la démonstration).
     var level = LEVEL0;
     var morphTl = null;
     var setLevel = function (l, animate) {
       level = l;
-      single(lvs, lvs[l - 1]);
-      icon.setAttribute("aria-label", lvs[l - 1].getAttribute("aria-label") || "");
+      icon.setAttribute("aria-label", Content.text("care.humeur.carte.mlvs.mlv." + (l - 1) + ".aria"));
       if (morphTl) morphTl.kill();
       if (!animate || reduced) {
         gsap.set(paths, { attr: { d: LV[l - 1] } });
@@ -205,13 +256,13 @@
       morphTl.to(paths, { morphSVG: LV[l - 1], duration: 0.7, ease: "power2.inOut" }, 0);
       spin(morphTl, 0);
     };
-    lvs.forEach(function (b, i) {
-      hover(b, { y: -4 }, { y: 0 });
-      b.addEventListener("click", function () {
-        if (i + 1 !== level) setLevel(i + 1, true);
-      });
+    range.addEventListener("input", function () {
+      var l = Math.round(range.valueAsNumber);
+      if (l !== level) setLevel(l, true);
     });
-    lvs[LEVEL0 - 1].classList.add("on");
+    range.addEventListener("change", function () {
+      range.value = level;
+    });
     var toastsOf = function (card) {
       var t = card.querySelector(".toast");
       var tt = null;
@@ -267,9 +318,8 @@
       gsap.utils.toArray(q(".ra .cchip")).forEach(function (b, i) {
         b.classList.toggle("on", i < 2);
       });
-      single(pbs, pbs[pbs.length - 1]);
-      pinfo.innerHTML = PINFO0;
       setLevel(LEVEL0, false);
+      range.value = LEVEL0;
       usedOn = false;
       usedBtn.firstChild.textContent = Content.text("care.alerte.carte.donnees.voir");
       used.classList.remove("on");
