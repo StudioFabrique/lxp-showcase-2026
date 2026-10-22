@@ -1604,6 +1604,30 @@ window.CONTENT = {
       "next": "Une plateforme **robuste**, **évolutive** et intégrant des modules d'**intelligence artificielle**."
     }
   },
+  "setup": {
+    "label": "Mettre en place ANDRIA",
+    "notes": "Avant la clôture : ce qu'il faut pour mettre ANDRIA en place, en termes simples. Trois faits tirés du dépôt du LXP : s'installe sur un serveur avec sauvegardes, IA séparée et désactivable, import Moodle. Le détail technique (conteneurs, bases, fournisseur d'IA) reste en réserve pour les questions. Volontairement absents : licence, hébergement des données, SSO, SCORM, tarif, contact (rien dans le dépôt). Le bandeau du bas renvoie à l'équipe Step.",
+    "title": "Mettre en place **ANDRIA**",
+    "lede": "Ce qu'il faut savoir pour démarrer.",
+    "cards": [
+      {
+        "role": "Hébergement",
+        "title": "Hébergeable chez vous",
+        "text": "ANDRIA s'installe sur un serveur, avec des sauvegardes de vos données."
+      },
+      {
+        "role": "Intelligence artificielle",
+        "title": "Une IA facultative",
+        "text": "L'assistant, les quiz et les alertes de décrochage s'appuient sur un service d'IA séparé. Il peut être désactivé."
+      },
+      {
+        "role": "Contenus existants",
+        "title": "Reprendre ce qui existe",
+        "text": "Vos cours Moodle et vos parcours déjà construits peuvent être importés."
+      }
+    ],
+    "band": "Modalités d'accès, licence et accompagnement : à définir avec l'équipe Step."
+  },
   "start": {
     "label": "Départ",
     "notes": "Écran d'attente : n'importe quelle touche lance la présentation.",
@@ -1949,5 +1973,28 @@ window.CONTENT = {
       ],
       "conclusion": "Plutôt que de connecter des outils disparates pour collecter de la donnée, **créer le contenant qui produit les données à analyser**."
     }
+  },
+  "who": {
+    "label": "Pour qui, pour quoi",
+    "notes": "Après la définition et le comparatif LMS / LXP : à qui sert ANDRIA et ce que chacun y gagne. Trois profils, un bénéfice chacun, tous tirés de la documentation du projet (objectifs 1 à 9). Aucun chiffre ni résultat n'est affiché : la présentation ne revendique pas d'amélioration mesurée. Les cartes se posent d'elles-mêmes, un seul clic pour continuer.",
+    "title": "Pour **qui** ? Pour **quoi** ?",
+    "lede": "Conçue par un organisme de formation pour la formation à distance, notamment auprès de publics fragilisés. Trois profils y trouvent leur place.",
+    "roles": [
+      {
+        "role": "L'apprenant",
+        "title": "Apprendre à son rythme",
+        "text": "Des contenus et des modalités adaptés à ses besoins, ses envies et son profil, avec un assistant disponible 24 h/24."
+      },
+      {
+        "role": "Le formateur",
+        "title": "Repérer avant le décrochage",
+        "text": "Des signaux d'alerte précoces et des outils d'analyse pour proposer une remédiation ciblée."
+      },
+      {
+        "role": "L'organisme",
+        "title": "Garder la main sur ses formations",
+        "text": "Créer, publier et mettre à jour les contenus, reprendre ceux de Moodle, analyser les données que la plateforme produit."
+      }
+    ]
   }
 };

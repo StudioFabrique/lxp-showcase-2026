@@ -6,7 +6,7 @@ Tous les textes affichés sont ici, en JSON. Le HTML (`composition/index.html`) 
 content/
 ├─ deck.json            titre de l'onglet, URL de démo, logos et années, mention de cofinancement, boutons communs
 └─ scenes/
-   ├─ start.json  intro.json  what.json  traits.json  frise.json  closing.json
+   ├─ start.json  intro.json  what.json  who.json  traits.json  frise.json  closing.json
    └─ proto.json  content.json  assistant.json  assess.json  organize.json  care.json  steer.json  personalize.json
 ```
 

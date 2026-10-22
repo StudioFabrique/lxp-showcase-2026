@@ -62,6 +62,21 @@ Légende : **[PAUSE]** = la lecture s'arrête jusqu'à une interaction (chevron,
 
 **[PAUSE]** → chevron.
 
+### S1-d — Pour qui, pour quoi ? (≈ 40 s)
+- Titre : **Pour qui ? Pour quoi ?**
+- Phrase : « Conçue par un organisme de formation pour la formation à distance, notamment auprès de publics fragilisés. Trois profils y trouvent leur place. »
+- Trois cartes, un bénéfice chacun (tirés des objectifs du projet, sans chiffre) :
+
+| Profil | Bénéfice | Texte |
+|---|---|---|
+| L'apprenant | Apprendre à son rythme | Des contenus et des modalités adaptés à ses besoins, ses envies et son profil, avec un assistant disponible 24 h/24. |
+| Le formateur | Repérer avant le décrochage | Des signaux d'alerte précoces et des outils d'analyse pour proposer une remédiation ciblée. |
+| L'organisme | Garder la main sur ses formations | Créer, publier et mettre à jour les contenus, reprendre ceux de Moodle, analyser les données que la plateforme produit. |
+
+- Placée après le comparatif LMS / LXP (fin de S1) et avant « Ce que fait ANDRIA » (S2). ⚠ La cible « organismes de formation, publics fragilisés » est déduite de la documentation du projet : à confirmer.
+
+**[PAUSE]** → chevron.
+
 ---
 
 ## S2 — Caractéristiques (≈ 1 min 30)
@@ -139,6 +154,16 @@ Garde-fous repris de `brag-plan.md` : données fictives, pas de revendication d'
 3. Chevron ou lecture automatique (≈ 8 s par snapshot), fondu enchaîné entre deux captures.
 4. Dernier snapshot : la frise s'étend vers la droite avec une **flèche** en pointillé : « Le projet continue d'évoluer ».
 5. Dernier plan : logo ANDRIA, « Voir la démo : lxp.dev.step.eco », logos partenaires.
+
+---
+
+## S5bis — Mettre en place ANDRIA (≈ 30 s)
+
+- Placée entre la frise et la clôture. Titre : **Mettre en place ANDRIA**, puis « Ce qu'il faut savoir pour démarrer. »
+- Trois cartes, en termes simples (faits tirés du dépôt du LXP) : **Hébergeable chez vous** (s'installe sur un serveur, avec des sauvegardes) · **Une IA facultative** (service séparé, désactivable) · **Reprendre ce qui existe** (import des cours Moodle et des parcours).
+- Bandeau : « Modalités d'accès, licence et accompagnement : à définir avec l'équipe Step. » ⚠ À valider : aucune information de licence, d'hébergement des données, de SSO/SCORM ni de contact dans le dépôt.
+
+**[PAUSE]** → chevron.
 
 ---
 

@@ -34,6 +34,13 @@
       ]
     },
     {
+      "sceneId": "who",
+      "notes": "Après la définition et le comparatif LMS / LXP : à qui sert ANDRIA et ce que chacun y gagne. Trois profils, un bénéfice chacun, tous tirés de la documentation du projet (objectifs 1 à 9). Aucun chiffre ni résultat n'est affiché : la présentation ne revendique pas d'amélioration mesurée. Les cartes se posent d'elles-mêmes, un seul clic pour continuer.",
+      "fragments": [
+        70.2
+      ]
+    },
+    {
       "sceneId": "traits",
       "notes": "Neuf caractéristiques sous forme de tuiles : survol ou clic pour les détails. Le chevron suffit pour avancer.",
       "fragments": [
@@ -54,6 +61,13 @@
         27,
         27.8,
         28.6
+      ]
+    },
+    {
+      "sceneId": "setup",
+      "notes": "Avant la clôture : ce qu'il faut pour mettre ANDRIA en place, en termes simples. Trois faits tirés du dépôt du LXP : s'installe sur un serveur avec sauvegardes, IA séparée et désactivable, import Moodle. Le détail technique (conteneurs, bases, fournisseur d'IA) reste en réserve pour les questions. Volontairement absents : licence, hébergement des données, SSO, SCORM, tarif, contact (rien dans le dépôt). Le bandeau du bas renvoie à l'équipe Step.",
+      "fragments": [
+        74.2
       ]
     },
     {
@@ -207,7 +221,7 @@
 }
     </script>
 
-    <div data-hf-id="hf-v1yu" id="root" data-composition-id="root" data-start="0" data-duration="70" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-v1yu" id="root" data-composition-id="root" data-start="0" data-duration="78" data-width="1920" data-height="1080">
     <div data-hf-id="hf-1rt5" id="stage">
       <div data-hf-id="hf-l8dk" id="logo" role="img" data-tx-aria-label="deck.stage.logoLabel"></div>
       <div data-hf-id="hf-0l40" id="partners">
@@ -349,6 +363,34 @@
       <button data-hf-id="hf-p9su" class="chevron mini" data-next data-tx-aria-label="deck.ui.continue"><i data-hf-id="hf-pu6f" class="halo"></i><svg data-hf-id="hf-eibp" viewBox="0 0 24 24" aria-hidden="true"><polyline data-hf-id="hf-9nrt" points="6 9 12 15 18 9"/></svg></button>
     </div>
 
+    <div id="scene-who" class="scene-frame clip" data-composition-id="who" data-start="70" data-duration="4" data-width="1920" data-height="1080" data-tx-data-label="who.label" data-fragments='[70.2]'>
+      <div class="cam">
+        <h2 class="h1 wo-title" data-tx="who.title"></h2>
+        <p class="lede wo-lede" data-tx="who.lede"></p>
+        <div class="wo-cards">
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            <small data-tx="who.roles.0.role"></small>
+            <h3 data-tx="who.roles.0.title"></h3>
+            <p data-tx="who.roles.0.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+            <small data-tx="who.roles.1.role"></small>
+            <h3 data-tx="who.roles.1.title"></h3>
+            <p data-tx="who.roles.1.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+            <small data-tx="who.roles.2.role"></small>
+            <h3 data-tx="who.roles.2.title"></h3>
+            <p data-tx="who.roles.2.text"></p>
+          </article>
+        </div>
+      </div>
+      <button class="chevron mini" data-next data-tx-aria-label="deck.ui.continue"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+    </div>
+
     <div data-hf-id="hf-ypq3" id="scene-frise" class="scene-frame clip" data-composition-id="frise" data-start="22" data-duration="8" data-width="1920" data-height="1080" data-tx-data-label="frise.label" data-fragments='[22.2, 23.0, 23.8, 24.6, 25.4, 26.2, 27.0, 27.8, 28.6]'>
       <div data-hf-id="hf-ao4s" class="cam3">
         <div data-hf-id="hf-kuqd" class="tiltwrap">
@@ -398,6 +440,35 @@
         </div>
       </div>
       <button class="chevron mini side" data-next data-tx-aria-label="deck.ui.nextStep"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></button>
+    </div>
+
+    <div id="scene-setup" class="scene-frame clip" data-composition-id="setup" data-start="74" data-duration="4" data-width="1920" data-height="1080" data-tx-data-label="setup.label" data-fragments='[74.2]'>
+      <div class="cam">
+        <h2 class="h1 wo-title" data-tx="setup.title"></h2>
+        <p class="lede wo-lede" data-tx="setup.lede"></p>
+        <div class="wo-cards">
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></span>
+            <small data-tx="setup.cards.0.role"></small>
+            <h3 data-tx="setup.cards.0.title"></h3>
+            <p data-tx="setup.cards.0.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
+            <small data-tx="setup.cards.1.role"></small>
+            <h3 data-tx="setup.cards.1.title"></h3>
+            <p data-tx="setup.cards.1.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg></span>
+            <small data-tx="setup.cards.2.role"></small>
+            <h3 data-tx="setup.cards.2.title"></h3>
+            <p data-tx="setup.cards.2.text"></p>
+          </article>
+        </div>
+        <p class="wo-band" data-tx="setup.band"></p>
+      </div>
+      <button class="chevron mini" data-next data-tx-aria-label="deck.ui.continue"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
 
     <div id="scene-closing" data-stage="hidden" class="scene-frame clip" data-composition-id="closing" data-start="30" data-duration="8" data-width="1920" data-height="1080" data-tx-data-label="closing.label" data-fragments='[30.2, 30.68, 31.16, 31.64, 32.12, 32.6, 33.08, 33.56, 34.04, 34.52, 35.0, 35.48, 35.96, 36.44, 36.92, 37.4]'>
@@ -981,6 +1052,8 @@
     <script src="js/scene-intro.js"></script>
     <script src="js/scene-what.js"></script>
     <script src="js/scene-traits.js"></script>
+    <script src="js/scene-who.js"></script>
+    <script src="js/scene-setup.js"></script>
     <script src="js/scene-frise.js"></script>
     <script src="js/scene-content.js"></script>
     <script src="js/scene-proto.js"></script>
