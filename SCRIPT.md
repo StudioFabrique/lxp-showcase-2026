@@ -135,13 +135,13 @@ Pour chaque scène : titre, 2 à 3 messages, animation de 8 à 12 s (rejouable),
 | # | Titre | Messages | Animation (source brag) |
 |---|---|---|---|
 | 1 | **Un prototype pour valider l'idée** | Analyse du marché LXP / LMS · personas issus d'entretiens · architecture et chaîne CI/CD · premiers travaux sur l'IA | Schéma SVG de l'architecture qui se construit, flèches en séquence (nouveau) |
-| 2 | **Créer du contenu** | Structure : organisme, parcours, module, cours, leçon, activités · éditeur riche · six types d'activité | `hierarchy` + `editor` : pyramide 3D des niveaux, cartes qui s'emboîtent |
-| 3 | **Un assistant disponible 24 h/24** | Sélectionner un passage du cours · poser une question · réponse avec source · suggestion de quiz | `chatbot` |
-| 4 | **Évaluer** | Diagnostic, quiz, entraînement · remises des apprenants · note et commentaire pédagogique | `quiz` + `assignments` |
-| 5 | **Organiser** | Calendrier · médiathèque · groupes et formateurs · tags | `calendar`, `groups`, `trainers`, `tags` |
-| 6 | **Suivre et accompagner** | Progression et préférences · humeur de l'apprenant · alerte de décrochage · retour de l'équipe | `progression` + `care` : morphing des humeurs |
-| 7 | **Piloter** | Consommation IA par promotion · classement des cours · import Moodle et de parcours · tableaux de bord par rôle | `usage` + `dashboards` |
-| 8 | **Personnaliser et encourager** | Identité de l'organisme et thèmes · modèles d'e-mails et récapitulatifs · félicitations de l'équipe | `themes`, `instance`, `emails`, `accomplishments` |
+| 2 | **Créer ses propres cours** | Structure : organisme, parcours, module, cours, leçon, activités · éditeur riche · six types d'activité | `hierarchy` + `editor` : pyramide 3D des niveaux, cartes qui s'emboîtent |
+| 3 | **Un assistant 24 h/24** | Sélectionner un passage du cours · poser une question · réponse avec source · suggestion de quiz | `chatbot` |
+| 4 | **Vérifier ce qui est acquis** | Diagnostic, quiz, entraînement · remises des apprenants · note et commentaire pédagogique | `quiz` + `assignments` |
+| 5 | **Tout organiser au même endroit** | Calendrier · médiathèque · groupes et formateurs · tags | `calendar`, `groups`, `trainers`, `tags` |
+| 6 | **Accompagner chaque apprenant** | Progression et préférences · humeur de l'apprenant · alerte de décrochage · retour de l'équipe | `progression` + `care` : morphing des humeurs |
+| 7 | **Piloter usages et contenus** | Consommation IA par promotion · classement des cours · import Moodle et de parcours · tableaux de bord par rôle | `usage` + `dashboards` |
+| 8 | **À l'image de l'organisme** | Identité de l'organisme et thèmes · modèles d'e-mails et récapitulatifs · félicitations de l'équipe | `themes`, `instance`, `emails`, `accomplishments` |
 
 Garde-fous repris de `brag-plan.md` : données fictives, pas de revendication d'amélioration causée par l'IA, pas de fonctionnalité « bientôt » présentée comme disponible.
 

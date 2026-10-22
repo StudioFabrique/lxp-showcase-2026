@@ -1,5 +1,5 @@
 {
-  "label": "Évaluer",
+  "label": "Vérifier ce qui est acquis",
   "notes": "Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.",
   "types": {
     "intro": {

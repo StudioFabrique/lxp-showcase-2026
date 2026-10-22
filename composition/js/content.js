@@ -41,7 +41,7 @@ window.CONTENT = {
     }
   },
   "assess": {
-    "label": "Évaluer",
+    "label": "Vérifier ce qui est acquis",
     "notes": "Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.",
     "types": {
       "intro": {
@@ -220,7 +220,7 @@ window.CONTENT = {
     }
   },
   "assistant": {
-    "label": "Un assistant disponible 24 h/24",
+    "label": "Un assistant 24 h/24",
     "notes": "Assistant virtuel disponible 24 h/24 et 7 j/7 ; réponses contextualisées au cours ; quiz suggéré. Les réponses affichées sont des exemples scénarisés.",
     "lanceur": {
       "intro": {
@@ -347,7 +347,7 @@ window.CONTENT = {
     }
   },
   "care": {
-    "label": "Suivre et accompagner",
+    "label": "Accompagner chaque apprenant",
     "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
     "preferences": {
       "intro": {
@@ -769,7 +769,7 @@ window.CONTENT = {
     ]
   },
   "content": {
-    "label": "Créer du contenu",
+    "label": "Créer ses propres cours",
     "notes": "Structure en six niveaux, puis éditeur riche et six types d'activité.",
     "levels": {
       "badge": "Créer du contenu",
@@ -952,31 +952,31 @@ window.CONTENT = {
       },
       {
         "period": "",
-        "title": "Créer du contenu"
+        "title": "Créer ses propres cours"
       },
       {
         "period": "",
-        "title": "Assistant virtuel"
+        "title": "Un assistant 24 h/24"
       },
       {
         "period": "",
-        "title": "Évaluer"
+        "title": "Vérifier ce qui est acquis"
       },
       {
         "period": "",
-        "title": "Organiser"
+        "title": "Tout organiser au même endroit"
       },
       {
         "period": "",
-        "title": "Suivre et accompagner"
+        "title": "Accompagner chaque apprenant"
       },
       {
         "period": "",
-        "title": "Piloter"
+        "title": "Piloter usages et contenus"
       },
       {
         "period": "",
-        "title": "Personnaliser et encourager"
+        "title": "À l'image de l'organisme"
       }
     ]
   },
@@ -985,7 +985,7 @@ window.CONTENT = {
     "notes": "Bienvenue. ANDRIA est la plateforme d'apprentissage que Step a conçue entre 2022 et 2026, avec le soutien de la Région Nouvelle-Aquitaine et de l'Union européenne."
   },
   "organize": {
-    "label": "Organiser",
+    "label": "Tout organiser au même endroit",
     "notes": "Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.",
     "calendrier": {
       "intro": {
@@ -1366,7 +1366,7 @@ window.CONTENT = {
     }
   },
   "personalize": {
-    "label": "Personnaliser et encourager",
+    "label": "À l'image de l'organisme",
     "notes": "Thèmes clairs et sombres au choix de l'organisme ; identité (nom, logo) ; modèles d'e-mails ; félicitations, badges de compétences et historique d'accomplissements. Données fictives.",
     "themes": {
       "intro": {
@@ -1636,7 +1636,7 @@ window.CONTENT = {
     "message": "Appuyer sur n'importe quelle touche pour lancer la présentation"
   },
   "steer": {
-    "label": "Piloter",
+    "label": "Piloter usages et contenus",
     "notes": "Consommation de l'IA par promotion, classement des cours, import de cours Moodle et de parcours, tableaux de bord selon le rôle. Données fictives.",
     "ia": {
       "intro": {
