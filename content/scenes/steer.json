@@ -127,7 +127,7 @@
   "roles": {
     "intro": {
       "h1": "Un tableau de bord **pour chacun**",
-      "lede": "Chaque rôle retrouve les actions et les informations qui le concernent."
+      "lede": "Chaque rôle retrouve les actions et les informations qui le concernent : la navigation et les cartes changent."
     },
     "carte": {
       "entete": {
@@ -136,55 +136,123 @@
       "onglets": [
         {
           "nom": "Apprenant",
-          "salutation": "Bonjour Camille !",
-          "tuiles": [
+          "espace": "Espace apprenant",
+          "nav": [
+            "Accueil",
+            "Parcours",
+            "Calendrier",
+            "Remises & évaluations",
+            "Ressources supplémentaires"
+          ],
+          "salutation": "Bonjour Camille",
+          "sous": "Retrouvez votre formation et votre prochaine activité.",
+          "cartes": [
             {
-              "titre": "Mon avancement",
-              "texte": "Reprendre la leçon en cours."
+              "titre": "Reprendre mon apprentissage",
+              "lignes": [
+                {
+                  "t": "Construire une interface",
+                  "s": "La structure d'une page"
+                }
+              ],
+              "pastille": "2 / 3"
             },
             {
-              "titre": "Calendrier",
-              "texte": "Votre prochaine séance : Atelier CSS."
+              "titre": "Ma prochaine séance",
+              "lignes": [
+                {
+                  "t": "Atelier CSS",
+                  "s": "Demain à 14 h"
+                }
+              ]
             },
             {
-              "titre": "Remises et évaluations",
-              "texte": "Votre retour pédagogique est disponible."
+              "titre": "Mes parcours",
+              "lignes": [
+                {
+                  "t": "Développeur web",
+                  "s": "3 modules à explorer"
+                },
+                {
+                  "t": "Les bases du HTML",
+                  "s": "Votre dernière activité"
+                }
+              ]
+            },
+            {
+              "titre": "Mes accomplissements",
+              "lignes": [
+                {
+                  "t": "Vos compétences se construisent.",
+                  "s": ""
+                }
+              ],
+              "badges": [
+                "HTML",
+                "CSS"
+              ]
             }
           ]
         },
         {
           "nom": "Équipe pédagogique",
-          "salutation": "Bonjour Marc !",
-          "tuiles": [
+          "espace": "Équipe pédagogique",
+          "nav": [
+            "Accueil",
+            "Utilisateurs",
+            "Groupes",
+            "Parcours",
+            "Modules",
+            "Cours",
+            "Calendrier",
+            "Évaluations"
+          ],
+          "salutation": "Votre tableau de bord",
+          "sous": "Organiser les contenus et accompagner les apprenants.",
+          "cartes": [
             {
-              "titre": "Classement de mes cours",
-              "texte": "Les cours les mieux notés par vos apprenants."
+              "titre": "Actions recommandées",
+              "lignes": [
+                {
+                  "t": "Répondre à Camille",
+                  "s": "Un feedback attend votre retour."
+                },
+                {
+                  "t": "Préparer votre prochain cours",
+                  "s": "Retrouver les contenus à publier"
+                }
+              ]
             },
             {
-              "titre": "Alertes de groupe",
-              "texte": "1 cas critique à examiner."
+              "titre": "Alertes du groupe",
+              "lignes": [
+                {
+                  "t": "1 cas critique",
+                  "s": "Développeur web 2026"
+                }
+              ]
             },
             {
-              "titre": "Évaluer un apprenant",
-              "texte": "Noter une remise et laisser un commentaire."
-            }
-          ]
-        },
-        {
-          "nom": "Administrateur",
-          "salutation": "Bonjour Sophie !",
-          "tuiles": [
-            {
-              "titre": "Créer une formation",
-              "texte": "Ouvrir un nouvel organisme de formation."
+              "titre": "Derniers parcours",
+              "lignes": [
+                {
+                  "t": "Métiers du numérique",
+                  "s": "Développeur web"
+                },
+                {
+                  "t": "Construire une interface",
+                  "s": "Retrouver les derniers modules"
+                }
+              ]
             },
             {
-              "titre": "Créer un utilisateur",
-              "texte": "Inviter une personne et lui attribuer un rôle."
-            },
-            {
-              "titre": "Voir les feedbacks",
-              "texte": "Lire les retours des apprenants."
+              "titre": "Retours des apprenants",
+              "lignes": [
+                {
+                  "t": "« Je bloque sur la dernière leçon. »",
+                  "s": "Camille Martin"
+                }
+              ]
             }
           ]
         }

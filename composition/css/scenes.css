@@ -3421,15 +3421,7 @@
 }
 #scene-steer .pi-ico svg,
 #scene-steer .pi-impico svg,
-#scene-steer .pi-tico svg {
-  width: 60%;
-  height: 60%;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+
 #scene-steer .pi-sub {
   font-size: 28px;
   color: var(--soft);
@@ -3607,8 +3599,7 @@
   background: var(--color-base-100);
   box-shadow: var(--elev-sm);
 }
-#scene-steer .pi-impico,
-#scene-steer .pi-tico {
+#scene-steer .pi-impico {
   width: 96px;
   height: 96px;
   border-radius: 28px;
@@ -3677,53 +3668,14 @@
   outline: 4px solid var(--color-secondary);
   outline-offset: 4px;
 }
-#scene-steer .pi-panels {
-  position: relative;
-  height: 520px;
-  margin-top: 26px;
-}
-#scene-steer .pi-panel {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-#scene-steer .pi-panel.on {
-  opacity: 1;
-  pointer-events: auto;
-}
-#scene-steer .pi-hello {
-  font-size: 50px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-#scene-steer .pi-tiles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 26px;
-}
-#scene-steer .pi-tile {
-  padding: 28px 24px;
-  min-height: 340px;
-  border-radius: 24px;
-  border: 1px solid var(--color-base-300);
-  background: var(--color-base-100);
-  box-shadow: var(--elev-sm);
-}
-#scene-steer .pi-tile b {
-  display: block;
-  margin-top: 22px;
-  font-size: 34px;
-  line-height: 1.15;
-  font-weight: 800;
-}
-#scene-steer .pi-tile p {
-  margin-top: 12px;
-  font-size: 28px;
-  line-height: 1.35;
-  color: var(--soft);
-}
+
+
+
+
+
+
+
+
 
 /* Personnaliser et encourager -----------------------------------------------------------------------
    Préfixe pz-, scopé sous #scene-personalize. L'aperçu des thèmes est piloté par des variables --m-*. */
@@ -4904,4 +4856,174 @@
 }
 #scene-care .rsm + .rtitle {
   margin-top: 22px;
+}
+
+/* Piloter · tableau de bord par rôle : barre latérale en verre et cartes de l'application ------------------- */
+#scene-steer .pi-dash {
+  position: relative;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 24px;
+  height: 540px;
+  margin-top: 22px;
+  transform-style: preserve-3d;
+}
+#scene-steer .pi-side {
+  position: relative;
+  padding: 22px 16px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 24px;
+  background: var(--color-base-100);
+  box-shadow: var(--elev);
+  transform-style: preserve-3d;
+}
+#scene-steer .pi-glass {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  border: 2px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+  pointer-events: none;
+}
+#scene-steer .pi-nav {
+  position: absolute;
+  inset: 22px 16px;
+}
+#scene-steer .pi-nav small {
+  display: block;
+  margin: 0 8px 14px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--soft);
+}
+#scene-steer .pi-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#scene-steer .pi-nav li {
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-base-content);
+}
+#scene-steer .pi-nav li.act {
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-base-100));
+  color: var(--color-primary);
+  font-weight: 800;
+}
+#scene-steer .pi-board {
+  position: relative;
+}
+#scene-steer .pi-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#scene-steer .pi-head h5 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+#scene-steer .pi-head p {
+  margin-top: 6px;
+  font-size: 25px;
+  color: var(--soft);
+}
+#scene-steer .pi-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  transform-style: preserve-3d;
+}
+#scene-steer .pi-c {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 20px;
+  border: 1px solid var(--color-base-300);
+  border-radius: 20px;
+  background: var(--color-base-100);
+  box-shadow: var(--elev-sm);
+  min-height: 0;
+}
+#scene-steer .pi-c h4 {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+#scene-steer .pi-r b {
+  display: block;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#scene-steer .pi-r small {
+  display: block;
+  font-size: 21px;
+  line-height: 1.25;
+  color: var(--soft);
+}
+#scene-steer .pi-pill {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-base-100));
+  color: var(--color-primary);
+  font-size: 22px;
+  font-weight: 700;
+}
+#scene-steer .pi-chips {
+  display: flex;
+  gap: 10px;
+}
+#scene-steer .pi-chips span {
+  padding: 2px 16px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-accent) 14%, var(--color-base-100));
+  color: var(--color-accent);
+  font-size: 22px;
+  font-weight: 700;
+}
+#scene-steer .pi-cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 52px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+  filter: drop-shadow(0 3px 4px color-mix(in srgb, var(--color-neutral) 35%, transparent));
+}
+#scene-steer .pi-cursor svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-base-content);
+  stroke: var(--color-base-100);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+#scene-steer .pi-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
 }
