@@ -26,7 +26,7 @@
   "identite": {
     "intro": {
       "h1": "Le **nom et le logo** de l'organisme",
-      "lede": "L'instance prend l'identité de l'organisme qui l'utilise."
+      "lede": "La plateforme prend le nom et le logo de l'organisme de formation qui l'utilise."
     },
     "carte": {
       "entete": { "h3": "Identité de l'organisme" },

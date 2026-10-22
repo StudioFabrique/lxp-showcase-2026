@@ -582,7 +582,7 @@ window.CONTENT = {
         "date": "8 septembre 2025",
         "titre": "Le premier assistant",
         "fonctions": [
-          "Assistant « A.L.A.A. »",
+          "Premier nom de l'assistant : « A.L.A.A. »",
           "Questions en langage naturel",
           ""
         ],
@@ -1419,7 +1419,7 @@ window.CONTENT = {
     "identite": {
       "intro": {
         "h1": "Le **nom et le logo** de l'organisme",
-        "lede": "L'instance prend l'identité de l'organisme qui l'utilise."
+        "lede": "La plateforme prend le nom et le logo de l'organisme de formation qui l'utilise."
       },
       "carte": {
         "entete": {
@@ -1641,7 +1641,7 @@ window.CONTENT = {
     "ia": {
       "intro": {
         "h1": "Savoir **ce que consomme l'IA**",
-        "lede": "Les tokens consommés ce mois-ci, par promotion et par utilisateur."
+        "lede": "La consommation d'IA ce mois-ci, par promotion et par utilisateur, mesurée en « tokens » (l'unité de calcul de l'IA)."
       },
       "carte": {
         "entete": {
@@ -1993,7 +1993,7 @@ window.CONTENT = {
         "text": "Des signaux d'alerte précoces et des outils d'analyse pour proposer une remédiation ciblée."
       },
       {
-        "role": "L'organisme",
+        "role": "L'organisme de formation",
         "title": "Garder la main sur ses formations",
         "text": "Créer, publier et mettre à jour les contenus, reprendre ceux de Moodle, analyser les données que la plateforme produit."
       }
