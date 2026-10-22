@@ -150,7 +150,7 @@ Garde-fous repris de `brag-plan.md` : données fictives, pas de revendication d'
 ## S5 — Clôture : l'évolution de l'interface (≈ 2 min)
 
 1. Titre : **L'interface au fil des mois**.
-2. Une bande de snapshots, un commit à la fois. Pour chacun : la capture, sa **date** (ex. « 17 avril 2023 »), 1 à 3 fonctionnalités marquantes (⚠ rédigées après sélection des commits, relues par vous).
+2. Six jalons choisis (premiers écrans 2023, tableau de bord 2024, premier assistant 2025, tableau de bord IA, ancien puis nouveau tableau de bord 2026), puis la page de connexion 2023 / 2026. Les huit autres captures sont archivées dans `closing.json` (`_snapshotsRetirees`). Une bande de snapshots, un commit à la fois. Pour chacun : la capture, sa **date** (ex. « 17 avril 2023 »), 1 à 3 fonctionnalités marquantes (⚠ rédigées après sélection des commits, relues par vous).
 3. Chevron ou lecture automatique (≈ 8 s par snapshot), fondu enchaîné entre deux captures.
 4. Dernier snapshot : la frise s'étend vers la droite avec une **flèche** en pointillé : « Le projet continue d'évoluer ».
 5. Dernier plan : logo ANDRIA, « Voir la démo : lxp.dev.step.eco », logos partenaires.
