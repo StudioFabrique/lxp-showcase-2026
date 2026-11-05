@@ -1,156 +1,225 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ANDRIA — état des lieux 2026</title>
-    <script src="vendor/hyperframes-player.global.js"></script>
-    <script src="vendor/hyperframes-slideshow.global.js"></script>
-    <link rel="stylesheet" href="ui/nav.css" />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background: #ffffff;
-      }
-      /* Bandes blanches (et non noires) quand l'écran n'est pas en 16:9. */
-      hyperframes-player,
-      hyperframes-slideshow {
-        background: #ffffff;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- tabindex="0" : sans focus, les flèches du clavier sont mortes. -->
-    <hyperframes-slideshow
-      tabindex="0"
-      style="display: block; position: relative; width: 100vw; height: 100vh"
-    >
-      <hyperframes-player
-        interactive
-        style="position: absolute; inset: 0"
-        src="composition/index.html"
-      ></hyperframes-player>
-
-      <!-- ÎLE COPIÉE depuis composition/index.html par `npm run sync` : ne pas éditer ici. -->
-      <script type="application/hyperframes-slideshow+json" id="island-copy">{"slides":[{"sceneId":"start","notes":"Écran d'attente : n'importe quelle touche lance la présentation."},{"sceneId":"intro","notes":"Bienvenue. ANDRIA est la plateforme d'apprentissage que Step a conçue entre 2022 et 2026, avec le soutien de la Région Nouvelle-Aquitaine et de l'Union européenne."},{"sceneId":"what","notes":"Trois temps : ce qu'est ANDRIA, le problème résolu et les objectifs, puis la comparaison LMS / LXP. Une interaction par temps.","fragments":[10.2,11,11.8,12.6,13.4,14.2]},{"sceneId":"traits","notes":"Neuf caractéristiques sous forme de tuiles : survol ou clic pour les détails. Le chevron suffit pour avancer.","fragments":[16.2,17]},{"sceneId":"frise","notes":"La première phase, financée par la Région, a validé la faisabilité. La deuxième, cofinancée par le FSE, a produit la plateforme actuelle. Cliquer un jalon ouvre sa scène.","fragments":[22.2,23,23.8,24.6,25.4,26.2,27,27.8,28.6]},{"sceneId":"closing","notes":"Un commit à la fois : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer. Dernier écran : la page de connexion, comparée entre 2023 (visuel fixe) et 2026 (le fond est une photo tirée de l'API Unsplash à chaque visite). Les quatre photos affichées sont de vraies photos Unsplash (licence Unsplash) ; les captures sont produites par tools/snapshots/login.mjs.","fragments":[30.2,30.68,31.16,31.64,32.12,32.6,33.08,33.56,34.04,34.52,35,35.48,35.96,36.44,36.92,37.4]}],"slideSequences":[{"id":"proto","label":"Un prototype pour valider l'idée","slides":[{"sceneId":"proto","notes":"Phase 1 : analyse du marché, personas, prototype, bases techniques ; faisabilité validée.","fragments":[38.2,39,40]}]},{"id":"content","label":"Créer du contenu","slides":[{"sceneId":"content","notes":"Structure en six niveaux, puis éditeur riche et six types d'activité.","fragments":[42.2,43]}]},{"id":"assistant","label":"Un assistant disponible 24 h/24","slides":[{"sceneId":"assistant","notes":"Assistant virtuel disponible 24 h/24 et 7 j/7 ; réponses contextualisées au cours ; quiz suggéré. Les réponses affichées sont des exemples scénarisés.","fragments":[46.2,47,48]}]},{"id":"assess","label":"Évaluer","slides":[{"sceneId":"assess","notes":"Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.","fragments":[50.2,51,52]}]},{"id":"organize","label":"Organiser","slides":[{"sceneId":"organize","notes":"Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.","fragments":[54.2,55,56,57]}]},{"id":"care","label":"Suivre et accompagner","slides":[{"sceneId":"care","notes":"Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.","fragments":[58.2,59,60,61]}]},{"id":"steer","label":"Piloter","slides":[{"sceneId":"steer","notes":"Consommation de l'IA par promotion, classement des cours, import de cours Moodle et de parcours, tableaux de bord selon le rôle. Données fictives.","fragments":[62.2,63,64,65]}]},{"id":"personalize","label":"Personnaliser et encourager","slides":[{"sceneId":"personalize","notes":"Thèmes clairs et sombres au choix de l'organisme ; identité (nom, logo) ; modèles d'e-mails ; félicitations, badges de compétences et historique d'accomplissements. Données fictives.","fragments":[66.2,67,68,69]}]}]}</script>
-    </hyperframes-slideshow>
-
-    <!-- Navigation globale (ui/nav.js) : numéro discret + plan. Données générées par `npm run sync`. -->
-    <div id="nav" data-thumbs="composition/assets/thumbs/">
-      <div class="nav-counter-wrap nav-hide"><button type="button" class="nav-counter"></button></div>
-      <div class="nav-grid" role="dialog" aria-modal="true" hidden>
-        <div class="nav-head"><h2 class="nav-title"></h2><button type="button" class="nav-close">×</button></div>
-        <ul class="nav-cards"></ul>
-      </div>
-      <script type="application/json" id="nav-data">{"ui":{"title":"Plan de la présentation","open":"Ouvrir le plan de la présentation","close":"Fermer le plan"},"entries":[{"kind":"main","id":"start","index":0,"label":"Départ"},{"kind":"main","id":"intro","index":1,"label":"Introduction"},{"kind":"main","id":"what","index":2,"label":"ANDRIA"},{"kind":"main","id":"traits","index":3,"label":"Caractéristiques"},{"kind":"main","id":"frise","index":4,"label":"Frise du projet"},{"kind":"seq","id":"proto","label":"Un prototype pour valider l'idée"},{"kind":"seq","id":"content","label":"Créer du contenu"},{"kind":"seq","id":"assistant","label":"Un assistant disponible 24 h/24"},{"kind":"seq","id":"assess","label":"Évaluer"},{"kind":"seq","id":"organize","label":"Organiser"},{"kind":"seq","id":"care","label":"Suivre et accompagner"},{"kind":"seq","id":"steer","label":"Piloter"},{"kind":"seq","id":"personalize","label":"Personnaliser et encourager"},{"kind":"main","id":"closing","index":5,"label":"Évolution de l'interface"}]}</script>
-    </div>
-    <script src="ui/nav.js"></script>
-
-    <script>
-      // Les clics dans la composition (chevron, frise) demandent « suivant » au parent.
-      (function () {
-        var deck = document.querySelector("hyperframes-slideshow");
-        window.addEventListener("message", function (e) {
-          var d = e.data;
-          if (!d || d.source !== "lxp-deck") return;
-          if (d.type === "goto") {
-            var c = deck.controller;
-            var idx = c && c.show ? c.show.slides.findIndex(function (s) { return s.sceneId === d.scene; }) : -1;
-            if (idx >= 0) c.syncTo("main", idx, d.fragment);
-            return;
-          }
-          if (d.type === "back") {
-            if (deck.controller && deck.controller.back) deck.controller.back();
-            return;
-          }
-          if (d.type === "open") {
-            if (/^https:\/\//.test(d.url)) window.open(d.url, "_blank", "noopener");
-            return;
-          }
-          if (d.type === "branch") {
-            if (deck.controller && deck.controller.enterBranch) deck.controller.enterBranch(d.id);
-            return;
-          }
-          if (d.type !== "nav") return;
-          var key = d.action === "prev" ? "ArrowLeft" : "ArrowRight";
-          deck.dispatchEvent(new KeyboardEvent("keydown", { key: key, bubbles: true }));
-        });
-        deck.focus();
-
-        // Le contrôleur d'origine revient à la diapositive précédente, pas à la PAUSE précédente.
-        // On le complète : « précédent » recule d'une PAUSE, puis atterrit sur la dernière PAUSE
-        // de la diapositive d'avant (état « terminé »), comme dans un vrai retour arrière.
-        function patchController() {
-          var c = deck.controller;
-          if (!c || c.__lxpPatched || !c.syncTo || !c.show) return !!(c && c.__lxpPatched);
-          var original = c.prev.bind(c);
-          c.prev = function () {
-            var p = c.position;
-            var slides = p.sequenceId === "main" ? c.show.slides : (c.show.sequences[p.sequenceId] || {}).slides || [];
-            if (p.fragmentIndex > 0) return c.syncTo(p.sequenceId, p.slideIndex, p.fragmentIndex - 1);
-            if (p.slideIndex > 0) {
-              var before = slides[p.slideIndex - 1];
-              var last = before && before.fragments ? before.fragments.length - 1 : -1;
-              if (last > 0) return c.syncTo(p.sequenceId, p.slideIndex - 1, last);
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Présentation ANDRIA 2026</title>
+        <script src="vendor/hyperframes-player.global.js"></script>
+        <script src="vendor/hyperframes-slideshow.global.js"></script>
+        <link rel="stylesheet" href="ui/nav.css" />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
             }
-            return original();
-          };
-          c.__lxpPatched = true;
-          return true;
-        }
-        // Écran de départ : n'importe quelle touche lance la présentation (focus dans la page parente).
-        var NAV_KEYS = ["ArrowRight", "ArrowLeft", " ", "Backspace", "p", "P", "Shift", "Control", "Alt", "Meta"];
-        document.addEventListener("keydown", function (e) {
-          var c = deck.controller;
-          if (!c || e.ctrlKey || e.metaKey || e.altKey || NAV_KEYS.indexOf(e.key) !== -1) return;
-          var pos = c.position;
-          if (pos.sequenceId === "main" && pos.slideIndex === 0) c.next();
-        });
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: #ffffff;
+            }
+            /* Bandes blanches (et non noires) quand l'écran n'est pas en 16:9. */
+            hyperframes-player,
+            hyperframes-slideshow {
+                background: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- tabindex="0" : sans focus, les flèches du clavier sont mortes. -->
+        <hyperframes-slideshow
+            tabindex="0"
+            style="
+                display: block;
+                position: relative;
+                width: 100vw;
+                height: 100vh;
+            "
+        >
+            <hyperframes-player
+                interactive
+                style="position: absolute; inset: 0"
+                src="composition/index.html"
+            ></hyperframes-player>
 
-        // Pas d'infobulle « HyperFrames Composition » sur la scène (titre de l'iframe).
-        var titleTimer = setInterval(function () {
-          var pl = document.querySelector("hyperframes-player");
-          var fr = pl && pl.iframeElement;
-          if (fr) {
-            fr.removeAttribute("title");
-            clearInterval(titleTimer);
-          }
-        }, 100);
+            <!-- ÎLE COPIÉE depuis composition/index.html par `npm run sync` : ne pas éditer ici. -->
+            <script
+                type="application/hyperframes-slideshow+json"
+                id="island-copy"
+            >{"slides":[{"sceneId":"start","notes":"Écran d'attente : n'importe quelle touche lance la présentation."},{"sceneId":"intro","notes":"Bienvenue. ANDRIA est la plateforme d'apprentissage que Step a conçue entre 2022 et 2026, avec le soutien de la Région Nouvelle-Aquitaine et de l'Union européenne."},{"sceneId":"what","notes":"Trois temps : ce qu'est ANDRIA, le problème résolu et les objectifs, puis la comparaison LMS / LXP. Une interaction par temps.","fragments":[10.2,11,11.8,12.6,13.4,14.2]},{"sceneId":"who","notes":"Après la définition et le comparatif LMS / LXP : à qui sert ANDRIA et ce que chacun y gagne. Trois profils, un bénéfice chacun, tous tirés de la documentation du projet (objectifs 1 à 9). Aucun chiffre ni résultat n'est affiché : la présentation ne revendique pas d'amélioration mesurée. Les cartes se posent d'elles-mêmes, un seul clic pour continuer.","fragments":[70.2]},{"sceneId":"traits","notes":"Neuf caractéristiques sous forme de tuiles : survol ou clic pour les détails. Le chevron suffit pour avancer.","fragments":[16.2,17]},{"sceneId":"frise","notes":"La première phase, financée par la Région, a validé la faisabilité. La deuxième, cofinancée par le FSE, a produit la plateforme actuelle. Cliquer un jalon ouvre sa scène.","fragments":[22.2,23,23.8,24.6,25.4,26.2,27,27.8,28.6]},{"sceneId":"setup","notes":"Avant la clôture : ce qu'il faut pour mettre ANDRIA en place, en termes simples. Trois faits tirés du dépôt du LXP : s'installe sur un serveur avec sauvegardes, IA séparée et désactivable, import Moodle. Le détail technique (conteneurs, bases, fournisseur d'IA) reste en réserve pour les questions. Volontairement absents : licence, hébergement des données, SSO, SCORM, tarif, contact (rien dans le dépôt). Le bandeau du bas renvoie à l'équipe Step.","fragments":[74.2]},{"sceneId":"closing","notes":"Six jalons choisis (premiers écrans, tableau de bord 2024, premier assistant, tableau de bord IA, ancien puis nouveau tableau de bord) : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les autres captures sont gardées dans closing.json (clé _snapshotsRetirees). Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer. Dernier écran : la page de connexion, comparée entre 2023 (visuel fixe) et 2026 (le fond est une photo tirée de l'API Unsplash à chaque visite). Les quatre photos affichées sont de vraies photos Unsplash (licence Unsplash) ; les captures sont produites par tools/snapshots/login.mjs.","fragments":[30.2,30.68,31.16,31.64,32.12,32.6,33.08,33.56]}],"slideSequences":[{"id":"proto","label":"Un prototype pour valider l'idée","slides":[{"sceneId":"proto","notes":"Phase 1 : analyse du marché, personas, prototype, bases techniques ; faisabilité validée.","fragments":[38.2,39,40]}]},{"id":"content","label":"Créer ses propres cours","slides":[{"sceneId":"content","notes":"Structure en six niveaux, puis éditeur riche et six types d'activité.","fragments":[42.2,43]}]},{"id":"assistant","label":"Un assistant 24 h/24","slides":[{"sceneId":"assistant","notes":"Assistant virtuel disponible 24 h/24 et 7 j/7 ; réponses contextualisées au cours ; quiz suggéré. Les réponses affichées sont des exemples scénarisés.","fragments":[46.2,47,48]}]},{"id":"assess","label":"Vérifier ce qui est acquis","slides":[{"sceneId":"assess","notes":"Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.","fragments":[50.2,51,52]}]},{"id":"organize","label":"Tout organiser au même endroit","slides":[{"sceneId":"organize","notes":"Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.","fragments":[54.2,55,56,57]}]},{"id":"care","label":"Accompagner chaque apprenant","slides":[{"sceneId":"care","notes":"Progression de l'apprenant (reprise de la dernière leçon, avancement, profil d'apprentissage) ; humeur du jour : une barre se règle et le pictogramme se déforme en relief (morphing 3D), puis un commentaire est envoyé ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.","fragments":[58.2,59,60,61]}]},{"id":"steer","label":"Piloter usages et contenus","slides":[{"sceneId":"steer","notes":"Consommation de l'IA par promotion, classement des cours, import de cours Moodle et de parcours, tableaux de bord selon le rôle. Données fictives.","fragments":[62.2,63,64,65]}]},{"id":"personalize","label":"À l'image de l'organisme","slides":[{"sceneId":"personalize","notes":"Thèmes clairs et sombres au choix de l'organisme ; identité (nom, logo) ; modèles d'e-mails ; félicitations, badges de compétences et historique d'accomplissements. Données fictives.","fragments":[66.2,67,68,69]}]}]}</script>
+        </hyperframes-slideshow>
 
-        // Raccourci de développement : index.html#content (ou #assistant, #frise…) ouvre directement la scène.
-        function applyHash() {
-          var c = deck.controller;
-          var h = location.hash.slice(1);
-          if (!h || !c || !c.show) return;
-          var fr = c.show.slides.findIndex(function (s) { return s.sceneId === "frise"; });
-          if (h === "frise") {
-            c.syncTo("main", fr, 1);
-          } else if (c.show.sequences[h]) {
-            c.syncTo("main", fr, 1);
-            setTimeout(function () { c.enterBranch(h); }, 300);
-          } else {
-            // Diapositive de premier niveau (start, intro, what, traits, closing) : accès direct.
-            var idx = c.show.slides.findIndex(function (s) { return s.sceneId === h; });
-            if (idx >= 0) c.syncTo("main", idx, 0);
-          }
-        }
-        var timer = setInterval(function () {
-          if (patchController()) {
-            clearInterval(timer);
-            applyHash();
-          }
-        }, 100);
-      })();
-    </script>
-  </body>
+        <!-- Navigation globale (ui/nav.js) : numéro discret + plan. Données générées par `npm run sync`. -->
+        <div id="nav" data-thumbs="composition/assets/thumbs/">
+            <div class="nav-counter-wrap nav-hide">
+                <button type="button" class="nav-counter"></button>
+            </div>
+            <div class="nav-grid" role="dialog" aria-modal="true" hidden>
+                <div class="nav-head">
+                    <h2 class="nav-title"></h2>
+                    <button type="button" class="nav-close">×</button>
+                </div>
+                <ul class="nav-cards"></ul>
+            </div>
+            <script type="application/json" id="nav-data">{"ui":{"title":"Plan de la présentation","open":"Ouvrir le plan de la présentation","close":"Fermer le plan"},"entries":[{"kind":"main","id":"start","index":0,"label":"Départ"},{"kind":"main","id":"intro","index":1,"label":"Introduction"},{"kind":"main","id":"what","index":2,"label":"ANDRIA"},{"kind":"main","id":"who","index":3,"label":"Pour qui, pour quoi"},{"kind":"main","id":"traits","index":4,"label":"Caractéristiques"},{"kind":"main","id":"frise","index":5,"label":"Frise du projet"},{"kind":"main","id":"setup","index":6,"label":"Mettre en place ANDRIA"},{"kind":"seq","id":"proto","label":"Un prototype pour valider l'idée"},{"kind":"seq","id":"content","label":"Créer ses propres cours"},{"kind":"seq","id":"assistant","label":"Un assistant 24 h/24"},{"kind":"seq","id":"assess","label":"Vérifier ce qui est acquis"},{"kind":"seq","id":"organize","label":"Tout organiser au même endroit"},{"kind":"seq","id":"care","label":"Accompagner chaque apprenant"},{"kind":"seq","id":"steer","label":"Piloter usages et contenus"},{"kind":"seq","id":"personalize","label":"À l'image de l'organisme"},{"kind":"main","id":"closing","index":7,"label":"Évolution de l'interface"}]}</script>
+        </div>
+        <script src="ui/nav.js"></script>
+
+        <script>
+            // Les clics dans la composition (chevron, frise) demandent « suivant » au parent.
+            (function () {
+                var deck = document.querySelector("hyperframes-slideshow");
+                window.addEventListener("message", function (e) {
+                    var d = e.data;
+                    if (!d || d.source !== "lxp-deck") return;
+                    if (d.type === "goto") {
+                        var c = deck.controller;
+                        var idx =
+                            c && c.show
+                                ? c.show.slides.findIndex(function (s) {
+                                      return s.sceneId === d.scene;
+                                  })
+                                : -1;
+                        if (idx >= 0) c.syncTo("main", idx, d.fragment);
+                        return;
+                    }
+                    if (d.type === "back") {
+                        if (deck.controller && deck.controller.back)
+                            deck.controller.back();
+                        return;
+                    }
+                    if (d.type === "open") {
+                        if (/^https:\/\//.test(d.url))
+                            window.open(d.url, "_blank", "noopener");
+                        return;
+                    }
+                    if (d.type === "branch") {
+                        if (deck.controller && deck.controller.enterBranch)
+                            deck.controller.enterBranch(d.id);
+                        return;
+                    }
+                    if (d.type !== "nav") return;
+                    var key = d.action === "prev" ? "ArrowLeft" : "ArrowRight";
+                    deck.dispatchEvent(
+                        new KeyboardEvent("keydown", {
+                            key: key,
+                            bubbles: true,
+                        }),
+                    );
+                });
+                deck.focus();
+
+                // Le contrôleur d'origine revient à la diapositive précédente, pas à la PAUSE précédente.
+                // On le complète : « précédent » recule d'une PAUSE, puis atterrit sur la dernière PAUSE
+                // de la diapositive d'avant (état « terminé »), comme dans un vrai retour arrière.
+                function patchController() {
+                    var c = deck.controller;
+                    if (!c || c.__lxpPatched || !c.syncTo || !c.show)
+                        return !!(c && c.__lxpPatched);
+                    var original = c.prev.bind(c);
+                    c.prev = function () {
+                        var p = c.position;
+                        var slides =
+                            p.sequenceId === "main"
+                                ? c.show.slides
+                                : (c.show.sequences[p.sequenceId] || {})
+                                      .slides || [];
+                        if (p.fragmentIndex > 0)
+                            return c.syncTo(
+                                p.sequenceId,
+                                p.slideIndex,
+                                p.fragmentIndex - 1,
+                            );
+                        if (p.slideIndex > 0) {
+                            var before = slides[p.slideIndex - 1];
+                            var last =
+                                before && before.fragments
+                                    ? before.fragments.length - 1
+                                    : -1;
+                            if (last > 0)
+                                return c.syncTo(
+                                    p.sequenceId,
+                                    p.slideIndex - 1,
+                                    last,
+                                );
+                        }
+                        return original();
+                    };
+                    c.__lxpPatched = true;
+                    return true;
+                }
+                // Écran de départ : n'importe quelle touche lance la présentation (focus dans la page parente).
+                var NAV_KEYS = [
+                    "ArrowRight",
+                    "ArrowLeft",
+                    " ",
+                    "Backspace",
+                    "p",
+                    "P",
+                    "Shift",
+                    "Control",
+                    "Alt",
+                    "Meta",
+                ];
+                document.addEventListener("keydown", function (e) {
+                    var c = deck.controller;
+                    if (
+                        !c ||
+                        e.ctrlKey ||
+                        e.metaKey ||
+                        e.altKey ||
+                        NAV_KEYS.indexOf(e.key) !== -1
+                    )
+                        return;
+                    var pos = c.position;
+                    if (pos.sequenceId === "main" && pos.slideIndex === 0)
+                        c.next();
+                });
+
+                // Pas d'infobulle « HyperFrames Composition » sur la scène (titre de l'iframe).
+                var titleTimer = setInterval(function () {
+                    var pl = document.querySelector("hyperframes-player");
+                    var fr = pl && pl.iframeElement;
+                    if (fr) {
+                        fr.removeAttribute("title");
+                        clearInterval(titleTimer);
+                    }
+                }, 100);
+
+                // Raccourci de développement : index.html#content (ou #assistant, #frise…) ouvre directement la scène.
+                function applyHash() {
+                    var c = deck.controller;
+                    var h = location.hash.slice(1);
+                    if (!h || !c || !c.show) return;
+                    var fr = c.show.slides.findIndex(function (s) {
+                        return s.sceneId === "frise";
+                    });
+                    if (h === "frise") {
+                        c.syncTo("main", fr, 1);
+                    } else if (c.show.sequences[h]) {
+                        c.syncTo("main", fr, 1);
+                        setTimeout(function () {
+                            c.enterBranch(h);
+                        }, 300);
+                    } else {
+                        // Diapositive de premier niveau (start, intro, what, traits, closing) : accès direct.
+                        var idx = c.show.slides.findIndex(function (s) {
+                            return s.sceneId === h;
+                        });
+                        if (idx >= 0) c.syncTo("main", idx, 0);
+                    }
+                }
+                var timer = setInterval(function () {
+                    if (patchController()) {
+                        clearInterval(timer);
+                        applyHash();
+                    }
+                }, 100);
+            })();
+        </script>
+    </body>
 </html>

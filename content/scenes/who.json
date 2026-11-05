@@ -1,0 +1,23 @@
+{
+  "label": "Pour qui, pour quoi",
+  "notes": "Après la définition et le comparatif LMS / LXP : à qui sert ANDRIA et ce que chacun y gagne. Trois profils, un bénéfice chacun, tous tirés de la documentation du projet (objectifs 1 à 9). Aucun chiffre ni résultat n'est affiché : la présentation ne revendique pas d'amélioration mesurée. Les cartes se posent d'elles-mêmes, un seul clic pour continuer.",
+  "title": "Pour **qui** ? Pour **quoi** ?",
+  "lede": "Conçue par un organisme de formation pour la formation à distance, notamment auprès de publics fragilisés. Trois profils y trouvent leur place.",
+  "roles": [
+    {
+      "role": "L'apprenant",
+      "title": "Apprendre à son rythme",
+      "text": "Des contenus et des modalités adaptés à ses besoins, ses envies et son profil, avec un assistant disponible 24 h/24."
+    },
+    {
+      "role": "Le formateur",
+      "title": "Repérer avant le décrochage",
+      "text": "Des signaux d'alerte précoces et des outils d'analyse pour proposer une remédiation ciblée."
+    },
+    {
+      "role": "L'organisme de formation",
+      "title": "Garder la main sur ses formations",
+      "text": "Créer, publier et mettre à jour les contenus, reprendre ceux de Moodle, analyser les données que la plateforme produit."
+    }
+  ]
+}

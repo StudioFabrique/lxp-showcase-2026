@@ -2,7 +2,7 @@
    0 la consommation de l'IA (total de tokens, par promotion, plus gros consommateurs)
    1 le classement des cours, d'après les retours des apprenants
    2 l'import de cours Moodle et de parcours
-   3 un tableau de bord par rôle (apprenant, équipe pédagogique, administrateur).
+   3 un tableau de bord par rôle (apprenant, équipe pédagogique) : barre latérale et cartes de l'application.
    Libellés repris du LXP (dashboard-ia, dashboard-admin, CourseImport). Données fictives.
    Tous les textes viennent de content/scenes/steer.json (Content.*). */
 (function () {
@@ -139,9 +139,69 @@
     chevOff(14.7);
     leave("uc", 14.7);
     activate("ud", 15.4);
-    enter("ud", 15.4, [".pi-tab", ".pi-panel.on .pi-hello", ".pi-panel.on .pi-tile"]);
-    chevOn(18.6);
-    tl.addLabel("step3", 18.9);
+    enter("ud", 15.4, [".pi-tab"]);
+    // Construction du tableau de bord (séquence « dashboards » du dépôt lxp) : la barre latérale arrive en verre
+    // puis se solidifie, les cartes se posent l'une après l'autre ; un curseur change ensuite de rôle.
+    var ud = el.querySelector(".ud");
+    var tabs = gsap.utils.toArray(q(".pi-tab"));
+    var faces = gsap.utils.toArray(q(".pi-face"));
+    var navs = gsap.utils.toArray(q(".pi-nav"));
+    var cursor = el.querySelector(".pi-cursor");
+    var ring = el.querySelector(".pi-ring");
+    var rs = getComputedStyle(document.documentElement);
+    var CP = rs.getPropertyValue("--color-primary").trim();
+    var CB = rs.getPropertyValue("--color-base-100").trim();
+    var CT = rs.getPropertyValue("--color-base-content").trim();
+    var CL = rs.getPropertyValue("--color-base-300").trim();
+    var tabOn = { backgroundColor: CP, borderColor: CP, color: "#ffffff" };
+    var tabOff = { backgroundColor: CB, borderColor: CL, color: CT };
+    var pos = function (node, fx0, fy0) {
+      var x = 0;
+      var y = 0;
+      var n = node;
+      while (n && n !== ud) {
+        x += n.offsetLeft;
+        y += n.offsetTop;
+        n = n.offsetParent;
+      }
+      return { x: x + node.offsetWidth * fx0, y: y + node.offsetHeight * fy0 };
+    };
+    // État initial : le rôle « Apprenant » est affiché.
+    tl.set(tabs[0], tabOn, 0);
+    tl.set(tabs[1], tabOff, 0);
+    tl.set(faces[1], { opacity: 0, pointerEvents: "none" }, 0);
+    tl.set(navs[1], { opacity: 0 }, 0);
+    // 1. Barre latérale : verre en vol, puis solide ; les entrées apparaissent.
+    fx.ft(tl, q(".pi-side"), { opacity: 0, x: -24, y: -30, z: 520, rotation: -8, transformPerspective: P }, { opacity: 1, x: 0, y: 0, z: 40, rotation: 0, duration: 1.0, ease: "back.out(1.2)" }, 16.4);
+    fx.ft(tl, q(".pi-glass"), { opacity: 1 }, { opacity: 0, duration: 1.1, ease: "sine.inOut" }, 17.3);
+    fx.ft(tl, q(".pi-nav.on small, .pi-nav.on li"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: "sine.out", stagger: 0.07 }, 17.6);
+    // 2. Cartes du tableau de bord : elles se posent en profondeur.
+    fx.ft(tl, q(".pi-face:first-child .pi-head"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 17.2);
+    fx.drop(tl, q(".pi-face:first-child .pi-c"), 17.5, { z0: 420, turn: 8, stagger: 0.14, dur: 0.75 });
+    // 3. Un curseur clique sur « Équipe pédagogique » : la navigation et les cartes changent.
+    var tip = function (pt) {
+      return { x: pt.x - 3.6, y: pt.y - 2.3 };
+    };
+    var T1 = pos(tabs[1], 0.5, 0.55);
+    var T0 = { x: T1.x + 120, y: T1.y + 150 };
+    fx.ft(tl, cursor, { opacity: 0, x: tip(T0).x, y: tip(T0).y, scale: 1 }, { opacity: 1, x: tip(T1).x, y: tip(T1).y, duration: 0.8, ease: "power2.inOut" }, 19.2);
+    tl.to(cursor, { scale: 0.9, duration: 0.1 }, 20.1);
+    tl.to(cursor, { scale: 1, duration: 0.16 }, 20.2);
+    fx.ft(tl, ring, { x: T1.x - 22, y: T1.y - 22, scale: 0.35, opacity: 0.6 }, { x: T1.x - 22, y: T1.y - 22, scale: 1.4, opacity: 0, duration: 0.45 }, 20.1);
+    tl.to(cursor, { opacity: 0, duration: 0.3 }, 20.6);
+    tl.to(tabs[0], Object.assign({ duration: 0.25 }, tabOff), 20.1);
+    tl.to(tabs[1], Object.assign({ duration: 0.25 }, tabOn), 20.1);
+    tl.to(faces[0], { opacity: 0, duration: 0.3 }, 20.1);
+    tl.set(faces[0], { pointerEvents: "none" }, 20.1);
+    tl.to(navs[0], { opacity: 0, duration: 0.3 }, 20.1);
+    tl.to(navs[1], { opacity: 1, duration: 0.3 }, 20.35);
+    tl.to(faces[1], { opacity: 1, duration: 0.2 }, 20.4);
+    tl.set(faces[1], { pointerEvents: "auto" }, 20.4);
+    fx.ft(tl, q(".pi-face:last-child .pi-head"), { y: 24 }, { y: 0, duration: 0.5, ease: "power3.out" }, 20.4);
+    fx.drop(tl, q(".pi-face:last-child .pi-c"), 20.5, { z0: 420, turn: 8, stagger: 0.12, dur: 0.7 });
+    fx.ft(tl, q(".pi-nav:last-child li"), { x: -14 }, { x: 0, duration: 0.4, ease: "sine.out", stagger: 0.06 }, 20.5);
+    chevOn(22.4);
+    tl.addLabel("step3", 22.7);
 
     // ── Interactions (hors timeline) ──────────────────────────────────────────────────────
     var hover = function (node, on, off) {
@@ -232,20 +292,22 @@
       });
     });
 
-    // Rôles : un onglet affiche le tableau de bord du rôle.
-    var tabs = gsap.utils.toArray(q(".pi-tab"));
-    var panels = gsap.utils.toArray(q(".pi-panel"));
+    // Rôles : un onglet affiche la navigation et les cartes du rôle.
     var cur = 0;
     var showRole = function (i, animate) {
+      gsap.killTweensOf(tabs.concat(faces, navs));
       tabs.forEach(function (t, k) {
-        t.classList.toggle("on", k === i);
+        gsap.set(t, k === i ? tabOn : tabOff);
       });
-      panels.forEach(function (p, k) {
-        p.classList.toggle("on", k === i);
-        if (k !== i) gsap.set(p, { clearProps: "opacity" });
+      faces.forEach(function (f, k) {
+        gsap.set(f, { opacity: k === i ? 1 : 0, pointerEvents: k === i ? "auto" : "none" });
+      });
+      navs.forEach(function (n, k) {
+        gsap.set(n, { opacity: k === i ? 1 : 0 });
       });
       if (animate && i !== cur) {
-        gsap.fromTo(panels[i].querySelectorAll(".pi-hello, .pi-tile"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5 * d, stagger: 0.08 * d, ease: "power3.out", overwrite: "auto" });
+        gsap.fromTo(faces[i].querySelectorAll(".pi-head, .pi-c"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5 * d, stagger: 0.08 * d, ease: "power3.out", overwrite: "auto" });
+        gsap.fromTo(navs[i].querySelectorAll("li"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.35 * d, stagger: 0.05 * d, overwrite: "auto" });
       }
       cur = i;
     };
@@ -255,9 +317,9 @@
         showRole(i, true);
       });
     });
-    panels.forEach(function (p) {
-      p.querySelectorAll(".pi-tile").forEach(function (t) {
-        hover(t, { y: -8 }, { y: 0 });
+    faces.forEach(function (f) {
+      f.querySelectorAll(".pi-c").forEach(function (c) {
+        hover(c, { y: -6 }, { y: 0 });
       });
     });
 
@@ -269,7 +331,6 @@
         resetImp(i);
       });
       showRole(0, false);
-      gsap.set(panels[0].querySelectorAll(".pi-hello, .pi-tile"), { clearProps: "opacity,transform" });
     });
   };
 })();

@@ -17,10 +17,16 @@ const flag = (n, d) => (args.includes(n) ? args[args.indexOf(n) + 1] : d);
 const repo = resolve(root, flag("--repo", "../lxp"));
 const cache = join(root, ".snapshots-cache");
 const valueFlags = ["--repo", "--route", "--out"];
-const which = args.find((a, i) => !a.startsWith("--") && !valueFlags.includes(args[i - 1])) || "all";
+const which =
+  args.find(
+    (a, i) => !a.startsWith("--") && !valueFlags.includes(args[i - 1]),
+  ) || "all";
 
-const snaps = JSON.parse(readFileSync(join(root, "content/scenes/closing.json"), "utf8")).snapshots;
-const todo = which === "all" ? Object.keys(captures).map(Number) : [Number(which)];
+const snaps = JSON.parse(
+  readFileSync(join(root, "content/scenes/closing.json"), "utf8"),
+).snapshots;
+const todo =
+  which === "all" ? Object.keys(captures).map(Number) : [Number(which)];
 mkdirSync(cache, { recursive: true });
 let failed = 0;
 for (const i of todo) {
@@ -31,7 +37,7 @@ for (const i of todo) {
     failed++;
     continue;
   }
-  console.log(`[${i}] ${s.date} · ${s.titre} (${s._commit})`);
+  console.log(`[${i}] ${s.date} - ${s.titre} (${s._commit})`);
   try {
     // Le résultat du build est conservé (petit) : les itérations sur les données ne reconstruisent pas.
     const built = join(cache, "out", s._commit);
@@ -40,9 +46,20 @@ for (const i of todo) {
       cpSync(build(front), built, { recursive: true });
       rmSync(join(cache, "src", s._commit), { recursive: true, force: true });
     }
-    const out = args.includes("--out") ? flag("--out") : join(root, "composition", s.image);
-    const r = await capture({ dir: built, out, route: flag("--route", cfg.route), mock: cfg.mock, storage: cfg.storage, before: cfg.before, viewport: cfg.viewport });
-    if (args.includes("--seen")) console.log("  API :\n    " + r.seen.join("\n    "));
+    const out = args.includes("--out")
+      ? flag("--out")
+      : join(root, "composition", s.image);
+    const r = await capture({
+      dir: built,
+      out,
+      route: flag("--route", cfg.route),
+      mock: cfg.mock,
+      storage: cfg.storage,
+      before: cfg.before,
+      viewport: cfg.viewport,
+    });
+    if (args.includes("--seen"))
+      console.log("  API :\n    " + r.seen.join("\n    "));
     console.log(`  ✓ ${args.includes("--out") ? out : s.image}`);
   } catch (e) {
     console.error("  ✗", e.message.split("\n").slice(0, 6).join("\n    "));

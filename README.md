@@ -27,7 +27,7 @@ Testé dans Chrome et WebKit (le moteur de Safari), en `file://`, du 1024 × 768
 npm run scene -- proto
 ```
 
-Ouvre la scène dans le navigateur et recharge la page à chaque modification. Scènes possibles : `frise`, `proto`, `content`, `assistant`, `assess`, `organize`, `care`, `steer`, `personalize`, `closing`.
+Ouvre la scène dans le navigateur et recharge la page à chaque modification. Scènes possibles : `who`, `frise`, `proto`, `content`, `assistant`, `assess`, `organize`, `care`, `steer`, `personalize`, `closing`.
 
 ## Si je veux modifier le contenu sans l'IA, je fais comment ?
 

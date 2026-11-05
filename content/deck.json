@@ -1,12 +1,12 @@
 {
-  "title": "ANDRIA — état des lieux 2026",
+  "title": "Présentation ANDRIA 2026",
   "demoUrl": "https://lxp.dev.step.eco",
   "stage": {
     "logoLabel": "ANDRIA",
     "cofinancement": "Projet cofinancé par l'Union européenne",
     "years": {
       "from": "2022",
-      "dash": "—",
+      "dash": "-",
       "to": "2026"
     },
     "partners": [
@@ -17,7 +17,7 @@
         "alt": "Région Nouvelle-Aquitaine"
       },
       {
-        "alt": "L'Europe s'engage en France — Fonds social européen, Union européenne"
+        "alt": "L'Europe s'engage en France Fonds social européen, Union européenne"
       }
     ]
   },

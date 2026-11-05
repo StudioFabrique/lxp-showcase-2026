@@ -34,6 +34,13 @@
       ]
     },
     {
+      "sceneId": "who",
+      "notes": "Après la définition et le comparatif LMS / LXP : à qui sert ANDRIA et ce que chacun y gagne. Trois profils, un bénéfice chacun, tous tirés de la documentation du projet (objectifs 1 à 9). Aucun chiffre ni résultat n'est affiché : la présentation ne revendique pas d'amélioration mesurée. Les cartes se posent d'elles-mêmes, un seul clic pour continuer.",
+      "fragments": [
+        70.2
+      ]
+    },
+    {
       "sceneId": "traits",
       "notes": "Neuf caractéristiques sous forme de tuiles : survol ou clic pour les détails. Le chevron suffit pour avancer.",
       "fragments": [
@@ -57,8 +64,15 @@
       ]
     },
     {
+      "sceneId": "setup",
+      "notes": "Avant la clôture : ce qu'il faut pour mettre ANDRIA en place, en termes simples. Trois faits tirés du dépôt du LXP : s'installe sur un serveur avec sauvegardes, IA séparée et désactivable, import Moodle. Le détail technique (conteneurs, bases, fournisseur d'IA) reste en réserve pour les questions. Volontairement absents : licence, hébergement des données, SSO, SCORM, tarif, contact (rien dans le dépôt). Le bandeau du bas renvoie à l'équipe Step.",
+      "fragments": [
+        74.2
+      ]
+    },
+    {
       "sceneId": "closing",
-      "notes": "Un commit à la fois : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer. Dernier écran : la page de connexion, comparée entre 2023 (visuel fixe) et 2026 (le fond est une photo tirée de l'API Unsplash à chaque visite). Les quatre photos affichées sont de vraies photos Unsplash (licence Unsplash) ; les captures sont produites par tools/snapshots/login.mjs.",
+      "notes": "Six jalons choisis (premiers écrans, tableau de bord 2024, premier assistant, tableau de bord IA, ancien puis nouveau tableau de bord) : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les autres captures sont gardées dans closing.json (clé _snapshotsRetirees). Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer. Dernier écran : la page de connexion, comparée entre 2023 (visuel fixe) et 2026 (le fond est une photo tirée de l'API Unsplash à chaque visite). Les quatre photos affichées sont de vraies photos Unsplash (licence Unsplash) ; les captures sont produites par tools/snapshots/login.mjs.",
       "fragments": [
         30.2,
         30.68,
@@ -67,15 +81,7 @@
         32.12,
         32.6,
         33.08,
-        33.56,
-        34.04,
-        34.52,
-        35,
-        35.48,
-        35.96,
-        36.44,
-        36.92,
-        37.4
+        33.56
       ]
     }
   ],
@@ -97,7 +103,7 @@
     },
     {
       "id": "content",
-      "label": "Créer du contenu",
+      "label": "Créer ses propres cours",
       "slides": [
         {
           "sceneId": "content",
@@ -111,7 +117,7 @@
     },
     {
       "id": "assistant",
-      "label": "Un assistant disponible 24 h/24",
+      "label": "Un assistant 24 h/24",
       "slides": [
         {
           "sceneId": "assistant",
@@ -126,7 +132,7 @@
     },
     {
       "id": "assess",
-      "label": "Évaluer",
+      "label": "Vérifier ce qui est acquis",
       "slides": [
         {
           "sceneId": "assess",
@@ -141,7 +147,7 @@
     },
     {
       "id": "organize",
-      "label": "Organiser",
+      "label": "Tout organiser au même endroit",
       "slides": [
         {
           "sceneId": "organize",
@@ -157,11 +163,11 @@
     },
     {
       "id": "care",
-      "label": "Suivre et accompagner",
+      "label": "Accompagner chaque apprenant",
       "slides": [
         {
           "sceneId": "care",
-          "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
+          "notes": "Progression de l'apprenant (reprise de la dernière leçon, avancement, profil d'apprentissage) ; humeur du jour : une barre se règle et le pictogramme se déforme en relief (morphing 3D), puis un commentaire est envoyé ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
           "fragments": [
             58.2,
             59,
@@ -173,7 +179,7 @@
     },
     {
       "id": "steer",
-      "label": "Piloter",
+      "label": "Piloter usages et contenus",
       "slides": [
         {
           "sceneId": "steer",
@@ -189,7 +195,7 @@
     },
     {
       "id": "personalize",
-      "label": "Personnaliser et encourager",
+      "label": "À l'image de l'organisme",
       "slides": [
         {
           "sceneId": "personalize",
@@ -207,7 +213,7 @@
 }
     </script>
 
-    <div data-hf-id="hf-v1yu" id="root" data-composition-id="root" data-start="0" data-duration="70" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-v1yu" id="root" data-composition-id="root" data-start="0" data-duration="78" data-width="1920" data-height="1080">
     <div data-hf-id="hf-1rt5" id="stage">
       <div data-hf-id="hf-l8dk" id="logo" role="img" data-tx-aria-label="deck.stage.logoLabel"></div>
       <div data-hf-id="hf-0l40" id="partners">
@@ -349,6 +355,34 @@
       <button data-hf-id="hf-p9su" class="chevron mini" data-next data-tx-aria-label="deck.ui.continue"><i data-hf-id="hf-pu6f" class="halo"></i><svg data-hf-id="hf-eibp" viewBox="0 0 24 24" aria-hidden="true"><polyline data-hf-id="hf-9nrt" points="6 9 12 15 18 9"/></svg></button>
     </div>
 
+    <div id="scene-who" class="scene-frame clip" data-composition-id="who" data-start="70" data-duration="4" data-width="1920" data-height="1080" data-tx-data-label="who.label" data-fragments='[70.2]'>
+      <div class="cam">
+        <h2 class="h1 wo-title" data-tx="who.title"></h2>
+        <p class="lede wo-lede" data-tx="who.lede"></p>
+        <div class="wo-cards">
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            <small data-tx="who.roles.0.role"></small>
+            <h3 data-tx="who.roles.0.title"></h3>
+            <p data-tx="who.roles.0.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+            <small data-tx="who.roles.1.role"></small>
+            <h3 data-tx="who.roles.1.title"></h3>
+            <p data-tx="who.roles.1.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+            <small data-tx="who.roles.2.role"></small>
+            <h3 data-tx="who.roles.2.title"></h3>
+            <p data-tx="who.roles.2.text"></p>
+          </article>
+        </div>
+      </div>
+      <button class="chevron mini" data-next data-tx-aria-label="deck.ui.continue"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+    </div>
+
     <div data-hf-id="hf-ypq3" id="scene-frise" class="scene-frame clip" data-composition-id="frise" data-start="22" data-duration="8" data-width="1920" data-height="1080" data-tx-data-label="frise.label" data-fragments='[22.2, 23.0, 23.8, 24.6, 25.4, 26.2, 27.0, 27.8, 28.6]'>
       <div data-hf-id="hf-ao4s" class="cam3">
         <div data-hf-id="hf-kuqd" class="tiltwrap">
@@ -400,12 +434,41 @@
       <button class="chevron mini side" data-next data-tx-aria-label="deck.ui.nextStep"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></button>
     </div>
 
-    <div id="scene-closing" data-stage="hidden" class="scene-frame clip" data-composition-id="closing" data-start="30" data-duration="8" data-width="1920" data-height="1080" data-tx-data-label="closing.label" data-fragments='[30.2, 30.68, 31.16, 31.64, 32.12, 32.6, 33.08, 33.56, 34.04, 34.52, 35.0, 35.48, 35.96, 36.44, 36.92, 37.4]'>
+    <div id="scene-setup" class="scene-frame clip" data-composition-id="setup" data-start="74" data-duration="4" data-width="1920" data-height="1080" data-tx-data-label="setup.label" data-fragments='[74.2]'>
+      <div class="cam">
+        <h2 class="h1 wo-title" data-tx="setup.title"></h2>
+        <p class="lede wo-lede" data-tx="setup.lede"></p>
+        <div class="wo-cards">
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></span>
+            <small data-tx="setup.cards.0.role"></small>
+            <h3 data-tx="setup.cards.0.title"></h3>
+            <p data-tx="setup.cards.0.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
+            <small data-tx="setup.cards.1.role"></small>
+            <h3 data-tx="setup.cards.1.title"></h3>
+            <p data-tx="setup.cards.1.text"></p>
+          </article>
+          <article class="wo-card">
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg></span>
+            <small data-tx="setup.cards.2.role"></small>
+            <h3 data-tx="setup.cards.2.title"></h3>
+            <p data-tx="setup.cards.2.text"></p>
+          </article>
+        </div>
+        <p class="wo-band" data-tx="setup.band"></p>
+      </div>
+      <button class="chevron mini" data-next data-tx-aria-label="deck.ui.continue"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+    </div>
+
+    <div id="scene-closing" data-stage="hidden" class="scene-frame clip" data-composition-id="closing" data-start="30" data-duration="8" data-width="1920" data-height="1080" data-tx-data-label="closing.label" data-fragments='[30.2, 30.68, 31.16, 31.64, 32.12, 32.6, 33.08, 33.56]'>
       <div class="cam">
         <h2 class="cl-title" data-tx="closing.title"></h2>
-        <div class="cl-browser"><div class="cl-view"><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.0.image" data-tx-alt="closing.snapshots.0.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.1.image" data-tx-alt="closing.snapshots.1.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.2.image" data-tx-alt="closing.snapshots.2.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.3.image" data-tx-alt="closing.snapshots.3.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.4.image" data-tx-alt="closing.snapshots.4.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.5.image" data-tx-alt="closing.snapshots.5.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.6.image" data-tx-alt="closing.snapshots.6.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.7.image" data-tx-alt="closing.snapshots.7.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.8.image" data-tx-alt="closing.snapshots.8.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.9.image" data-tx-alt="closing.snapshots.9.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.10.image" data-tx-alt="closing.snapshots.10.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.11.image" data-tx-alt="closing.snapshots.11.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.12.image" data-tx-alt="closing.snapshots.12.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.13.image" data-tx-alt="closing.snapshots.13.titre" /></div><div class="cl-shot cl-cmp"><figure class="cmp-pane cmp-then"><figcaption><b data-tx="closing.comparatif.debut.annee"></b><span data-tx="closing.comparatif.debut.legende"></span></figcaption><div class="cmp-frame"><img alt="" data-tx-src="closing.comparatif.debut.image" data-tx-alt="closing.comparatif.debut.alt" /></div></figure><svg class="cmp-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg><figure class="cmp-pane cmp-now"><figcaption><b data-tx="closing.comparatif.fin.annee"></b><span data-tx="closing.comparatif.fin.legende"></span></figcaption><div class="cmp-frame"><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.0" data-tx-alt="closing.comparatif.fin.alt" /><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.1" /><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.2" /><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.3" /><span class="cmp-badge">Unsplash</span></div></figure><div class="cmp-strip"><p class="cmp-query"><small data-tx="closing.comparatif.requeteLibelle"></small><span data-tx="closing.comparatif.requete"></span></p><div class="cmp-photos"><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.0.image" data-tx-alt="closing.comparatif.photos.0.alt" /></figure><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.1.image" data-tx-alt="closing.comparatif.photos.1.alt" /></figure><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.2.image" data-tx-alt="closing.comparatif.photos.2.alt" /></figure><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.3.image" data-tx-alt="closing.comparatif.photos.3.alt" /></figure></div></div></div></div></div>
-        <div class="cl-info"><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.0.date"></p><h3 class="cl-name" data-tx="closing.snapshots.0.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.0.fonctions.0"></li><li data-tx="closing.snapshots.0.fonctions.1"></li><li data-tx="closing.snapshots.0.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.1.date"></p><h3 class="cl-name" data-tx="closing.snapshots.1.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.1.fonctions.0"></li><li data-tx="closing.snapshots.1.fonctions.1"></li><li data-tx="closing.snapshots.1.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.2.date"></p><h3 class="cl-name" data-tx="closing.snapshots.2.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.2.fonctions.0"></li><li data-tx="closing.snapshots.2.fonctions.1"></li><li data-tx="closing.snapshots.2.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.3.date"></p><h3 class="cl-name" data-tx="closing.snapshots.3.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.3.fonctions.0"></li><li data-tx="closing.snapshots.3.fonctions.1"></li><li data-tx="closing.snapshots.3.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.4.date"></p><h3 class="cl-name" data-tx="closing.snapshots.4.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.4.fonctions.0"></li><li data-tx="closing.snapshots.4.fonctions.1"></li><li data-tx="closing.snapshots.4.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.5.date"></p><h3 class="cl-name" data-tx="closing.snapshots.5.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.5.fonctions.0"></li><li data-tx="closing.snapshots.5.fonctions.1"></li><li data-tx="closing.snapshots.5.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.6.date"></p><h3 class="cl-name" data-tx="closing.snapshots.6.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.6.fonctions.0"></li><li data-tx="closing.snapshots.6.fonctions.1"></li><li data-tx="closing.snapshots.6.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.7.date"></p><h3 class="cl-name" data-tx="closing.snapshots.7.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.7.fonctions.0"></li><li data-tx="closing.snapshots.7.fonctions.1"></li><li data-tx="closing.snapshots.7.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.8.date"></p><h3 class="cl-name" data-tx="closing.snapshots.8.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.8.fonctions.0"></li><li data-tx="closing.snapshots.8.fonctions.1"></li><li data-tx="closing.snapshots.8.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.9.date"></p><h3 class="cl-name" data-tx="closing.snapshots.9.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.9.fonctions.0"></li><li data-tx="closing.snapshots.9.fonctions.1"></li><li data-tx="closing.snapshots.9.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.10.date"></p><h3 class="cl-name" data-tx="closing.snapshots.10.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.10.fonctions.0"></li><li data-tx="closing.snapshots.10.fonctions.1"></li><li data-tx="closing.snapshots.10.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.11.date"></p><h3 class="cl-name" data-tx="closing.snapshots.11.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.11.fonctions.0"></li><li data-tx="closing.snapshots.11.fonctions.1"></li><li data-tx="closing.snapshots.11.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.12.date"></p><h3 class="cl-name" data-tx="closing.snapshots.12.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.12.fonctions.0"></li><li data-tx="closing.snapshots.12.fonctions.1"></li><li data-tx="closing.snapshots.12.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.13.date"></p><h3 class="cl-name" data-tx="closing.snapshots.13.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.13.fonctions.0"></li><li data-tx="closing.snapshots.13.fonctions.1"></li><li data-tx="closing.snapshots.13.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.14.date"></p><h3 class="cl-name" data-tx="closing.snapshots.14.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.14.fonctions.0"></li><li data-tx="closing.snapshots.14.fonctions.1"></li><li data-tx="closing.snapshots.14.fonctions.2"></li></ul></article></div>
-        <div class="cl-rail"><i class="cl-line"></i><i class="cl-done"></i><span class="cl-ext"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg></span><button type="button" class="cl-dot" data-goto="0" data-scene="closing" data-tx-aria-label="closing.snapshots.0.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="1" data-scene="closing" data-tx-aria-label="closing.snapshots.1.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="2" data-scene="closing" data-tx-aria-label="closing.snapshots.2.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="3" data-scene="closing" data-tx-aria-label="closing.snapshots.3.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="4" data-scene="closing" data-tx-aria-label="closing.snapshots.4.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="5" data-scene="closing" data-tx-aria-label="closing.snapshots.5.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="6" data-scene="closing" data-tx-aria-label="closing.snapshots.6.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="7" data-scene="closing" data-tx-aria-label="closing.snapshots.7.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="8" data-scene="closing" data-tx-aria-label="closing.snapshots.8.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="9" data-scene="closing" data-tx-aria-label="closing.snapshots.9.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="10" data-scene="closing" data-tx-aria-label="closing.snapshots.10.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="11" data-scene="closing" data-tx-aria-label="closing.snapshots.11.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="12" data-scene="closing" data-tx-aria-label="closing.snapshots.12.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="13" data-scene="closing" data-tx-aria-label="closing.snapshots.13.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="14" data-scene="closing" data-tx-aria-label="closing.snapshots.14.date"><i></i><span class="cl-yr"></span></button></div>
+        <div class="cl-browser"><div class="cl-view"><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.0.image" data-tx-alt="closing.snapshots.0.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.1.image" data-tx-alt="closing.snapshots.1.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.2.image" data-tx-alt="closing.snapshots.2.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.3.image" data-tx-alt="closing.snapshots.3.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.4.image" data-tx-alt="closing.snapshots.4.titre" /></div><div class="cl-shot"><span class="cl-miss" data-tx="closing.captureManquante"></span><img alt="" data-tx-src="closing.snapshots.5.image" data-tx-alt="closing.snapshots.5.titre" /></div><div class="cl-shot cl-cmp"><figure class="cmp-pane cmp-then"><figcaption><b data-tx="closing.comparatif.debut.annee"></b><span data-tx="closing.comparatif.debut.legende"></span></figcaption><div class="cmp-frame"><img alt="" data-tx-src="closing.comparatif.debut.image" data-tx-alt="closing.comparatif.debut.alt" /></div></figure><svg class="cmp-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg><figure class="cmp-pane cmp-now"><figcaption><b data-tx="closing.comparatif.fin.annee"></b><span data-tx="closing.comparatif.fin.legende"></span></figcaption><div class="cmp-frame"><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.0" data-tx-alt="closing.comparatif.fin.alt" /><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.1" /><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.2" /><img class="cmp-now-img" alt="" data-tx-src="closing.comparatif.fin.images.3" /><span class="cmp-badge">Unsplash</span></div></figure><div class="cmp-strip"><p class="cmp-query"><small data-tx="closing.comparatif.requeteLibelle"></small><span data-tx="closing.comparatif.requete"></span></p><div class="cmp-photos"><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.0.image" data-tx-alt="closing.comparatif.photos.0.alt" /></figure><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.1.image" data-tx-alt="closing.comparatif.photos.1.alt" /></figure><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.2.image" data-tx-alt="closing.comparatif.photos.2.alt" /></figure><figure class="cmp-ph"><img alt="" data-tx-src="closing.comparatif.photos.3.image" data-tx-alt="closing.comparatif.photos.3.alt" /></figure></div></div></div></div></div>
+        <div class="cl-info"><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.0.date"></p><h3 class="cl-name" data-tx="closing.snapshots.0.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.0.fonctions.0"></li><li data-tx="closing.snapshots.0.fonctions.1"></li><li data-tx="closing.snapshots.0.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.1.date"></p><h3 class="cl-name" data-tx="closing.snapshots.1.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.1.fonctions.0"></li><li data-tx="closing.snapshots.1.fonctions.1"></li><li data-tx="closing.snapshots.1.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.2.date"></p><h3 class="cl-name" data-tx="closing.snapshots.2.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.2.fonctions.0"></li><li data-tx="closing.snapshots.2.fonctions.1"></li><li data-tx="closing.snapshots.2.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.3.date"></p><h3 class="cl-name" data-tx="closing.snapshots.3.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.3.fonctions.0"></li><li data-tx="closing.snapshots.3.fonctions.1"></li><li data-tx="closing.snapshots.3.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.4.date"></p><h3 class="cl-name" data-tx="closing.snapshots.4.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.4.fonctions.0"></li><li data-tx="closing.snapshots.4.fonctions.1"></li><li data-tx="closing.snapshots.4.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.5.date"></p><h3 class="cl-name" data-tx="closing.snapshots.5.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.5.fonctions.0"></li><li data-tx="closing.snapshots.5.fonctions.1"></li><li data-tx="closing.snapshots.5.fonctions.2"></li></ul></article><article class="cl-card"><p class="cl-date" data-tx="closing.snapshots.6.date"></p><h3 class="cl-name" data-tx="closing.snapshots.6.titre"></h3><ul class="cl-feat"><li data-tx="closing.snapshots.6.fonctions.0"></li><li data-tx="closing.snapshots.6.fonctions.1"></li><li data-tx="closing.snapshots.6.fonctions.2"></li></ul></article></div>
+        <div class="cl-rail"><i class="cl-line"></i><i class="cl-done"></i><span class="cl-ext"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></svg></span><button type="button" class="cl-dot" data-goto="0" data-scene="closing" data-tx-aria-label="closing.snapshots.0.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="1" data-scene="closing" data-tx-aria-label="closing.snapshots.1.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="2" data-scene="closing" data-tx-aria-label="closing.snapshots.2.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="3" data-scene="closing" data-tx-aria-label="closing.snapshots.3.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="4" data-scene="closing" data-tx-aria-label="closing.snapshots.4.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="5" data-scene="closing" data-tx-aria-label="closing.snapshots.5.date"><i></i><span class="cl-yr"></span></button><button type="button" class="cl-dot" data-goto="6" data-scene="closing" data-tx-aria-label="closing.snapshots.6.date"><i></i><span class="cl-yr"></span></button></div>
         <div class="cl-final"><p class="cl-msg" data-tx="closing.final.message"></p><button type="button" class="btn primary cl-demo" data-tx-data-open="deck.demoUrl"><span data-tx="closing.final.demo"></span><span class="cl-url" data-tx="closing.final.adresse"></span></button></div>
       </div>
       <button class="chevron mini side" data-next data-tx-aria-label="deck.ui.continue"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></button>
@@ -765,6 +828,8 @@
             <div class="ch"><h3 data-tx="care.preferences.carte.entete.h3"></h3></div>
             <div class="rcols">
               <div class="rcol">
+                <p class="rtitle" data-tx="care.preferences.carte.rcols.rcol.0.titre"></p>
+                <p class="raide" data-tx="care.preferences.carte.rcols.rcol.0.aide"></p>
                 <p class="who" data-tx="care.preferences.carte.rcols.rcol.0.who.0"></p>
                 <div class="paces"><button type="button" class="pace on" data-tx-data-d="care.preferences.carte.rcols.rcol.0.paces.pace-description.0" data-tx="care.preferences.carte.rcols.rcol.0.paces.pace.0"></button><button type="button" class="pace" data-tx-data-d="care.preferences.carte.rcols.rcol.0.paces.pace-description.1" data-tx="care.preferences.carte.rcols.rcol.0.paces.pace.1"></button><button type="button" class="pace" data-tx-data-d="care.preferences.carte.rcols.rcol.0.paces.pace-description.2" data-tx="care.preferences.carte.rcols.rcol.0.paces.pace.2"></button><button type="button" class="pace" data-tx-data-d="care.preferences.carte.rcols.rcol.0.paces.pace-description.3" data-tx="care.preferences.carte.rcols.rcol.0.paces.pace.3"></button></div>
                 <p class="pdesc" data-tx="care.preferences.carte.rcols.rcol.0.pdesc"></p>
@@ -772,9 +837,10 @@
                 <div class="chips"><button type="button" class="cchip on" data-tx="care.preferences.carte.rcols.rcol.0.chips.cchip.0"></button><button type="button" class="cchip on" data-tx="care.preferences.carte.rcols.rcol.0.chips.cchip.1"></button><button type="button" class="cchip" data-tx="care.preferences.carte.rcols.rcol.0.chips.cchip.2"></button><button type="button" class="cchip" data-tx="care.preferences.carte.rcols.rcol.0.chips.cchip.3"></button></div>
               </div>
               <div class="rcol">
-                <p class="who" data-tx="care.preferences.carte.rcols.rcol.1.who"></p>
-                <div class="pbars"><button type="button" class="wkb" data-tx-data-w="care.preferences.carte.rcols.rcol.1.pbars.wkb.0.semaine" data-tx-data-m="care.preferences.carte.rcols.rcol.1.pbars.wkb.0.modules"><i style="height:22%"></i><span data-tx="care.preferences.carte.rcols.rcol.1.pbars.wkb.0.span"></span></button><button type="button" class="wkb" data-tx-data-w="care.preferences.carte.rcols.rcol.1.pbars.wkb.1.semaine" data-tx-data-m="care.preferences.carte.rcols.rcol.1.pbars.wkb.1.modules"><i style="height:38%"></i><span data-tx="care.preferences.carte.rcols.rcol.1.pbars.wkb.1.span"></span></button><button type="button" class="wkb" data-tx-data-w="care.preferences.carte.rcols.rcol.1.pbars.wkb.2.semaine" data-tx-data-m="care.preferences.carte.rcols.rcol.1.pbars.wkb.2.modules"><i style="height:46%"></i><span data-tx="care.preferences.carte.rcols.rcol.1.pbars.wkb.2.span"></span></button><button type="button" class="wkb" data-tx-data-w="care.preferences.carte.rcols.rcol.1.pbars.wkb.3.semaine" data-tx-data-m="care.preferences.carte.rcols.rcol.1.pbars.wkb.3.modules"><i style="height:64%"></i><span data-tx="care.preferences.carte.rcols.rcol.1.pbars.wkb.3.span"></span></button><button type="button" class="wkb" data-tx-data-w="care.preferences.carte.rcols.rcol.1.pbars.wkb.4.semaine" data-tx-data-m="care.preferences.carte.rcols.rcol.1.pbars.wkb.4.modules"><i style="height:72%"></i><span data-tx="care.preferences.carte.rcols.rcol.1.pbars.wkb.4.span"></span></button><button type="button" class="wkb" data-tx-data-w="care.preferences.carte.rcols.rcol.1.pbars.wkb.5.semaine" data-tx-data-m="care.preferences.carte.rcols.rcol.1.pbars.wkb.5.modules"><i style="height:90%"></i><span data-tx="care.preferences.carte.rcols.rcol.1.pbars.wkb.5.span"></span></button></div>
-                <p class="pinfo" data-tx="care.preferences.carte.rcols.rcol.1.pinfo"></p>
+                <p class="rtitle" data-tx="care.preferences.carte.rcols.rcol.1.reprise.titre"></p>
+                <div class="rsm"><div class="rsm-row"><div class="rsm-head"><b data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.0.module"></b><span class="rsm-prog" data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.0.progression"></span></div><small data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.0.cours"></small><p class="rsm-next"><span data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.0.etiquette"></span><em data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.0.prochaine"></em></p></div><div class="rsm-row"><div class="rsm-head"><b data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.1.module"></b><span class="rsm-prog" data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.1.progression"></span></div><small data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.1.cours"></small><p class="rsm-next"><span data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.1.etiquette"></span><em data-tx="care.preferences.carte.rcols.rcol.1.reprise.lignes.1.prochaine"></em></p></div></div>
+                <p class="rtitle" data-tx="care.preferences.carte.rcols.rcol.1.avancement.titre"></p>
+                <div class="avb"><span data-tx="care.preferences.carte.rcols.rcol.1.avancement.module"></span><div class="track"><i></i></div><b data-tx="care.preferences.carte.rcols.rcol.1.avancement.valeur"></b></div>
               </div>
             </div>
           </article>
@@ -787,10 +853,15 @@
           <article class="ogc surface">
             <div class="ch"><h3 data-tx="care.humeur.carte.entete.h3"></h3></div>
             <div class="wxbox"><div class="wx"><div class="feeling-3d" role="img" data-level-1="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5" data-level-2="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M16 14v6 M8 14v6 M12 16v6" data-level-3="M12 2v2 M4.93 4.93l1.41 1.41 M20 12h2 M19.07 4.93l-1.41 1.41 M15.947 12.65a4 4 0 0 0-5.925-4.128 M3 20a5 5 0 1 1 8.9-4H13a3 3 0 0 1 2 5.24 M11 20v2 M7 19v2" data-level-4="M12 2v2 M4.93 4.93l1.41 1.41 M20 12h2 M19.07 4.93l-1.41 1.41 M15.947 12.65a4 4 0 0 0-5.925-4.128 M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" data-level-5="M8 12.0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0 M12 2v2 M12 20v2 M4.93 4.93l1.41 1.41 M17.66 17.66l1.41 1.41 M2 12h2 M20 12h2 M6.34 17.66l-1.41 1.41 M19.07 4.93l-1.41 1.41"><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:9"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:8"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:7"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:6"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:5"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:4"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:3"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:2"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:1"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg><svg class="feeling-layer" viewBox="0 0 24 24" aria-hidden="true" style="--depth:0"><path class="feeling-path" d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M13 12l-3 5h4l-3 5"></path></svg></div></div></div>
-            <div class="mlvs"><button type="button" class="mlv" data-l="1" data-tx-aria-label="care.humeur.carte.mlvs.mlv.0.aria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></svg></button><button type="button" class="mlv" data-l="2" data-tx-aria-label="care.humeur.carte.mlvs.mlv.1.aria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg></button><button type="button" class="mlv" data-l="3" data-tx-aria-label="care.humeur.carte.mlvs.mlv.2.aria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M3 20a5 5 0 1 1 8.9-4H13a3 3 0 0 1 2 5.24"/><path d="M11 20v2"/><path d="M7 19v2"/></svg></button><button type="button" class="mlv" data-l="4" data-tx-aria-label="care.humeur.carte.mlvs.mlv.3.aria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg></button><button type="button" class="mlv" data-l="5" data-tx-aria-label="care.humeur.carte.mlvs.mlv.4.aria"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button></div>
+            <div class="mform">
+              <input type="range" class="mslider" min="1" max="5" step="any" value="3" data-tx-aria-label="care.humeur.carte.slider.aria" />
+              <p class="mcl" data-tx="care.humeur.carte.commentaire.libelle"></p>
+              <textarea class="mta" rows="2" data-tx-aria-label="care.humeur.carte.commentaire.libelle"></textarea>
+            </div>
             <div class="rfoot"><span class="btn primary sm sendm" role="button" tabindex="0" data-tx="care.humeur.carte.pied.bouton"></span></div>
             <p class="toast" data-tx="care.humeur.carte.toast"></p>
           </article>
+        <div class="mcursor" aria-hidden="true"><svg viewBox="0 0 28 36"><path d="M3 2L3 27L10 20L16 33L21 30L15 18L25 18Z"/></svg></div><div class="mring" aria-hidden="true"></div>
         </section>
         <section class="step rc">
           <div class="og-text">
@@ -888,9 +959,13 @@
           </div>
           <article class="ogc surface">
             <div class="ch"><h3 data-tx="steer.roles.carte.entete.h3"></h3></div>
-            <div class="pi-tabs" role="tablist"><button type="button" class="pi-tab on" role="tab" data-tx="steer.roles.carte.onglets.0.nom"></button><button type="button" class="pi-tab" role="tab" data-tx="steer.roles.carte.onglets.1.nom"></button><button type="button" class="pi-tab" role="tab" data-tx="steer.roles.carte.onglets.2.nom"></button></div>
-            <div class="pi-panels"><div class="pi-panel on"><p class="pi-hello" data-tx="steer.roles.carte.onglets.0.salutation"></p><div class="pi-tiles"><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span><b data-tx="steer.roles.carte.onglets.0.tuiles.0.titre"></b><p data-tx="steer.roles.carte.onglets.0.tuiles.0.texte"></p></div><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span><b data-tx="steer.roles.carte.onglets.0.tuiles.1.titre"></b><p data-tx="steer.roles.carte.onglets.0.tuiles.1.texte"></p></div><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span><b data-tx="steer.roles.carte.onglets.0.tuiles.2.titre"></b><p data-tx="steer.roles.carte.onglets.0.tuiles.2.texte"></p></div></div></div><div class="pi-panel"><p class="pi-hello" data-tx="steer.roles.carte.onglets.1.salutation"></p><div class="pi-tiles"><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><b data-tx="steer.roles.carte.onglets.1.tuiles.0.titre"></b><p data-tx="steer.roles.carte.onglets.1.tuiles.0.texte"></p></div><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span><b data-tx="steer.roles.carte.onglets.1.tuiles.1.titre"></b><p data-tx="steer.roles.carte.onglets.1.tuiles.1.texte"></p></div><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg></span><b data-tx="steer.roles.carte.onglets.1.tuiles.2.titre"></b><p data-tx="steer.roles.carte.onglets.1.tuiles.2.texte"></p></div></div></div><div class="pi-panel"><p class="pi-hello" data-tx="steer.roles.carte.onglets.2.salutation"></p><div class="pi-tiles"><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span><b data-tx="steer.roles.carte.onglets.2.tuiles.0.titre"></b><p data-tx="steer.roles.carte.onglets.2.tuiles.0.texte"></p></div><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21a8 8 0 0 1 10.434-7.62"/><circle cx="10" cy="8" r="5"/><path d="M19 16v6"/><path d="M22 19h-6"/></svg></span><b data-tx="steer.roles.carte.onglets.2.tuiles.1.titre"></b><p data-tx="steer.roles.carte.onglets.2.tuiles.1.texte"></p></div><div class="pi-tile"><span class="pi-tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg></span><b data-tx="steer.roles.carte.onglets.2.tuiles.2.titre"></b><p data-tx="steer.roles.carte.onglets.2.tuiles.2.texte"></p></div></div></div></div>
+            <div class="pi-tabs" role="tablist"><button type="button" class="pi-tab on" role="tab" data-tx="steer.roles.carte.onglets.0.nom"></button><button type="button" class="pi-tab" role="tab" data-tx="steer.roles.carte.onglets.1.nom"></button></div>
+            <div class="pi-dash">
+              <aside class="pi-side"><div class="pi-glass" aria-hidden="true"></div><div class="pi-nav on"><small data-tx="steer.roles.carte.onglets.0.espace"></small><ul><li class="act" data-tx="steer.roles.carte.onglets.0.nav.0"></li><li data-tx="steer.roles.carte.onglets.0.nav.1"></li><li data-tx="steer.roles.carte.onglets.0.nav.2"></li><li data-tx="steer.roles.carte.onglets.0.nav.3"></li><li data-tx="steer.roles.carte.onglets.0.nav.4"></li></ul></div><div class="pi-nav"><small data-tx="steer.roles.carte.onglets.1.espace"></small><ul><li class="act" data-tx="steer.roles.carte.onglets.1.nav.0"></li><li data-tx="steer.roles.carte.onglets.1.nav.1"></li><li data-tx="steer.roles.carte.onglets.1.nav.2"></li><li data-tx="steer.roles.carte.onglets.1.nav.3"></li><li data-tx="steer.roles.carte.onglets.1.nav.4"></li><li data-tx="steer.roles.carte.onglets.1.nav.5"></li><li data-tx="steer.roles.carte.onglets.1.nav.6"></li><li data-tx="steer.roles.carte.onglets.1.nav.7"></li></ul></div></aside>
+              <div class="pi-board"><div class="pi-face on"><div class="pi-head"><h5 data-tx="steer.roles.carte.onglets.0.salutation"></h5><p data-tx="steer.roles.carte.onglets.0.sous"></p></div><div class="pi-cards"><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.0.cartes.0.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.0.cartes.0.lignes.0.t"></b><small data-tx="steer.roles.carte.onglets.0.cartes.0.lignes.0.s"></small></div><span class="pi-pill" data-tx="steer.roles.carte.onglets.0.cartes.0.pastille"></span></div><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.0.cartes.1.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.0.cartes.1.lignes.0.t"></b><small data-tx="steer.roles.carte.onglets.0.cartes.1.lignes.0.s"></small></div></div><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.0.cartes.2.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.0.cartes.2.lignes.0.t"></b><small data-tx="steer.roles.carte.onglets.0.cartes.2.lignes.0.s"></small></div><div class="pi-r"><b data-tx="steer.roles.carte.onglets.0.cartes.2.lignes.1.t"></b><small data-tx="steer.roles.carte.onglets.0.cartes.2.lignes.1.s"></small></div></div><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.0.cartes.3.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.0.cartes.3.lignes.0.t"></b></div><div class="pi-chips"><span data-tx="steer.roles.carte.onglets.0.cartes.3.badges.0"></span><span data-tx="steer.roles.carte.onglets.0.cartes.3.badges.1"></span></div></div></div></div><div class="pi-face"><div class="pi-head"><h5 data-tx="steer.roles.carte.onglets.1.salutation"></h5><p data-tx="steer.roles.carte.onglets.1.sous"></p></div><div class="pi-cards"><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.1.cartes.0.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.1.cartes.0.lignes.0.t"></b><small data-tx="steer.roles.carte.onglets.1.cartes.0.lignes.0.s"></small></div><div class="pi-r"><b data-tx="steer.roles.carte.onglets.1.cartes.0.lignes.1.t"></b><small data-tx="steer.roles.carte.onglets.1.cartes.0.lignes.1.s"></small></div></div><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.1.cartes.1.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.1.cartes.1.lignes.0.t"></b><small data-tx="steer.roles.carte.onglets.1.cartes.1.lignes.0.s"></small></div></div><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.1.cartes.2.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.1.cartes.2.lignes.0.t"></b><small data-tx="steer.roles.carte.onglets.1.cartes.2.lignes.0.s"></small></div><div class="pi-r"><b data-tx="steer.roles.carte.onglets.1.cartes.2.lignes.1.t"></b><small data-tx="steer.roles.carte.onglets.1.cartes.2.lignes.1.s"></small></div></div><div class="pi-c"><h4 data-tx="steer.roles.carte.onglets.1.cartes.3.titre"></h4><div class="pi-r"><b data-tx="steer.roles.carte.onglets.1.cartes.3.lignes.0.t"></b><small data-tx="steer.roles.carte.onglets.1.cartes.3.lignes.0.s"></small></div></div></div></div></div>
+            </div>
           </article>
+          <div class="pi-cursor" aria-hidden="true"><svg viewBox="0 0 28 36"><path d="M3 2L3 27L10 20L16 33L21 30L15 18L25 18Z"/></svg></div><div class="pi-ring" aria-hidden="true"></div>
         </section>
       </div>
       <button class="chevron mini" data-next data-tx-aria-label="deck.ui.continue"><i class="halo"></i><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -981,6 +1056,8 @@
     <script src="js/scene-intro.js"></script>
     <script src="js/scene-what.js"></script>
     <script src="js/scene-traits.js"></script>
+    <script src="js/scene-who.js"></script>
+    <script src="js/scene-setup.js"></script>
     <script src="js/scene-frise.js"></script>
     <script src="js/scene-content.js"></script>
     <script src="js/scene-proto.js"></script>

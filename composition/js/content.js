@@ -1,14 +1,14 @@
 /* GÉNÉRÉ par tools/sync-content.mjs depuis content/*.json : ne pas modifier ici. */
 window.CONTENT = {
   "deck": {
-    "title": "ANDRIA — état des lieux 2026",
+    "title": "Présentation ANDRIA 2026",
     "demoUrl": "https://lxp.dev.step.eco",
     "stage": {
       "logoLabel": "ANDRIA",
       "cofinancement": "Projet cofinancé par l'Union européenne",
       "years": {
         "from": "2022",
-        "dash": "—",
+        "dash": "-",
         "to": "2026"
       },
       "partners": [
@@ -19,7 +19,7 @@ window.CONTENT = {
           "alt": "Région Nouvelle-Aquitaine"
         },
         {
-          "alt": "L'Europe s'engage en France — Fonds social européen, Union européenne"
+          "alt": "L'Europe s'engage en France Fonds social européen, Union européenne"
         }
       ]
     },
@@ -41,7 +41,7 @@ window.CONTENT = {
     }
   },
   "assess": {
-    "label": "Évaluer",
+    "label": "Vérifier ce qui est acquis",
     "notes": "Quatre types de quiz (QCM, vrai ou faux, associations, ordre) ; résultats du diagnostic ; remise de l'apprenant, notation par critères et commentaire. Données fictives.",
     "types": {
       "intro": {
@@ -169,7 +169,7 @@ window.CONTENT = {
       "rend": {
         "gh": "Travail remis",
         "who": [
-          "Apprenant · réponse textuelle",
+          "Apprenant - réponse textuelle",
           "Fichiers",
           "Barème d’évaluation"
         ],
@@ -220,7 +220,7 @@ window.CONTENT = {
     }
   },
   "assistant": {
-    "label": "Un assistant disponible 24 h/24",
+    "label": "Un assistant 24 h/24",
     "notes": "Assistant virtuel disponible 24 h/24 et 7 j/7 ; réponses contextualisées au cours ; quiz suggéré. Les réponses affichées sont des exemples scénarisés.",
     "lanceur": {
       "intro": {
@@ -347,16 +347,16 @@ window.CONTENT = {
     }
   },
   "care": {
-    "label": "Suivre et accompagner",
-    "notes": "Progression et préférences de l'apprenant ; humeur du jour ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
+    "label": "Accompagner chaque apprenant",
+    "notes": "Progression de l'apprenant (reprise de la dernière leçon, avancement, profil d'apprentissage) ; humeur du jour : une barre se règle et le pictogramme se déforme en relief (morphing 3D), puis un commentaire est envoyé ; alerte de décrochage avec les données utilisées ; retour de l'équipe sur l'analyse. Données fictives.",
     "preferences": {
       "intro": {
-        "h1": "Suivre **chaque apprenant**",
-        "lede": "Son rythme préféré, ses préférences d’apprentissage et sa progression semaine après semaine."
+        "h1": "Chaque apprenant **garde sa progression**",
+        "lede": "Il reprend là où il s'était arrêté, suit son avancement et renseigne son rythme et ses préférences d'apprentissage."
       },
       "carte": {
         "entete": {
-          "h3": "Préférences"
+          "h3": "Espace de l'apprenant"
         },
         "rcols": {
           "rcol": [
@@ -387,45 +387,35 @@ window.CONTENT = {
                   "Synthèse",
                   "Questions d’entraînement"
                 ]
-              }
+              },
+              "titre": "Mon profil d'apprentissage",
+              "aide": "Renseigné par l'apprenant"
             },
             {
-              "who": "Progression",
-              "pbars": {
-                "wkb": [
+              "reprise": {
+                "titre": "Reprendre là où je m'étais arrêté",
+                "lignes": [
                   {
-                    "semaine": "Semaine 1",
-                    "modules": "1 module",
-                    "span": "S1"
+                    "module": "Construire une interface",
+                    "cours": "Cours 1 : Les bases du HTML",
+                    "etiquette": "HTML",
+                    "progression": "2 / 3",
+                    "prochaine": "La structure d'une page"
                   },
                   {
-                    "semaine": "Semaine 2",
-                    "modules": "2 modules",
-                    "span": "S2"
-                  },
-                  {
-                    "semaine": "Semaine 3",
-                    "modules": "2 modules",
-                    "span": "S3"
-                  },
-                  {
-                    "semaine": "Semaine 4",
-                    "modules": "3 modules",
-                    "span": "S4"
-                  },
-                  {
-                    "semaine": "Semaine 5",
-                    "modules": "4 modules",
-                    "span": "S5"
-                  },
-                  {
-                    "semaine": "Semaine 6",
-                    "modules": "5 modules",
-                    "span": "S6"
+                    "module": "Développer une API",
+                    "cours": "Cours 2 : Les routes HTTP",
+                    "etiquette": "API REST",
+                    "progression": "1 / 4",
+                    "prochaine": "Définir une route"
                   }
                 ]
               },
-              "pinfo": "**Semaine 6** · 5 modules"
+              "avancement": {
+                "titre": "Mon avancement",
+                "module": "Construire une interface",
+                "valeur": "68 %"
+              }
             }
           ]
         }
@@ -434,7 +424,7 @@ window.CONTENT = {
     "humeur": {
       "intro": {
         "h1": "Un point **sur son ressenti**",
-        "lede": "L’apprenant indique chaque jour comment il se sent. L’équipe le voit."
+        "lede": "L’apprenant règle chaque jour comment il se sent, avec un mot s’il le souhaite. L’équipe le voit."
       },
       "carte": {
         "entete": {
@@ -462,7 +452,14 @@ window.CONTENT = {
         "pied": {
           "bouton": "Envoyer"
         },
-        "toast": "Feedback envoyé !"
+        "toast": "Feedback envoyé !",
+        "slider": {
+          "aria": "Niveau de ressenti, de 1 à 5"
+        },
+        "commentaire": {
+          "libelle": "Commentaire (facultatif)",
+          "exemple": "Je bloque sur la dernière leçon."
+        }
       }
     },
     "alerte": {
@@ -552,7 +549,7 @@ window.CONTENT = {
   },
   "closing": {
     "label": "Évolution de l'interface",
-    "notes": "Un commit à la fois : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer. Dernier écran : la page de connexion, comparée entre 2023 (visuel fixe) et 2026 (le fond est une photo tirée de l'API Unsplash à chaque visite). Les quatre photos affichées sont de vraies photos Unsplash (licence Unsplash) ; les captures sont produites par tools/snapshots/login.mjs.",
+    "notes": "Six jalons choisis (premiers écrans, tableau de bord 2024, premier assistant, tableau de bord IA, ancien puis nouveau tableau de bord) : la date, la capture réelle de l'interface à cette date et ce qu'elle montre. Les autres captures sont gardées dans closing.json (clé _snapshotsRetirees). Les captures sont produites en reconstruisant chaque commit avec des données fictives (tools/snapshots). Ensuite le projet continue d'évoluer. Dernier écran : la page de connexion, comparée entre 2023 (visuel fixe) et 2026 (le fond est une photo tirée de l'API Unsplash à chaque visite). Les quatre photos affichées sont de vraies photos Unsplash (licence Unsplash) ; les captures sont produites par tools/snapshots/login.mjs.",
     "title": "L'interface au fil des mois",
     "captureManquante": "Capture à venir",
     "snapshots": [
@@ -568,28 +565,6 @@ window.CONTENT = {
         "_commit": "8204569ef"
       },
       {
-        "date": "4 septembre 2023",
-        "titre": "L'édition d'un parcours",
-        "fonctions": [
-          "Un parcours en cinq étapes",
-          "Objectifs, compétences et modules",
-          ""
-        ],
-        "image": "assets/snapshots/2023-09-04-dafd74e.webp",
-        "_commit": "dafd74ef8"
-      },
-      {
-        "date": "29 décembre 2023",
-        "titre": "Le profil de l'utilisateur",
-        "fonctions": [
-          "Informations personnelles",
-          "Calendrier, évaluations et badges",
-          ""
-        ],
-        "image": "assets/snapshots/2023-12-29-5d400a3.webp",
-        "_commit": "5d400a32f"
-      },
-      {
         "date": "5 mars 2024",
         "titre": "Le tableau de bord",
         "fonctions": [
@@ -601,59 +576,15 @@ window.CONTENT = {
         "_commit": "da283f2a2"
       },
       {
-        "date": "27 septembre 2024",
-        "titre": "La liste des groupes",
-        "fonctions": [
-          "Groupes d'apprenants",
-          "Recherche et activation",
-          ""
-        ],
-        "image": "assets/snapshots/2024-09-27-ac6b6f4.webp",
-        "_commit": "ac6b6f46a"
-      },
-      {
-        "date": "19 décembre 2024",
-        "titre": "La médiathèque",
-        "fonctions": [
-          "Images, vidéos, audios, documents",
-          "Taille et nombre d'utilisations",
-          ""
-        ],
-        "image": "assets/snapshots/2024-12-19-e576c18.webp",
-        "_commit": "e576c189f"
-      },
-      {
-        "date": "24 avril 2025",
-        "titre": "La liste des parcours",
-        "fonctions": [
-          "Tableau des parcours",
-          "Recherche et filtre par formation",
-          ""
-        ],
-        "image": "assets/snapshots/2025-04-24-d8027b1.webp",
-        "_commit": "d8027b163"
-      },
-      {
         "date": "8 septembre 2025",
         "titre": "Le premier assistant",
         "fonctions": [
-          "Assistant « A.L.A.A. »",
+          "Premier nom de l'assistant : « A.L.A.A. »",
           "Questions en langage naturel",
           ""
         ],
         "image": "assets/snapshots/2025-09-08-a1a615e.webp",
         "_commit": "a1a615ed9"
-      },
-      {
-        "date": "2 décembre 2025",
-        "titre": "Le calendrier",
-        "fonctions": [
-          "Emploi du temps de la semaine",
-          "Cours planifiés par module",
-          ""
-        ],
-        "image": "assets/snapshots/2025-12-02-7d3d8fc.webp",
-        "_commit": "7d3d8fc3b"
       },
       {
         "date": "5 mars 2026",
@@ -686,28 +617,6 @@ window.CONTENT = {
           ""
         ],
         "image": "assets/snapshots/2026-10-15-5708778.webp",
-        "_commit": "57087787e"
-      },
-      {
-        "date": "15 octobre 2026",
-        "titre": "La gestion des parcours",
-        "fonctions": [
-          "Formations et parcours en cartes",
-          "Recherche d'un parcours",
-          ""
-        ],
-        "image": "assets/snapshots/2026-10-15-5708778-parcours.webp",
-        "_commit": "57087787e"
-      },
-      {
-        "date": "15 octobre 2026",
-        "titre": "La médiathèque",
-        "fonctions": [
-          "Images, vidéos, audios, fichiers",
-          "Recherche et tri",
-          ""
-        ],
-        "image": "assets/snapshots/2026-10-15-5708778-mediatheque.webp",
         "_commit": "57087787e"
       },
       {
@@ -764,10 +673,100 @@ window.CONTENT = {
           "alt": "Relief de béton géométrique"
         }
       ]
-    }
+    },
+    "_snapshotsRetirees": [
+      {
+        "date": "4 septembre 2023",
+        "titre": "L'édition d'un parcours",
+        "fonctions": [
+          "Un parcours en cinq étapes",
+          "Objectifs, compétences et modules",
+          ""
+        ],
+        "image": "assets/snapshots/2023-09-04-dafd74e.webp",
+        "_commit": "dafd74ef8"
+      },
+      {
+        "date": "29 décembre 2023",
+        "titre": "Le profil de l'utilisateur",
+        "fonctions": [
+          "Informations personnelles",
+          "Calendrier, évaluations et badges",
+          ""
+        ],
+        "image": "assets/snapshots/2023-12-29-5d400a3.webp",
+        "_commit": "5d400a32f"
+      },
+      {
+        "date": "27 septembre 2024",
+        "titre": "La liste des groupes",
+        "fonctions": [
+          "Groupes d'apprenants",
+          "Recherche et activation",
+          ""
+        ],
+        "image": "assets/snapshots/2024-09-27-ac6b6f4.webp",
+        "_commit": "ac6b6f46a"
+      },
+      {
+        "date": "19 décembre 2024",
+        "titre": "La médiathèque",
+        "fonctions": [
+          "Images, vidéos, audios, documents",
+          "Taille et nombre d'utilisations",
+          ""
+        ],
+        "image": "assets/snapshots/2024-12-19-e576c18.webp",
+        "_commit": "e576c189f"
+      },
+      {
+        "date": "24 avril 2025",
+        "titre": "La liste des parcours",
+        "fonctions": [
+          "Tableau des parcours",
+          "Recherche et filtre par formation",
+          ""
+        ],
+        "image": "assets/snapshots/2025-04-24-d8027b1.webp",
+        "_commit": "d8027b163"
+      },
+      {
+        "date": "2 décembre 2025",
+        "titre": "Le calendrier",
+        "fonctions": [
+          "Emploi du temps de la semaine",
+          "Cours planifiés par module",
+          ""
+        ],
+        "image": "assets/snapshots/2025-12-02-7d3d8fc.webp",
+        "_commit": "7d3d8fc3b"
+      },
+      {
+        "date": "15 octobre 2026",
+        "titre": "La gestion des parcours",
+        "fonctions": [
+          "Formations et parcours en cartes",
+          "Recherche d'un parcours",
+          ""
+        ],
+        "image": "assets/snapshots/2026-10-15-5708778-parcours.webp",
+        "_commit": "57087787e"
+      },
+      {
+        "date": "15 octobre 2026",
+        "titre": "La médiathèque",
+        "fonctions": [
+          "Images, vidéos, audios, fichiers",
+          "Recherche et tri",
+          ""
+        ],
+        "image": "assets/snapshots/2026-10-15-5708778-mediatheque.webp",
+        "_commit": "57087787e"
+      }
+    ]
   },
   "content": {
-    "label": "Créer du contenu",
+    "label": "Créer ses propres cours",
     "notes": "Structure en six niveaux, puis éditeur riche et six types d'activité.",
     "levels": {
       "badge": "Créer du contenu",
@@ -950,31 +949,31 @@ window.CONTENT = {
       },
       {
         "period": "",
-        "title": "Créer du contenu"
+        "title": "Créer ses propres cours"
       },
       {
         "period": "",
-        "title": "Assistant virtuel"
+        "title": "Un assistant 24 h/24"
       },
       {
         "period": "",
-        "title": "Évaluer"
+        "title": "Vérifier ce qui est acquis"
       },
       {
         "period": "",
-        "title": "Organiser"
+        "title": "Tout organiser au même endroit"
       },
       {
         "period": "",
-        "title": "Suivre et accompagner"
+        "title": "Accompagner chaque apprenant"
       },
       {
         "period": "",
-        "title": "Piloter"
+        "title": "Piloter usages et contenus"
       },
       {
         "period": "",
-        "title": "Personnaliser et encourager"
+        "title": "À l'image de l'organisme"
       }
     ]
   },
@@ -983,7 +982,7 @@ window.CONTENT = {
     "notes": "Bienvenue. ANDRIA est la plateforme d'apprentissage que Step a conçue entre 2022 et 2026, avec le soutien de la Région Nouvelle-Aquitaine et de l'Union européenne."
   },
   "organize": {
-    "label": "Organiser",
+    "label": "Tout organiser au même endroit",
     "notes": "Calendrier par parcours (cours, devoirs, modules) ; médiathèque (images, vidéos, audios, ressources) ; groupes rattachés à un parcours et à ses formateurs ; tags. Données fictives.",
     "calendrier": {
       "intro": {
@@ -1364,7 +1363,7 @@ window.CONTENT = {
     }
   },
   "personalize": {
-    "label": "Personnaliser et encourager",
+    "label": "À l'image de l'organisme",
     "notes": "Thèmes clairs et sombres au choix de l'organisme ; identité (nom, logo) ; modèles d'e-mails ; félicitations, badges de compétences et historique d'accomplissements. Données fictives.",
     "themes": {
       "intro": {
@@ -1417,7 +1416,7 @@ window.CONTENT = {
     "identite": {
       "intro": {
         "h1": "Le **nom et le logo** de l'organisme",
-        "lede": "L'instance prend l'identité de l'organisme qui l'utilise."
+        "lede": "La plateforme prend le nom et le logo de l'organisme de formation qui l'utilise."
       },
       "carte": {
         "entete": {
@@ -1521,7 +1520,7 @@ window.CONTENT = {
     "label": "Un prototype pour valider l'idée",
     "notes": "Phase 1 : analyse du marché, personas, prototype, bases techniques ; faisabilité validée.",
     "prototype": {
-      "badge": "Phase 1 · juin 2022 – février 2024",
+      "badge": "Phase 1 - juin 2022 – février 2024",
       "title": "Un prototype pour **valider l'idée**",
       "lede": "Analyser le marché, écouter les utilisateurs, puis construire.",
       "railStart": "Juin 2022",
@@ -1561,23 +1560,23 @@ window.CONTENT = {
       },
       "layers": [
         {
-          "name": "Livraison · CI/CD",
+          "name": "Livraison - CI/CD",
           "detail": "Chaîne d'intégration et de déploiement continus (CI/CD)"
         },
         {
-          "name": "Données · PostgreSQL et MongoDB",
+          "name": "Données - PostgreSQL et MongoDB",
           "detail": "Bases de données PostgreSQL et MongoDB"
         },
         {
-          "name": "API · Node.js / Express",
+          "name": "API - Node.js / Express",
           "detail": "Architecture Node.js / Express"
         },
         {
-          "name": "Interface · React",
+          "name": "Interface - React",
           "detail": "Frontend React"
         },
         {
-          "name": "Exploration · IA",
+          "name": "Exploration - IA",
           "detail": "Travaux exploratoires sur l'intégration de l'IA"
         }
       ]
@@ -1599,10 +1598,34 @@ window.CONTENT = {
           "text": "Fonctionnel, potentiel démontré"
         }
       ],
-      "railLeft": "Fin de la phase 1 · février 2024",
-      "railRight": "Phase 2 · 2024 – 2026",
+      "railLeft": "Fin de la phase 1 - février 2024",
+      "railRight": "Phase 2 - 2024 – 2026",
       "next": "Une plateforme **robuste**, **évolutive** et intégrant des modules d'**intelligence artificielle**."
     }
+  },
+  "setup": {
+    "label": "Mettre en place ANDRIA",
+    "notes": "Avant la clôture : ce qu'il faut pour mettre ANDRIA en place, en termes simples. Trois faits tirés du dépôt du LXP : s'installe sur un serveur avec sauvegardes, IA séparée et désactivable, import Moodle. Le détail technique (conteneurs, bases, fournisseur d'IA) reste en réserve pour les questions. Volontairement absents : licence, hébergement des données, SSO, SCORM, tarif, contact (rien dans le dépôt). Le bandeau du bas renvoie à l'équipe Step.",
+    "title": "Mettre en place **ANDRIA**",
+    "lede": "Ce qu'il faut savoir pour démarrer.",
+    "cards": [
+      {
+        "role": "Hébergement",
+        "title": "Hébergeable chez vous",
+        "text": "ANDRIA s'installe sur un serveur, avec des sauvegardes de vos données."
+      },
+      {
+        "role": "Intelligence artificielle",
+        "title": "Une IA facultative",
+        "text": "L'assistant, les quiz et les alertes de décrochage s'appuient sur un service d'IA séparé. Il peut être désactivé."
+      },
+      {
+        "role": "Contenus existants",
+        "title": "Reprendre ce qui existe",
+        "text": "Vos cours Moodle et vos parcours déjà construits peuvent être importés."
+      }
+    ],
+    "band": "Modalités d'accès, licence et accompagnement : à définir avec l'équipe Step."
   },
   "start": {
     "label": "Départ",
@@ -1610,12 +1633,12 @@ window.CONTENT = {
     "message": "Appuyer sur n'importe quelle touche pour lancer la présentation"
   },
   "steer": {
-    "label": "Piloter",
+    "label": "Piloter usages et contenus",
     "notes": "Consommation de l'IA par promotion, classement des cours, import de cours Moodle et de parcours, tableaux de bord selon le rôle. Données fictives.",
     "ia": {
       "intro": {
         "h1": "Savoir **ce que consomme l'IA**",
-        "lede": "Les tokens consommés ce mois-ci, par promotion et par utilisateur."
+        "lede": "La consommation d'IA ce mois-ci, par promotion et par utilisateur, mesurée en « tokens » (l'unité de calcul de l'IA)."
       },
       "carte": {
         "entete": {
@@ -1738,7 +1761,7 @@ window.CONTENT = {
     "roles": {
       "intro": {
         "h1": "Un tableau de bord **pour chacun**",
-        "lede": "Chaque rôle retrouve les actions et les informations qui le concernent."
+        "lede": "Chaque rôle retrouve les actions et les informations qui le concernent : la navigation et les cartes changent."
       },
       "carte": {
         "entete": {
@@ -1747,55 +1770,123 @@ window.CONTENT = {
         "onglets": [
           {
             "nom": "Apprenant",
-            "salutation": "Bonjour Camille !",
-            "tuiles": [
+            "espace": "Espace apprenant",
+            "nav": [
+              "Accueil",
+              "Parcours",
+              "Calendrier",
+              "Remises & évaluations",
+              "Ressources supplémentaires"
+            ],
+            "salutation": "Bonjour Camille",
+            "sous": "Retrouvez votre formation et votre prochaine activité.",
+            "cartes": [
               {
-                "titre": "Mon avancement",
-                "texte": "Reprendre la leçon en cours."
+                "titre": "Reprendre mon apprentissage",
+                "lignes": [
+                  {
+                    "t": "Construire une interface",
+                    "s": "La structure d'une page"
+                  }
+                ],
+                "pastille": "2 / 3"
               },
               {
-                "titre": "Calendrier",
-                "texte": "Votre prochaine séance : Atelier CSS."
+                "titre": "Ma prochaine séance",
+                "lignes": [
+                  {
+                    "t": "Atelier CSS",
+                    "s": "Demain à 14 h"
+                  }
+                ]
               },
               {
-                "titre": "Remises et évaluations",
-                "texte": "Votre retour pédagogique est disponible."
+                "titre": "Mes parcours",
+                "lignes": [
+                  {
+                    "t": "Développeur web",
+                    "s": "3 modules à explorer"
+                  },
+                  {
+                    "t": "Les bases du HTML",
+                    "s": "Votre dernière activité"
+                  }
+                ]
+              },
+              {
+                "titre": "Mes accomplissements",
+                "lignes": [
+                  {
+                    "t": "Vos compétences se construisent.",
+                    "s": ""
+                  }
+                ],
+                "badges": [
+                  "HTML",
+                  "CSS"
+                ]
               }
             ]
           },
           {
             "nom": "Équipe pédagogique",
-            "salutation": "Bonjour Marc !",
-            "tuiles": [
+            "espace": "Équipe pédagogique",
+            "nav": [
+              "Accueil",
+              "Utilisateurs",
+              "Groupes",
+              "Parcours",
+              "Modules",
+              "Cours",
+              "Calendrier",
+              "Évaluations"
+            ],
+            "salutation": "Votre tableau de bord",
+            "sous": "Organiser les contenus et accompagner les apprenants.",
+            "cartes": [
               {
-                "titre": "Classement de mes cours",
-                "texte": "Les cours les mieux notés par vos apprenants."
+                "titre": "Actions recommandées",
+                "lignes": [
+                  {
+                    "t": "Répondre à Camille",
+                    "s": "Un feedback attend votre retour."
+                  },
+                  {
+                    "t": "Préparer votre prochain cours",
+                    "s": "Retrouver les contenus à publier"
+                  }
+                ]
               },
               {
-                "titre": "Alertes de groupe",
-                "texte": "1 cas critique à examiner."
+                "titre": "Alertes du groupe",
+                "lignes": [
+                  {
+                    "t": "1 cas critique",
+                    "s": "Développeur web 2026"
+                  }
+                ]
               },
               {
-                "titre": "Évaluer un apprenant",
-                "texte": "Noter une remise et laisser un commentaire."
-              }
-            ]
-          },
-          {
-            "nom": "Administrateur",
-            "salutation": "Bonjour Sophie !",
-            "tuiles": [
-              {
-                "titre": "Créer une formation",
-                "texte": "Ouvrir un nouvel organisme de formation."
+                "titre": "Derniers parcours",
+                "lignes": [
+                  {
+                    "t": "Métiers du numérique",
+                    "s": "Développeur web"
+                  },
+                  {
+                    "t": "Construire une interface",
+                    "s": "Retrouver les derniers modules"
+                  }
+                ]
               },
               {
-                "titre": "Créer un utilisateur",
-                "texte": "Inviter une personne et lui attribuer un rôle."
-              },
-              {
-                "titre": "Voir les feedbacks",
-                "texte": "Lire les retours des apprenants."
+                "titre": "Retours des apprenants",
+                "lignes": [
+                  {
+                    "t": "« Je bloque sur la dernière leçon. »",
+                    "s": "Camille Martin"
+                  }
+                ]
               }
             ]
           }
@@ -1813,8 +1904,8 @@ window.CONTENT = {
         "text": "Chacun adapte son apprentissage à ses intérêts et à ses objectifs."
       },
       {
-        "title": "Recommandations",
-        "text": "Du contenu proposé selon l'historique d'apprentissage et les préférences."
+        "title": "Reprendre là où l'on s'était arrêté",
+        "text": "L'apprenant retrouve sa dernière leçon et la reprend en un clic."
       },
       {
         "title": "Interactivité",
@@ -1949,5 +2040,28 @@ window.CONTENT = {
       ],
       "conclusion": "Plutôt que de connecter des outils disparates pour collecter de la donnée, **créer le contenant qui produit les données à analyser**."
     }
+  },
+  "who": {
+    "label": "Pour qui, pour quoi",
+    "notes": "Après la définition et le comparatif LMS / LXP : à qui sert ANDRIA et ce que chacun y gagne. Trois profils, un bénéfice chacun, tous tirés de la documentation du projet (objectifs 1 à 9). Aucun chiffre ni résultat n'est affiché : la présentation ne revendique pas d'amélioration mesurée. Les cartes se posent d'elles-mêmes, un seul clic pour continuer.",
+    "title": "Pour **qui** ? Pour **quoi** ?",
+    "lede": "Conçue par un organisme de formation pour la formation à distance, notamment auprès de publics fragilisés. Trois profils y trouvent leur place.",
+    "roles": [
+      {
+        "role": "L'apprenant",
+        "title": "Apprendre à son rythme",
+        "text": "Des contenus et des modalités adaptés à ses besoins, ses envies et son profil, avec un assistant disponible 24 h/24."
+      },
+      {
+        "role": "Le formateur",
+        "title": "Repérer avant le décrochage",
+        "text": "Des signaux d'alerte précoces et des outils d'analyse pour proposer une remédiation ciblée."
+      },
+      {
+        "role": "L'organisme de formation",
+        "title": "Garder la main sur ses formations",
+        "text": "Créer, publier et mettre à jour les contenus, reprendre ceux de Moodle, analyser les données que la plateforme produit."
+      }
+    ]
   }
 };
