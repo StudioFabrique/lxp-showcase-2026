@@ -31,9 +31,9 @@ const nav = JSON.stringify({ ui: deck.ui?.nav ?? { title: "Plan", open: "Plan", 
 
 const wrapperPath = join(root, "index.html");
 const wrapper = readFileSync(wrapperPath, "utf8");
-const marker = /(<script type="application\/hyperframes-slideshow\+json" id="island-copy">)[\s\S]*?(<\/script>)/;
+const marker = /(<script\s+type="application\/hyperframes-slideshow\+json"\s+id="island-copy"\s*>)[\s\S]*?(<\/script>)/;
 if (!marker.test(wrapper)) throw new Error("Marqueur island-copy introuvable dans index.html");
-const navMarker = /(<script type="application\/json" id="nav-data">)[\s\S]*?(<\/script>)/;
+const navMarker = /(<script\s+type="application\/json"\s+id="nav-data"\s*>)[\s\S]*?(<\/script>)/;
 if (!navMarker.test(wrapper)) throw new Error("Marqueur nav-data introuvable dans index.html");
 const next = wrapper.replace(marker, `$1${json}$2`).replace(navMarker, `$1${nav.replace(/<\//g, "<\\/")}$2`);
 // N'écrit que si le contenu change : évite de relancer les observateurs de fichiers (rechargement en boucle).
