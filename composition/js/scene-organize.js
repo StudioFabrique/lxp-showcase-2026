@@ -14,19 +14,35 @@
     var q = function (s) {
       return "#scene-organize " + s;
     };
-    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var reduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var d = reduced ? 0 : 1;
     var tok = function (n) {
-      return getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+      return getComputedStyle(document.documentElement)
+        .getPropertyValue(n)
+        .trim();
     };
-    var C = { line: tok("--color-base-300"), base: tok("--color-base-100"), pri: tok("--color-primary") };
-    var rgb = [1, 3, 5].map(function (i) {
-      return parseInt(C.pri.substr(i, 2), 16);
-    }).join(",");
+    var C = {
+      line: tok("--color-base-300"),
+      base: tok("--color-base-100"),
+      pri: tok("--color-primary"),
+    };
+    var rgb = [1, 3, 5]
+      .map(function (i) {
+        return parseInt(C.pri.substr(i, 2), 16);
+      })
+      .join(",");
 
     S.set(tl, "hidden", 0);
     tl.set(q(".oa"), { pointerEvents: "auto" }, 0);
-    fx.ft(tl, q(".bar"), { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0);
+    fx.ft(
+      tl,
+      q(".bar"),
+      { opacity: 0, y: -24 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+      0,
+    );
 
     // Entrée d'un outil : le texte monte, la carte arrive en pivotant, puis le contenu se pose ligne à ligne.
     var enter = function (cls, t, rows) {
@@ -34,11 +50,23 @@
       fx.ft(
         tl,
         s + " .h1",
-        { opacity: 0, y: 60, rotationX: -24, transformPerspective: P, transformOrigin: "50% 100%" },
+        {
+          opacity: 0,
+          y: 60,
+          rotationX: -24,
+          transformPerspective: P,
+          transformOrigin: "50% 100%",
+        },
         { opacity: 1, y: 0, rotationX: 0, duration: 0.9, ease: "power3.out" },
         t + 0.25,
       );
-      fx.ft(tl, s + " .lede", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, t + 0.7);
+      fx.ft(
+        tl,
+        s + " .lede",
+        { opacity: 0, y: 36 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+        t + 0.7,
+      );
       fx.ft(
         tl,
         s + " .ogc",
@@ -46,23 +74,79 @@
         { opacity: 1, x: 0, rotationY: 0, duration: 1.0, ease: "power3.out" },
         t,
       );
-      fx.ft(tl, s + " .ch, " + s + " .mtabs", { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.4 }, t + 0.8);
-      fx.ft(tl, rows.map(function (r) {
-        return s + " " + r;
-      }).join(", "), { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out", stagger: 0.045 }, t + 1.2);
+      fx.ft(
+        tl,
+        s + " .ch, " + s + " .mtabs",
+        { opacity: 0, y: -14 },
+        { opacity: 1, y: 0, duration: 0.4 },
+        t + 0.8,
+      );
+      fx.ft(
+        tl,
+        rows
+          .map(function (r) {
+            return s + " " + r;
+          })
+          .join(", "),
+        { opacity: 0, y: 22 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.45,
+          ease: "power2.out",
+          stagger: 0.045,
+        },
+        t + 1.2,
+      );
     };
     var leave = function (cls, t) {
       var s = q("." + cls);
       tl.set(s, { pointerEvents: "none" }, t);
-      fx.ft(tl, s + " .og-text", { opacity: 1, x: 0, rotationY: 0, transformPerspective: P }, { opacity: 0, x: -180, rotationY: 38, duration: 0.7, ease: "power2.in" }, t);
-      fx.ft(tl, s + " .ogc", { opacity: 1, x: 0, rotationY: 0 }, { opacity: 0, x: 180, rotationY: -30, duration: 0.7, ease: "power2.in" }, t);
+      fx.ft(
+        tl,
+        s + " .og-text",
+        { opacity: 1, x: 0, rotationY: 0, transformPerspective: P },
+        {
+          opacity: 0,
+          x: -180,
+          rotationY: 38,
+          duration: 0.7,
+          ease: "power2.in",
+        },
+        t,
+      );
+      fx.ft(
+        tl,
+        s + " .ogc",
+        { opacity: 1, x: 0, rotationY: 0 },
+        {
+          opacity: 0,
+          x: 180,
+          rotationY: -30,
+          duration: 0.7,
+          ease: "power2.in",
+        },
+        t,
+      );
     };
     var chevOn = function (t) {
-      fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, t);
+      fx.ft(
+        tl,
+        q(".chevron.mini"),
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.4 },
+        t,
+      );
       tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, t);
     };
     var chevOff = function (t) {
-      fx.ft(tl, q(".chevron.mini"), { opacity: 1 }, { opacity: 0, duration: 0.2 }, t);
+      fx.ft(
+        tl,
+        q(".chevron.mini"),
+        { opacity: 1 },
+        { opacity: 0, duration: 0.2 },
+        t,
+      );
       tl.set(q(".chevron.mini"), { pointerEvents: "none" }, t);
     };
     var activate = function (cls, t) {
@@ -72,10 +156,46 @@
 
     // ── Étape 0 : calendrier ──────────────────────────────────────────────────────────────
     enter("oa", 0.9, [".wk", ".day"]);
-    fx.ft(tl, q(".lg"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.08 }, 1.9);
-    fx.ft(tl, q(".ev"), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.4)", stagger: 0.12 }, 3.0);
+    fx.ft(
+      tl,
+      q(".lg"),
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: "back.out(2)",
+        stagger: 0.08,
+      },
+      1.9,
+    );
+    fx.ft(
+      tl,
+      q(".ev"),
+      { scale: 0.6, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.4,
+        ease: "back.out(2.4)",
+        stagger: 0.12,
+      },
+      3.0,
+    );
     // La journée du jour prend la lumière.
-    fx.ft(tl, q(".day.today"), { scale: 1 }, { scale: 1.06, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: 1 }, 4.1);
+    fx.ft(
+      tl,
+      q(".day.today"),
+      { scale: 1 },
+      {
+        scale: 1.06,
+        duration: 0.35,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: 1,
+      },
+      4.1,
+    );
     chevOn(5.0);
     tl.addLabel("step0", 5.3);
 
@@ -84,7 +204,13 @@
     leave("oa", 5.5);
     activate("ob", 6.2);
     enter("ob", 6.2, [".sorts", ".mhead", ".mlist.on .mrow2"]);
-    fx.ft(tl, q(".tab"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 }, 7.0);
+    fx.ft(
+      tl,
+      q(".tab"),
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 },
+      7.0,
+    );
     chevOn(10.4);
     tl.addLabel("step1", 10.7);
 
@@ -93,7 +219,13 @@
     leave("ob", 10.9);
     activate("oc", 11.6);
     enter("oc", 11.6, [".ghead", ".grow"]);
-    fx.ft(tl, q(".ginfo"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 13.2);
+    fx.ft(
+      tl,
+      q(".ginfo"),
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+      13.2,
+    );
     chevOn(15.8);
     tl.addLabel("step2", 16.1);
 
@@ -109,10 +241,23 @@
     // ── Interactions (hors timeline) ──────────────────────────────────────────────────────
     var hover = function (node, on, off) {
       node.addEventListener("mouseenter", function () {
-        if (!reduced) gsap.to(node, Object.assign({ duration: 0.3, ease: "power3.out", overwrite: "auto" }, on));
+        if (!reduced)
+          gsap.to(
+            node,
+            Object.assign(
+              { duration: 0.3, ease: "power3.out", overwrite: "auto" },
+              on,
+            ),
+          );
       });
       node.addEventListener("mouseleave", function () {
-        gsap.to(node, Object.assign({ duration: 0.35, ease: "power2.out", overwrite: "auto" }, off));
+        gsap.to(
+          node,
+          Object.assign(
+            { duration: 0.35, ease: "power2.out", overwrite: "auto" },
+            off,
+          ),
+        );
       });
     };
 
@@ -125,9 +270,20 @@
       b.addEventListener("click", function () {
         var k = b.getAttribute("data-k");
         off[k] = !off[k];
-        gsap.to(b, { opacity: off[k] ? 0.45 : 1, duration: 0.25, overwrite: "auto" });
+        gsap.to(b, {
+          opacity: off[k] ? 0.45 : 1,
+          duration: 0.25,
+          overwrite: "auto",
+        });
         evs.forEach(function (e) {
-          if (e.getAttribute("data-k") === k) gsap.to(e, { opacity: off[k] ? 0 : 1, scale: off[k] ? 0.6 : 1, duration: 0.3 * d, ease: "power2.out", overwrite: "auto" });
+          if (e.getAttribute("data-k") === k)
+            gsap.to(e, {
+              opacity: off[k] ? 0 : 1,
+              scale: off[k] ? 0.6 : 1,
+              duration: 0.3 * d,
+              ease: "power2.out",
+              overwrite: "auto",
+            });
         });
       });
     });
@@ -137,9 +293,20 @@
       hover(e, { scale: 1.06 }, { scale: 1 });
       e.addEventListener("click", function () {
         sel = e;
-        evd.querySelector("small").textContent = e.getAttribute("data-t") + " · " + e.getAttribute("data-d");
+        evd.querySelector("small").textContent =
+          e.getAttribute("data-t") + " - " + e.getAttribute("data-d");
         evd.querySelector("b").textContent = e.getAttribute("data-n");
-        gsap.fromTo(evd, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4 * d, ease: "power3.out", overwrite: "auto" });
+        gsap.fromTo(
+          evd,
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.4 * d,
+            ease: "power3.out",
+            overwrite: "auto",
+          },
+        );
       });
     });
 
@@ -159,7 +326,18 @@
       rows.forEach(function (r) {
         list.appendChild(r);
       });
-      if (animate) gsap.fromTo(rows, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.35 * d, stagger: 0.05 * d, overwrite: "auto" });
+      if (animate)
+        gsap.fromTo(
+          rows,
+          { opacity: 0, y: 18 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.35 * d,
+            stagger: 0.05 * d,
+            overwrite: "auto",
+          },
+        );
     };
     var showList = function (name) {
       tabs.forEach(function (t) {
@@ -171,7 +349,11 @@
         l.classList.toggle("on", on);
         if (on) {
           sortList(l, false);
-          gsap.fromTo(l, { opacity: 0, x: 40 * d }, { opacity: 1, x: 0, duration: 0.4 * d, ease: "power3.out" });
+          gsap.fromTo(
+            l,
+            { opacity: 0, x: 40 * d },
+            { opacity: 1, x: 0, duration: 0.4 * d, ease: "power3.out" },
+          );
         } else gsap.set(l, { opacity: 0, x: 0 });
       });
     };
@@ -207,7 +389,18 @@
           return "<span>" + t + "</span>";
         })
         .join("");
-      if (animate) gsap.fromTo(ginfo.querySelectorAll("p, em"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.35 * d, stagger: 0.08 * d, overwrite: "auto" });
+      if (animate)
+        gsap.fromTo(
+          ginfo.querySelectorAll("p, em"),
+          { opacity: 0, y: 12 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.35 * d,
+            stagger: 0.08 * d,
+            overwrite: "auto",
+          },
+        );
     };
     showGroup(rowsG[0], false);
     rowsG.forEach(function (r) {
@@ -219,11 +412,17 @@
 
     // Tags : « Ajouter un tag » crée le tag suivant (exemples du LXP) ; × le supprime.
     var tbody = el.querySelector(".tbody");
-    var queue = Content.get("organize.tags.carte.suggestions").map(function (t) {
-      return [t.nom, t.usage, t.parcours];
-    });
+    var queue = Content.get("organize.tags.carte.suggestions").map(
+      function (t) {
+        return [t.nom, t.usage, t.parcours];
+      },
+    );
     var esc = function (t) {
-      return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      return String(t)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
     };
     var queueStart = queue.slice();
     var tagStart = tbody.innerHTML;
@@ -248,11 +447,28 @@
       var t = queue.shift();
       var row = document.createElement("div");
       row.className = "trow";
-      row.innerHTML = '<span class="tt"><i></i></span><span>' + esc(t[1]) + "</span><span>" + esc(t[2]) + '</span><button type="button" class="tdel" aria-label="' + esc(Content.text("organize.tags.carte.supprimer")) + '">×</button>';
+      row.innerHTML =
+        '<span class="tt"><i></i></span><span>' +
+        esc(t[1]) +
+        "</span><span>" +
+        esc(t[2]) +
+        '</span><button type="button" class="tdel" aria-label="' +
+        esc(Content.text("organize.tags.carte.supprimer")) +
+        '">×</button>';
       row.querySelector(".tt").appendChild(document.createTextNode(t[0]));
       tbody.insertBefore(row, tbody.firstChild);
       bindDel(row.querySelector(".tdel"));
-      gsap.fromTo(row, { opacity: 0, y: -24, backgroundColor: "rgba(" + rgb + ",0.16)" }, { opacity: 1, y: 0, backgroundColor: C.base, duration: 0.6 * d, ease: "back.out(1.6)" });
+      gsap.fromTo(
+        row,
+        { opacity: 0, y: -24, backgroundColor: "rgba(" + rgb + ",0.16)" },
+        {
+          opacity: 1,
+          y: 0,
+          backgroundColor: C.base,
+          duration: 0.6 * d,
+          ease: "back.out(1.6)",
+        },
+      );
       if (!queue.length) gsap.to(addBtn, { opacity: 0.5, duration: 0.3 });
     });
 

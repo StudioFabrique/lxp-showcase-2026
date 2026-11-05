@@ -2,7 +2,7 @@
   "label": "Un prototype pour valider l'idée",
   "notes": "Phase 1 : analyse du marché, personas, prototype, bases techniques ; faisabilité validée.",
   "prototype": {
-    "badge": "Phase 1 · juin 2022 – février 2024",
+    "badge": "Phase 1 - juin 2022 – février 2024",
     "title": "Un prototype pour **valider l'idée**",
     "lede": "Analyser le marché, écouter les utilisateurs, puis construire.",
     "railStart": "Juin 2022",
@@ -42,23 +42,23 @@
     },
     "layers": [
       {
-        "name": "Livraison · CI/CD",
+        "name": "Livraison - CI/CD",
         "detail": "Chaîne d'intégration et de déploiement continus (CI/CD)"
       },
       {
-        "name": "Données · PostgreSQL et MongoDB",
+        "name": "Données - PostgreSQL et MongoDB",
         "detail": "Bases de données PostgreSQL et MongoDB"
       },
       {
-        "name": "API · Node.js / Express",
+        "name": "API - Node.js / Express",
         "detail": "Architecture Node.js / Express"
       },
       {
-        "name": "Interface · React",
+        "name": "Interface - React",
         "detail": "Frontend React"
       },
       {
-        "name": "Exploration · IA",
+        "name": "Exploration - IA",
         "detail": "Travaux exploratoires sur l'intégration de l'IA"
       }
     ]
@@ -80,8 +80,8 @@
         "text": "Fonctionnel, potentiel démontré"
       }
     ],
-    "railLeft": "Fin de la phase 1 · février 2024",
-    "railRight": "Phase 2 · 2024 – 2026",
+    "railLeft": "Fin de la phase 1 - février 2024",
+    "railRight": "Phase 2 - 2024 – 2026",
     "next": "Une plateforme **robuste**, **évolutive** et intégrant des modules d'**intelligence artificielle**."
   }
 }

@@ -21,10 +21,35 @@ const which = process.argv[2] || "all";
 
 // Photographes des quatre fonds (crédits repris sur la diapositive).
 const PHOTOS = [
-  { id: "1712105052313-ae83f9c8cf7e", alt: "Façade blanche, architecture minimale", author: { name: "Lance Anderson", profileUrl: "https://unsplash.com/@lanceanderson" } },
-  { id: "1760926521199-9b2194e9d266", alt: "Architecture abstraite en noir et blanc", author: { name: "Sebastian Schuster", profileUrl: "https://unsplash.com/@sschusterphotoart" } },
-  { id: "1767854507594-424e6a844672", alt: "Béton brutaliste et escaliers", author: { name: "I P", profileUrl: "https://unsplash.com/@ipraudz" } },
-  { id: "1761414500810-6317b6b32801", alt: "Relief de béton géométrique", author: { name: "Gérard Griffay", profileUrl: "https://unsplash.com/@ggriffay" } },
+  {
+    id: "1712105052313-ae83f9c8cf7e",
+    alt: "Façade blanche, architecture minimale",
+    author: {
+      name: "Lance Anderson",
+      profileUrl: "https://unsplash.com/@lanceanderson",
+    },
+  },
+  {
+    id: "1760926521199-9b2194e9d266",
+    alt: "Architecture abstraite en noir et blanc",
+    author: {
+      name: "Sebastian Schuster",
+      profileUrl: "https://unsplash.com/@sschusterphotoart",
+    },
+  },
+  {
+    id: "1767854507594-424e6a844672",
+    alt: "Béton brutaliste et escaliers",
+    author: { name: "I P", profileUrl: "https://unsplash.com/@ipraudz" },
+  },
+  {
+    id: "1761414500810-6317b6b32801",
+    alt: "Relief de béton géométrique",
+    author: {
+      name: "Gérard Griffay",
+      profileUrl: "https://unsplash.com/@ggriffay",
+    },
+  },
 ];
 
 const built = async (hash) => {
@@ -40,7 +65,8 @@ const built = async (hash) => {
 
 // Visiteur non connecté : le handshake est refusé, l'application affiche la connexion.
 const anonymous = (extra) => (path, method, url) => {
-  if (path.endsWith("/auth/handshake")) return { __status: 401, __body: { message: "Non connecté" } };
+  if (path.endsWith("/auth/handshake"))
+    return { __status: 401, __body: { message: "Non connecté" } };
   return extra?.(path, method, url);
 };
 
@@ -57,24 +83,54 @@ const run = async (label, job) => {
 };
 
 if (which === "all" || which === "debut") {
-  await run("[début] 28 juin 2023 · connexion (8204569ef)", async () => {
+  await run("[début] 28 juin 2023 - connexion (8204569ef)", async () => {
     const dir = await built("8204569ef");
-    await capture({ dir, route: "/", mock: anonymous(() => ({})), out: join(assets, "debut.webp"), wait: 1500 });
+    await capture({
+      dir,
+      route: "/",
+      mock: anonymous(() => ({})),
+      out: join(assets, "debut.webp"),
+      wait: 1500,
+    });
   });
 }
 
 if (which === "all" || which === "fin") {
   const dir = await built("57087787e");
-  const files = Object.fromEntries(PHOTOS.map((p, i) => [`photo-${p.id}`, join(assets, `unsplash-${i + 1}.webp`)]));
+  const files = Object.fromEntries(
+    PHOTOS.map((p, i) => [
+      `photo-${p.id}`,
+      join(assets, `unsplash-${i + 1}.webp`),
+    ]),
+  );
   for (const [i, photo] of PHOTOS.entries()) {
-    await run(`[fin ${i + 1}] 15 octobre 2026 · connexion, fond de ${photo.author.name} (57087787e)`, async () => {
-      const mock = modern((path) => {
-        if (path.endsWith("/auth/handshake")) return { __status: 401, __body: { message: "Non connecté" } };
-        if (path.endsWith("/auth/backgrounds")) return { photos: [{ ...photo, url: `https://images.unsplash.com/photo-${photo.id}?w=1400` }] };
-        return undefined;
-      });
-      await capture({ dir, route: "/", mock, files, out: join(assets, `fin-${i + 1}.webp`), wait: 4500 });
-    });
+    await run(
+      `[fin ${i + 1}] 15 octobre 2026 - connexion, fond de ${photo.author.name} (57087787e)`,
+      async () => {
+        const mock = modern((path) => {
+          if (path.endsWith("/auth/handshake"))
+            return { __status: 401, __body: { message: "Non connecté" } };
+          if (path.endsWith("/auth/backgrounds"))
+            return {
+              photos: [
+                {
+                  ...photo,
+                  url: `https://images.unsplash.com/photo-${photo.id}?w=1400`,
+                },
+              ],
+            };
+          return undefined;
+        });
+        await capture({
+          dir,
+          route: "/",
+          mock,
+          files,
+          out: join(assets, `fin-${i + 1}.webp`),
+          wait: 4500,
+        });
+      },
+    );
   }
 }
 process.exit(failed ? 1 : 0);

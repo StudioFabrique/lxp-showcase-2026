@@ -10,12 +10,7 @@
       "etiquette": "Évaluation initiale",
       "titre": "Quiz d'auto-évaluation",
       "qtabs": {
-        "tab": [
-          "QCM",
-          "Vrai ou faux",
-          "Associations",
-          "Ordre"
-        ]
+        "tab": ["QCM", "Vrai ou faux", "Associations", "Ordre"]
       },
       "qbody": {
         "qp": [
@@ -66,27 +61,13 @@
                 "answer": "regroupe des activités"
               }
             ],
-            "startOrder": [
-              1,
-              2,
-              0
-            ]
+            "startOrder": [1, 2, 0]
           },
           {
             "h4": "Du plus large au plus précis.",
             "verdict": "Ordre correct",
-            "items": [
-              "Parcours",
-              "Module",
-              "Cours",
-              "Leçon"
-            ],
-            "startOrder": [
-              3,
-              0,
-              2,
-              1
-            ]
+            "items": ["Parcours", "Module", "Cours", "Leçon"],
+            "startOrder": [3, 0, 2, 1]
           }
         ]
       },
@@ -127,7 +108,7 @@
     "rend": {
       "gh": "Travail remis",
       "who": [
-        "Apprenant · réponse textuelle",
+        "Apprenant - réponse textuelle",
         "Fichiers",
         "Barème d’évaluation"
       ],
