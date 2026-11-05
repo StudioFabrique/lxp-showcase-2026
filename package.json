@@ -6,6 +6,7 @@
     "check": "npm run sync && cd composition && npx --yes hyperframes@0.8.174 check",
     "build": "npm run sync && node tools/build-dist.mjs",
     "dev": "npm run sync && npx --yes hyperframes@0.8.174 present ./composition",
+    "vercel-build": "npm run build",
     "studio": "npx --yes hyperframes@0.8.174 preview ./composition --background",
     "scene": "node tools/dev-server.mjs",
     "snapshots": "node tools/snapshots/run.mjs",
