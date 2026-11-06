@@ -203,11 +203,9 @@
         dot.style.background = th.sw[i];
       });
     });
-    // Identité : l'aperçu reprend le nom saisi.
+    // Identité : l'aperçu reprend le nom saisi ; le logo (Step) est une image du HTML.
     var orgName = el.querySelector(".pz-f-nom").textContent.trim();
     el.querySelector(".pz-idname").textContent = orgName;
-    el.querySelector(".pz-idlogo").textContent = orgName.charAt(0).toUpperCase();
-    el.querySelector(".pz-brand").textContent = orgName;
 
     // ── Étape 0 : thèmes ──────────────────────────────────────────────────────────────────
     enter("za", 0.9, [".pz-ico", ".pz-desc", ".pz-gh", ".pz-th", ".pz-mock"]);

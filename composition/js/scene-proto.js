@@ -171,7 +171,8 @@
         gsap.set(card, { z: 0, scale: 1, rotationX: 0, rotationY: 0 });
       });
     });
-    // Couches : survol ou clic = la plaque se soulève et le détail s'affiche à gauche.
+    // Couches : le survol ne change que la bordure (la plaque ne bouge pas, sinon la zone de survol saute) ;
+    // le clic sélectionne la couche (plaque soulevée, détail à gauche) et la sélection reste jusqu'à un nouveau clic.
     var DET = (Content.get("proto.architecture.layers") || []).map(function (l) {
       return l.detail;
     });
@@ -181,10 +182,22 @@
     var names = plates.map(function (p) {
       return p.querySelector("b").textContent;
     });
+    var BORDER = "rgba(186,230,253,1)";
+    var ON = "rgba(" + rgb + ",1)";
+    var selPlate = -1;
+    var hoverPlate = -1;
+    var renderPlates = function () {
+      plates.forEach(function (pl, i) {
+        var sel = i === selPlate;
+        gsap.to(pl, { y: sel && !reduced ? -22 : 0, duration: 0.4, ease: sel ? "back.out(2)" : "power3.out", overwrite: "auto" });
+        gsap.to(pl, { borderColor: sel || i === hoverPlate || i === 4 ? ON : BORDER, duration: 0.3 });
+      });
+    };
     var show = function (i) {
       gsap.to([ttl, txt], {
         opacity: 0,
         duration: 0.12,
+        overwrite: "auto",
         onComplete: function () {
           ttl.textContent = i < 0 ? D0[0] : names[i];
           txt.textContent = i < 0 ? D0[1] : DET[i];
@@ -194,20 +207,26 @@
     };
     plates.forEach(function (pl, i) {
       pl.addEventListener("mouseenter", function () {
-        if (!reduced) gsap.to(pl, { y: -22, duration: 0.4, ease: "back.out(2)", overwrite: "auto" });
-        gsap.to(pl, { borderColor: "rgba(" + rgb + ",1)", duration: 0.3, overwrite: "auto" });
-        show(i);
+        hoverPlate = i;
+        renderPlates();
       });
       pl.addEventListener("mouseleave", function () {
-        gsap.to(pl, { y: 0, duration: 0.45, ease: "power3.out", overwrite: "auto" });
-        gsap.to(pl, { borderColor: i === 4 ? "rgba(" + rgb + ",1)" : "rgba(186,230,253,1)", duration: 0.3, overwrite: "auto" });
-        show(-1);
+        if (hoverPlate === i) hoverPlate = -1;
+        renderPlates();
+      });
+      pl.addEventListener("click", function () {
+        selPlate = selPlate === i ? -1 : i;
+        renderPlates();
+        show(selPlate);
       });
     });
     el.addEventListener("scene:leave", function () {
+      selPlate = -1;
+      hoverPlate = -1;
       plates.forEach(function (pl, i) {
-        gsap.set(pl, { borderColor: i === 4 ? "rgba(" + rgb + ",1)" : "rgba(186,230,253,1)" });
+        gsap.set(pl, { y: 0, borderColor: i === 4 ? ON : BORDER });
       });
+      gsap.killTweensOf([ttl, txt]);
       ttl.textContent = D0[0];
       txt.textContent = D0[1];
       gsap.set([ttl, txt], { opacity: 1 });

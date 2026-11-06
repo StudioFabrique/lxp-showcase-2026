@@ -1,13 +1,13 @@
 {
   "label": "Mettre en place ANDRIA",
-  "notes": "Avant la clôture : ce qu'il faut pour mettre ANDRIA en place, en termes simples. Trois faits tirés du dépôt du LXP : s'installe sur un serveur avec sauvegardes, IA séparée et désactivable, import Moodle. Le détail technique (conteneurs, bases, fournisseur d'IA) reste en réserve pour les questions. Volontairement absents : licence, hébergement des données, SSO, SCORM, tarif, contact (rien dans le dépôt). Le bandeau du bas renvoie à l'équipe Step.",
+  "notes": "Avant la clôture : ce qu'il faut pour mettre ANDRIA en place, en termes simples. Trois faits tirés du dépôt du LXP : s'installe sur un serveur avec sauvegardes, IA séparée et désactivable, import Moodle. Le détail technique (conteneurs, bases, fournisseur d'IA) reste en réserve pour les questions. Volontairement absents : licence, hébergement des données, SSO, SCORM, tarif, contact (rien dans le dépôt).",
   "title": "Mettre en place **ANDRIA**",
   "lede": "Ce qu'il faut savoir pour démarrer.",
   "cards": [
     {
       "role": "Hébergement",
-      "title": "Hébergeable chez vous",
-      "text": "ANDRIA s'installe sur un serveur, avec des sauvegardes de vos données."
+      "title": "On héberge et configure ANDRIA pour vous",
+      "text": "Serveur, sauvegardes automatiques des bases et des fichiers, stockage S3… l'équipe du studio s'occupe de tout."
     },
     {
       "role": "Intelligence artificielle",
@@ -19,6 +19,5 @@
       "title": "Reprendre ce qui existe",
       "text": "Vos cours Moodle et vos parcours déjà construits peuvent être importés."
     }
-  ],
-  "band": "Modalités d'accès, licence et accompagnement : à définir avec l'équipe Step."
+  ]
 }

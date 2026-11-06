@@ -49,7 +49,7 @@ lxp-showcase-2026/
 ### S1 Scène intermédiaire 1 (3 gates)
 
 1. **Qu'est-ce que ANDRIA ?** : définition de la LXP, une phrase de contexte (transformation numérique des formations Step), la finalité (personnalisation + IA).
-2. **PAUSE** → **Objectifs / problématique résolue** : les 3 problèmes de départ (individualisation impossible en LMS, décrochage post-pandémie, besoin d'autonomie), puis les 9 objectifs regroupés en 3 familles (apprendre, s'engager, accompagner) pour rester lisible.
+2. **PAUSE** → **Objectifs / problématique résolue** : les 3 problèmes de départ (individualisation impossible en LMS, besoin d'autonomie), puis les 9 objectifs regroupés en 3 familles (apprendre, s'engager, accompagner) pour rester lisible.
 3. **PAUSE** → **LXP vs LMS** : tableau à 5 lignes, animé ligne par ligne (centré contenus ↔ centré utilisateur, etc.), phrase de conclusion « créer le contenant qui produit les données ».
 
 ### S2 Scène intermédiaire 2 : caractéristiques

@@ -1,4 +1,4 @@
-/* Mettre en place ANDRIA : trois cartes (déploiement, IA, contenus existants) puis un bandeau.
+/* Mettre en place ANDRIA : trois cartes (hébergement, IA, contenus existants).
    Une seule étape : le chevron enchaîne sur la clôture. */
 (function () {
   var Deck = (window.Deck = window.Deck || { scenes: {} });
@@ -21,7 +21,6 @@
       1.0,
     );
     fx.drop(tl, q(".wo-card"), 1.1, { z0: 420, turn: 10, stagger: 0.2, dur: 0.85 });
-    fx.ft(tl, q(".wo-band"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 2.3);
     fx.ft(tl, q(".chevron.mini"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 2.6);
     tl.set(q(".chevron.mini"), { pointerEvents: "auto" }, 2.6);
     tl.addLabel("step0", 3.0);

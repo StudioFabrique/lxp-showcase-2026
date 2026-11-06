@@ -38,7 +38,7 @@ _Notes_ : « Bienvenue. ANDRIA est la plateforme d'apprentissage que Step a con�
 - Titre : **Quel problème résout-elle ?**
 - Contexte : « À partir de 2020, la formation à distance fait apparaître trois difficultés : »
   1. **Individualiser** : les LMS existants sont centrés sur les contenus, pas sur l'apprenant.
-  2. **Décrochage** : les publics fragilisés décrochent davantage en formation à distance, après la pandémie.
+  2. **Décrochage** : les publics fragilisés décrochent davantage en formation à distance.
   3. **Autonomie** : le besoin d'autonomie des apprenants n'est pas satisfait par les outils disponibles.
 - Puis « Les objectifs » : neuf objectifs regroupés en trois familles (une famille apparaît à chaque battement) :
   - **Apprendre efficacement** : améliorer l'efficacité, favoriser l'apprentissage continu et l'autonomie, améliorer la gestion des compétences.
