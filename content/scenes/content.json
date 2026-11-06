@@ -13,7 +13,6 @@
       "Leçon",
       "Activités"
     ],
-    "hint": "Cliquez un niveau pour le détailler",
     "levelBadge": "Niveau {0} sur {1}",
     "exampleLabel": "Exemple :",
     "details": [

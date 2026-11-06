@@ -37,13 +37,13 @@
   "architecture": {
     "title": "Une architecture **pour durer**",
     "hint": {
-      "title": "Survolez une couche",
+      "title": "Cliquez sur une couche",
       "text": "Interface, API, données, livraison : chaque couche pose les bases de la plateforme."
     },
     "layers": [
       {
         "name": "Livraison - CI/CD",
-        "detail": "Chaîne d'intégration et de déploiement continus (CI/CD)"
+        "detail": "Chaîne d'intégration et de déploiement continus (CI/CD), avec Jenkins pour l'automatisation et Infisical pour la gestion des secrets"
       },
       {
         "name": "Données - PostgreSQL et MongoDB",

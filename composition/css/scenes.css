@@ -1012,13 +1012,6 @@
 .ca .lede {
     font-size: 30px;
 }
-.rail-hint {
-    position: absolute;
-    left: 124px;
-    top: 530px;
-    font-size: 24px;
-    color: var(--soft);
-}
 .rail {
     position: absolute;
     left: 110px;
@@ -3933,8 +3926,8 @@
     --m-pr: #0369a1;
     --m-prc: #ffffff;
     align-self: start;
-    height: 590px;
-    padding: 28px;
+    min-height: 570px;
+    padding: 24px 28px 36px;
     border-radius: 26px;
     border: 2px solid var(--m-bd);
     background: var(--m-bg);
@@ -3945,7 +3938,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 14px;
 }
 #scene-personalize .pz-hello {
     font-size: 42px;
@@ -3963,12 +3956,12 @@
 #scene-personalize .pz-mtiles {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin-top: 28px;
+    gap: 14px;
+    margin-top: 22px;
 }
 #scene-personalize .pz-mtile {
     position: relative;
-    padding: 22px 24px 22px 70px;
+    padding: 18px 24px 20px 70px;
     border-radius: 20px;
     border: 1px solid var(--m-bd);
     background: var(--m-card);
@@ -3976,7 +3969,7 @@
 #scene-personalize .pz-mdot {
     position: absolute;
     left: 22px;
-    top: 26px;
+    top: 22px;
     width: 30px;
     height: 30px;
     border-radius: 10px;
@@ -4052,15 +4045,15 @@
     box-shadow: var(--elev-sm);
 }
 #scene-personalize .pz-idlogo {
-    width: 150px;
+    width: 240px;
     height: 150px;
-    border-radius: 40px;
     display: grid;
     place-items: center;
-    font-size: 84px;
-    font-weight: 800;
-    color: var(--color-primary-content);
-    background: var(--color-primary);
+}
+#scene-personalize .pz-idlogo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 #scene-personalize .pz-idname {
     font-size: 40px;
@@ -4160,6 +4153,21 @@
     padding: 18px 28px;
     font-size: 30px;
     color: var(--color-primary);
+}
+#scene-personalize .pz-brand img {
+    display: block;
+    height: 44px;
+    width: auto;
+}
+#scene-personalize .pz-mail-prev.v1 .pz-brand img,
+#scene-personalize .pz-mail-prev.v4 .pz-brand img {
+    filter: brightness(0) invert(1);
+}
+#scene-personalize .pz-mail-prev.v1 .pz-brand img {
+    height: 36px;
+}
+#scene-personalize .pz-mail-prev.v4 .pz-brand img {
+    height: 64px;
 }
 #scene-personalize .pz-mb {
     padding: 8px 28px 30px;
@@ -4651,10 +4659,21 @@
     outline-offset: 3px;
     border-radius: 50%;
 }
+#scene-closing .cl-dot::before {
+    /* Zone cliquable élargie : le repère et sa date. */
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -56px;
+    width: 220px;
+    height: 100px;
+    transform: translateX(-50%);
+}
 #scene-closing .cl-yr {
     position: absolute;
     left: 50%;
     top: -40px;
+    white-space: nowrap;
     transform: translateX(-50%);
     font-size: 24px;
     font-weight: 600;
@@ -4807,23 +4826,10 @@
     line-height: 1.38;
     color: var(--soft);
 }
-.wo-band {
-    position: absolute;
-    left: 110px;
-    right: 110px;
-    top: 905px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    color: var(--color-primary);
-}
 #scene-setup .wo-cards {
     top: 380px;
 }
-#scene-setup .wo-band {
-    top: 880px;
-}
-
+#scene-setup 
 /* Suivre - progression de l'apprenant (modèle : séquence « progression » du dépôt lxp) ------------------ */
 #scene-care .rtitle {
     font-size: 30px;

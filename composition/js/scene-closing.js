@@ -44,16 +44,12 @@
           .trim() || "#0369a1",
     };
 
-    // Mise en place : positions des repères, années sous la frise, captures manquantes.
-    var lastYear = "";
+    // Mise en place : positions des repères, date de chaque capture sous la frise, captures manquantes.
     dots.forEach(function (d, i) {
       d.style.left = dotX(i) + "px";
-      var words = (cards[i].querySelector(".cl-date").textContent || "")
-        .trim()
-        .split(/\s+/);
-      var year = words[words.length - 1] || "";
-      d.querySelector(".cl-yr").textContent = year !== lastYear ? year : "";
-      lastYear = year;
+      d.querySelector(".cl-yr").textContent = (
+        cards[i].querySelector(".cl-date").textContent || ""
+      ).trim();
     });
     shots.forEach(function (sh) {
       var img = sh.querySelector("img");
