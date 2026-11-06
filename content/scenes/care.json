@@ -144,7 +144,25 @@
             "texte": "Abandon"
           },
           "small": "Probabilité estimée"
-        }
+        },
+        "axe": {
+          "y": [
+            "0 %",
+            "25 %",
+            "50 %",
+            "75 %",
+            "100 %"
+          ],
+          "x": [
+            "6 oct.",
+            "13 oct.",
+            "20 oct.",
+            "27 oct.",
+            "3 nov.",
+            "10 nov."
+          ]
+        },
+        "callout": "Abandon : 56 %"
       },
       "used": {
         "p": [

@@ -205,6 +205,9 @@
       s.tl.pause(0);
       s.tl.pause("step" + idx);
     } else if (forward || !animate || reduced) {
+      // La scène quittée peut encore être en lecture : elle continuerait d'animer le calque persistant
+      // (logo, mention de cofinancement…) par-dessus la nouvelle scène.
+      gsap.killTweensOf(prev.tl);
       hide(prev, animate);
       show(s, animate);
       s.tl.pause(0);

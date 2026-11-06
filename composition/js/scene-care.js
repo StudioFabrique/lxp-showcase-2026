@@ -21,7 +21,7 @@
     var d = reduced ? 0 : 1;
     var LEVEL_START = 3; // niveau au début de la démonstration
     var LEVEL0 = 2; // niveau affiché à l'issue de la démonstration
-    var D = 3.5; // décalage des étapes suivantes : la démonstration de l'humeur dure plus longtemps
+    var D = 4.2; // décalage des étapes suivantes : la démonstration de l'humeur dure plus longtemps (la sortie de la carte doit suivre le label step1, 14,7 s)
 
     S.set(tl, "hidden", 0);
     tl.set(q(".ra"), { pointerEvents: "auto" }, 0);
@@ -125,7 +125,9 @@
     var click = function (pt, at) {
       tl.to(cursor, { scale: 0.9, duration: 0.1 }, at);
       tl.to(cursor, { scale: 1, duration: 0.16 }, at + 0.1);
-      fx.ft(tl, ring, { x: pt.x - 22, y: pt.y - 22, scale: 0.35, opacity: 0.6 }, { x: pt.x - 22, y: pt.y - 22, scale: 1.4, opacity: 0, duration: 0.45 }, at);
+      // Positionné au moment du clic seulement : un état de départ posé à 0 (fx.ft) laisserait l'anneau visible avant.
+      tl.set(ring, { x: pt.x - 22, y: pt.y - 22, scale: 0.35, opacity: 0.6 }, at);
+      tl.to(ring, { scale: 1.4, opacity: 0, duration: 0.45 }, at);
     };
     // Un demi-tour complet avec un léger bond vers l'avant, pendant que le tracé se déforme.
     var spin = function (tlx, at) {
@@ -142,6 +144,7 @@
     tl.set(range, { value: LEVEL_START }, 0);
     tl.set(area, { value: "" }, 0);
     tl.set(cursor, { opacity: 0 }, 0);
+    tl.set(ring, { opacity: 0 }, 0);
     tl.set(q(".rb .toast"), { opacity: 0 }, 0);
     fx.ft(tl, icon, { opacity: 0, rotationY: -180, scale: 0.6, transformPerspective: 1400 }, { opacity: 1, rotationY: 0, scale: 1, duration: 1.0, ease: "power3.out" }, 7.3);
     // 1. Le curseur saisit la barre et la fait glisser : le pictogramme passe à la pluie.
@@ -184,18 +187,30 @@
     activate("rc", 11.6 + D);
     enter("rc", 11.6 + D, [".alrow", ".sig", ".leg", ".usedbtn"]);
     fx.ft(tl, q(".alr"), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.4)" }, 12.9 + D);
-    fx.ft(tl, q(".gl"), { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.1 }, 13.2 + D);
-    fx.ft(tl, q(".ln"), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut", stagger: 0.3 }, 13.6 + D);
-    chevOn(15.8 + D);
-    tl.addLabel("step2", 16.1 + D);
+    // Graphique : axes, puis les trois courbes se dévoilent de gauche à droite (rideau commun, donc synchrones),
+    // chaque marqueur se pose au passage ; l'abandon est mis en avant à l'arrivée.
+    var REVEAL0 = 13.5 + D;
+    var REVEAL_LEN = 2.0;
+    var W0 = 96; // abscisse du premier point ; les suivants sont espacés de 178,4 (voir le SVG)
+    fx.ft(tl, q(".chart .axis"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 13.0 + D);
+    fx.ft(tl, q(".chart .rev"), { attr: { width: W0 - 8 } }, { attr: { width: 1028 }, duration: REVEAL_LEN, ease: "none" }, REVEAL0);
+    ["wr", "ok", "ko"].forEach(function (k) {
+      gsap.utils.toArray(q(".chart .pts." + k + " .pt")).forEach(function (pt, i) {
+        fx.ft(tl, pt, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.6)" }, REVEAL0 + (REVEAL_LEN * (W0 - 8 + i * 178.4)) / (1028 - (W0 - 8)));
+      });
+    });
+    fx.ft(tl, q(".chart .call"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, REVEAL0 + REVEAL_LEN + 0.1);
+    fx.ft(tl, q(".chart .pulse"), { scale: 1, opacity: 0.7 }, { scale: 2.6, opacity: 0, duration: 0.9, ease: "power2.out" }, REVEAL0 + REVEAL_LEN + 0.1);
+    chevOn(16.5 + D);
+    tl.addLabel("step2", 16.8 + D);
 
     // ── Étape 3 : retour de l'équipe ──────────────────────────────────────────────────────
-    chevOff(16.3 + D);
-    leave("rc", 16.3 + D);
-    activate("rd", 17.0 + D);
-    enter("rd", 17.0 + D, [".who", ".av", ".cchip", ".rfoot"]);
-    chevOn(20.2 + D);
-    tl.addLabel("step3", 20.5 + D);
+    chevOff(17.1 + D);
+    leave("rc", 17.1 + D);
+    activate("rd", 17.8 + D);
+    enter("rd", 17.8 + D, [".who", ".av", ".cchip", ".rfoot"]);
+    chevOn(21.0 + D);
+    tl.addLabel("step3", 21.3 + D);
 
     // ── Interactions (hors timeline) ──────────────────────────────────────────────────────
     var hover = function (node, on, off) {

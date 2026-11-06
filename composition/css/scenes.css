@@ -3402,19 +3402,25 @@
     margin-top: 20px;
 }
 .chart svg {
+    display: block;
     width: 100%;
-    height: 250px;
+    height: auto;
+    overflow: visible;
 }
 .gl {
     stroke: var(--color-base-300);
     stroke-width: 2;
 }
+.axl {
+    font-size: 22px;
+    font-weight: 600;
+    fill: var(--soft);
+}
 .ln {
     fill: none;
-    stroke-width: 5;
+    stroke-width: 6;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-dasharray: 1;
 }
 .ln.ok {
     stroke: var(--color-accent);
@@ -3425,12 +3431,56 @@
 .ln.ko {
     stroke: var(--color-error);
 }
+.chart .area {
+    fill: url(#care-area);
+}
+.chart .a0 {
+    stop-color: var(--color-error);
+    stop-opacity: 0.22;
+}
+.chart .a1 {
+    stop-color: var(--color-error);
+    stop-opacity: 0;
+}
+.chart .pt {
+    stroke: var(--color-base-100);
+    stroke-width: 3;
+}
+.chart .pts.ok .pt {
+    fill: var(--color-accent);
+}
+.chart .pts.wr .pt {
+    fill: var(--color-warning);
+}
+.chart .pts.ko .pt {
+    fill: var(--color-error);
+}
+.chart .pulse {
+    fill: none;
+    stroke: var(--color-error);
+    stroke-width: 3;
+}
+.chart .tail {
+    stroke: var(--color-error);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+.chart .chip {
+    fill: var(--color-error);
+}
+.chart .chipt {
+    font-size: 22px;
+    font-weight: 700;
+    fill: var(--color-error-content, #fff);
+}
 .leg {
     display: flex;
     align-items: center;
     gap: 26px;
+    margin-top: 6px;
     font-size: 26px;
     font-weight: 700;
+    color: var(--color-base-content);
 }
 .leg i {
     display: inline-block;
@@ -3440,14 +3490,14 @@
     border-radius: 50%;
     background: currentColor;
 }
-.leg .ok {
-    color: var(--color-accent);
+.leg .ok i {
+    background: var(--color-accent);
 }
-.leg .wr {
-    color: #b45309;
+.leg .wr i {
+    background: var(--color-warning);
 }
-.leg .ko {
-    color: var(--color-error);
+.leg .ko i {
+    background: var(--color-error);
 }
 .leg small {
     margin-left: auto;
