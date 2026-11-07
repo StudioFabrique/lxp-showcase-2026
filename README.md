@@ -48,3 +48,4 @@ Ouvre la scène dans le navigateur et recharge la page à chaque modification. S
 | `npm run snapshots -- 5` | refait une capture de la scène « L'interface au fil des mois » (voir `PLAN.md` §22) |
 
 `npm install` n'est nécessaire que pour `thumbs` et `snapshots` (Chrome requis). `npm run zip` n'a besoin que de l'outil `zip` du système.
+
